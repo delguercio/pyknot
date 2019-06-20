@@ -3,24 +3,23 @@
 #
 # This is program that will take in the Gauss code and output the overstrand list
 #
-# Doesn't take into account signs
-#
 
 
 #
 # I call the strand number for the overstrand list "strand #" 
 # and numbering system for the Gauss code the "crossing index". 
 #
-# Next creates a dictionary of the form 
+
+#
+# First creates a dictionary of the form 
 #              {{strand #0: overcrossing index, ... , -undercrossing index} ,
 #               {strand #1: overcrossing index, ... , -undercrossing index} ,
 #               ... }
-#
+
 
 def create_dict(gauss_code_list):
     """
-        input: gauss code list, if there are an odd number of crossing a loop is
-               added at the end
+        input: gauss code list
         output:dictionary with the keys integer strand numbers between 0 and
                length of gauss code list divided by two. Each dictionary entry
                has value a list with at least one integer entry
@@ -65,8 +64,8 @@ def create_overstrand_list(gauss_code_list):
         #print("The corresponding strand is "+str(keys))
         #print(gauss_code_dict.items())
         overstrand_list.append(keys[0])
-    if len(overstrand_list)%2 == 1:
-        overstrand_list.append(len(overstrand_list))
+    #if len(overstrand_list)%2 == 1: # if you wanted to add a loop to in overstrand
+    #    overstrand_list.append(len(overstrand_list))
     return overstrand_list
 
 

@@ -13,8 +13,8 @@ import csv
 #
 # this didn't work so i just put the functions in :/
 #
-# from gauss_to_overstand import create_overstrand_list, create_dict
-#
+
+from gauss_to_overstrand import *
 
 def ToReducedRowEchelonForm( M):
     if not M: return M
@@ -52,7 +52,7 @@ def ToReducedRowEchelonForm( M):
               #  print("M is "+str(M))
         lead += 1
     return M
-
+"""
 
 fields = [ 'Name', 'Coloring Matrix']
 
@@ -95,7 +95,6 @@ for row in new_LoL:
     writer.writerow(row)
 
 newrawfile.close()
-"""
 
 def create_dict(gauss_code_list):
 
@@ -133,6 +132,7 @@ def create_overstrand_list(gauss_code_list):
     if len(overstrand_list)%2 == 1:
         overstrand_list.append(len(overstrand_list))
     return overstrand_list
+"""
 
 fields = [ 'Name', 'Gauss Code']
 
@@ -154,7 +154,7 @@ for row in reader:
         line_count = line_count + 1
     else:
         strings = row[1][1:-1].split(",")
-        print(strings)
+        #print(strings)
         #list_of_lists = [ list(crossing.split(",")) for crossing in strings ]
         #print(list_of_lists)
         list_of_intlists = [int(n) for n in strings]
@@ -166,7 +166,7 @@ rawfile.close()
 
 
 
-newfilename = "name_overstrand1_3colorable.csv"
+newfilename = "name_overstrand_3colorable.csv"
 
 newrawfile = open(newfilename, 'w')
 
@@ -176,5 +176,4 @@ for row in new_LoL:
     writer.writerow(row)
 
 newrawfile.close()
-"""
 
