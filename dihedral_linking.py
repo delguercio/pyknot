@@ -7,6 +7,8 @@
 #
 #
 
+import sympy
+
 
 def where_list(overstrand_list,color_list):
     """
@@ -58,8 +60,8 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
    #we have number of columns = number of strands, number of rows = number of crossings.... hm
 
    x_matrix = [[0]*(len(overstrand_list)+1) for i in range(len(overstrand_list))]
-   print("STARTING MATRIX")
-   print(x_matrix)
+   #print("STARTING MATRIX")
+   #print(x_matrix)
 
    #Great! now find epsilon signs. :)
    #need a loop for each of the crossings
@@ -88,7 +90,7 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
       #see if we have an epsilon three. this would happen if all three strands are the same color (homogeneous crossing)
 
       if(color_list[i]==color_list[(i+1)%len(overstrand_list)]==color_list[overstrand_list[i]]):
-         print("HOMOGENOUS CROSSING!")
+         #print("HOMOGENOUS CROSSING!")
          if(where_list[i] == where_list[overstrand_list[i]]):
             epsilon_three = -1
          else:
@@ -107,10 +109,10 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
       else:
          x_matrix[i][overstrand_list[i]] += 2*epsilon_three
 
-      print("NEW MATRIX")
-      print(x_matrix)
+      #print("NEW MATRIX")
+      return sympy.Matrix(x_matrix).rref()[0]
       
-print('trefoil '+str(where_list([2, 0, 1, 3],[1, 2, 0, 1])))
+#print('trefoil '+str(where_list([2, 0, 1, 3],[1, 2, 0, 1])))
 where_list_trefoil = where_list([2, 0, 1, 3],[1, 2, 0, 1])
-initialize_matrix([2, 0, 1, 3],[1, 2, 0, 1],where_list_trefoil,[1, 1, 1, 1])
+print(initialize_matrix([2, 0, 1, 3],[1, 2, 0, 1],where_list_trefoil,[1, 1, 1, 1]))
 #print('6_1 '+str(where_list([2, 4, 0, 5, 1, 3],[0, 2, 1, 2, 0, 1])))
