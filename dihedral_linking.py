@@ -104,12 +104,14 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
       
       if epsilon_three == 0:
          x_matrix[i][overstrand_list[i]]+= (epsilon_one*epsilon_two)
-         x_matrix[i][len(overstrand_list)] -= sign_list[i]*epsilon_one
+         x_matrix[i][len(overstrand_list)] += sign_list[i]*epsilon_one
 
       else:
          x_matrix[i][overstrand_list[i]] += 2*epsilon_three
 
-      #print("NEW MATRIX")
+      print("NEW MATRIX")
+      print(x_matrix)
+      
       return sympy.Matrix(x_matrix).rref()[0]
       
 #print('trefoil '+str(where_list([2, 0, 1, 3],[1, 2, 0, 1])))
