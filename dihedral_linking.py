@@ -34,25 +34,32 @@ def where_list(overstrand_list,color_list):
     where_list = []
     colors = [0,1,2]
     for i in range(len(overstrand_list)):
+        #print("We are on strand ", i)
         if i == 0:
-            where_list.append(color_list[0])
-            #print(where_list)
-        color_of_overstrand = color_list[overstrand_list[i]]
-        universe_of_incoming_understrand = where_list[i-1]
-        #print('COLOR OF OVERSTRAND')
-        #print(color_of_overstrand)
-        #print('UNIVERSE OF INCOMING UNDERSTRAND')
-        #print(universe_of_incoming_understrand)
-        if universe_of_incoming_understrand == color_of_overstrand:
-            where_list.append(color_of_overstrand)
-            #print(where_list)
+            where_list.append(color_list[overstrand_list[0]])
+            #print("We initialized the first strand: ", where_list)
+        elif i == 1:
+            where_list.append(color_list[overstrand_list[0]])
+            #print("We initialized the second strand: ", where_list)
+        
         else:
-            colors.remove(color_of_overstrand)
-            colors.remove(universe_of_incoming_understrand)
-            #print(colors)
-            where_list.append(colors[0])
-            #print(where_list)
-            colors = [0,1,2]
+            color_of_overstrand = color_list[overstrand_list[i-1]]
+            universe_of_incoming_understrand = where_list[i-1]
+            #print('COLOR OF OVERSTRAND')
+            #print(color_of_overstrand)
+            #print('UNIVERSE OF INCOMING UNDERSTRAND')
+            #print(universe_of_incoming_understrand)
+            
+            if universe_of_incoming_understrand == color_of_overstrand:
+                where_list.append(color_of_overstrand)
+                #print(where_list)
+            else:
+                colors.remove(color_of_overstrand)
+                colors.remove(universe_of_incoming_understrand)
+                #print(colors)
+                where_list.append(colors[0])
+                #print(where_list)
+                colors = [0,1,2]
     return where_list
 
 def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
@@ -95,26 +102,31 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
             epsilon_three = -1
          else:
             epsilon_three = 1
+         #print("epsilon three: ", epsilon_three )
 
 
       #now we need to add the equation information to this row of the matrix.
       x_matrix[i][i]+=1
       x_matrix[i][(i+1)%len(overstrand_list)]+=1
-
+      #print("NEW MATRIX")
+      #print(x_matrix)
       
       if epsilon_three == 0:
          x_matrix[i][overstrand_list[i]]+= (epsilon_one*epsilon_two)
          x_matrix[i][len(overstrand_list)] += sign_list[i]*epsilon_one
 
+         #print("NEW MATRIX")
+         #print(x_matrix)
+
       else:
          x_matrix[i][overstrand_list[i]] += 2*epsilon_three
 
-      print("NEW MATRIX")
-      print(x_matrix)
+      #print("NEW MATRIX")
+      #print(x_matrix)
       
-      return sympy.Matrix(x_matrix).rref()[0]
+      #return sympy.Matrix(x_matrix).rref()[0]
       
-#print('trefoil '+str(where_list([2, 0, 1, 3],[1, 2, 0, 1])))
+print('trefoil '+str(where_list([2, 0, 1, 3],[1, 2, 0, 1])))
 where_list_trefoil = where_list([2, 0, 1, 3],[1, 2, 0, 1])
 print(initialize_matrix([2, 0, 1, 3],[1, 2, 0, 1],where_list_trefoil,[1, 1, 1, 1]))
 #print('6_1 '+str(where_list([2, 4, 0, 5, 1, 3],[0, 2, 1, 2, 0, 1])))
