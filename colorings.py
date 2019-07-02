@@ -146,6 +146,7 @@ def computecoef(colorlist, numcrossings,overstrands, signs):
                     # To determine sign, check whether the color of the incoming understrand
                     # (strand k) matches the number of the 3-cell from which A_2f(k)
                     # is on the right
+                    #THIS IS EPSILON 1
                     if(WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]==colorlist[k]):
                         coefmatrix[k][overstrands[k]]-=1
                     elif (WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]!=colorlist[k]):
@@ -159,7 +160,7 @@ def computecoef(colorlist, numcrossings,overstrands, signs):
                         coefmatrix[k][overstrands[k]]+=1                        
                     coefmatrix[k][n]=1                                 
             elif (WhereIsA2i(colorlist,overstrands,n)[k]!=colorlist[overstrands[k]]):
-                # Same as above but all signs switch   
+                # Same as above but all signs switch
                 if (signs[k]==1):
                     if(WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]==colorlist[k]):
                         coefmatrix[k][overstrands[k]]+=1                        
@@ -194,7 +195,9 @@ def computecoef(colorlist, numcrossings,overstrands, signs):
                 if (WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]==WhereIsA2i(colorlist,overstrands,n)[k]):
                     coefmatrix[k][overstrands[k]]-=2                    
                 elif (WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]!=WhereIsA2i(colorlist,overstrands,n)[k]):
-                    coefmatrix[k][overstrands[k]]+=2                     
+                    coefmatrix[k][overstrands[k]]+=2
+    print("COEF MATRIX:")
+    print( coefmatrix )                     
     return coefmatrix
 
 # computecoef2 computes the coefficients x_i of the 2-cells A_2i of the 2-chain bounding the
@@ -209,7 +212,7 @@ def computecoef2(colorlist, numcrossings,overstrands, signs):
         coefmatrix[k][k]+=1
        
         coefmatrix[k][(k+1)%n]-=1
-       
+       #PRETTY SURE THIS IS EPSILON 2
         if (homog(k,colorlist,n,overstrands)=='d'):
             if (WhereIsA2i(colorlist,overstrands,n)[k]==colorlist[overstrands[k]]):                
                 if (signs[k]==1):                  
@@ -987,8 +990,8 @@ newrawfile.close()
 #display([1,1,1,1,1,1,1,1],[4,5,0,7,2,1,6,3],'6-1',[2,2,1,3,2,3,1,1],'no')
 #print(display([-1,1,-1,1,-1,1,-1,1],[4,3,6,7,0,6,2,1],'7-7',[3,1,3,2,2,1,1,2]))
 
-#print(display([1,1,1,1],[2,0,1,3],'3-1',[1,2,3,1]))
-print(display([1, -1, 1, 1, -1, 1],[2, 4, 0, 5, 1, 3],'6-1',[0, 2, 1, 2, 0, 1]))
+print(display([1,1,1,1],[2,0,1,3],'3-1',[1,2,3,1]))
+#print(display([1, -1, 1, 1, -1, 1],[2, 4, 0, 5, 1, 3],'6-1',[0, 2, 1, 2, 0, 1]))
 #print(display([-1,1,-1,1,1,1,1,1,1,1,-1,1],[2,4,5,6,1,9,3,5,10,6,8,11],'11n-1',[1,2,3,3,1,3,2,1,2,1,3,1,1]))
 #Lo_Knot_Ls_31 = [[[3,0,2,1],[1,1,1,-1],[1,2,3,3]],[[2,0,1,3],[1,1,1,-1],[1,2,3,1]],[[2,0,3,1],[1,1,-1,1],[1,2,3,3]],[[3,2,0,1],[1,1,-1,1],[1,2,2,3]],[[1,3,2,0],[1,-1,1,1],[1,2,2,3]]]
 
