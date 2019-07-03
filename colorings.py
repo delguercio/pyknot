@@ -138,9 +138,15 @@ def computecoef(colorlist, numcrossings,overstrands, signs):
         coefmatrix[k][(k+1)%n]-=1
         # If the crossing k has 3 colors
         if (homog(k,colorlist,n,overstrands)=='d'):
+            print()
+            print("This crossing is heterogeneous")
             if (WhereIsA2i(colorlist,overstrands,n)[k]==colorlist[overstrands[k]]):
+                print("w(i) for i = ", k, " is ", WhereIsA2i(colorlist,overstrands,n)[k])
+                print("the overstrand is ", overstrands[k], " and its color is ", colorlist[overstrands[k]] )
+                print("w(i) is equal to color(overstrand)")
                 #If the crossing is positive
                 if (signs[k]==1):
+                    print("This crossing is positive")
                     # Look at A_2f(k) and A_3f(k)
                     # One contributes 0 and the other +/-(a_2-a_3)
                     # To determine sign, check whether the color of the incoming understrand
@@ -149,32 +155,58 @@ def computecoef(colorlist, numcrossings,overstrands, signs):
                     #THIS IS EPSILON 1
                     if(WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]==colorlist[k]):
                         coefmatrix[k][overstrands[k]]-=1
+                        print("w(overstrand) equals color(i)")
+                        
                     elif (WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]!=colorlist[k]):
+                        print("w(overstrand) does not equal color(i)")
+                        
                         coefmatrix[k][overstrands[k]]+=1           
                     #Look at A_1f(k)
+                    
+                    print("the right side of the equation is negative 1")
                     coefmatrix[k][n]-=1
                 elif (signs[k]==-1):
+                    print("this crossing is negative")
                     if(WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]==colorlist[k]):
-                        coefmatrix[k][overstrands[k]]-=1                        
+                        coefmatrix[k][overstrands[k]]-=1    
+                        print("w(overstrand) equals color(i)")
+                        
                     elif (WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]!=colorlist[k]):
-                        coefmatrix[k][overstrands[k]]+=1                        
-                    coefmatrix[k][n]=1                                 
+                        coefmatrix[k][overstrands[k]]+=1    
+                        print("w(overstrand) does not equal color(i)")
+                    
+                    print("the right side of the equation is positive 1")
+                    coefmatrix[k][n]=1                  
+                    
+                    
             elif (WhereIsA2i(colorlist,overstrands,n)[k]!=colorlist[overstrands[k]]):
+                print("w(i) for i = ", k, " is ", WhereIsA2i(colorlist,overstrands,n)[k])
+                print("the overstrand is ", overstrands[k], " and its color is ", colorlist[overstrands[k]] )
+                print("w(i) is not equal to color(overstrand)")
                 # Same as above but all signs switch
                 if (signs[k]==1):
+                    print("This crossing is positive")
                     if(WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]==colorlist[k]):
+                        print("w(overstrand) equals color(i)")
                         coefmatrix[k][overstrands[k]]+=1                        
                     elif (WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]!=colorlist[k]):
-                        coefmatrix[k][overstrands[k]]-=1                        
+                        print("w(overstrand) does not equal color(i)")
+                        coefmatrix[k][overstrands[k]]-=1  
+                    print("the right side of the equation is positive 1")
                     coefmatrix[k][n]=1                    
                 elif (signs[k]==-1):
+                    print("this crossing is negative")
                     if(WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]==colorlist[k]):
+                        print("w(overstrand) equals color(i)")
                         coefmatrix[k][overstrands[k]]+=1                        
                     elif (WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]!=colorlist[k]):
-                        coefmatrix[k][overstrands[k]]-=1                        
+                        print("w(overstrand) does not equal color(i)")
+                        coefmatrix[k][overstrands[k]]-=1  
+                    print("the right side of the equation is negative 1")
                     coefmatrix[k][n]-=1      
                     
-                    
+            print("the coefficient of x(overstrand) is ", coefmatrix[k][overstrands[k]])
+            print()
                     
                     
                     
