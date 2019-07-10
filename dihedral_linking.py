@@ -130,7 +130,7 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
       if epsilon_three == 0:
          print('this')
          print(x_matrix[i][overstrand_list[i]])
-         x_matrix[i][overstrand_list[i]]+= (epsilon_one*epsilon_two)
+         x_matrix[i][overstrand_list[i]] -= (epsilon_one*epsilon_two)
          print('changed to')
          print(x_matrix[i][overstrand_list[i]])
          x_matrix[i][len(overstrand_list)] += sign_list[i]*epsilon_two

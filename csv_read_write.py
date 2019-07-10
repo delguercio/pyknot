@@ -26,14 +26,15 @@ import math
 def menu():
     """ 
     """
-    print("(0) ")
-    print("(1) csv read and write")
+    print("")
+    print("(0) read in 1d array")
+    print("(1) read in 2d array")
     print("(2) ")
     print("(3) ")
     print("(4) ")
     print("(5) ")
     print("(6) ")
-    print("(7) ")
+    print("(7) help !")
     print("(9) Quit")
     print(" ")    
     print("Enter your choice:")
@@ -50,10 +51,59 @@ def main():
             break
 
         elif uc == 0:  #
-            #L = input("Enter a new list: ")
 
         elif uc == 1:  #
-            csv_read_write()
+
+            funtion = input("Function name input:\
+                             Your options are:\
+                             ToReducedRowEchelonForm\
+                                - matrix to rre matrix \
+                                - input (matrix , mod) \
+                             ColourList\
+                                - rre matrix to list of strand colorings\
+                                - input matrix")
+
+            fields = [ 'Name', 'Coloring Matrix']
+
+            newfields = [ 'Name', 'Row Reduced Coloring Matrix']
+
+            filename = "name_matrix1_3colorable.csv"
+
+            newfilename = "name_reducedmatrix_3colorable.csv"
+
+            line_count = 0
+
+            rawfile = open(filename, 'r')
+
+            reader = csv.reader(rawfile)
+
+            new_LoL = []
+             
+            for row in reader:
+                if line_count == 0:
+                    new_LoL.append(newfields)
+                    line_count = line_count + 1
+                else:
+                    strings = row[1][2:-2].split("], [")
+                    #print(strings)
+                    list_of_lists = [ list(crossing.split(",")) for crossing in strings ]
+                    #print(list_of_lists)
+                    list_of_intlists = [ [int(n) for n in string] for string in list_of_lists ]
+                    new_LoL.append([row[0],ToReducedRowEchelonForm( list_of_intlists )])
+                    line_count = line_count + 1
+
+            rawfile.close()
+
+
+            newrawfile = open(newfilename, 'w')
+
+            writer = csv.writer(newrawfile)
+
+            for row in new_LoL:
+                writer.writerow(row)
+
+            newrawfile.close()        
+
 
         elif uc == 2: # 
             print(" ")
@@ -86,7 +136,6 @@ def main():
     print(" ")
 
 
-def 
 
 fields = [ 'Name', 'Coloring Matrix']
 
