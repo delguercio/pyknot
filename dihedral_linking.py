@@ -8,6 +8,7 @@
 #
 
 import sympy
+import math
 
 
 def where_list(overstrand_list,color_list):
@@ -79,13 +80,13 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
       #epsilon_one = 0
       #epsilon_two = 0
       epsilon_three = 0
-      print('for equation '+str(i))
+      '''print('for equation '+str(i))
       print('epsilon_one')
       print(epsilon_one)
       print('epsilon_two')
       print(epsilon_two)
       print('epsilon_three')
-      print(epsilon_three)
+      print(epsilon_three)'''
       
       #epsilon one is positive if the color of i is not equal to the where of the overstrand.
       
@@ -102,53 +103,80 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
       else:
          epsilon_two = -1
 
-      print('for equation'+str(i))
+      '''print('for equation'+str(i))
       print('epsilon_one')
       print(epsilon_one)
       print('epsilon_two')
       print(epsilon_two)
       print('epsilon_three')
-      print(epsilon_three)
+      print(epsilon_three)'''
 
       #see if we have an epsilon three. this would happen if all three strands are the same color (homogeneous crossing)
 
       if(color_list[i]==color_list[(i+1)%len(overstrand_list)]==color_list[overstrand_list[i]]):
-         print("HOMOGENOUS CROSSING!")
+         #print("HOMOGENOUS CROSSING!")
          if(where_list[i] == where_list[overstrand_list[i]]):
             epsilon_three = -1
          else:
             epsilon_three = 1
-         print("epsilon three: ", epsilon_three )
+         #print("epsilon three: ", epsilon_three )
 
 
       #now we need to add the equation information to this row of the matrix.
       x_matrix[i][i]+=1
       x_matrix[i][(i+1)%len(overstrand_list)]-=1
-      print("NEW MATRIX")
-      print(x_matrix)
+      #print("NEW MATRIX")
+      #print(x_matrix)
       
       if epsilon_three == 0:
-         print('this')
-         print(x_matrix[i][overstrand_list[i]])
+         #print('this')
+         #print(x_matrix[i][overstrand_list[i]])
          x_matrix[i][overstrand_list[i]] -= (epsilon_one*epsilon_two)
-         print('changed to')
-         print(x_matrix[i][overstrand_list[i]])
+         #print('changed to')
+         #print(x_matrix[i][overstrand_list[i]])
          x_matrix[i][len(overstrand_list)] += sign_list[i]*epsilon_two
 
-         print("NEW MATRIX")
-         print(x_matrix)
+         #print("NEW MATRIX")
+         #print(x_matrix)
 
       else:
          x_matrix[i][overstrand_list[i]] += 2*epsilon_three
 
-      print("NEW MATRIX")
-      print(x_matrix)
-      
-   return sympy.Matrix(x_matrix).rref()[0]
-      
-#print('trefoil '+str(where_list([2, 0, 1, 3],[1, 2, 3, 1])))
-#where_list_trefoil = where_list([2, 0, 1, 3],[1, 2, 3, 1])
-#print(initialize_matrix([2, 0, 1, 3],[1, 2, 3, 1],where_list_trefoil,[1, 1, 1, 1]))
+      #print("NEW MATRIX")
+      #print(x_matrix)
 
+   print("FINISHED MATRIX")
+   print(sympy.Matrix(x_matrix).rref()[0])
+   return sympy.Matrix(x_matrix).rref()[0]
+
+def solve_2chain(rref_matrix):
+    print("RREF MATRIX:")
+    print(rref_matrix)
+    number_rows = int(math.sqrt(len(rref_matrix)))
+    number_cols = int(len(rref_matrix)/number_rows)-1
+    x_values = []
+    for i in range(number_cols):
+        x_values.append(0)
+        
+    print("X VALUES START ", x_values)
+    for i in range(number_rows):
+        #print("on row ",i, " out of ", number_rows)
+        #print("check for ", (number_rows*i)+i, " through ", (number_rows*i)+i+number_cols)
+        for j in range(number_cols):
+            #print("on col ", j, " out of ", number_cols)
+            value = rref_matrix[(number_rows*i)+i+j]
+            if value != 0:
+                x_values[j] = rref_matrix[(number_rows*i)+i+number_cols]
+                break
+    print("ummmm x values now: ", x_values)
+    return rref_matrix
+        
+print('trefoil '+str(where_list([2, 0, 1, 3],[1, 2, 3, 1])))
+where_list_trefoil = where_list([2, 0, 1, 3],[1, 2, 3, 1])
+rref_matrix_trefoil = initialize_matrix([2, 0, 1, 3],[1, 2, 3, 1],where_list_trefoil,[1, 1, 1, 1])
+solve_2chain(rref_matrix_trefoil)
+print()
 where_list_6_1 = where_list([2, 4, 0, 5, 1, 3],[3, 2, 1, 2, 3, 1])
-print(initialize_matrix([2, 4, 0, 5, 1, 3],[3, 2, 1, 2, 3, 1],where_list_6_1,[1, -1, 1, 1, -1, 1]))
+print('6_1 knot ' + str(where_list_6_1))
+rref_matrix_6_1 = initialize_matrix([2, 4, 0, 5, 1, 3],[3, 2, 1, 2, 3, 1],where_list_6_1,[1, -1, 1, 1, -1, 1])
+solve_2chain(rref_matrix_6_1)
