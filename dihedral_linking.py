@@ -11,7 +11,7 @@ import sympy
 import math
 
 
-def where_list(overstrand_list,color_list):
+def where(overstrand_list,color_list):
     """
         this function outputs the universe your head is in if
         your right hand is in A_(i,2) and you are walking in
@@ -33,7 +33,7 @@ def where_list(overstrand_list,color_list):
             then where(2nd strand) = the third color 
     """
     where_list = []
-    colors = [1,2,3]
+    colors = [1,2,0]
     for i in range(len(overstrand_list)):
         #print("We are on strand ", i)
         if i == 0:
@@ -60,7 +60,7 @@ def where_list(overstrand_list,color_list):
                 #print(colors)
                 where_list.append(colors[0])
                 #print(where_list)
-                colors = [1,2,3]
+                colors = [1,2,0]
     return where_list
 
 def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
@@ -145,20 +145,20 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
       #print("NEW MATRIX")
       #print(x_matrix)
 
-   print("FINISHED MATRIX")
-   print(sympy.Matrix(x_matrix).rref()[0])
+   #print("FINISHED MATRIX")
+   #print(sympy.Matrix(x_matrix).rref()[0])
    return sympy.Matrix(x_matrix).rref()[0]
 
 def solve_2chain(rref_matrix):
-    print("RREF MATRIX:")
-    print(rref_matrix)
+    #print("RREF MATRIX:")
+    #print(rref_matrix)
     number_rows = int(math.sqrt(len(rref_matrix)))
     number_cols = int(len(rref_matrix)/number_rows)-1
     x_values = []
     for i in range(number_cols):
         x_values.append(0)
         
-    print("X VALUES START ", x_values)
+    #print("X VALUES START ", x_values)
     for i in range(number_rows):
         #print("on row ",i, " out of ", number_rows)
         #print("check for ", (number_rows*i)+i, " through ", (number_rows*i)+i+number_cols)
@@ -168,10 +168,10 @@ def solve_2chain(rref_matrix):
             if value != 0:
                 x_values[j] = rref_matrix[(number_rows*i)+i+number_cols]
                 break
-    print("ummmm x values now: ", x_values)
+    #print("ummmm x values now: ", x_values)
     return x_values
 
-def intersecting_cells(overstrand_list,color_list,where_list,sign_list, two_chain):
+def intersecting_cells(overstrand_list,color_list,where_list,sign_list):
   """
       goes through all the crossings
       at crossing i the color of the overstrand[i] is the same as where[i]
@@ -191,12 +191,12 @@ def intersecting_cells(overstrand_list,color_list,where_list,sign_list, two_chai
   """
   num_crossings = len(overstrand_list)
   intersect_list = [0]*(num_crossings*2)
-  print("two chain: ", two_chain)
+
   
   for i in range(num_crossings):
     #see if the crossing is homog or heterog
     if color_list[i] == color_list[int((i+1)%num_crossings)] and color_list[i] == color_list[overstrand_list[i]] and color_list[int((i+1)%num_crossings)] == color_list[overstrand_list[i]]:
-        print("homogeneous crossing")
+        #print("homogeneous crossing")
         if sign_list[i] == 1:
             if where_list[overstrand_list[i]] == where_list[i]:
                 intersect_list[i+num_crossings] += 1
@@ -209,30 +209,68 @@ def intersecting_cells(overstrand_list,color_list,where_list,sign_list, two_chai
                 intersect_list[i+num_crossings] -= 1
         
     else:
-        print("heterogeneous crossing")
+        #print("heterogeneous crossing")
         if color_list[overstrand_list[i]] == where_list[i]:
           intersect_list[i] += 1
-        else:
+        elif color_list[overstrand_list[i]] != where_list[i]:
           if sign_list[i] == 1:
             if where_list[overstrand_list[i]] == color_list[i]:
               intersect_list[i+num_crossings] += 1
-            else:
+            elif where_list[overstrand_list[i]] != color_list[i]:
               intersect_list[i+num_crossings] -= 1
           else:
             if where_list[overstrand_list[i]] == color_list[i]:
               intersect_list[i+num_crossings] -= 1
-            else:
+            elif where_list[overstrand_list[i]] != color_list[i]:
               intersect_list[i+num_crossings] += 1
         
   return intersect_list
 
+def Degree1Surface(overstrand_list, sign_list, color_list):
+  """ 
+
+  """
+  # first call on all helper functions
+  where_list = where(overstrand_list,color_list)
+  #print(where_list)
+  rref_matrix = initialize_matrix(overstrand_list,color_list,where_list,sign_list)
+  #print(rref_matrix)
+  two_chain = solve_2chain(rref_matrix)
+  #print(two_chain)
+  intersect_list = intersecting_cells(overstrand_list,color_list,where_list,sign_list)
+  #print(intersect_list)
+  num_crossings = len(overstrand_list)
+
+  linking_number = 0
+
+  for i in range(len(intersect_list)):
+    #if it's an A_(1,i) surface
+    if i < num_crossings: 
+      linking_number += intersect_list[i]*sign_list[i]
+    #if it's a A_(2 or 3, i) with two_chain[i] numbers of crossings
+    elif i >= num_crossings: 
+      linking_number += intersect_list[i]*two_chain[i-num_crossings]*sign_list[i-num_crossings]
+  return linking_number
 
 
-print('trefoil '+str(where_list([2, 0, 1, 3],[1, 2, 3, 1])))
-where_list_trefoil = where_list([2, 0, 1, 3],[1, 2, 3, 1])
-rref_matrix_trefoil = initialize_matrix([2, 0, 1, 3],[1, 2, 3, 1],where_list_trefoil,[1, 1, 1, 1])
-solve_2chain(rref_matrix_trefoil)
-print(intersecting_cells([2, 0, 1, 3],[1, 2, 3, 1],where_list_trefoil,[1, 1, 1, 1],solve_2chain(rref_matrix_trefoil)))
+
+#print('trefoil where_list'+str(where([2, 0, 1, 3],[1, 2, 3, 1])))
+#where_list_trefoil = where([2, 0, 1, 3],[1, 2, 3, 1])
+#rref_matrix_trefoil = initialize_matrix([2, 0, 1, 3],[1, 2, 3, 1],where_list_trefoil,[1, 1, 1, 1])
+#twochain_trefoil = solve_2chain(rref_matrix_trefoil)
+#intersect_list_trefoil = intersecting_cells([2, 0, 1, 3],[1, 2, 3, 1],where_list_trefoil,[1, 1, 1, 1])
+print('trefoil')
+print('we got '+str(Degree1Surface([2, 0, 1, 3],[1, 1, 1, 1],[1, 2, 0, 1])))
+print('patricia got 2')
+print('6_1')
+print('we got '+str(Degree1Surface([2, 4, 0, 5, 1, 3] , [1, -1, 1, 1, -1, 1] , [0, 2, 1, 2, 0, 1])))
+print('patricia got -2')
+print('7_4')
+print('we got '+str(Degree1Surface([5, 4, 0, 6, 1, 2, 3, 7] , [-1, -1, -1, -1, -1, -1, -1, 1] , [1, 2, 0, 2, 1, 0, 0, 1])))
+print('patricia got 2')
+print('7_7')
+print('we got '+str(Degree1Surface([4, 3, 6, 5, 0, 1, 2, 7] , [1, -1, 1, -1, 1, -1, 1, 1] , [1, 0, 2, 1, 2, 0, 0, 1])))
+print('patricia got -2')
 #where_list_6_1 = where_list([2, 4, 0, 5, 1, 3],[3, 2, 1, 2, 3, 1])
 #print('6_1 knot ' + str(where_list_6_1))
 #rref_matrix_6_1 = initialize_matrix([2, 4, 0, 5, 1, 3],[3, 2, 1, 2, 3, 1],where_list_6_1,[1, -1, 1, 1, -1, 1])
