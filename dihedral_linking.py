@@ -169,9 +169,9 @@ def solve_2chain(rref_matrix):
                 x_values[j] = rref_matrix[(number_rows*i)+i+number_cols]
                 break
     print("ummmm x values now: ", x_values)
-    return rref_matrix
+    return x_values
 
-def intersecting_cells(overstrand_list,color_list,where_list,sign_list):
+def intersecting_cells(overstrand_list,color_list,where_list,sign_list, two_chain):
   """
       goes through all the crossings
       at crossing i the color of the overstrand[i] is the same as where[i]
@@ -191,20 +191,39 @@ def intersecting_cells(overstrand_list,color_list,where_list,sign_list):
   """
   num_crossings = len(overstrand_list)
   intersect_list = [0]*(num_crossings*2)
+  print("two chain: ", two_chain)
+  
   for i in range(num_crossings):
-    if color_list[overstrand_list[i]] == where_list[i]:
-      intersect_list[i] += 1
+    #see if the crossing is homog or heterog
+    if color_list[i] == color_list[int((i+1)%num_crossings)] and color_list[i] == color_list[overstrand_list[i]] and color_list[int((i+1)%num_crossings)] == color_list[overstrand_list[i]]:
+        print("homogeneous crossing")
+        if sign_list[i] == 1:
+            if where_list[overstrand_list[i]] == where_list[i]:
+                intersect_list[i+num_crossings] += 1
+            elif where_list[overstrand_list[i]] != where_list[i]:
+                intersect_list[i+num_crossings] -= 1
+        elif sign_list[i] == -1:
+            if where_list[overstrand_list[i]] == where_list[i]:
+                intersect_list[i+num_crossings] += 1
+            elif where_list[overstrand_list[i]] != where_list[i]:
+                intersect_list[i+num_crossings] -= 1
+        
     else:
-      if sign_list[i] == 1:
-        if where_list[overstrand_list[i]] == color_list[i]:
-          intersect_list[i+num_crossings] += 1
+        print("heterogeneous crossing")
+        if color_list[overstrand_list[i]] == where_list[i]:
+          intersect_list[i] += 1
         else:
-          intersect_list[i+num_crossings] -= 1
-      else:
-        if where_list[overstrand_list[i]] == color_list[i]:
-          intersect_list[i+num_crossings] -= 1
-        else:
-          intersect_list[i+num_crossings] += 1
+          if sign_list[i] == 1:
+            if where_list[overstrand_list[i]] == color_list[i]:
+              intersect_list[i+num_crossings] += 1
+            else:
+              intersect_list[i+num_crossings] -= 1
+          else:
+            if where_list[overstrand_list[i]] == color_list[i]:
+              intersect_list[i+num_crossings] -= 1
+            else:
+              intersect_list[i+num_crossings] += 1
+        
   return intersect_list
 
 
@@ -213,7 +232,7 @@ print('trefoil '+str(where_list([2, 0, 1, 3],[1, 2, 3, 1])))
 where_list_trefoil = where_list([2, 0, 1, 3],[1, 2, 3, 1])
 rref_matrix_trefoil = initialize_matrix([2, 0, 1, 3],[1, 2, 3, 1],where_list_trefoil,[1, 1, 1, 1])
 solve_2chain(rref_matrix_trefoil)
-print(intersecting_cells([2, 0, 1, 3],[1, 2, 3, 1],where_list_trefoil,[1, 1, 1, 1]))
+print(intersecting_cells([2, 0, 1, 3],[1, 2, 3, 1],where_list_trefoil,[1, 1, 1, 1],solve_2chain(rref_matrix_trefoil)))
 #where_list_6_1 = where_list([2, 4, 0, 5, 1, 3],[3, 2, 1, 2, 3, 1])
 #print('6_1 knot ' + str(where_list_6_1))
 #rref_matrix_6_1 = initialize_matrix([2, 4, 0, 5, 1, 3],[3, 2, 1, 2, 3, 1],where_list_6_1,[1, -1, 1, 1, -1, 1])
