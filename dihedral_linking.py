@@ -170,13 +170,51 @@ def solve_2chain(rref_matrix):
                 break
     print("ummmm x values now: ", x_values)
     return rref_matrix
-        
+
+def intersecting_cells(overstrand_list,color_list,where_list,sign_list):
+  """
+      goes through all the crossings
+      at crossing i the color of the overstrand[i] is the same as where[i]
+        then the lift passes through the cell A_(1,i)
+      otherwise overstrand[i] is not the same as where[i]
+      thus the lift passes through the cell A_(2,i) or A_(3,i)
+        if positive crossing
+            if where[overstrand[i]] == color[i]
+                then the lift passes through A_(2,i)
+            else
+                then the lift passes through A_(3,i)
+        else negative crossing
+            if where[overstrand[i]] == color[i]
+                then the lift passes through A_(3,i)           
+            else
+                then the lift passes through A_(2,i)
+  """
+  num_crossings = len(overstrand_list)
+  intersect_list = [0]*(num_crossings*2)
+  for i in range(num_crossings):
+    if color_list[overstrand_list[i]] == where_list[i]:
+      intersect_list[i] += 1
+    else:
+      if sign_list[i] == 1:
+        if where_list[overstrand_list[i]] == color_list[i]:
+          intersect_list[i+num_crossings] += 1
+        else:
+          intersect_list[i+num_crossings] -= 1
+      else:
+        if where_list[overstrand_list[i]] == color_list[i]:
+          intersect_list[i+num_crossings] -= 1
+        else:
+          intersect_list[i+num_crossings] += 1
+  return intersect_list
+
+
+
 print('trefoil '+str(where_list([2, 0, 1, 3],[1, 2, 3, 1])))
 where_list_trefoil = where_list([2, 0, 1, 3],[1, 2, 3, 1])
 rref_matrix_trefoil = initialize_matrix([2, 0, 1, 3],[1, 2, 3, 1],where_list_trefoil,[1, 1, 1, 1])
 solve_2chain(rref_matrix_trefoil)
-print()
-where_list_6_1 = where_list([2, 4, 0, 5, 1, 3],[3, 2, 1, 2, 3, 1])
-print('6_1 knot ' + str(where_list_6_1))
-rref_matrix_6_1 = initialize_matrix([2, 4, 0, 5, 1, 3],[3, 2, 1, 2, 3, 1],where_list_6_1,[1, -1, 1, 1, -1, 1])
-solve_2chain(rref_matrix_6_1)
+print(intersecting_cells([2, 0, 1, 3],[1, 2, 3, 1],where_list_trefoil,[1, 1, 1, 1]))
+#where_list_6_1 = where_list([2, 4, 0, 5, 1, 3],[3, 2, 1, 2, 3, 1])
+#print('6_1 knot ' + str(where_list_6_1))
+#rref_matrix_6_1 = initialize_matrix([2, 4, 0, 5, 1, 3],[3, 2, 1, 2, 3, 1],where_list_6_1,[1, -1, 1, 1, -1, 1])
+#solve_2chain(rref_matrix_6_1)
