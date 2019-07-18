@@ -337,7 +337,6 @@ def intersectionnumberDeg2withDeg1Surface(boundarycoefs, colorlist, overstrands,
     """
     n=numcrossings
     intersection=0
-    count = 0
     print('boundary coefs')
     print(boundarycoefs)
     #push the degree 2 knot into the 3-cell from which A_2k can be seen from the right.
@@ -350,20 +349,22 @@ def intersectionnumberDeg2withDeg1Surface(boundarycoefs, colorlist, overstrands,
             #with coefficient 1
             if WhereIsA2i(colorlist,overstrands,n)[k]==colorlist[overstrands[k]]:
                 if signs[k]==1:
+                    print("add 1")
+                    print("case A_1")
                     intersection+=1
                     print('case zero')
+                    print('f(k)=', overstrands[k], '-x_f(k)=', -boundarycoefs[overstrands[k]])
                     print(intersection)
-                    count+=1
-                    print(count)
                 elif signs[k]==-1:
+                    print("subtract 1")
+                    print("case A_1 neg")
                     intersection-=1
                     print('case 1')
+                    print('f(k)=', overstrands[k], '-x_f(k)=', -boundarycoefs[overstrands[k]])
                     print(intersection)
-                    count+=1
-                    print(count)
             #Otherwise the push-off will intersect A_2f(k)or A_3f(k),
             #but we only count it if x_i is nonzero.  Note that the knot intersects only
-            #one of these, x_i times
+            #one of these, x_i times 
             #If it intersects A_3f(k) rather than A_2f(k) need to multiply by -1
             elif WhereIsA2i(colorlist,overstrands,n)[k]!=colorlist[overstrands[k]]:
                 #Check whether the knot intersects A_2f(k) or A_3f(k) by checking
@@ -375,65 +376,57 @@ def intersectionnumberDeg2withDeg1Surface(boundarycoefs, colorlist, overstrands,
                         #in this case the knot intersects A_3f(k) so the contribution
                         #is -x[k]
                         intersection-=boundarycoefs[overstrands[k]]
+                        print("subtract ", boundarycoefs[overstrands[k]])
                         print('case a')
                         print('f(k)=', overstrands[k], '-x_f(k)=', -boundarycoefs[overstrands[k]])
                         print(intersection)
-                        count+=1
-                        print(count)
                     elif signs[k]==-1:
                         intersection-=boundarycoefs[overstrands[k]]
+                        print("subtract ", boundarycoefs[overstrands[k]])
                         print('case b')
                         print('f(k)=', overstrands[k], '+-x_f(k)=', -boundarycoefs[overstrands[k]])
-                        print(intersection)   
-                        count+=1
-                        print(count)       
+                        print(intersection)        
                 elif colorlist[k]!=WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]:
                     if signs[k]==1:
                         intersection+=boundarycoefs[overstrands[k]]
+                        print("add ", boundarycoefs[overstrands[k]])
                         print('case c')
                         print('f(k)=', overstrands[k], 'x_f(k)=', boundarycoefs[overstrands[k]])
                         print(intersection)
-                        count+=1
-                        print(count)
                     elif signs[k]==-1:
                         intersection+=boundarycoefs[overstrands[k]]
+                        print("add ", boundarycoefs[overstrands[k]])
                         print('case d')
                         print('f(k)=', overstrands[k], 'x_f(k)=', boundarycoefs[overstrands[k]])
                         print(intersection)
-                        count+=1
-                        print(count)
         elif homog(k, colorlist,n,overstrands)=='s':
             #The push-off will either intersect A_2f(k) or A_3f(k)
             if signs[k]==1:            
                 if WhereIsA2i(colorlist,overstrands,n)[k]==WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]:
                     intersection+=boundarycoefs[overstrands[k]]
+                    print("add ", boundarycoefs[overstrands[k]])
                     print('case e')
                     print('f(k)=', overstrands[k], 'x_f(k)=', boundarycoefs[overstrands[k]])
                     print(intersection)
-                    count+=1
-                    print(count)
                 elif WhereIsA2i(colorlist,overstrands,n)[k]!=WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]:
                     intersection-=boundarycoefs[overstrands[k]]
+                    print("subtract ", boundarycoefs[overstrands[k]])
                     print('case f')
                     print('f(k)=', overstrands[k], '-x_f(k)=', -boundarycoefs[overstrands[k]])
                     print(intersection)
-                    count+=1
-                    print(count)
             elif signs[k]==-1:
                 if WhereIsA2i(colorlist,overstrands,n)[k]==WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]:
                     intersection+=boundarycoefs[overstrands[k]]
+                    print("add ", boundarycoefs[overstrands[k]])
                     print('case g')
                     print('f(k)=', overstrands[k], 'x_f(k)=', boundarycoefs[overstrands[k]])
                     print(intersection)
-                    count+=1
-                    print(count)
                 elif WhereIsA2i(colorlist,overstrands,n)[k]!=WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]:
                     intersection-=boundarycoefs[overstrands[k]]
+                    print("subtract ", boundarycoefs[overstrands[k]])
                     print('case h')
                     print('f(k)=', overstrands[k], '-x_f(k)=', -boundarycoefs[overstrands[k]])
                     print(intersection)
-                    count+=1
-                    print(count)
     return intersection
 
 
@@ -1022,8 +1015,25 @@ newrawfile.close()
 #display([1,1,1,1,1,1,1,1],[4,5,0,7,2,1,6,3],'6-1',[2,2,1,3,2,3,1,1],'no')
 #print(display([-1,1,-1,1,-1,1,-1,1],[4,3,6,7,0,6,2,1],'7-7',[3,1,3,2,2,1,1,2]))
 
-print(display([1,1,1,1],[2,0,1,3],'3-1',[1,2,3,1]))
-print(display([1, -1, 1, 1, -1, 1],[2, 4, 0, 5, 1, 3],'6-1',[0, 2, 1, 2, 0, 1]))
+#print(display([1,1,1,1],[2,0,1,3],'3-1',[1,2,3,1]))
+#print(display([1, -1, 1, 1, -1, 1],[2, 4, 0, 5, 1, 3],'6-1',[0, 2, 1, 2, 0, 1]))
+
+
+
+print('trefoil')
+print('we got '+str(display([2, 0, 1, 3],[1, 1, 1, 1],'3_1',[1, 2, 0, 1])))
+print('patricia got 2')
+print('6_1')
+print('we got '+str(display([1, -1, 1, 1, -1, 1] ,[2, 4, 0, 5, 1, 3] , '6_1' ,[0, 2, 1, 2, 0, 1])))
+print('patricia got -2')
+print('7_4')
+print('we got '+str(display( [-1, -1, -1, -1, -1, -1, -1, 1] ,[5, 4, 0, 6, 1, 2, 3, 7] ,'7_4',[1, 2, 0, 2, 1, 0, 0, 1])))
+print('patricia got 2')
+print('7_7')
+print('we got '+str(display([1, -1, 1, -1, 1, -1, 1, 1] ,[4, 3, 6, 5, 0, 1, 2, 7] ,  '7_7',[1, 0, 2, 1, 2, 0, 0, 1])))
+print('patricia got -2')
+
+
 #print(display([-1,1,-1,1,1,1,1,1,1,1,-1,1],[2,4,5,6,1,9,3,5,10,6,8,11],'11n-1',[1,2,3,3,1,3,2,1,2,1,3,1,1]))
 #Lo_Knot_Ls_31 = [[[3,0,2,1],[1,1,1,-1],[1,2,3,3]],[[2,0,1,3],[1,1,1,-1],[1,2,3,1]],[[2,0,3,1],[1,1,-1,1],[1,2,3,3]],[[3,2,0,1],[1,1,-1,1],[1,2,2,3]],[[1,3,2,0],[1,-1,1,1],[1,2,2,3]]]
 

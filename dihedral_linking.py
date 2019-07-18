@@ -131,10 +131,12 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
       if epsilon_three == 0:
          #print('this')
          #print(x_matrix[i][overstrand_list[i]])
-         x_matrix[i][overstrand_list[i]] -= (epsilon_one*epsilon_two)
+         #CHANGED THIS 
+         x_matrix[i][overstrand_list[i]] += (epsilon_one*epsilon_two)
          #print('changed to')
          #print(x_matrix[i][overstrand_list[i]])
-         x_matrix[i][len(overstrand_list)] += sign_list[i]*epsilon_two
+         #ALSO CHANGED THIS ON THE SIGN STUFF TO SEE NOW IT IS THE SAME AS PATRICIAS CODE
+         x_matrix[i][len(overstrand_list)] -= sign_list[i]*epsilon_two
 
          #print("NEW MATRIX")
          #print(x_matrix)
@@ -169,6 +171,10 @@ def solve_2chain(rref_matrix):
                 x_values[j] = rref_matrix[(number_rows*i)+i+number_cols]
                 break
     #print("ummmm x values now: ", x_values)
+    
+    for x in range(len(x_values)):
+        x_values[x] = -x_values[x]
+        
     return x_values
 
 def intersecting_cells(overstrand_list,color_list,where_list,sign_list):
@@ -234,9 +240,11 @@ def Degree1Surface(overstrand_list, sign_list, color_list):
   where_list = where(overstrand_list,color_list)
   #print(where_list)
   rref_matrix = initialize_matrix(overstrand_list,color_list,where_list,sign_list)
-  #print(rref_matrix)
+  print("rref_matrix")
+  print(rref_matrix)
   two_chain = solve_2chain(rref_matrix)
-  #print(two_chain)
+  print("two_chain")
+  print(two_chain)
   intersect_list = intersecting_cells(overstrand_list,color_list,where_list,sign_list)
   #print(intersect_list)
   num_crossings = len(overstrand_list)
@@ -246,10 +254,16 @@ def Degree1Surface(overstrand_list, sign_list, color_list):
   for i in range(len(intersect_list)):
     #if it's an A_(1,i) surface
     if i < num_crossings: 
+      print("overstrand ", overstrand_list[i])
+      print("sign", sign_list[i])
       linking_number += intersect_list[i]*sign_list[i]
+      print("add ", intersect_list[i]*sign_list[i])
     #if it's a A_(2 or 3, i) with two_chain[i] numbers of crossings
     elif i >= num_crossings: 
+      print("overstrand ", overstrand_list[i-num_crossings])
+      print("sign", sign_list[i-num_crossings])
       linking_number += intersect_list[i]*two_chain[i-num_crossings]*sign_list[i-num_crossings]
+      print("add ", intersect_list[i]*two_chain[i-num_crossings]*sign_list[i-num_crossings])
   return linking_number
 
 
