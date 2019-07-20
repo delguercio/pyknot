@@ -223,8 +223,8 @@ def computecoef(colorlist, numcrossings,overstrands, signs):
                     coefmatrix[k][overstrands[k]]-=2                    
                 elif (WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]!=WhereIsA2i(colorlist,overstrands,n)[k]):
                     coefmatrix[k][overstrands[k]]+=2
-    # print("COEF MATRIX:")
-    # print( coefmatrix )                     
+    print("COEF MATRIX:")
+    print( coefmatrix )                     
     return coefmatrix
 
 # computecoef2 computes the coefficients x_i of the 2-cells A_2i of the 2-chain bounding the
@@ -1050,8 +1050,8 @@ newrawfile.close()
 #display([1,1,1,1,1,1,1,1],[4,5,0,7,2,1,6,3],'6-1',[2,2,1,3,2,3,1,1],'no')
 #print(display([-1,1,-1,1,-1,1,-1,1],[4,3,6,7,0,6,2,1],'7-7',[3,1,3,2,2,1,1,2]))
 
-#print(display([1,1,1,1],[2,0,1,3],'3-1',[1,2,3,1]))
-#print(display([1, -1, 1, 1, -1, 1],[2, 4, 0, 5, 1, 3],'6-1',[0, 2, 1, 2, 0, 1]))
+print(display([1,1,1,1],[2,0,1,3],'3-1',[1,2,3,1]))
+print(display([1, -1, 1, 1, -1, 1],[2, 4, 0, 5, 1, 3],'6-1',[0, 2, 1, 2, 0, 1]))
 
 
 

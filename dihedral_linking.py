@@ -91,9 +91,9 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
       #epsilon one is positive if the color of i is not equal to the where of the overstrand.
       
       if(color_list[i] == where_list[overstrand_list[i]]):
-         epsilon_one = -1
-      else:
          epsilon_one = 1
+      else:
+         epsilon_one = -1
 
 
       #epsilon two is positive if the color of the overstrand is equal to the where of
@@ -137,7 +137,19 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
          #print(x_matrix[i][overstrand_list[i]])
          #ALSO CHANGED THIS ON THE SIGN STUFF TO SEE NOW IT IS THE SAME AS PATRICIAS CODE
          # I BELIEVE THIS TO BE TRUE olivia 7/18/19
-         x_matrix[i][len(overstrand_list)] += (-sign_list[i])*epsilon_two
+         #x_matrix[i][len(overstrand_list)] += (-sign_list[i])*epsilon_two
+         #x_matrix[i][len(overstrand_list)] += (-sign_list[i]*epsilon_two*epsilon_one)
+         
+         if where_list[i] == color_list[overstrand_list[i]]:
+             if sign_list[i] == 1:  
+                 x_matrix[i][len(overstrand_list)] += -1
+             else:
+                 x_matrix[i][len(overstrand_list)] += 1
+         else:
+              if sign_list[i] == 1:  
+                 x_matrix[i][len(overstrand_list)] += 1
+              else:
+                 x_matrix[i][len(overstrand_list)] += -1
 
          #print("NEW MATRIX")
          #print(x_matrix)
@@ -153,8 +165,8 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
       #print("NEW MATRIX")
       #print(x_matrix)
 
-   #print("MATRIX")
-   #print(x_matrix)
+   print("MATRIX")
+   print(x_matrix)
    return sympy.Matrix(x_matrix).rref()[0]
 
 
@@ -240,15 +252,14 @@ def intersecting_cells(overstrand_list,color_list,where_list,sign_list):
         elif color_list[overstrand_list[i]] != where_list[i]:
           if sign_list[i] == 1:
             if where_list[overstrand_list[i]] == color_list[i]:
-              intersect_list[i+num_crossings] += 1
-            elif where_list[overstrand_list[i]] != color_list[i]:
               intersect_list[i+num_crossings] -= 1
+            elif where_list[overstrand_list[i]] != color_list[i]:
+              intersect_list[i+num_crossings] += 1
           else:
             if where_list[overstrand_list[i]] == color_list[i]:
               intersect_list[i+num_crossings] -= 1
             elif where_list[overstrand_list[i]] != color_list[i]:
               intersect_list[i+num_crossings] += 1
-        
   return intersect_list
 
 def linking_number(overstrand_list, sign_list, color_list):
@@ -281,11 +292,9 @@ def linking_number(overstrand_list, sign_list, color_list):
     elif i >= num_crossings: 
       #print("overstrand ", overstrand_list[i-num_crossings])
       #print("sign", sign_list[i-num_crossings])
-      linking_number += intersect_list[i]*two_chain[i-num_crossings]*sign_list[i-num_crossings]
+      linking_number += intersect_list[i]*two_chain[i-num_crossings]#*sign_list[i-num_crossings]
       #print("add ", intersect_list[i]*two_chain[i-num_crossings]*sign_list[i-num_crossings])
   return linking_number
-
-
 
 #print('trefoil where_list'+str(where([2, 0, 1, 3],[1, 2, 3, 1])))
 #where_list_trefoil = where([2, 0, 1, 3],[1, 2, 3, 1])
@@ -294,15 +303,19 @@ def linking_number(overstrand_list, sign_list, color_list):
 #intersect_list_trefoil = intersecting_cells([2, 0, 1, 3],[1, 2, 3, 1],where_list_trefoil,[1, 1, 1, 1])
 print('trefoil')
 print('we got '+str(linking_number([2, 0, 1, 3],[1, 1, 1, 1],[1, 2, 0, 1])))
+print()
 #print('patricia got 2')
 print('6_1')
 print('we got '+str(linking_number([2, 4, 0, 5, 1, 3] , [1, -1, 1, 1, -1, 1] , [0, 2, 1, 2, 0, 1])))
+print()
 #print('patricia got -2')
 print('7_4')
 print('we got '+str(linking_number([5, 4, 0, 6, 1, 2, 3, 7] , [-1, -1, -1, -1, -1, -1, -1, 1] , [1, 2, 0, 2, 1, 0, 0, 1])))
+print()
 #print('patricia got 2')
 print('7_7')
 print('we got '+str(linking_number([4, 3, 6, 5, 0, 1, 2, 7] , [1, -1, 1, -1, 1, -1, 1, 1] , [1, 0, 2, 1, 2, 0, 0, 1])))
+#print()
 #print('patricia got -2')
 print('9_35')
 print(linking_number([6, 5, 7, 0, 8, 1, 3, 2, 4, 9],[-1, -1, -1, -1, -1, -1, -1, -1, -1, 1],[2, 2, 2, 1, 0, 2, 2, 0, 1, 2]))
