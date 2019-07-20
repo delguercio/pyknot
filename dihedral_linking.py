@@ -131,25 +131,32 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
       if epsilon_three == 0:
          #print('this')
          #print(x_matrix[i][overstrand_list[i]])
-         #CHANGED THIS 
-         x_matrix[i][overstrand_list[i]] += (epsilon_one*epsilon_two)
+         # I BELIEVE THIS TO BE TRUE olivia 7/18/19
+         x_matrix[i][overstrand_list[i]] += (-epsilon_one)*epsilon_two
          #print('changed to')
          #print(x_matrix[i][overstrand_list[i]])
          #ALSO CHANGED THIS ON THE SIGN STUFF TO SEE NOW IT IS THE SAME AS PATRICIAS CODE
-         x_matrix[i][len(overstrand_list)] -= sign_list[i]*epsilon_two
+         # I BELIEVE THIS TO BE TRUE olivia 7/18/19
+         x_matrix[i][len(overstrand_list)] += (-sign_list[i])*epsilon_two
 
          #print("NEW MATRIX")
          #print(x_matrix)
 
       else:
+         #print("the matrix was")
+         #print(x_matrix)
+         #print("we are adding "+str(2*epsilon_three)+" to "+str(overstrand_list[i])+" column, row "+str(i))
          x_matrix[i][overstrand_list[i]] += 2*epsilon_three
+         #print("and the matrix becomes")
+         #print(x_matrix)
 
       #print("NEW MATRIX")
       #print(x_matrix)
 
-   #print("FINISHED MATRIX")
-   #print(sympy.Matrix(x_matrix).rref()[0])
+   #print("MATRIX")
+   #print(x_matrix)
    return sympy.Matrix(x_matrix).rref()[0]
+
 
 def solve_2chain(rref_matrix):
     #print("RREF MATRIX:")
@@ -176,6 +183,18 @@ def solve_2chain(rref_matrix):
         x_values[x] = -x_values[x]
         
     return x_values
+
+# print("3_1 two chain")
+# print(solve_2chain(sympy.Matrix([[1, -1, -1, 0, -1], [1, 1, -1, 0, 1], [0, 1, 1, -1, -1], [-1, 0, 0, -1, 0]]).rref()[0]))
+# print("6_1")
+# print(solve_2chain(sympy.Matrix([[1, -1, -1, 0, 0, 0, -1], [0, 1, -1, 0, 1, 0, -1], [-1, 0, 1, -1, 0, 0, 1], [0, 0, 0, 1, -1, -1, -1], [0, 1, 0, 0, 1, -1, -1], [-1, 0, 0, -1, 0, 1, 1]]).rref()[0]))
+# print("7_4")
+# print(solve_2chain(sympy.Matrix([[1, -1, 0, 0, 0, 1, 0, 0, 1], [0, 1, -1, 0, 1, 0, 0, 0, -1], [-1, 0, 1, -1, 0, 0, 0, 0, -1], [0, 0, 0, 1, -1, 0, 1, 0, 1], [0, 1, 0, 0, 1, -1, 0, 0, -1], [0, 0, 2, 0, 0, 1, -1, 0, 0], [0, 0, 0, 1, 0, 0, 1, -1, 1], [-1, 0, 0, 0, 0, 0, 0, -1, 0]]).rref()[0]))
+# print("7_7")
+# print(solve_2chain(sympy.Matrix([[1, -1, 0, 0, -1, 0, 0, 0, -1], [0, 1, -1, -1, 0, 0, 0, 0, -1], [0, 0, 1, -1, 0, 0, -1, 0, -1], [0, 0, 0, 1, -1, -1, 0, 0, 1], [-1, 0, 0, 0, 1, -1, 0, 0, 1], [0, -2, 0, 0, 0, 1, -1, 0, 0], [0, 0, -1, 0, 0, 0, 1, -1, 1], [-1, 0, 0, 0, 0, 0, 0, -1, 0]]).rref()[0]))
+# print("9_35")
+# print(solve_2chain(sympy.Matrix([[1, -1, 0, 0, 0, 0, -2, 0, 0, 0, 0], [0, 1, -1, 0, 0, -2, 0, 0, 0, 0, 0], [0, 0, 1, -1, 0, 0, 0, 1, 0, 0, -1], [1, 0, 0, 1, -1, 0, 0, 0, 0, 0, -1], [0, 0, 0, 0, 1, -1, 0, 0, 1, 0, -1], [0, -2, 0, 0, 0, 1, -1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 1, -1, 0, 0, -1], [0, 0, 1, 0, 0, 0, 0, 1, -1, 0, -1], [0, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1], [-1, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0]]).rref()[0]))
+
 
 def intersecting_cells(overstrand_list,color_list,where_list,sign_list):
   """
@@ -232,7 +251,7 @@ def intersecting_cells(overstrand_list,color_list,where_list,sign_list):
         
   return intersect_list
 
-def Degree1Surface(overstrand_list, sign_list, color_list):
+def linking_number(overstrand_list, sign_list, color_list):
   """ 
 
   """
@@ -240,11 +259,11 @@ def Degree1Surface(overstrand_list, sign_list, color_list):
   where_list = where(overstrand_list,color_list)
   #print(where_list)
   rref_matrix = initialize_matrix(overstrand_list,color_list,where_list,sign_list)
-  print("rref_matrix")
-  print(rref_matrix)
+  #print("rref_matrix")
+  #print(rref_matrix)
   two_chain = solve_2chain(rref_matrix)
-  print("two_chain")
-  print(two_chain)
+  #print("two_chain")
+  #print(two_chain)
   intersect_list = intersecting_cells(overstrand_list,color_list,where_list,sign_list)
   #print(intersect_list)
   num_crossings = len(overstrand_list)
@@ -254,16 +273,16 @@ def Degree1Surface(overstrand_list, sign_list, color_list):
   for i in range(len(intersect_list)):
     #if it's an A_(1,i) surface
     if i < num_crossings: 
-      print("overstrand ", overstrand_list[i])
-      print("sign", sign_list[i])
+      #print("overstrand ", overstrand_list[i])
+      #print("sign", sign_list[i])
       linking_number += intersect_list[i]*sign_list[i]
-      print("add ", intersect_list[i]*sign_list[i])
+      #print("add ", intersect_list[i]*sign_list[i])
     #if it's a A_(2 or 3, i) with two_chain[i] numbers of crossings
     elif i >= num_crossings: 
-      print("overstrand ", overstrand_list[i-num_crossings])
-      print("sign", sign_list[i-num_crossings])
+      #print("overstrand ", overstrand_list[i-num_crossings])
+      #print("sign", sign_list[i-num_crossings])
       linking_number += intersect_list[i]*two_chain[i-num_crossings]*sign_list[i-num_crossings]
-      print("add ", intersect_list[i]*two_chain[i-num_crossings]*sign_list[i-num_crossings])
+      #print("add ", intersect_list[i]*two_chain[i-num_crossings]*sign_list[i-num_crossings])
   return linking_number
 
 
@@ -274,17 +293,19 @@ def Degree1Surface(overstrand_list, sign_list, color_list):
 #twochain_trefoil = solve_2chain(rref_matrix_trefoil)
 #intersect_list_trefoil = intersecting_cells([2, 0, 1, 3],[1, 2, 3, 1],where_list_trefoil,[1, 1, 1, 1])
 print('trefoil')
-print('we got '+str(Degree1Surface([2, 0, 1, 3],[1, 1, 1, 1],[1, 2, 0, 1])))
-print('patricia got 2')
+print('we got '+str(linking_number([2, 0, 1, 3],[1, 1, 1, 1],[1, 2, 0, 1])))
+#print('patricia got 2')
 print('6_1')
-print('we got '+str(Degree1Surface([2, 4, 0, 5, 1, 3] , [1, -1, 1, 1, -1, 1] , [0, 2, 1, 2, 0, 1])))
-print('patricia got -2')
+print('we got '+str(linking_number([2, 4, 0, 5, 1, 3] , [1, -1, 1, 1, -1, 1] , [0, 2, 1, 2, 0, 1])))
+#print('patricia got -2')
 print('7_4')
-print('we got '+str(Degree1Surface([5, 4, 0, 6, 1, 2, 3, 7] , [-1, -1, -1, -1, -1, -1, -1, 1] , [1, 2, 0, 2, 1, 0, 0, 1])))
-print('patricia got 2')
+print('we got '+str(linking_number([5, 4, 0, 6, 1, 2, 3, 7] , [-1, -1, -1, -1, -1, -1, -1, 1] , [1, 2, 0, 2, 1, 0, 0, 1])))
+#print('patricia got 2')
 print('7_7')
-print('we got '+str(Degree1Surface([4, 3, 6, 5, 0, 1, 2, 7] , [1, -1, 1, -1, 1, -1, 1, 1] , [1, 0, 2, 1, 2, 0, 0, 1])))
-print('patricia got -2')
+print('we got '+str(linking_number([4, 3, 6, 5, 0, 1, 2, 7] , [1, -1, 1, -1, 1, -1, 1, 1] , [1, 0, 2, 1, 2, 0, 0, 1])))
+#print('patricia got -2')
+print('9_35')
+print(linking_number([6, 5, 7, 0, 8, 1, 3, 2, 4, 9],[-1, -1, -1, -1, -1, -1, -1, -1, -1, 1],[2, 2, 2, 1, 0, 2, 2, 0, 1, 2]))
 #where_list_6_1 = where_list([2, 4, 0, 5, 1, 3],[3, 2, 1, 2, 3, 1])
 #print('6_1 knot ' + str(where_list_6_1))
 #rref_matrix_6_1 = initialize_matrix([2, 4, 0, 5, 1, 3],[3, 2, 1, 2, 3, 1],where_list_6_1,[1, -1, 1, 1, -1, 1])

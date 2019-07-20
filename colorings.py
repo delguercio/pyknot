@@ -76,11 +76,6 @@ def findallcolorings(numcrossings,overstrands):
     return allcolorings
             
     
-    
-    
-
-
-
 
 
 # WhereIsA2i tells you in which 3-cell you must stand so A_2i is right of A_3i
@@ -138,15 +133,15 @@ def computecoef(colorlist, numcrossings,overstrands, signs):
         coefmatrix[k][(k+1)%n]-=1
         # If the crossing k has 3 colors
         if (homog(k,colorlist,n,overstrands)=='d'):
-            print()
-            print("This crossing is heterogeneous")
+            # print()
+            # print("This crossing is heterogeneous")
             if (WhereIsA2i(colorlist,overstrands,n)[k]==colorlist[overstrands[k]]):
-                print("w(i) for i = ", k, " is ", WhereIsA2i(colorlist,overstrands,n)[k])
-                print("the overstrand is ", overstrands[k], " and its color is ", colorlist[overstrands[k]] )
-                print("w(i) is equal to color(overstrand)")
+                # print("w(i) for i = ", k, " is ", WhereIsA2i(colorlist,overstrands,n)[k])
+                # print("the overstrand is ", overstrands[k], " and its color is ", colorlist[overstrands[k]] )
+                # print("w(i) is equal to color(overstrand)")
                 #If the crossing is positive
                 if (signs[k]==1):
-                    print("This crossing is positive")
+                    # print("This crossing is positive")
                     # Look at A_2f(k) and A_3f(k)
                     # One contributes 0 and the other +/-(a_2-a_3)
                     # To determine sign, check whether the color of the incoming understrand
@@ -155,58 +150,58 @@ def computecoef(colorlist, numcrossings,overstrands, signs):
                     #THIS IS EPSILON 1
                     if(WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]==colorlist[k]):
                         coefmatrix[k][overstrands[k]]-=1
-                        print("w(overstrand) equals color(i)")
+                        # print("w(overstrand) equals color(i)")
                         
                     elif (WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]!=colorlist[k]):
-                        print("w(overstrand) does not equal color(i)")
+                        # print("w(overstrand) does not equal color(i)")
                         
                         coefmatrix[k][overstrands[k]]+=1           
                     #Look at A_1f(k)
                     
-                    print("the right side of the equation is negative 1")
+                    # print("the right side of the equation is negative 1")
                     coefmatrix[k][n]-=1
                 elif (signs[k]==-1):
-                    print("this crossing is negative")
+                    # print("this crossing is negative")
                     if(WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]==colorlist[k]):
                         coefmatrix[k][overstrands[k]]-=1    
-                        print("w(overstrand) equals color(i)")
+                        # print("w(overstrand) equals color(i)")
                         
                     elif (WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]!=colorlist[k]):
                         coefmatrix[k][overstrands[k]]+=1    
-                        print("w(overstrand) does not equal color(i)")
+                    #     print("w(overstrand) does not equal color(i)")
                     
-                    print("the right side of the equation is positive 1")
+                    # print("the right side of the equation is positive 1")
                     coefmatrix[k][n]=1                  
                     
                     
             elif (WhereIsA2i(colorlist,overstrands,n)[k]!=colorlist[overstrands[k]]):
-                print("w(i) for i = ", k, " is ", WhereIsA2i(colorlist,overstrands,n)[k])
-                print("the overstrand is ", overstrands[k], " and its color is ", colorlist[overstrands[k]] )
-                print("w(i) is not equal to color(overstrand)")
+                # print("w(i) for i = ", k, " is ", WhereIsA2i(colorlist,overstrands,n)[k])
+                # print("the overstrand is ", overstrands[k], " and its color is ", colorlist[overstrands[k]] )
+                # print("w(i) is not equal to color(overstrand)")
                 # Same as above but all signs switch
                 if (signs[k]==1):
-                    print("This crossing is positive")
+                    # print("This crossing is positive")
                     if(WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]==colorlist[k]):
-                        print("w(overstrand) equals color(i)")
+                        # print("w(overstrand) equals color(i)")
                         coefmatrix[k][overstrands[k]]+=1                        
                     elif (WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]!=colorlist[k]):
-                        print("w(overstrand) does not equal color(i)")
+                        # print("w(overstrand) does not equal color(i)")
                         coefmatrix[k][overstrands[k]]-=1  
-                    print("the right side of the equation is positive 1")
+                    # print("the right side of the equation is positive 1")
                     coefmatrix[k][n]=1                    
                 elif (signs[k]==-1):
-                    print("this crossing is negative")
+                    # print("this crossing is negative")
                     if(WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]==colorlist[k]):
-                        print("w(overstrand) equals color(i)")
+                        # print("w(overstrand) equals color(i)")
                         coefmatrix[k][overstrands[k]]+=1                        
                     elif (WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]!=colorlist[k]):
-                        print("w(overstrand) does not equal color(i)")
+                        # print("w(overstrand) does not equal color(i)")
                         coefmatrix[k][overstrands[k]]-=1  
-                    print("the right side of the equation is negative 1")
+                    # print("the right side of the equation is negative 1")
                     coefmatrix[k][n]-=1      
                     
-            print("the coefficient of x(overstrand) is ", coefmatrix[k][overstrands[k]])
-            print()
+            # print("the coefficient of x(overstrand) is ", coefmatrix[k][overstrands[k]])
+            # print()
                     
                     
                     
@@ -228,8 +223,8 @@ def computecoef(colorlist, numcrossings,overstrands, signs):
                     coefmatrix[k][overstrands[k]]-=2                    
                 elif (WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]!=WhereIsA2i(colorlist,overstrands,n)[k]):
                     coefmatrix[k][overstrands[k]]+=2
-    print("COEF MATRIX:")
-    print( coefmatrix )                     
+    # print("COEF MATRIX:")
+    # print( coefmatrix )                     
     return coefmatrix
 
 # computecoef2 computes the coefficients x_i of the 2-cells A_2i of the 2-chain bounding the
@@ -237,6 +232,7 @@ def computecoef(colorlist, numcrossings,overstrands, signs):
 # A_3i is called y_i then x_i+y_i=1, so we need only the x_i.
 def computecoef2(colorlist, numcrossings,overstrands, signs):
     n=numcrossings
+    print("computecoef2 is being used")
     #The matrix A of coefficients in our system Ax=b
     coefmatrix= [[0 for x in range(n+1)] for x in range(n)] 
     for k in range(0,n):
@@ -278,11 +274,6 @@ def computecoef2(colorlist, numcrossings,overstrands, signs):
                         coefmatrix[k][n]+=1
                         
                     
-                    
-                    
-                    
-                    
-                    
         elif (homog(k, colorlist,n,overstrands)=='s'):    
            
             if (signs[k]==1):
@@ -306,9 +297,9 @@ def computecoef2(colorlist, numcrossings,overstrands, signs):
 
 def solvefor2chain(matrixofcoefs, numcrossings):
     M=Matrix(matrixofcoefs)
-    print(M)
+    #print(M)
     pivots=M.rref()[1]
-    print(M.rref())
+    #print(M.rref())
     numpivots=len(pivots)
     RR=M.rref()[0]    
     #initialize a column vector x
@@ -323,10 +314,16 @@ def solvefor2chain(matrixofcoefs, numcrossings):
         #Let all the free variables (non pivots) be zero
         return x
    
-
-
-
-
+# print("3_1 two chain")
+twochain_3_1 = solvefor2chain([[1, -1, -1, 0, -1], [1, 1, -1, 0, 1], [0, 1, 1, -1, -1], [-1, 0, 0, -1, 0]],4)
+# print("6_1")
+twochain_6_1 = solvefor2chain([[1, -1, -1, 0, 0, 0, -1], [0, 1, -1, 0, 1, 0, -1], [-1, 0, 1, -1, 0, 0, 1], [0, 0, 0, 1, -1, -1, -1], [0, 1, 0, 0, 1, -1, -1], [-1, 0, 0, -1, 0, 1, 1]],6)
+# print("7_4")
+twochain_7_4 = solvefor2chain([[1, -1, 0, 0, 0, 1, 0, 0, 1], [0, 1, -1, 0, 1, 0, 0, 0, -1], [-1, 0, 1, -1, 0, 0, 0, 0, -1], [0, 0, 0, 1, -1, 0, 1, 0, 1], [0, 1, 0, 0, 1, -1, 0, 0, -1], [0, 0, 2, 0, 0, 1, -1, 0, 0], [0, 0, 0, 1, 0, 0, 1, -1, 1], [-1, 0, 0, 0, 0, 0, 0, -1, 0]],8)
+# print("7_7")
+twochain_7_7 = solvefor2chain([[1, -1, 0, 0, -1, 0, 0, 0, -1], [0, 1, -1, -1, 0, 0, 0, 0, -1], [0, 0, 1, -1, 0, 0, -1, 0, -1], [0, 0, 0, 1, -1, -1, 0, 0, 1], [-1, 0, 0, 0, 1, -1, 0, 0, 1], [0, -2, 0, 0, 0, 1, -1, 0, 0], [0, 0, -1, 0, 0, 0, 1, -1, 1], [-1, 0, 0, 0, 0, 0, 0, -1, 0]],8)
+# print("9_35")
+twochain_9_35 = solvefor2chain([[1, -1, 0, 0, 0, 0, -2, 0, 0, 0, 0], [0, 1, -1, 0, 0, -2, 0, 0, 0, 0, 0], [0, 0, 1, -1, 0, 0, 0, 1, 0, 0, -1], [1, 0, 0, 1, -1, 0, 0, 0, 0, 0, -1], [0, 0, 0, 0, 1, -1, 0, 0, 1, 0, -1], [0, -2, 0, 0, 0, 1, -1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 1, -1, 0, 0, -1], [0, 0, 1, 0, 0, 0, 0, 1, -1, 0, -1], [0, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1], [-1, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0]],10)
 #Compute the intersection of the degree 2 curve with the 2 cells A_1k and x_k(A_2k-A3k)
 #crossing by crossing
 
@@ -337,8 +334,8 @@ def intersectionnumberDeg2withDeg1Surface(boundarycoefs, colorlist, overstrands,
     """
     n=numcrossings
     intersection=0
-    print('boundary coefs')
-    print(boundarycoefs)
+    #print('boundary coefs')
+    #print(boundarycoefs)
     #push the degree 2 knot into the 3-cell from which A_2k can be seen from the right.
     for k in range(0,n):    
         if homog(k, colorlist,n,overstrands)=='d':
@@ -349,19 +346,19 @@ def intersectionnumberDeg2withDeg1Surface(boundarycoefs, colorlist, overstrands,
             #with coefficient 1
             if WhereIsA2i(colorlist,overstrands,n)[k]==colorlist[overstrands[k]]:
                 if signs[k]==1:
-                    print("add 1")
-                    print("case A_1")
+                    # print("add 1")
+                    # print("case A_1")
                     intersection+=1
-                    print('case zero')
-                    print('f(k)=', overstrands[k], '-x_f(k)=', -boundarycoefs[overstrands[k]])
-                    print(intersection)
+                    # print('case zero')
+                    # print('f(k)=', overstrands[k], '-x_f(k)=', -boundarycoefs[overstrands[k]])
+                    # print(intersection)
                 elif signs[k]==-1:
-                    print("subtract 1")
-                    print("case A_1 neg")
+                    # print("subtract 1")
+                    # print("case A_1 neg")
                     intersection-=1
-                    print('case 1')
-                    print('f(k)=', overstrands[k], '-x_f(k)=', -boundarycoefs[overstrands[k]])
-                    print(intersection)
+                    # print('case 1')
+                    # print('f(k)=', overstrands[k], '-x_f(k)=', -boundarycoefs[overstrands[k]])
+                    # print(intersection)
             #Otherwise the push-off will intersect A_2f(k)or A_3f(k),
             #but we only count it if x_i is nonzero.  Note that the knot intersects only
             #one of these, x_i times 
@@ -376,58 +373,73 @@ def intersectionnumberDeg2withDeg1Surface(boundarycoefs, colorlist, overstrands,
                         #in this case the knot intersects A_3f(k) so the contribution
                         #is -x[k]
                         intersection-=boundarycoefs[overstrands[k]]
-                        print("subtract ", boundarycoefs[overstrands[k]])
-                        print('case a')
-                        print('f(k)=', overstrands[k], '-x_f(k)=', -boundarycoefs[overstrands[k]])
-                        print(intersection)
+                        # print("subtract ", boundarycoefs[overstrands[k]])
+                        # print('case a')
+                        # print('f(k)=', overstrands[k], '-x_f(k)=', -boundarycoefs[overstrands[k]])
+                        # print(intersection)
                     elif signs[k]==-1:
                         intersection-=boundarycoefs[overstrands[k]]
-                        print("subtract ", boundarycoefs[overstrands[k]])
-                        print('case b')
-                        print('f(k)=', overstrands[k], '+-x_f(k)=', -boundarycoefs[overstrands[k]])
-                        print(intersection)        
+                        # print("subtract ", boundarycoefs[overstrands[k]])
+                        # print('case b')
+                        # print('f(k)=', overstrands[k], '+-x_f(k)=', -boundarycoefs[overstrands[k]])
+                        # print(intersection)        
                 elif colorlist[k]!=WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]:
                     if signs[k]==1:
                         intersection+=boundarycoefs[overstrands[k]]
-                        print("add ", boundarycoefs[overstrands[k]])
-                        print('case c')
-                        print('f(k)=', overstrands[k], 'x_f(k)=', boundarycoefs[overstrands[k]])
-                        print(intersection)
+                        # print("add ", boundarycoefs[overstrands[k]])
+                        # print('case c')
+                        # print('f(k)=', overstrands[k], 'x_f(k)=', boundarycoefs[overstrands[k]])
+                        # print(intersection)
                     elif signs[k]==-1:
                         intersection+=boundarycoefs[overstrands[k]]
-                        print("add ", boundarycoefs[overstrands[k]])
-                        print('case d')
-                        print('f(k)=', overstrands[k], 'x_f(k)=', boundarycoefs[overstrands[k]])
-                        print(intersection)
+                        # print("add ", boundarycoefs[overstrands[k]])
+                        # print('case d')
+                        # print('f(k)=', overstrands[k], 'x_f(k)=', boundarycoefs[overstrands[k]])
+                        # print(intersection)
         elif homog(k, colorlist,n,overstrands)=='s':
             #The push-off will either intersect A_2f(k) or A_3f(k)
             if signs[k]==1:            
                 if WhereIsA2i(colorlist,overstrands,n)[k]==WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]:
                     intersection+=boundarycoefs[overstrands[k]]
-                    print("add ", boundarycoefs[overstrands[k]])
-                    print('case e')
-                    print('f(k)=', overstrands[k], 'x_f(k)=', boundarycoefs[overstrands[k]])
-                    print(intersection)
+                    # print("add ", boundarycoefs[overstrands[k]])
+                    # print('case e')
+                    # print('f(k)=', overstrands[k], 'x_f(k)=', boundarycoefs[overstrands[k]])
+                    # print(intersection)
                 elif WhereIsA2i(colorlist,overstrands,n)[k]!=WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]:
                     intersection-=boundarycoefs[overstrands[k]]
-                    print("subtract ", boundarycoefs[overstrands[k]])
-                    print('case f')
-                    print('f(k)=', overstrands[k], '-x_f(k)=', -boundarycoefs[overstrands[k]])
-                    print(intersection)
+                    # print("subtract ", boundarycoefs[overstrands[k]])
+                    # print('case f')
+                    # print('f(k)=', overstrands[k], '-x_f(k)=', -boundarycoefs[overstrands[k]])
+                    # print(intersection)
             elif signs[k]==-1:
                 if WhereIsA2i(colorlist,overstrands,n)[k]==WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]:
                     intersection+=boundarycoefs[overstrands[k]]
-                    print("add ", boundarycoefs[overstrands[k]])
-                    print('case g')
-                    print('f(k)=', overstrands[k], 'x_f(k)=', boundarycoefs[overstrands[k]])
-                    print(intersection)
+                    # print("add ", boundarycoefs[overstrands[k]])
+                    # print('case g')
+                    # print('f(k)=', overstrands[k], 'x_f(k)=', boundarycoefs[overstrands[k]])
+                    # print(intersection)
                 elif WhereIsA2i(colorlist,overstrands,n)[k]!=WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]:
                     intersection-=boundarycoefs[overstrands[k]]
-                    print("subtract ", boundarycoefs[overstrands[k]])
-                    print('case h')
-                    print('f(k)=', overstrands[k], '-x_f(k)=', -boundarycoefs[overstrands[k]])
-                    print(intersection)
+                    # print("subtract ", boundarycoefs[overstrands[k]])
+                    # print('case h')
+                    # print('f(k)=', overstrands[k], '-x_f(k)=', -boundarycoefs[overstrands[k]])
+                    # print(intersection)
     return intersection
+
+
+
+
+
+print('3_1')
+print(intersectionnumberDeg2withDeg1Surface(twochain_3_1, [1, 2, 0, 1], [2, 0, 1, 3], [1, 1, 1, 1], 4))
+print('6_1')
+print(intersectionnumberDeg2withDeg1Surface(twochain_6_1, [0, 2, 1, 2, 0, 1], [2, 4, 0, 5, 1, 3] , [1, -1, 1, 1, -1, 1] ,6) )
+print('7_4')
+print(intersectionnumberDeg2withDeg1Surface(twochain_7_4, [1, 2, 0, 2, 1, 0, 0, 1], [5, 4, 0, 6, 1, 2, 3, 7] , [-1, -1, -1, -1, -1, -1, -1, 1] , 8))
+print('7_7')
+print(intersectionnumberDeg2withDeg1Surface(twochain_7_7, [1, 0, 2, 1, 2, 0, 0, 1], [4, 3, 6, 5, 0, 1, 2, 7] , [1, -1, 1, -1, 1, -1, 1, 1] , 8))
+print('9_35')
+print(intersectionnumberDeg2withDeg1Surface(twochain_9_35, [2, 2, 2, 1, 0, 2, 2, 0, 1, 2], [6, 5, 7, 0, 8, 1, 3, 2, 4, 9],[-1, -1, -1, -1, -1, -1, -1, -1, -1, 1],10))
 
 
 def intersectionnumberDeg1withDeg2Surface(boundarycoefs, colorlist, overstrands, signs, numcrossings):
@@ -831,7 +843,7 @@ def display(signs,overstrands,name,coloring): #,detail
     #else:
     #    print('There is no bounding 2-chain for the degree 1 curve.')
     #    print()
-    M2=computecoef2(coloring,c,overstrands, signs)
+############### OLIVIA CHANGED    M2=computecoef2(coloring,c,overstrands, signs)
 #    print('The matrix of coefficients x_i of A_2i (and 1-x_i of A_3i), with inhomogeneous part in the last column, is')
 #    print()
 #    print(M2)
@@ -839,17 +851,17 @@ def display(signs,overstrands,name,coloring): #,detail
 #    print('The reduced row eschelon form and pivots are:')
 #    print(Matrix(M2).rref())
 #    print()
-    if solvefor2chain(M2,c)!='False':
+ ############## OLIVIA CHANGED   if solvefor2chain(M2,c)!='False':
         #print('The coefficients of 2-cell corresponding to the deg 2 curve are')
         #print()
         #print(solvefor2chain(M2,c))
         #print()
         #print('The linking number, computed with the surface bounded by the deg 2 curve, is ', intersectionnumberDeg1withDeg2Surface(solvefor2chain(M2,c),coloring,overstrands,signs,c),'.')
         #print()
-        return [intersectionnumberDeg1withDeg2Surface(solvefor2chain(M2,c),coloring,overstrands,signs,c),intersectionnumberDeg2withDeg1Surface(solvefor2chain(M,c),coloring,overstrands,signs,c)]
+    return intersectionnumberDeg2withDeg1Surface(solvefor2chain(M,c),coloring,overstrands,signs,c)#intersectionnumberDeg1withDeg2Surface(solvefor2chain(M2,c),coloring,overstrands,signs,c)#,intersectionnumberDeg2withDeg1Surface(solvefor2chain(M,c),coloring,overstrands,signs,c)]
         #print('The self-linking number of the degree 2 curve is ', selflinkingnumberDeg2(solvefor2chain(M2,c),coloring,overstrands,signs,c),'.')
-    else:
-        return "No Dihedral Linking Number Exists"
+ ##############   else:
+ ##############       return "No Dihedral Linking Number Exists"
     #if detail=='yes':
 
     #    print('The collection of linking invariants for ', name, ' computed by intersecting the degree 2 curve with a surface whose boundary is the degree 1 curve, is:')
@@ -869,6 +881,29 @@ def display(signs,overstrands,name,coloring): #,detail
     #    print()
     #elif detail=='no':
     #    print('For collections of invariants let detail= yes')
+"""
+
+
+
+
+
+print('trefoil')
+print('patricia got '+str(display([1, 1, 1, 1],[2, 0, 1, 3],'3_1',[1, 2, 0, 1])))
+#print('we got')
+print('6_1')
+print('patricia got'+str(display([1, -1, 1, 1, -1, 1] ,[2, 4, 0, 5, 1, 3] , '6_1' ,[0, 2, 1, 2, 0, 1])))
+#print('patricia got -2')
+print('7_4')
+print('patricia got '+str(display( [-1, -1, -1, -1, -1, -1, -1, 1] ,[5, 4, 0, 6, 1, 2, 3, 7] ,'7_4',[1, 2, 0, 2, 1, 0, 0, 1])))
+#print('patricia got 2')
+print('7_7')
+print('patricia got '+str(display([1, -1, 1, -1, 1, -1, 1, 1] ,[4, 3, 6, 5, 0, 1, 2, 7] ,  '7_7',[1, 0, 2, 1, 2, 0, 0, 1])))
+#print('patricia got -2')
+"""
+
+# 0 6 -8 4
+
+
 
 def slicedisplayType1(aRange,bRange):
     for k in range(0,aRange):
@@ -1020,18 +1055,7 @@ newrawfile.close()
 
 
 
-print('trefoil')
-print('we got '+str(display([2, 0, 1, 3],[1, 1, 1, 1],'3_1',[1, 2, 0, 1])))
-print('patricia got 2')
-print('6_1')
-print('we got '+str(display([1, -1, 1, 1, -1, 1] ,[2, 4, 0, 5, 1, 3] , '6_1' ,[0, 2, 1, 2, 0, 1])))
-print('patricia got -2')
-print('7_4')
-print('we got '+str(display( [-1, -1, -1, -1, -1, -1, -1, 1] ,[5, 4, 0, 6, 1, 2, 3, 7] ,'7_4',[1, 2, 0, 2, 1, 0, 0, 1])))
-print('patricia got 2')
-print('7_7')
-print('we got '+str(display([1, -1, 1, -1, 1, -1, 1, 1] ,[4, 3, 6, 5, 0, 1, 2, 7] ,  '7_7',[1, 0, 2, 1, 2, 0, 0, 1])))
-print('patricia got -2')
+
 
 
 #print(display([-1,1,-1,1,1,1,1,1,1,1,-1,1],[2,4,5,6,1,9,3,5,10,6,8,11],'11n-1',[1,2,3,3,1,3,2,1,2,1,3,1,1]))
