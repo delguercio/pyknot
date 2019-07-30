@@ -92,4 +92,45 @@ print('The overstrand list for 11n-1 is '+str(create_overstrand_list(eleven_n_on
 """
 print(create_overstrand_list(three_one))
 
+fields = [ 'Name', 'Gauss Notation']
 
+newfields = [ 'Name', 'Overstrand List']
+
+filename = "name_gauss_3colorable.csv"
+
+line_count = 0
+
+rawfile = open(filename, 'r')
+
+reader = csv.reader(rawfile)
+
+new_LoL = []
+ 
+for row in reader:
+    if line_count == 0:
+        new_LoL.append(newfields)
+        line_count = line_count + 1
+    else:
+        strings = list(row[1][1:-1].split(","))
+        list_of_ints = [ int(number) for number in strings ]
+        signs = SignList( list_of_ints )
+        if len(signs)%2 == 0:
+            new_LoL.append([row[0],signs])
+            line_count = line_count + 1
+        else:
+            pos_crossing = signs + [1]
+            new_LoL.append([row[0],pos_crossing])
+            line_count = line_count + 1            
+
+rawfile.close()
+
+newfilename = "name_overstrand_3colorable.csv"
+
+newrawfile = open(newfilename, 'w')
+
+writer = csv.writer(newrawfile)
+
+for row in new_LoL:
+    writer.writerow(row)
+
+newrawfile.close()
