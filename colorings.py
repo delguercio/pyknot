@@ -15,6 +15,24 @@ from sympy import Matrix
 import itertools
 
 
+overstrand_3_1 = [2, 0, 1, 3]
+overstrand_6_1 = [2, 4, 0, 5, 1, 3]
+overstrand_7_4 = [5, 4, 0, 6, 1, 2, 3, 7]
+overstrand_7_7 = [4, 3, 6, 5, 0, 1, 2, 7]
+overstrand_9_35 = [6, 5, 7, 0, 8, 1, 3, 2, 4, 9]
+
+color_3_1 = [1, 2, 3, 1]
+color_6_1 = [3, 2, 1, 2, 3, 1]
+color_7_4 = [1, 2, 3, 2, 1, 3, 3, 1]
+color_7_7 = [1, 3, 2, 1, 2, 3, 3, 1]
+color_9_35 = [2, 2, 2, 1, 3, 2, 2, 3, 1, 2]
+
+sign_3_1 = [1, 1, 1, 1]
+sign_6_1 = [1, -1, 1, 1, -1, 1]
+sign_7_4 = [-1, -1, -1, -1, -1, -1, -1, 1]
+sign_7_7 = [1, -1, 1, -1, 1, -1, 1, 1]
+sign_9_35 = [-1, -1, -1, -1, -1, -1, -1, -1, -1, 1]
+
 
 # A color is a number between 1 and 3.
 # A coloring is a list of colors such that the ith crossing 
@@ -109,7 +127,17 @@ def WhereIsA2i(colorlist,overstrands,numcrossings):
             twist.append(s.pop())
     return twist
 
+where_3_1 = WhereIsA2i(color_3_1,  overstrand_3_1 , 4 )
+where_6_1 = WhereIsA2i(color_6_1 , overstrand_6_1 , 6)
+where_7_4 = WhereIsA2i(color_7_4 , overstrand_7_4 , 8 )
+where_7_7 = WhereIsA2i(color_7_7 , overstrand_7_7 , 8 )
+where_9_35 = WhereIsA2i(color_9_35 , overstrand_9_35  , 9)
 
+print(where_3_1)
+print(where_6_1)
+print(where_7_4)
+print(where_7_7)
+print(where_9_35)
 
 
 # x_i is the coefficient of A_2i-A_3i in the 2-chain A_11+...+A_1c+sum_i(x_i(A_2i-A3i))
@@ -223,8 +251,8 @@ def computecoef(colorlist, numcrossings,overstrands, signs):
                     coefmatrix[k][overstrands[k]]-=2                    
                 elif (WhereIsA2i(colorlist,overstrands,n)[overstrands[k]]!=WhereIsA2i(colorlist,overstrands,n)[k]):
                     coefmatrix[k][overstrands[k]]+=2
-    print("COEF MATRIX:")
-    print( coefmatrix )                     
+    #print("COEF MATRIX:")
+    #print( coefmatrix )                     
     return coefmatrix
 
 # computecoef2 computes the coefficients x_i of the 2-cells A_2i of the 2-chain bounding the
@@ -232,7 +260,7 @@ def computecoef(colorlist, numcrossings,overstrands, signs):
 # A_3i is called y_i then x_i+y_i=1, so we need only the x_i.
 def computecoef2(colorlist, numcrossings,overstrands, signs):
     n=numcrossings
-    print("computecoef2 is being used")
+    #print("computecoef2 is being used")
     #The matrix A of coefficients in our system Ax=b
     coefmatrix= [[0 for x in range(n+1)] for x in range(n)] 
     for k in range(0,n):
@@ -430,16 +458,16 @@ def intersectionnumberDeg2withDeg1Surface(boundarycoefs, colorlist, overstrands,
 
 
 
-print('3_1')
-print(intersectionnumberDeg2withDeg1Surface(twochain_3_1, [1, 2, 0, 1], [2, 0, 1, 3], [1, 1, 1, 1], 4))
-print('6_1')
-print(intersectionnumberDeg2withDeg1Surface(twochain_6_1, [0, 2, 1, 2, 0, 1], [2, 4, 0, 5, 1, 3] , [1, -1, 1, 1, -1, 1] ,6) )
-print('7_4')
-print(intersectionnumberDeg2withDeg1Surface(twochain_7_4, [1, 2, 0, 2, 1, 0, 0, 1], [5, 4, 0, 6, 1, 2, 3, 7] , [-1, -1, -1, -1, -1, -1, -1, 1] , 8))
-print('7_7')
-print(intersectionnumberDeg2withDeg1Surface(twochain_7_7, [1, 0, 2, 1, 2, 0, 0, 1], [4, 3, 6, 5, 0, 1, 2, 7] , [1, -1, 1, -1, 1, -1, 1, 1] , 8))
-print('9_35')
-print(intersectionnumberDeg2withDeg1Surface(twochain_9_35, [2, 2, 2, 1, 0, 2, 2, 0, 1, 2], [6, 5, 7, 0, 8, 1, 3, 2, 4, 9],[-1, -1, -1, -1, -1, -1, -1, -1, -1, 1],10))
+# print('3_1')
+# print(intersectionnumberDeg2withDeg1Surface(twochain_3_1, [1, 2, 0, 1], [2, 0, 1, 3], [1, 1, 1, 1], 4))
+# print('6_1')
+# print(intersectionnumberDeg2withDeg1Surface(twochain_6_1, [0, 2, 1, 2, 0, 1], [2, 4, 0, 5, 1, 3] , [1, -1, 1, 1, -1, 1] ,6) )
+# print('7_4')
+# print(intersectionnumberDeg2withDeg1Surface(twochain_7_4, [1, 2, 0, 2, 1, 0, 0, 1], [5, 4, 0, 6, 1, 2, 3, 7] , [-1, -1, -1, -1, -1, -1, -1, 1] , 8))
+# print('7_7')
+# print(intersectionnumberDeg2withDeg1Surface(twochain_7_7, [1, 0, 2, 1, 2, 0, 0, 1], [4, 3, 6, 5, 0, 1, 2, 7] , [1, -1, 1, -1, 1, -1, 1, 1] , 8))
+# print('9_35')
+# print(intersectionnumberDeg2withDeg1Surface(twochain_9_35, [2, 2, 2, 1, 0, 2, 2, 0, 1, 2], [6, 5, 7, 0, 8, 1, 3, 2, 4, 9],[-1, -1, -1, -1, -1, -1, -1, -1, -1, 1],10))
 
 
 def intersectionnumberDeg1withDeg2Surface(boundarycoefs, colorlist, overstrands, signs, numcrossings):
@@ -843,7 +871,7 @@ def display(signs,overstrands,name,coloring): #,detail
     #else:
     #    print('There is no bounding 2-chain for the degree 1 curve.')
     #    print()
-############### OLIVIA CHANGED    M2=computecoef2(coloring,c,overstrands, signs)
+    M2=computecoef2(coloring,c,overstrands, signs)
 #    print('The matrix of coefficients x_i of A_2i (and 1-x_i of A_3i), with inhomogeneous part in the last column, is')
 #    print()
 #    print(M2)
@@ -851,17 +879,17 @@ def display(signs,overstrands,name,coloring): #,detail
 #    print('The reduced row eschelon form and pivots are:')
 #    print(Matrix(M2).rref())
 #    print()
- ############## OLIVIA CHANGED   if solvefor2chain(M2,c)!='False':
+    if solvefor2chain(M2,c)!='False':
         #print('The coefficients of 2-cell corresponding to the deg 2 curve are')
         #print()
         #print(solvefor2chain(M2,c))
         #print()
         #print('The linking number, computed with the surface bounded by the deg 2 curve, is ', intersectionnumberDeg1withDeg2Surface(solvefor2chain(M2,c),coloring,overstrands,signs,c),'.')
         #print()
-    return intersectionnumberDeg2withDeg1Surface(solvefor2chain(M,c),coloring,overstrands,signs,c)#intersectionnumberDeg1withDeg2Surface(solvefor2chain(M2,c),coloring,overstrands,signs,c)#,intersectionnumberDeg2withDeg1Surface(solvefor2chain(M,c),coloring,overstrands,signs,c)]
+        return [intersectionnumberDeg2withDeg1Surface(solvefor2chain(M,c),coloring,overstrands,signs,c),intersectionnumberDeg1withDeg2Surface(solvefor2chain(M2,c),coloring,overstrands,signs,c)]#,intersectionnumberDeg2withDeg1Surface(solvefor2chain(M,c),coloring,overstrands,signs,c)]
         #print('The self-linking number of the degree 2 curve is ', selflinkingnumberDeg2(solvefor2chain(M2,c),coloring,overstrands,signs,c),'.')
- ##############   else:
- ##############       return "No Dihedral Linking Number Exists"
+    else:
+        return "No Dihedral Linking Number Exists"
     #if detail=='yes':
 
     #    print('The collection of linking invariants for ', name, ' computed by intersecting the degree 2 curve with a surface whose boundary is the degree 1 curve, is:')
@@ -881,27 +909,38 @@ def display(signs,overstrands,name,coloring): #,detail
     #    print()
     #elif detail=='no':
     #    print('For collections of invariants let detail= yes')
-"""
 
 
 
 
 
-print('trefoil')
-print('patricia got '+str(display([1, 1, 1, 1],[2, 0, 1, 3],'3_1',[1, 2, 0, 1])))
-#print('we got')
-print('6_1')
-print('patricia got'+str(display([1, -1, 1, 1, -1, 1] ,[2, 4, 0, 5, 1, 3] , '6_1' ,[0, 2, 1, 2, 0, 1])))
-#print('patricia got -2')
-print('7_4')
-print('patricia got '+str(display( [-1, -1, -1, -1, -1, -1, -1, 1] ,[5, 4, 0, 6, 1, 2, 3, 7] ,'7_4',[1, 2, 0, 2, 1, 0, 0, 1])))
-#print('patricia got 2')
-print('7_7')
-print('patricia got '+str(display([1, -1, 1, -1, 1, -1, 1, 1] ,[4, 3, 6, 5, 0, 1, 2, 7] ,  '7_7',[1, 0, 2, 1, 2, 0, 0, 1])))
-#print('patricia got -2')
-"""
 
+# print('trefoil')
+# print('patricia got '+str(display([1, 1, 1, 1],[2, 0, 1, 3],'3_1',[1, 2, 0, 1])))
+# #print('we got')
+# print('6_1')
+# print('patricia got'+str(display([1, -1, 1, 1, -1, 1] ,[2, 4, 0, 5, 1, 3] , '6_1' ,[0, 2, 1, 2, 0, 1])))
+# #print('patricia got -2')
+# print('7_4')
+# print('patricia got '+str(display( [-1, -1, -1, -1, -1, -1, -1, 1] ,[5, 4, 0, 6, 1, 2, 3, 7] ,'7_4',[1, 2, 0, 2, 1, 0, 0, 1])))
+# #print('patricia got 2')
+# print('7_7')
+# print('patricia got '+str(display([1, -1, 1, -1, 1, -1, 1, 1] ,[4, 3, 6, 5, 0, 1, 2, 7] ,  '7_7',[1, 0, 2, 1, 2, 0, 0, 1])))
+# #print('patricia got -2')
+
+#print(display([-1,1,-1,-1,-1,1,-1,1,1,1],[3,4,7,6,1,8,0,1,4,9],'9_47',[1,1,2,1,0,2,2,0,2,1]))
+#print(display([-1,1,-1,-1,-1,1,-1,1,1,1],[3,4,7,6,1,8,0,1,4,9],'9_47',[0,1,0,2,2,0,2,1,1,0]))
+#print(display([-1,1,-1,-1,-1,1,-1,1,1,1],[3,4,7,6,1,8,0,1,4,9],'9_47',[1,2,2,0,2,2,1,1,0,1]))
+#print(display([-1,1,-1,-1,-1,1,-1,1,1,1],[3,4,7,6,1,8,0,1,4,9],'9_47',[0,2,1,1,0,1,2,1,0,0]))
+
+
+#print(display([-1,-1,-1,-1,1,-1,1,1,-1,1,-1,1],[4,7,10,0,8,2,9,5,1,6,3,11],'11a_293',[0,2,0,2,1,1,2,1,1,0,1,0]))
+#print(display([-1,-1,-1,-1,1,-1,1,1,-1,1,-1,1],[4,7,10,0,8,2,9,5,1,6,3,11],'11a_293',[1,0,1,0,2,0,2,2,1,2,2,1]))
+#print(display([-1,-1,-1,-1,1,-1,1,1,-1,1,-1,1],[4,7,10,0,8,2,9,5,1,6,3,11],'11a_293',[0,2,0,2,1,0,0,1,2,2,1,0]))
+#print(display([-1,-1,-1,-1,1,-1,1,1,-1,1,-1,1],[4,7,10,0,8,2,9,5,1,6,3,11],'11a_293',[1,1,1,1,1,0,2,1,2,0,1,1]))
 # 0 6 -8 4
+
+#print(display([-1,-1,1,-1,-1,-1,-1,-1,1,-1],[8,5,0,1,7,0,2,4,3,5]))
 
 
 
@@ -978,11 +1017,13 @@ def twobridgedatatable(arange,brange,crange,drange,erange,frange):
                     for m in range(0, erange):
                         for n in range(0, frange):
                             twobridgedisplay(2*(3*i+1),2*(3*j+1),2*(3*k+1),2*(3*l+1),2*(3*m+1),2*(3*n+1))
-
+"""
 import csv
 
+
+
 #           0            1                  2              3             4            5
-"""
+
 fields = [ 'Name','Gauss Notation', 'Overstrand List', 'Sign List', 'Color List', 'Dihedral Linking Number' ]
 
 newfields = [ 'Name', 'Dihedral Linking Number' ]
@@ -1043,15 +1084,15 @@ for row in new_LoL:
     writer.writerow(row)
 
 newrawfile.close()
-"""
 
+"""
 #print(display([-1,-1,1,1,1,1],[3,5,4,0,2,1],'6-1',[2,1,2,0,1,0]))
 #print(display([-1,-1,1,1,1,1],[3,5,4,0,2,1],'6-1',[3,2,3,1,2,1]))
 #display([1,1,1,1,1,1,1,1],[4,5,0,7,2,1,6,3],'6-1',[2,2,1,3,2,3,1,1],'no')
 #print(display([-1,1,-1,1,-1,1,-1,1],[4,3,6,7,0,6,2,1],'7-7',[3,1,3,2,2,1,1,2]))
 
-print(display([1,1,1,1],[2,0,1,3],'3-1',[1,2,3,1]))
-print(display([1, -1, 1, 1, -1, 1],[2, 4, 0, 5, 1, 3],'6-1',[0, 2, 1, 2, 0, 1]))
+# print(display([1,1,1,1],[2,0,1,3],'3-1',[1,2,3,1]))
+# print(display([1, -1, 1, 1, -1, 1],[2, 4, 0, 5, 1, 3],'6-1',[0, 2, 1, 2, 0, 1]))
 
 
 
