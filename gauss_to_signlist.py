@@ -1,7 +1,7 @@
 # -----------------------------
 #    Filename: signlist.py
 #      Author: Jack Kendrick
-# Last Update: 6/5/2019
+# Last Update: 7/31/2019
 # -----------------------------
 
 import csv
@@ -53,8 +53,9 @@ def Rank(code):
 
     """Determines whether each arc around a modified Gauss code is a maximum (above the code) or a minimum (below the code). Also builds arc dictionary describing the start and end points of each arc in the modified Gauss code. Returns list of maximums, minimums, and the arc dictionary."""
 
-    max_list = []
+    max_list = [abs(code[0])]
     min_list = []
+    found = [abs(code[0])]
 
     n = len(code)
     arcs = {}
@@ -68,57 +69,35 @@ def Rank(code):
                 end += n
             arcs[arc] = [min(start, end), max(start, end)]
 
-    start = 0
-    
-    end_points = []
-    maximum = True
+    for arc in found:
+        found_inside = []
+        if arc in max_list:
+            maximum = True
+        else:
+            maximum = False
+        start = arcs[arc][0]
+        end = arcs[arc][1]
 
-    for arc in arcs:
-        inside = []
-        if start in arcs[arc]:
-            if arc not in max_list and arc not in min_list:
-                if maximum:
-                    max_list.append(arc)
-                else:
-                    min_list.append(arc)
+        for value in code[start:end]:
+            value = abs(value)
+            if value not in found:
+                if arcs[value][0] < start or arcs[value][1]> end:
+                    if maximum:
+                        min_list.append(value)
+                    else:
+                        max_list.append(value)
 
-            for value in code[arcs[arc][0]+1:arcs[arc][1]]:
-                    inside.append(abs(value))
+                    found.append(value)
+                    found_inside.append(value)
 
-            for in_arc in inside[::-1]:
-                if in_arc not in max_list and in_arc not in min_list:                    
-                    if arcs[in_arc][1] > arcs[arc][1] and maximum == True:
-                        min_list.append(in_arc)
-                    elif arcs[in_arc][0] < arcs[arc][0] and maximum == True:
-                        min_list.append(in_arc)
-                    elif arcs[in_arc][1] > arcs[arc][1] and maximum == False:
-                        max_list.append(in_arc)
-                    elif arcs[in_arc][0] < arcs[arc][0] and maximum == False:
-                        max_list.append(in_arc)
-
-                    end_points.append(arcs[in_arc][1])
-                    
-            if len(max_list) + len(min_list) == len(code)//2:
-                break
-            start = max(end_points)
-            if maximum:
-                maximum = False
-            else:
-                maximum = True
-
-    for arc in arcs:
-        if arc not in min_list and arc not in max_list:
-            in_max = True
-            for max_arc in max_list:
-                if arcs[max_arc][0] > arcs[arc][0] and arcs[max_arc][1] > arcs[arc][1] > arcs[max_arc][0]:
-                    in_max = False
-                elif arcs[max_arc][0] < arcs[arc][0] < arcs[max_arc][1] and arcs[max_arc][1] < arcs[arc][1]:
-                    in_max = False
-
-            if in_max:
-                max_list.append(arc)
-            else:
-                min_list.append(arc)
+        if len(found_inside) == 0 and found[-1] == arc and len(found)<n//2:
+            declared = True
+            while not declared:
+                for value in code[start:end]:
+                    value = abs(value)
+                    if value not in found:
+                        max_list.append(value)
+                        declared = True
 
     return [max_list, min_list, arcs]
         
@@ -242,10 +221,10 @@ def SignList(code):
     signs = Reorder(signs, fixed_code)
     return signs
 
-#def main():
-#    code = [1, -2, 3, -4, 5, 6, -7, -3, 8, -9, 4, -5, 10, -11, 2, 7, -6, -1, 12, -10, 9, -8, 11, -12]
-#    signs = SignList(code)
-#    print(signs)
+def main():
+    code = [-1, 2, -3, 4, -5, 1, -6, 7, -4, 3, -8, 9, -10, 11, -7, 5, -2, 8, -9, 10, -11, 6]
+    signs = SignList(code)
+    print(signs)
 
 #if __name__ == "__main__":
 #    main()
@@ -295,3 +274,5 @@ for row in new_LoL:
     writer.writerow(row)
 
 newrawfile.close()
+
+
