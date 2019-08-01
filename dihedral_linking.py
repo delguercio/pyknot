@@ -11,6 +11,25 @@ import sympy
 import math
 
 
+overstrand_3_1 = [2, 0, 1, 3]
+overstrand_6_1 = [2, 4, 0, 5, 1, 3]
+overstrand_7_4 = [5, 4, 0, 6, 1, 2, 3, 7]
+overstrand_7_7 = [4, 3, 6, 5, 0, 1, 2, 7]
+overstrand_9_35 = [6, 5, 7, 0, 8, 1, 3, 2, 4, 9]
+
+color_3_1 = [1, 2, 3, 1]
+color_6_1 = [3, 2, 1, 2, 3, 1]
+color_7_4 = [1, 2, 3, 2, 1, 3, 3, 1]
+color_7_7 = [1, 3, 2, 1, 2, 3, 3, 1]
+color_9_35 = [2, 2, 2, 1, 3, 2, 2, 3, 1, 2]
+
+sign_3_1 = [1, 1, 1, 1]
+sign_6_1 = [1, -1, 1, 1, -1, 1]
+sign_7_4 = [-1, -1, -1, -1, -1, -1, -1, 1]
+sign_7_7 = [1, -1, 1, -1, 1, -1, 1, 1]
+sign_9_35 = [-1, -1, -1, -1, -1, -1, -1, -1, -1, 1]
+
+
 def where(overstrand_list,color_list):
     """
         this function outputs the universe your head is in if
@@ -32,8 +51,9 @@ def where(overstrand_list,color_list):
         else where(1st strand) != color of the overstrand at 2nd crossing
             then where(2nd strand) = the third color 
     """
+    num_crossings = len(overstrand_list)
     where_list = []
-    colors = [1,2,0]
+    colors = [1,2,3]
     for i in range(len(overstrand_list)):
         #print("We are on strand ", i)
         if i == 0:
@@ -44,7 +64,7 @@ def where(overstrand_list,color_list):
             #print("We initialized the second strand: ", where_list)
         
         else:
-            color_of_overstrand = color_list[overstrand_list[i-1]]
+            color_of_overstrand = color_list[overstrand_list[(i-1)%num_crossings]]
             universe_of_incoming_understrand = where_list[i-1]
             #print('COLOR OF OVERSTRAND')
             #print(color_of_overstrand)
@@ -60,12 +80,26 @@ def where(overstrand_list,color_list):
                 #print(colors)
                 where_list.append(colors[0])
                 #print(where_list)
-                colors = [1,2,0]
+                colors = [1,2,3]
     return where_list
 
+
+where_3_1 = where( overstrand_3_1 , color_3_1 )
+where_6_1 = where( overstrand_6_1 , color_6_1 )
+where_7_4 = where( overstrand_7_4 , color_7_4 )
+where_7_7 = where( overstrand_7_7 , color_7_7 )
+where_9_35 = where( overstrand_9_35  , color_9_35 )
+
+print(where_3_1)
+print(where_6_1)
+print(where_7_4)
+print(where_7_7)
+print(where_9_35)
+
+
+
+
 def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
-   #how big does the matrix need to be?
-   #we have number of columns = number of strands, number of rows = number of crossings.... hm
 
    x_matrix = [[0]*(len(overstrand_list)+1) for i in range(len(overstrand_list))]
    #print("STARTING MATRIX")
@@ -132,28 +166,27 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
          #print('this')
          #print(x_matrix[i][overstrand_list[i]])
          # I BELIEVE THIS TO BE TRUE olivia 7/18/19
-         x_matrix[i][overstrand_list[i]] += (-epsilon_one)*epsilon_two
+         x_matrix[i][overstrand_list[i]] += (epsilon_one)*epsilon_two
          #print('changed to')
          #print(x_matrix[i][overstrand_list[i]])
          #ALSO CHANGED THIS ON THE SIGN STUFF TO SEE NOW IT IS THE SAME AS PATRICIAS CODE
          # I BELIEVE THIS TO BE TRUE olivia 7/18/19
-         #x_matrix[i][len(overstrand_list)] += (-sign_list[i])*epsilon_two
-         #x_matrix[i][len(overstrand_list)] += (-sign_list[i]*epsilon_two*epsilon_one)
+         x_matrix[i][len(overstrand_list)] += (sign_list[i])*epsilon_two
+         x_matrix[i][len(overstrand_list)] += (sign_list[i]*epsilon_two*epsilon_one)
          
-         if where_list[i] == color_list[overstrand_list[i]]:
-             if sign_list[i] == 1:  
-                 x_matrix[i][len(overstrand_list)] += -1
-             else:
-                 x_matrix[i][len(overstrand_list)] += 1
-         else:
-              if sign_list[i] == 1:  
-                 x_matrix[i][len(overstrand_list)] += 1
-              else:
-                 x_matrix[i][len(overstrand_list)] += -1
+        # if where_list[i] == color_list[overstrand_list[i]]:
+        #      if sign_list[i] == 1:  
+        #          x_matrix[i][len(overstrand_list)] += -1
+        #      else:
+        #          x_matrix[i][len(overstrand_list)] += 1
+        #  else:
+        #       if sign_list[i] == 1:  
+        #          x_matrix[i][len(overstrand_list)] += 1
+        #       else:
+        #          x_matrix[i][len(overstrand_list)] += -1
 
          #print("NEW MATRIX")
          #print(x_matrix)
-
       else:
          #print("the matrix was")
          #print(x_matrix)
@@ -168,6 +201,25 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
    print("MATRIX")
    print(x_matrix)
    return sympy.Matrix(x_matrix).rref()[0]
+
+# print('trefoil')
+# print('we got '+str(linking_number([2, 0, 1, 3],[1, 1, 1, 1],[1, 2, 0, 1])))
+# print()
+# #print('patricia got 2')
+# print('6_1')
+# print('we got '+str(linking_number([2, 4, 0, 5, 1, 3] , [1, -1, 1, 1, -1, 1] , [0, 2, 1, 2, 0, 1])))
+# print()
+# #print('patricia got -2')
+# print('7_4')
+# print('we got '+str(linking_number([5, 4, 0, 6, 1, 2, 3, 7] , [-1, -1, -1, -1, -1, -1, -1, 1] , [1, 2, 0, 2, 1, 0, 0, 1])))
+# print()
+# #print('patricia got 2')
+# print('7_7')
+# print('we got '+str(linking_number([4, 3, 6, 5, 0, 1, 2, 7] , [1, -1, 1, -1, 1, -1, 1, 1] , [1, 0, 2, 1, 2, 0, 0, 1])))
+# #print()
+# #print('patricia got -2')
+# print('9_35')
+# print(linking_number([6, 5, 7, 0, 8, 1, 3, 2, 4, 9],[-1, -1, -1, -1, -1, -1, -1, -1, -1, 1],[2, 2, 2, 1, 0, 2, 2, 0, 1, 2]))
 
 
 def solve_2chain(rref_matrix):
@@ -217,14 +269,14 @@ def intersecting_cells(overstrand_list,color_list,where_list,sign_list):
       thus the lift passes through the cell A_(2,i) or A_(3,i)
         if positive crossing
             if where[overstrand[i]] == color[i]
-                then the lift passes through A_(2,i)
-            else
                 then the lift passes through A_(3,i)
+            else
+                then the lift passes through A_(2,i)
         else negative crossing
             if where[overstrand[i]] == color[i]
-                then the lift passes through A_(3,i)           
+                then the lift passes through A_(2,i)           
             else
-                then the lift passes through A_(2,i)
+                then the lift passes through A_(3,i)
   """
   num_crossings = len(overstrand_list)
   intersect_list = [0]*(num_crossings*2)
@@ -234,16 +286,10 @@ def intersecting_cells(overstrand_list,color_list,where_list,sign_list):
     #see if the crossing is homog or heterog
     if color_list[i] == color_list[int((i+1)%num_crossings)] and color_list[i] == color_list[overstrand_list[i]] and color_list[int((i+1)%num_crossings)] == color_list[overstrand_list[i]]:
         #print("homogeneous crossing")
-        if sign_list[i] == 1:
-            if where_list[overstrand_list[i]] == where_list[i]:
-                intersect_list[i+num_crossings] += 1
-            elif where_list[overstrand_list[i]] != where_list[i]:
-                intersect_list[i+num_crossings] -= 1
-        elif sign_list[i] == -1:
-            if where_list[overstrand_list[i]] == where_list[i]:
-                intersect_list[i+num_crossings] += 1
-            elif where_list[overstrand_list[i]] != where_list[i]:
-                intersect_list[i+num_crossings] -= 1
+        if where_list[overstrand_list[i]] == where_list[i]:
+            intersect_list[i+num_crossings] -= 1
+        elif where_list[overstrand_list[i]] != where_list[i]:
+            intersect_list[i+num_crossings] += 1
         
     else:
         #print("heterogeneous crossing")
@@ -257,10 +303,14 @@ def intersecting_cells(overstrand_list,color_list,where_list,sign_list):
               intersect_list[i+num_crossings] += 1
           else:
             if where_list[overstrand_list[i]] == color_list[i]:
-              intersect_list[i+num_crossings] -= 1
-            elif where_list[overstrand_list[i]] != color_list[i]:
               intersect_list[i+num_crossings] += 1
+            elif where_list[overstrand_list[i]] != color_list[i]:
+              intersect_list[i+num_crossings] -= 1
   return intersect_list
+
+
+
+
 
 def linking_number(overstrand_list, sign_list, color_list):
   """ 
@@ -301,24 +351,24 @@ def linking_number(overstrand_list, sign_list, color_list):
 #rref_matrix_trefoil = initialize_matrix([2, 0, 1, 3],[1, 2, 3, 1],where_list_trefoil,[1, 1, 1, 1])
 #twochain_trefoil = solve_2chain(rref_matrix_trefoil)
 #intersect_list_trefoil = intersecting_cells([2, 0, 1, 3],[1, 2, 3, 1],where_list_trefoil,[1, 1, 1, 1])
-print('trefoil')
-print('we got '+str(linking_number([2, 0, 1, 3],[1, 1, 1, 1],[1, 2, 0, 1])))
-print()
-#print('patricia got 2')
-print('6_1')
-print('we got '+str(linking_number([2, 4, 0, 5, 1, 3] , [1, -1, 1, 1, -1, 1] , [0, 2, 1, 2, 0, 1])))
-print()
-#print('patricia got -2')
-print('7_4')
-print('we got '+str(linking_number([5, 4, 0, 6, 1, 2, 3, 7] , [-1, -1, -1, -1, -1, -1, -1, 1] , [1, 2, 0, 2, 1, 0, 0, 1])))
-print()
-#print('patricia got 2')
-print('7_7')
-print('we got '+str(linking_number([4, 3, 6, 5, 0, 1, 2, 7] , [1, -1, 1, -1, 1, -1, 1, 1] , [1, 0, 2, 1, 2, 0, 0, 1])))
-#print()
-#print('patricia got -2')
-print('9_35')
-print(linking_number([6, 5, 7, 0, 8, 1, 3, 2, 4, 9],[-1, -1, -1, -1, -1, -1, -1, -1, -1, 1],[2, 2, 2, 1, 0, 2, 2, 0, 1, 2]))
+# print('trefoil')
+# print('we got '+str(linking_number([2, 0, 1, 3],[1, 1, 1, 1],[1, 2, 0, 1])))
+# print()
+# print('patricia got 2')
+# print('6_1')
+# print('we got '+str(linking_number([2, 4, 0, 5, 1, 3] , [1, -1, 1, 1, -1, 1] , [0, 2, 1, 2, 0, 1])))
+# print()
+# print('patricia got -2')
+# print('7_4')
+# print('we got '+str(linking_number([5, 4, 0, 6, 1, 2, 3, 7] , [-1, -1, -1, -1, -1, -1, -1, 1] , [1, 2, 0, 2, 1, 0, 0, 1])))
+# print()
+# print('patricia got 2')
+# print('7_7')
+# print('we got '+str(linking_number([4, 3, 6, 5, 0, 1, 2, 7] , [1, -1, 1, -1, 1, -1, 1, 1] , [1, 0, 2, 1, 2, 0, 0, 1])))
+# #print()
+# print('patricia got -2')
+# print('9_35')
+# print(linking_number([6, 5, 7, 0, 8, 1, 3, 2, 4, 9],[-1, -1, -1, -1, -1, -1, -1, -1, -1, 1],[2, 2, 2, 1, 0, 2, 2, 0, 1, 2]))
 #where_list_6_1 = where_list([2, 4, 0, 5, 1, 3],[3, 2, 1, 2, 3, 1])
 #print('6_1 knot ' + str(where_list_6_1))
 #rref_matrix_6_1 = initialize_matrix([2, 4, 0, 5, 1, 3],[3, 2, 1, 2, 3, 1],where_list_6_1,[1, -1, 1, 1, -1, 1])
