@@ -29,8 +29,8 @@ sign_7_4 = [-1, -1, -1, -1, -1, -1, -1, 1]
 sign_7_7 = [1, -1, 1, -1, 1, -1, 1, 1]
 sign_9_35 = [-1, -1, -1, -1, -1, -1, -1, -1, -1, 1]
 
-
-def where(overstrand_list,color_list):
+#THE OLD ONE - DO NOT USE THIS ONE
+def whereList(overstrand_list,color_list):
     """
         this function outputs the universe your head is in if
         your right hand is in A_(i,2) and you are walking in
@@ -84,6 +84,35 @@ def where(overstrand_list,color_list):
     return where_list
 
 
+
+
+#USE THIS ONE
+def where(overstrand_list,color_list):
+    num_crossings = len(overstrand_list)
+    where_list = []
+    colorSet = set()
+    colorSet.add(1)
+    colorSet.add(2)
+    colorSet.add(3)
+    colorSet.discard(color_list[0])
+    
+    where_list.append(colorSet.pop())
+    
+    for i in range(1,num_crossings):
+        if( where_list[i-1] == color_list[overstrand_list[(i-1)%num_crossings]]):
+            where_list.append(where_list[i-1])
+            
+        elif( where_list[i-1] != color_list[overstrand_list[(i-1)%num_crossings]]):
+            colorSet = set()
+            colorSet.add(1)
+            colorSet.add(2)
+            colorSet.add(3)
+            colorSet.discard(where_list[i-1])
+            colorSet.discard(color_list[overstrand_list[(i-1)%num_crossings]])
+            where_list.append(colorSet.pop())
+        
+    return where_list
+    
 where_3_1 = where( overstrand_3_1 , color_3_1 )
 where_6_1 = where( overstrand_6_1 , color_6_1 )
 where_7_4 = where( overstrand_7_4 , color_7_4 )
@@ -95,9 +124,8 @@ print(where_6_1)
 print(where_7_4)
 print(where_7_7)
 print(where_9_35)
-
-
-
+    
+    
 
 def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
 
@@ -351,8 +379,8 @@ def linking_number(overstrand_list, sign_list, color_list):
 #rref_matrix_trefoil = initialize_matrix([2, 0, 1, 3],[1, 2, 3, 1],where_list_trefoil,[1, 1, 1, 1])
 #twochain_trefoil = solve_2chain(rref_matrix_trefoil)
 #intersect_list_trefoil = intersecting_cells([2, 0, 1, 3],[1, 2, 3, 1],where_list_trefoil,[1, 1, 1, 1])
-# print('trefoil')
-# print('we got '+str(linking_number([2, 0, 1, 3],[1, 1, 1, 1],[1, 2, 0, 1])))
+print('trefoil')
+print('we got '+str(linking_number([2, 0, 1, 3],[1, 1, 1, 1],[1, 2, 0, 1])))
 # print()
 # print('patricia got 2')
 # print('6_1')

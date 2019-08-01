@@ -39,7 +39,7 @@ def ColourList(matrix):
         colour_dict[pivots[i]] = colour
         
     for i in range(len(matrix)):
-        colours.append(colour_dict[i])
+        colours.append(colour_dict[i]+1)
 
     colourlists.append(colours)
 
@@ -63,12 +63,14 @@ def ColourList(matrix):
                 colour_dict[pivots[i]] = colour
                 
             for i in range(len(matrix)):
-                colours.append(colour_dict[i])
+                colours.append(colour_dict[i]+1)
 
-            colourlists.append(colours)
-
+            colourlists.append(colours)    
+        
     return colourlists
 
+
+print( ColourList([[1, 0, 0, 0, 0, 0, 0, 0, 1, 1], [0, 1, 0, 0, 0, 0, 0, 0, 0, 2], [0, 0, 1, 0, 0, 0, 0, 0, 2, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 2], [0, 0, 0, 0, 1, 0, 0, 0, 1, 1], [0, 0, 0, 0, 0, 1, 0, 0, 1, 1], [0, 0, 0, 0, 0, 0, 1, 0, 2, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]))
 
 fields = [ 'Name', 'Row Reduced oloring Matrix']
 
@@ -90,9 +92,9 @@ for row in reader:
         line_count = line_count + 1
     else:
         strings = row[1][2:-2].split("], [")
-        print(strings)
+#        print(strings)
         list_of_lists = [ list(crossing.split(",")) for crossing in strings ]
-        print(list_of_lists)
+#        print(list_of_lists)
         list_of_intlists = [ [int(n) for n in string] for string in list_of_lists ]
         new_LoL.append([row[0],ColourList( list_of_intlists )])
         line_count = line_count + 1
