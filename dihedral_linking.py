@@ -21,7 +21,7 @@ color_3_1 = [1, 2, 3, 1]
 color_6_1 = [3, 2, 1, 2, 3, 1]
 color_7_4 = [1, 2, 3, 2, 1, 3, 3, 1]
 color_7_7 = [1, 3, 2, 1, 2, 3, 3, 1]
-color_9_35 = [2, 2, 2, 1, 3, 2, 2, 3, 1, 2]
+color_9_35 = [3, 1, 2, 3, 3, 3, 2, 1, 3, 3]
 
 sign_3_1 = [1, 1, 1, 1]
 sign_6_1 = [1, -1, 1, 1, -1, 1]
@@ -119,11 +119,11 @@ where_7_4 = where( overstrand_7_4 , color_7_4 )
 where_7_7 = where( overstrand_7_7 , color_7_7 )
 where_9_35 = where( overstrand_9_35  , color_9_35 )
 
-print(where_3_1)
-print(where_6_1)
-print(where_7_4)
-print(where_7_7)
-print(where_9_35)
+# print(where_3_1)
+# print(where_6_1)
+# print(where_7_4)
+# print(where_7_7)
+# print(where_9_35)
     
     
 
@@ -185,23 +185,19 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
 
 
       #now we need to add the equation information to this row of the matrix.
-      x_matrix[i][i]+=1
-      x_matrix[i][(i+1)%len(overstrand_list)]-=1
+      x_matrix[i][i] +=1
+      x_matrix[i][(i+1)%len(overstrand_list)] -=1
       #print("NEW MATRIX")
       #print(x_matrix)
       
       if epsilon_three == 0:
          #print('this')
          #print(x_matrix[i][overstrand_list[i]])
-         # I BELIEVE THIS TO BE TRUE olivia 7/18/19
-         x_matrix[i][overstrand_list[i]] += (epsilon_one)*epsilon_two
+         x_matrix[i][overstrand_list[i]] += (epsilon_one*epsilon_two)
          #print('changed to')
          #print(x_matrix[i][overstrand_list[i]])
-         #ALSO CHANGED THIS ON THE SIGN STUFF TO SEE NOW IT IS THE SAME AS PATRICIAS CODE
-         # I BELIEVE THIS TO BE TRUE olivia 7/18/19
-         x_matrix[i][len(overstrand_list)] += (sign_list[i])*epsilon_two
-         x_matrix[i][len(overstrand_list)] += (sign_list[i]*epsilon_two*epsilon_one)
-         
+         x_matrix[i][len(overstrand_list)] += -(sign_list[i]*epsilon_two)
+             
         # if where_list[i] == color_list[overstrand_list[i]]:
         #      if sign_list[i] == 1:  
         #          x_matrix[i][len(overstrand_list)] += -1
@@ -226,29 +222,21 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
       #print("NEW MATRIX")
       #print(x_matrix)
 
-   print("MATRIX")
-   print(x_matrix)
+   #print("MATRIX")
+   #print(x_matrix)
    return sympy.Matrix(x_matrix).rref()[0]
 
-# print('trefoil')
-# print('we got '+str(linking_number([2, 0, 1, 3],[1, 1, 1, 1],[1, 2, 0, 1])))
-# print()
-# #print('patricia got 2')
-# print('6_1')
-# print('we got '+str(linking_number([2, 4, 0, 5, 1, 3] , [1, -1, 1, 1, -1, 1] , [0, 2, 1, 2, 0, 1])))
-# print()
-# #print('patricia got -2')
-# print('7_4')
-# print('we got '+str(linking_number([5, 4, 0, 6, 1, 2, 3, 7] , [-1, -1, -1, -1, -1, -1, -1, 1] , [1, 2, 0, 2, 1, 0, 0, 1])))
-# print()
-# #print('patricia got 2')
-# print('7_7')
-# print('we got '+str(linking_number([4, 3, 6, 5, 0, 1, 2, 7] , [1, -1, 1, -1, 1, -1, 1, 1] , [1, 0, 2, 1, 2, 0, 0, 1])))
-# #print()
-# #print('patricia got -2')
-# print('9_35')
-# print(linking_number([6, 5, 7, 0, 8, 1, 3, 2, 4, 9],[-1, -1, -1, -1, -1, -1, -1, -1, -1, 1],[2, 2, 2, 1, 0, 2, 2, 0, 1, 2]))
+matrix_3_1 = initialize_matrix(overstrand_3_1, color_3_1, where_3_1, sign_3_1 )
+matrix_6_1 = initialize_matrix(overstrand_6_1, color_6_1, where_6_1 ,sign_6_1 )
+matrix_7_4 = initialize_matrix(overstrand_7_4, color_7_4, where_7_4 ,sign_7_4 )
+matrix_7_7 = initialize_matrix(overstrand_7_7, color_7_7, where_7_7 ,sign_7_7 )
+matrix_9_35 = initialize_matrix(overstrand_9_35, color_9_35, where_9_35 , sign_9_35 )
 
+# print(matrix_3_1)
+# print(matrix_6_1)
+# print(matrix_7_4)
+# print(matrix_7_7)
+# print(matrix_9_35)
 
 def solve_2chain(rref_matrix):
     #print("RREF MATRIX:")
@@ -364,23 +352,43 @@ def linking_number(overstrand_list, sign_list, color_list):
     if i < num_crossings: 
       #print("overstrand ", overstrand_list[i])
       #print("sign", sign_list[i])
-      linking_number += intersect_list[i]*sign_list[i]
+      linking_number += intersect_list[i]#*sign_list[i]
       #print("add ", intersect_list[i]*sign_list[i])
     #if it's a A_(2 or 3, i) with two_chain[i] numbers of crossings
     elif i >= num_crossings: 
-      #print("overstrand ", overstrand_list[i-num_crossings])
-      #print("sign", sign_list[i-num_crossings])
-      linking_number += intersect_list[i]*two_chain[i-num_crossings]#*sign_list[i-num_crossings]
-      #print("add ", intersect_list[i]*two_chain[i-num_crossings]*sign_list[i-num_crossings])
+      print("overstrand ", overstrand_list[i-num_crossings])
+      print("sign", sign_list[i-num_crossings])
+      linking_number += intersect_list[i]*two_chain[i-num_crossings]*sign_list[i-num_crossings]
+      print("add ", intersect_list[i]*two_chain[i-num_crossings]*sign_list[i-num_crossings])
   return linking_number
+
+
+print('trefoil')
+print(linking_number(overstrand_3_1, sign_3_1, color_3_1))
+print('6_1')
+print(linking_number(overstrand_6_1, sign_6_1 , color_6_1))
+print('7_4')
+print(linking_number(overstrand_7_4, sign_7_4 , color_7_4))
+print('7_7')
+print(linking_number(overstrand_7_7, sign_7_7 , color_7_7))
+print('9_35')
+print(linking_number(overstrand_9_35, sign_9_35 , color_9_35))
+
+
+
+ 
+
+
+
+
 
 #print('trefoil where_list'+str(where([2, 0, 1, 3],[1, 2, 3, 1])))
 #where_list_trefoil = where([2, 0, 1, 3],[1, 2, 3, 1])
 #rref_matrix_trefoil = initialize_matrix([2, 0, 1, 3],[1, 2, 3, 1],where_list_trefoil,[1, 1, 1, 1])
 #twochain_trefoil = solve_2chain(rref_matrix_trefoil)
 #intersect_list_trefoil = intersecting_cells([2, 0, 1, 3],[1, 2, 3, 1],where_list_trefoil,[1, 1, 1, 1])
-print('trefoil')
-print('we got '+str(linking_number([2, 0, 1, 3],[1, 1, 1, 1],[1, 2, 0, 1])))
+# print('trefoil')
+# print('we got '+str(linking_number([2, 0, 1, 3],[1, 1, 1, 1],[1, 2, 0, 1])))
 # print()
 # print('patricia got 2')
 # print('6_1')

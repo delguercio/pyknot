@@ -25,7 +25,7 @@ color_3_1 = [1, 2, 3, 1]
 color_6_1 = [3, 2, 1, 2, 3, 1]
 color_7_4 = [1, 2, 3, 2, 1, 3, 3, 1]
 color_7_7 = [1, 3, 2, 1, 2, 3, 3, 1]
-color_9_35 = [2, 2, 2, 1, 3, 2, 2, 3, 1, 2]
+color_9_35 = [3, 1, 2, 3, 3, 3, 2, 1, 3, 3]
 
 sign_3_1 = [1, 1, 1, 1]
 sign_6_1 = [1, -1, 1, 1, -1, 1]
@@ -128,16 +128,16 @@ def WhereIsA2i(colorlist,overstrands,numcrossings):
     return twist
 
 where_3_1 = WhereIsA2i(color_3_1,  overstrand_3_1 , 4 )
-where_6_1 = WhereIsA2i(color_6_1 , overstrand_6_1 , 6)
+where_6_1 = WhereIsA2i(color_6_1 , overstrand_6_1 , 6 )
 where_7_4 = WhereIsA2i(color_7_4 , overstrand_7_4 , 8 )
 where_7_7 = WhereIsA2i(color_7_7 , overstrand_7_7 , 8 )
-where_9_35 = WhereIsA2i(color_9_35 , overstrand_9_35  , 9)
+where_9_35 = WhereIsA2i(color_9_35 , overstrand_9_35  , 10 )
 
-print(where_3_1)
-print(where_6_1)
-print(where_7_4)
-print(where_7_7)
-print(where_9_35)
+# print(where_3_1)
+# print(where_6_1)
+# print(where_7_4)
+# print(where_7_7)
+# print(where_9_35)
 
 
 # x_i is the coefficient of A_2i-A_3i in the 2-chain A_11+...+A_1c+sum_i(x_i(A_2i-A3i))
@@ -255,6 +255,19 @@ def computecoef(colorlist, numcrossings,overstrands, signs):
     #print( coefmatrix )                     
     return coefmatrix
 
+matrix_3_1 = computecoef(color_3_1, 4 , overstrand_3_1 , sign_3_1 )
+matrix_6_1 = computecoef(color_6_1 , 6,overstrand_6_1 , sign_6_1 )
+matrix_7_4 = computecoef(color_7_4 , 8, overstrand_7_4 , sign_7_4 )
+matrix_7_7 = computecoef(color_7_7 , 8, overstrand_7_7 , sign_7_7 )
+matrix_9_35 = computecoef(color_9_35 , 10, overstrand_9_35  , sign_9_35 )
+
+# print(matrix_3_1)
+# print(matrix_6_1)
+# print(matrix_7_4)
+# print(matrix_7_7)
+# print(matrix_9_35)
+
+
 # computecoef2 computes the coefficients x_i of the 2-cells A_2i of the 2-chain bounding the
 #degree 2 curve.  The 2-cells may also appear in this 2-chain.  If the coefficient of 
 # A_3i is called y_i then x_i+y_i=1, so we need only the x_i.
@@ -342,16 +355,19 @@ def solvefor2chain(matrixofcoefs, numcrossings):
         #Let all the free variables (non pivots) be zero
         return x
    
-# print("3_1 two chain")
-twochain_3_1 = solvefor2chain([[1, -1, -1, 0, -1], [1, 1, -1, 0, 1], [0, 1, 1, -1, -1], [-1, 0, 0, -1, 0]],4)
-# print("6_1")
-twochain_6_1 = solvefor2chain([[1, -1, -1, 0, 0, 0, -1], [0, 1, -1, 0, 1, 0, -1], [-1, 0, 1, -1, 0, 0, 1], [0, 0, 0, 1, -1, -1, -1], [0, 1, 0, 0, 1, -1, -1], [-1, 0, 0, -1, 0, 1, 1]],6)
-# print("7_4")
-twochain_7_4 = solvefor2chain([[1, -1, 0, 0, 0, 1, 0, 0, 1], [0, 1, -1, 0, 1, 0, 0, 0, -1], [-1, 0, 1, -1, 0, 0, 0, 0, -1], [0, 0, 0, 1, -1, 0, 1, 0, 1], [0, 1, 0, 0, 1, -1, 0, 0, -1], [0, 0, 2, 0, 0, 1, -1, 0, 0], [0, 0, 0, 1, 0, 0, 1, -1, 1], [-1, 0, 0, 0, 0, 0, 0, -1, 0]],8)
-# print("7_7")
-twochain_7_7 = solvefor2chain([[1, -1, 0, 0, -1, 0, 0, 0, -1], [0, 1, -1, -1, 0, 0, 0, 0, -1], [0, 0, 1, -1, 0, 0, -1, 0, -1], [0, 0, 0, 1, -1, -1, 0, 0, 1], [-1, 0, 0, 0, 1, -1, 0, 0, 1], [0, -2, 0, 0, 0, 1, -1, 0, 0], [0, 0, -1, 0, 0, 0, 1, -1, 1], [-1, 0, 0, 0, 0, 0, 0, -1, 0]],8)
-# print("9_35")
-twochain_9_35 = solvefor2chain([[1, -1, 0, 0, 0, 0, -2, 0, 0, 0, 0], [0, 1, -1, 0, 0, -2, 0, 0, 0, 0, 0], [0, 0, 1, -1, 0, 0, 0, 1, 0, 0, -1], [1, 0, 0, 1, -1, 0, 0, 0, 0, 0, -1], [0, 0, 0, 0, 1, -1, 0, 0, 1, 0, -1], [0, -2, 0, 0, 0, 1, -1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 1, -1, 0, 0, -1], [0, 0, 1, 0, 0, 0, 0, 1, -1, 0, -1], [0, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1], [-1, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0]],10)
+
+# twochain_3_1 = solvefor2chain([[1, -1, -1, 0, -1], [1, 1, -1, 0, 1], [0, 1, 1, -1, -1], [-1, 0, 0, -1, 0]],4)
+# twochain_6_1 = solvefor2chain([[1, -1, -1, 0, 0, 0, -1], [0, 1, -1, 0, 1, 0, -1], [-1, 0, 1, -1, 0, 0, 1], [0, 0, 0, 1, -1, -1, -1], [0, 1, 0, 0, 1, -1, -1], [-1, 0, 0, -1, 0, 1, 1]],6)
+# twochain_7_4 = solvefor2chain([[1, -1, 0, 0, 0, 1, 0, 0, 1], [0, 1, -1, 0, 1, 0, 0, 0, -1], [-1, 0, 1, -1, 0, 0, 0, 0, -1], [0, 0, 0, 1, -1, 0, 1, 0, 1], [0, 1, 0, 0, 1, -1, 0, 0, -1], [0, 0, 2, 0, 0, 1, -1, 0, 0], [0, 0, 0, 1, 0, 0, 1, -1, 1], [-1, 0, 0, 0, 0, 0, 0, -1, 0]],8)
+# twochain_7_7 = solvefor2chain([[1, -1, 0, 0, -1, 0, 0, 0, -1], [0, 1, -1, -1, 0, 0, 0, 0, -1], [0, 0, 1, -1, 0, 0, -1, 0, -1], [0, 0, 0, 1, -1, -1, 0, 0, 1], [-1, 0, 0, 0, 1, -1, 0, 0, 1], [0, -2, 0, 0, 0, 1, -1, 0, 0], [0, 0, -1, 0, 0, 0, 1, -1, 1], [-1, 0, 0, 0, 0, 0, 0, -1, 0]],8)
+# twochain_9_35 = solvefor2chain([[1, -1, 0, 0, 0, 0, -2, 0, 0, 0, 0], [0, 1, -1, 0, 0, -2, 0, 0, 0, 0, 0], [0, 0, 1, -1, 0, 0, 0, 1, 0, 0, -1], [1, 0, 0, 1, -1, 0, 0, 0, 0, 0, -1], [0, 0, 0, 0, 1, -1, 0, 0, 1, 0, -1], [0, -2, 0, 0, 0, 1, -1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 1, -1, 0, 0, -1], [0, 0, 1, 0, 0, 0, 0, 1, -1, 0, -1], [0, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1], [-1, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0]],10)
+
+# print(twochain_3_1)
+# print(twochain_6_1)
+# print(twochain_7_4)
+# print(twochain_7_7)
+# print(twochain_9_35)
+
 #Compute the intersection of the degree 2 curve with the 2 cells A_1k and x_k(A_2k-A3k)
 #crossing by crossing
 
@@ -913,20 +929,16 @@ def display(signs,overstrands,name,coloring): #,detail
 
 
 
-
-
 # print('trefoil')
-# print('patricia got '+str(display([1, 1, 1, 1],[2, 0, 1, 3],'3_1',[1, 2, 0, 1])))
-# #print('we got')
+# print(display(sign_3_1, overstrand_3_1,'3_1',color_3_1))
 # print('6_1')
-# print('patricia got'+str(display([1, -1, 1, 1, -1, 1] ,[2, 4, 0, 5, 1, 3] , '6_1' ,[0, 2, 1, 2, 0, 1])))
-# #print('patricia got -2')
+# print(display(sign_6_1 , overstrand_6_1 , '6_1' , color_6_1))
 # print('7_4')
-# print('patricia got '+str(display( [-1, -1, -1, -1, -1, -1, -1, 1] ,[5, 4, 0, 6, 1, 2, 3, 7] ,'7_4',[1, 2, 0, 2, 1, 0, 0, 1])))
-# #print('patricia got 2')
+# print(display(sign_7_4 , overstrand_7_4,'7_4',color_7_4))
 # print('7_7')
-# print('patricia got '+str(display([1, -1, 1, -1, 1, -1, 1, 1] ,[4, 3, 6, 5, 0, 1, 2, 7] ,  '7_7',[1, 0, 2, 1, 2, 0, 0, 1])))
-# #print('patricia got -2')
+# print(display(sign_7_7 , overstrand_7_7 ,  '7_7',color_7_7))
+# print('9_35')
+# print(display(sign_9_35, overstrand_9_35, '9_35', color_9_35))
 
 #print(display([-1,1,-1,-1,-1,1,-1,1,1,1],[3,4,7,6,1,8,0,1,4,9],'9_47',[1,1,2,1,0,2,2,0,2,1]))
 #print(display([-1,1,-1,-1,-1,1,-1,1,1,1],[3,4,7,6,1,8,0,1,4,9],'9_47',[0,1,0,2,2,0,2,1,1,0]))
@@ -1017,7 +1029,7 @@ def twobridgedatatable(arange,brange,crange,drange,erange,frange):
                     for m in range(0, erange):
                         for n in range(0, frange):
                             twobridgedisplay(2*(3*i+1),2*(3*j+1),2*(3*k+1),2*(3*l+1),2*(3*m+1),2*(3*n+1))
-"""
+
 import csv
 
 
@@ -1046,10 +1058,9 @@ for row in reader:
         line_count = line_count + 1
     else:
         color_list_listofstrings = row[4][2:-2].split("], [")
-        color_list_listoflists = [ list(crossing.split(",")) for crossing in color_list_listofstrings ]
+        color_list_listoflists = [ list(crossing.split(", ")) for crossing in color_list_listofstrings ]
         color_lists = [ [int(n) for n in string] for string in color_list_listoflists ]
-        #print("COLOR LISTS")
-        #print(color_lists)
+
         
         overstrand_list_listofstrings = row[2][1:-1].split(",")
         overstrand_list = [ int(string) for string in overstrand_list_listofstrings ]
@@ -1085,7 +1096,7 @@ for row in new_LoL:
 
 newrawfile.close()
 
-"""
+
 #print(display([-1,-1,1,1,1,1],[3,5,4,0,2,1],'6-1',[2,1,2,0,1,0]))
 #print(display([-1,-1,1,1,1,1],[3,5,4,0,2,1],'6-1',[3,2,3,1,2,1]))
 #display([1,1,1,1,1,1,1,1],[4,5,0,7,2,1,6,3],'6-1',[2,2,1,3,2,3,1,1],'no')

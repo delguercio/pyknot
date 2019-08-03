@@ -62,7 +62,8 @@ def main():
                              ColourList\
                                 - rre matrix to list of strand colorings\
                                 - input matrix")
-
+            if funtion == ToReducedRowEchelonForm:
+                
             fields = [ 'Name', 'Coloring Matrix']
 
             newfields = [ 'Name', 'Row Reduced Coloring Matrix']
