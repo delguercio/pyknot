@@ -139,8 +139,8 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
 
    for i in range(len(overstrand_list)):
       #initialize epsilon_three so we can see if a crossing is inhomogeneous or not easily
-      #epsilon_one = 0
-      #epsilon_two = 0
+      epsilon_one = 0
+      epsilon_two = 0
       epsilon_three = 0
       '''print('for equation '+str(i))
       print('epsilon_one')
@@ -224,7 +224,7 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
 
    #print("MATRIX")
    #print(x_matrix)
-   return sympy.Matrix(x_matrix).rref()[0]
+   return sympy.Matrix(x_matrix).rref()[0] #x_matrix #
 
 matrix_3_1 = initialize_matrix(overstrand_3_1, color_3_1, where_3_1, sign_3_1 )
 matrix_6_1 = initialize_matrix(overstrand_6_1, color_6_1, where_6_1 ,sign_6_1 )
@@ -352,14 +352,14 @@ def linking_number(overstrand_list, sign_list, color_list):
     if i < num_crossings: 
       #print("overstrand ", overstrand_list[i])
       #print("sign", sign_list[i])
-      linking_number += intersect_list[i]#*sign_list[i]
+      linking_number += intersect_list[i]*sign_list[i]
       #print("add ", intersect_list[i]*sign_list[i])
     #if it's a A_(2 or 3, i) with two_chain[i] numbers of crossings
     elif i >= num_crossings: 
-      print("overstrand ", overstrand_list[i-num_crossings])
-      print("sign", sign_list[i-num_crossings])
+      #print("overstrand ", overstrand_list[i-num_crossings])
+      #print("sign", sign_list[i-num_crossings])
       linking_number += intersect_list[i]*two_chain[i-num_crossings]*sign_list[i-num_crossings]
-      print("add ", intersect_list[i]*two_chain[i-num_crossings]*sign_list[i-num_crossings])
+      #print("add ", intersect_list[i]*two_chain[i-num_crossings]*sign_list[i-num_crossings])
   return linking_number
 
 

@@ -929,16 +929,37 @@ def display(signs,overstrands,name,coloring): #,detail
 
 
 
-# print('trefoil')
-# print(display(sign_3_1, overstrand_3_1,'3_1',color_3_1))
-# print('6_1')
-# print(display(sign_6_1 , overstrand_6_1 , '6_1' , color_6_1))
-# print('7_4')
-# print(display(sign_7_4 , overstrand_7_4,'7_4',color_7_4))
-# print('7_7')
-# print(display(sign_7_7 , overstrand_7_7 ,  '7_7',color_7_7))
-# print('9_35')
-# print(display(sign_9_35, overstrand_9_35, '9_35', color_9_35))
+print('trefoil')
+print(display(sign_3_1, overstrand_3_1,'3_1',color_3_1))
+print('6_1')
+print(display(sign_6_1 , overstrand_6_1 , '6_1' , color_6_1))
+print('7_4')
+print(display(sign_7_4 , overstrand_7_4,'7_4',color_7_4))
+print('7_7')
+print(display(sign_7_7 , overstrand_7_7 ,  '7_7',color_7_7))
+print('9_35')
+print(display(sign_9_35, overstrand_9_35, '9_35', color_9_35))
+
+
+sign_3_1 = [-1, -1, -1, -1]
+sign_6_1 = [-1, 1, -1, -1, 1, -1]
+sign_7_4 = [1, 1, 1, 1, 1, 1, 1, -1]
+sign_7_7 = [-1, 1, -1, 1, -1, 1, -1, -1]
+sign_9_35 = [1, 1, 1, 1, 1, 1, 1, 1, 1, -1]
+
+print('other orientation')
+
+print('trefoil')
+print(display(sign_3_1, overstrand_3_1,'3_1',color_3_1))
+print('6_1')
+print(display(sign_6_1 , overstrand_6_1 , '6_1' , color_6_1))
+print('7_4')
+print(display(sign_7_4 , overstrand_7_4,'7_4',color_7_4))
+print('7_7')
+print(display(sign_7_7 , overstrand_7_7 ,  '7_7',color_7_7))
+print('9_35')
+print(display(sign_9_35, overstrand_9_35, '9_35', color_9_35))
+
 
 #print(display([-1,1,-1,-1,-1,1,-1,1,1,1],[3,4,7,6,1,8,0,1,4,9],'9_47',[1,1,2,1,0,2,2,0,2,1]))
 #print(display([-1,1,-1,-1,-1,1,-1,1,1,1],[3,4,7,6,1,8,0,1,4,9],'9_47',[0,1,0,2,2,0,2,1,1,0]))
@@ -1036,65 +1057,65 @@ import csv
 
 #           0            1                  2              3             4            5
 
-fields = [ 'Name','Gauss Notation', 'Overstrand List', 'Sign List', 'Color List', 'Dihedral Linking Number' ]
+# fields = [ 'Name','Gauss Notation', 'Overstrand List', 'Sign List', 'Color List', 'Dihedral Linking Number' ]
 
-newfields = [ 'Name', 'Dihedral Linking Number' ]
+# newfields = [ 'Name', 'Dihedral Linking Number' ]
 
-filename = "allfields_3colorable.csv"
+# filename = "allfields_3colorable.csv"
 
-line_count = 0
+# line_count = 0
 
-rawfile = open(filename, 'r')
+# rawfile = open(filename, 'r')
 
-reader = csv.reader(rawfile)
+# reader = csv.reader(rawfile)
 
-dihedral_linking_numbers = []
+# dihedral_linking_numbers = []
 
-new_LoL = []
+# new_LoL = []
  
-for row in reader:
-    if line_count == 0:
-        new_LoL.append(newfields)
-        line_count = line_count + 1
-    else:
-        color_list_listofstrings = row[4][2:-2].split("], [")
-        color_list_listoflists = [ list(crossing.split(", ")) for crossing in color_list_listofstrings ]
-        color_lists = [ [int(n) for n in string] for string in color_list_listoflists ]
+# for row in reader:
+#     if line_count == 0:
+#         new_LoL.append(newfields)
+#         line_count = line_count + 1
+#     else:
+#         color_list_listofstrings = row[4][2:-2].split("], [")
+#         color_list_listoflists = [ list(crossing.split(", ")) for crossing in color_list_listofstrings ]
+#         color_lists = [ [int(n) for n in string] for string in color_list_listoflists ]
 
         
-        overstrand_list_listofstrings = row[2][1:-1].split(",")
-        overstrand_list = [ int(string) for string in overstrand_list_listofstrings ]
-        #print("OVERSTRAND LIST")
-        #print(overstrand_list)
+#         overstrand_list_listofstrings = row[2][1:-1].split(",")
+#         overstrand_list = [ int(string) for string in overstrand_list_listofstrings ]
+#         #print("OVERSTRAND LIST")
+#         #print(overstrand_list)
 
 
-        sign_list_listofstrings = row[3][1:-1].split(",")
-        sign_list = [ int(string) for string in sign_list_listofstrings ]
-        #print("SIGN LIST")
-        #print(sign_list)      
+#         sign_list_listofstrings = row[3][1:-1].split(",")
+#         sign_list = [ int(string) for string in sign_list_listofstrings ]
+#         #print("SIGN LIST")
+#         #print(sign_list)      
 
-        for i in range(len(color_lists)):
-            dihedral_linking_numbers.append(display( sign_list, overstrand_list, row[0], color_lists[i] ))
+#         for i in range(len(color_lists)):
+#             dihedral_linking_numbers.append(display( sign_list, overstrand_list, row[0], color_lists[i] ))
         
-        new_LoL.append([row[0],dihedral_linking_numbers])
-        dihedral_linking_numbers = []
+#         new_LoL.append([row[0],dihedral_linking_numbers])
+#         dihedral_linking_numbers = []
         
-        line_count = line_count + 1
+#         line_count = line_count + 1
 
-rawfile.close()
+# rawfile.close()
 
 
 
-newfilename = "name_DLN_3colorable.csv"
+# newfilename = "name_DLN_3colorable.csv"
 
-newrawfile = open(newfilename, 'w')
+# newrawfile = open(newfilename, 'w')
 
-writer = csv.writer(newrawfile)
+# writer = csv.writer(newrawfile)
 
-for row in new_LoL:
-    writer.writerow(row)
+# for row in new_LoL:
+#     writer.writerow(row)
 
-newrawfile.close()
+# newrawfile.close()
 
 
 #print(display([-1,-1,1,1,1,1],[3,5,4,0,2,1],'6-1',[2,1,2,0,1,0]))
