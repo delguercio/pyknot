@@ -10,7 +10,7 @@
 import sympy
 import math
 
-
+# reference lists for testing
 overstrand_3_1 = [2, 0, 1, 3]
 overstrand_6_1 = [2, 4, 0, 5, 1, 3]
 overstrand_7_4 = [5, 4, 0, 6, 1, 2, 3, 7]
@@ -29,80 +29,40 @@ sign_7_4 = [-1, -1, -1, -1, -1, -1, -1, 1]
 sign_7_7 = [1, -1, 1, -1, 1, -1, 1, 1]
 sign_9_35 = [-1, -1, -1, -1, -1, -1, -1, -1, -1, 1]
 
-#THE OLD ONE - DO NOT USE THIS ONE
-def whereList(overstrand_list,color_list):
-    """
-        this function outputs the universe your head is in if
-        your right hand is in A_(i,2) and you are walking in
-        the direction the knot is oriented
-
-        you travel along the strands from 0->1->2->...->n-1
-
-        at the 0th crossing
-        you initialize where(0th strand) to be the same
-        universe as the color of the overstrand
-
-        this means that where(1st strand) = same universe
-        as the color of the overstrand
-
-        now you approach the 1st crossing
-        if where(1st strand) = color of the overstrand at 1st crossing
-            then where(2nd strand) = color of the overstrand at 2nd crossing
-        else where(1st strand) != color of the overstrand at 2nd crossing
-            then where(2nd strand) = the third color 
-    """
-    num_crossings = len(overstrand_list)
-    where_list = []
-    colors = [1,2,3]
-    for i in range(len(overstrand_list)):
-        #print("We are on strand ", i)
-        if i == 0:
-            where_list.append(color_list[overstrand_list[0]])
-            #print("We initialized the first strand: ", where_list)
-        elif i == 1:
-            where_list.append(color_list[overstrand_list[0]])
-            #print("We initialized the second strand: ", where_list)
-        
-        else:
-            color_of_overstrand = color_list[overstrand_list[(i-1)%num_crossings]]
-            universe_of_incoming_understrand = where_list[i-1]
-            #print('COLOR OF OVERSTRAND')
-            #print(color_of_overstrand)
-            #print('UNIVERSE OF INCOMING UNDERSTRAND')
-            #print(universe_of_incoming_understrand)
-            
-            if universe_of_incoming_understrand == color_of_overstrand:
-                where_list.append(color_of_overstrand)
-                #print(where_list)
-            else:
-                colors.remove(color_of_overstrand)
-                colors.remove(universe_of_incoming_understrand)
-                #print(colors)
-                where_list.append(colors[0])
-                #print(where_list)
-                colors = [1,2,3]
-    return where_list
 
 
-
-
-#USE THIS ONE
+#This function tells you which 3-cell your head is in if you stand on the strand i with A(i,2) on your right.
+#Input the overstrand list and color list. 
 def where(overstrand_list,color_list):
+    #First make a variable for the number of crossings for convenience and initialize the list to be returned.
     num_crossings = len(overstrand_list)
     where_list = []
+    
+    #Using the set colorSet makes it easier for us to eliminate the wrong colors. colorSet starts with all 3 colors.
     colorSet = set()
     colorSet.add(1)
     colorSet.add(2)
     colorSet.add(3)
+    
+    #We discard the color of strand 0, since it is impossible for your head to be in the 3-cell of the color of the same strand you're on. 
     colorSet.discard(color_list[0])
     
+    #Choose one of the other colors left behind arbitrarily to be your starting 3-cell
+    #If the color chosen is the color of the overstrand you are standing upright. If it is the other color, you are upside down on strand 0. 
     where_list.append(colorSet.pop())
     
+    #Go through each of the crossings, not counting crossing 0. 
     for i in range(1,num_crossings):
+        #If you were standing upright on your last strand, you will be standing upright again on this strand in the same 3-cell.
+        #The top part of the diagram should be within the 3-cell corresponding to the color of the overstrand.
+        #So if you're standing upright in the top, you will be in the overstrand color 3-cell regardless of which strand you're on.
         if( where_list[i-1] == color_list[overstrand_list[(i-1)%num_crossings]]):
             where_list.append(where_list[i-1])
-            
+        
+        #If you were standing upside down on the last strand, you will be standing upside down in a different 3-cell.
         elif( where_list[i-1] != color_list[overstrand_list[(i-1)%num_crossings]]):
+            #Using colorSet, we can eliminate the 3-cell of the last strand and the 3-cell of the overstrand.
+            #The remaining 3-cell will correspond to this strand.
             colorSet = set()
             colorSet.add(1)
             colorSet.add(2)
@@ -112,7 +72,8 @@ def where(overstrand_list,color_list):
             where_list.append(colorSet.pop())
         
     return where_list
-    
+
+#testing print statements
 where_3_1 = where( overstrand_3_1 , color_3_1 )
 where_6_1 = where( overstrand_6_1 , color_6_1 )
 where_7_4 = where( overstrand_7_4 , color_7_4 )
@@ -126,106 +87,67 @@ where_9_35 = where( overstrand_9_35  , color_9_35 )
 # print(where_9_35)
     
     
-
+#This function outputs the matrix containing x_i, x_i+1, x_f(i) and a constant. This relies on using epsilon rules. 
 def initialize_matrix(overstrand_list,color_list,where_list,sign_list):
-
+   #Make a starting matrix of all 0s. (I think the initialization of epsilons one and two is doing nothing. Remove later?).
    x_matrix = [[0]*(len(overstrand_list)+1) for i in range(len(overstrand_list))]
-   #print("STARTING MATRIX")
-   #print(x_matrix)
    epsilon_one = 0
    epsilon_two = 0
-   #Great! now find epsilon signs. :)
-   #need a loop for each of the crossings
-
+    
+   #Now we need to find the signs of the first two epsilons.
+   #Loop through each of the crossings
    for i in range(len(overstrand_list)):
       #initialize epsilon_three so we can see if a crossing is inhomogeneous or not easily
       epsilon_one = 0
       epsilon_two = 0
       epsilon_three = 0
-      '''print('for equation '+str(i))
-      print('epsilon_one')
-      print(epsilon_one)
-      print('epsilon_two')
-      print(epsilon_two)
-      print('epsilon_three')
-      print(epsilon_three)'''
       
       #epsilon one is positive if the color of i is not equal to the where of the overstrand.
-      
+      #standing upside down on 
       if(color_list[i] == where_list[overstrand_list[i]]):
          epsilon_one = 1
       else:
          epsilon_one = -1
 
 
-      #epsilon two is positive if the color of the overstrand is equal to the where of
-         
+      #epsilon two is positive if the color of the overstrand is equal to the where of i. 
       if(color_list[overstrand_list[i]] == where_list[i]):
          epsilon_two = 1
       else:
          epsilon_two = -1
 
-      '''print('for equation'+str(i))
-      print('epsilon_one')
-      print(epsilon_one)
-      print('epsilon_two')
-      print(epsilon_two)
-      print('epsilon_three')
-      print(epsilon_three)'''
-
       #see if we have an epsilon three. this would happen if all three strands are the same color (homogeneous crossing)
-
       if(color_list[i]==color_list[(i+1)%len(overstrand_list)]==color_list[overstrand_list[i]]):
-         #print("HOMOGENOUS CROSSING!")
+         #epsilon 3 is negative if where of i is the same as where of the overstrand.
          if(where_list[i] == where_list[overstrand_list[i]]):
             epsilon_three = -1
          else:
             epsilon_three = 1
-         #print("epsilon three: ", epsilon_three )
-
 
       #now we need to add the equation information to this row of the matrix.
       x_matrix[i][i] +=1
       x_matrix[i][(i+1)%len(overstrand_list)] -=1
-      #print("NEW MATRIX")
-      #print(x_matrix)
       
+      #edits as a heterogenous crossing
       if epsilon_three == 0:
-         #print('this')
-         #print(x_matrix[i][overstrand_list[i]])
+         #edit the overstrand coefficient
          x_matrix[i][overstrand_list[i]] += (epsilon_one*epsilon_two)
-         #print('changed to')
-         #print(x_matrix[i][overstrand_list[i]])
+         #edit the constant on the LEFT side of the equation (the equation will be set equal to 0?)
          x_matrix[i][len(overstrand_list)] += -(sign_list[i]*epsilon_two)
              
-        # if where_list[i] == color_list[overstrand_list[i]]:
-        #      if sign_list[i] == 1:  
-        #          x_matrix[i][len(overstrand_list)] += -1
-        #      else:
-        #          x_matrix[i][len(overstrand_list)] += 1
-        #  else:
-        #       if sign_list[i] == 1:  
-        #          x_matrix[i][len(overstrand_list)] += 1
-        #       else:
-        #          x_matrix[i][len(overstrand_list)] += -1
-
-         #print("NEW MATRIX")
-         #print(x_matrix)
+      #edits as a homogenous crossing
       else:
-         #print("the matrix was")
-         #print(x_matrix)
-         #print("we are adding "+str(2*epsilon_three)+" to "+str(overstrand_list[i])+" column, row "+str(i))
+         #edit overstrand coefficient. constant is 0. 
          x_matrix[i][overstrand_list[i]] += 2*epsilon_three
-         #print("and the matrix becomes")
-         #print(x_matrix)
 
-      #print("NEW MATRIX")
-      #print(x_matrix)
 
    #print("MATRIX")
    #print(x_matrix)
+   
+   #return row reduced version of matrix
    return sympy.Matrix(x_matrix).rref()[0] #x_matrix #
 
+#testing
 matrix_3_1 = initialize_matrix(overstrand_3_1, color_3_1, where_3_1, sign_3_1 )
 matrix_6_1 = initialize_matrix(overstrand_6_1, color_6_1, where_6_1 ,sign_6_1 )
 matrix_7_4 = initialize_matrix(overstrand_7_4, color_7_4, where_7_4 ,sign_7_4 )
