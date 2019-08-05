@@ -1,11 +1,23 @@
 
+#############################################################
+# Created by: Olivia Del Guercio (delgur@gmail.com)         #
+# First Created: 2/22/19                                    #
+# Last Modified: 8/5/19                                     #
+#############################################################
 
 #
-# 
+# This is program that will take in the Gauss code and output the overstrand list
 #
 
+#
+# for example for the trefoil the sample input and output would be
+#       > create_overstrand_list([1, -2, 3, -1, 2, -3])
+#       > [2,0,1]
+#
 
 #
+# Note that it's a little confusing to have the gauss code and
+# the overstand list have different numbering systems so:
 # I call the strand number for the overstrand list "strand #" 
 # and numbering system for the Gauss code the "crossing index". 
 #
@@ -18,14 +30,15 @@
 
 
 def create_dict(gauss_code_list):
-    """
+    """ 
+        a helper function for create_overstrand_list(gauss_code_list)
         input: gauss code list
         output:dictionary with the keys integer strand numbers between 0 and
                length of gauss code list divided by two. Each dictionary entry
                has value a list with at least one integer entry
                [overcrossing index, ... , -undercrossing index]
                which corresponds to that strand number 
-        """
+    """
     strand_count = 0 # overstrand we are on
     knot_dict = {}   # intialize knot dictionary
     strand_indicies = [] # list of gauss code indicies that intersect a given overstrand
@@ -39,7 +52,7 @@ def create_dict(gauss_code_list):
             strand_indicies.append(gauss_code_list[i]) # if we are an overstrand, add gauss code index
                                                        # and continue
     for i in reversed(range(len(gauss_code_list))):        
-        if gauss_code_list[i]>0: #if the last ones are positive, it's a part of strand 0
+        if gauss_code_list[i]>0: # if the last ones are positive, it's a part of strand 0
             knot_dict[0].insert(0,gauss_code_list[i])
         else: #not a part of strand 0
             break
@@ -54,22 +67,22 @@ def create_overstrand_list(gauss_code_list):
         input: gauss code dictinary from create_dict(gauss_code_list)
         output: overstrand list to be input to colorings.py file
     """
-    gauss_code_dict = create_dict(gauss_code_list)
-    print(gauss_code_dict)
-    overstrand_list = []
+    gauss_code_dict = create_dict(gauss_code_list) #call helper function
+    #print(gauss_code_dict)
+    overstrand_list = [] # initialize overstrand list
     for key,val in gauss_code_dict.items():
-        lookingfor = val[-1]
+        lookingfor = val[-1] # you search in all dictionary items for the the positive corresponding value for the negative undercrossing index
         #print("I'm looking for "+str(lookingfor)+" in the Gauss Code")
         keys = [key for key, value in gauss_code_dict.items() if (-1)*lookingfor in value]
         #print("The corresponding strand is "+str(keys))
         #print(gauss_code_dict.items())
-        overstrand_list.append(keys[0])
-    #if len(overstrand_list)%2 == 1: # if you wanted to add a loop to in overstrand
-    #    overstrand_list.append(len(overstrand_list))
+        overstrand_list.append(keys[0]) 
+    #if len(overstrand_list)%2 == 1: # if you wanted to add a loop to in overstrand of odd crossing knots
+    #    overstrand_list.append(len(overstrand_list)) #you would uncomment these two lines, but we do it later
     return overstrand_list
 
 
-three_one = [1, -2, 3, -1, 2, -3,4,-4]
+three_one = [1, -2, 3, -1, 2, -3]
 four_one = [-1, 2, -3, 1, -4, 3, -2, 4]
 six_one = [1,-2,3,-4,2,-1,5,-6,4,-3,6,-5]
 seven_four = [-1, 2, -3, 4, -5, 6, -7, 3, -2, 1, -4, 7, -6, 5]
