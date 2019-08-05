@@ -1,3 +1,34 @@
+
+
+###############################################################
+## overstrand_to_matrix.py                                   ##
+##                                                           ##
+## Created by: Olivia Del Guercio (delgur@gmail.com)         ##
+##                 & Hana Sambora                            ##
+## First Created: 6/30/19                                    ##
+## Last Modified: 8/5/19                                     ##
+###############################################################
+
+#
+#
+# This program goes from the output of gauss_to_overstrand.py (i.e. the overstrand list)
+# to a matrix that represents the strands at each crossing of the knot that will then
+# be row reduced mod three to find all of the valid crossings.
+#
+# If you want to know more about this you can look at the Section 3.3 (3-colourings) of
+# http://www.math.ucsd.edu/~justin/Roberts-Knotes-Jan2015.pdf
+#
+# In the end the matrix will have the columns represent the strands and the rows represent
+# crossings. At a given crossing, we will add one to each column with a strand there.
+# So the trefoil for example:
+#
+#                   [[1,1,1,0],
+#       [2,0,1,3] -> [1,1,1,0],
+#                    [0,1,1,1],
+#                    [1,0,0,2]]
+#
+#
+
 from array import *
 import csv
 
@@ -11,18 +42,12 @@ import csv
 
 def create_matrix(overstrand_list):
     """
-        you know that the 0th crossing will have strands 0 and 1
-        you can you know the third strand at the 0th crosssing will be 1
-        (i.e. indexes (0,0),(0,1) (0,overstrand_list[0])
-        the second crossing will have strands 1 and 2 and so on
-        (i.e. indexes (1,1),(1,2) will get a 1)
-        you can know the third strand at the nth crossing by checking
-        what is at the nth position of the overstrand_list.
-        If odd, an extra loop was added at the end of the overstrand_list
-        so to compensate for that if the last index equals the last value
-        that means there a loop that crosses over itself and it will always
-        have the 0th strand and then itself twice. the last strand will 
-        not cross itself unless you put in a loop.
+        first makes a list of lists of tuples that
+        specify where we want to add the 1's later in the program
+        at the ith crossing (that is not a loop) the three strands represented are
+            [(i,i),(i,i+1),(i,overstrand[i])]
+        at the ith crossing (that IS a loop) the three strands represented are
+            [(i,i),(i,i+1),(i,overstrand[i])]
         input: overstrand_list
         output: 2d list of lists where the rows represent a crossing. to
                 find the DLN of a knot there must be an even number of 
@@ -37,21 +62,21 @@ def create_matrix(overstrand_list):
     # number of strands in the knot
     num_strand = len(overstrand_list)
 
-    # starting matrix of all 0s
+    # initialize matrix
     knot_matrix = [[0]*num_strand for i in range(num_strand)]
     #print("STARTING MATRIX")
     #print(knot_matrix)
 
-    # if we have six strands, the last column of the matrix will be labelled 5 by the computer
-    last_index = num_strand-1
+    last_index = num_strand-1 
 
-    # see if knot loops over itself (extra loop for odd # crossings)
+    # if knot contains a loops at the end
     if last_index == overstrand_list[last_index]:
-        # for each column, 
-        for i in range(num_strand-1):
+        for i in range(num_strand-1): # do not go to the last index
             index_list.append([(i,i),(i,i+1),(i,overstrand_list[i])])
+        # if the last index of the loop is guarenteed to have the 0th strand, and then the last strand twice
         index_list.append([(last_index,0),(last_index,overstrand_list[last_index]),(last_index,overstrand_list[last_index])])
     else:
+    #if the knot does not contain a loop at the end
         for i in range(num_strand):
             index_list.append([(i,i%num_strand),(i,(i+1)%num_strand),(i,overstrand_list[i])])
     #print("INDEX LIST")
@@ -65,17 +90,8 @@ def create_matrix(overstrand_list):
         for index in row:
             #print("INDEX")
             #print(index)
-            #print(index[0])
-            #print(index[1])
-            #print(knot_matrix)
-            #print(knot_matrix[index[0]][index[1]])
-            #knot_matrix[0][1] = 1
             knot_matrix[index[0]][index[1]] += 1
-            #print(knot_matrix[index[0]])
     return knot_matrix
-
-
-#print(six_one)
 
 #print('The dictionary for 6-1 '+str(create_matrix(six_one)))
 #print('The dictionary for 3-1 '+str(create_matrix(three_one)))
@@ -127,7 +143,6 @@ def create_matrix(overstrand_list):
 #     writer.writerow(row)
 
 # newrawfile.close()
-
 
 
 
