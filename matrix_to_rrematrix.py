@@ -1,5 +1,7 @@
-def ToReducedRowEchelonForm(M, n):
+#This program is edited from https://rosettacode.org/wiki/Reduced_row_echelon_form#Python
+#The difference is that our row reduction works in mod n, if we are working to n-color a knot. 
 
+def ToReducedRowEchelonForm(M, n):
     inverses = {}
     for i in range(n):
         for inverse in range(n):
