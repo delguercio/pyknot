@@ -1,5 +1,6 @@
 from array import *
 import csv
+
 #three_one = [2, 0, 1, 3]
 #six_one = [2, 4, 0, 5, 1, 3]
 #seven_four = [4, 5, 6, 1, 0, 3, 2, 7]
@@ -56,8 +57,6 @@ def create_matrix(overstrand_list):
     #print("INDEX LIST")
     #print(index_list)
 
-
-    #print("lol what")
     #print(knot_matrix[0])
 
     for row in index_list:
@@ -86,48 +85,48 @@ def create_matrix(overstrand_list):
 #print('The dictionary for 8-10  '+str(create_matrix(eight_ten)))
 
 
-fields = [ 'Name', 'Overstrand List']
+# fields = [ 'Name', 'Overstrand List']
 
-newfields = [ 'Name', 'Coloring Matrix']
+# newfields = [ 'Name', 'Coloring Matrix']
 
-filename = "name_overstrand1_3colorable.csv"
+# filename = "name_overstrand1_3colorable.csv"
 
-line_count = 0
+# line_count = 0
 
-rawfile = open(filename, 'r')
+# rawfile = open(filename, 'r')
 
-reader = csv.reader(rawfile)
+# reader = csv.reader(rawfile)
 
-new_LoL = []
+# new_LoL = []
  
-for row in reader:
-    if line_count == 0:
-        new_LoL.append(newfields)
-        line_count = line_count + 1
-    else:
-        strings = row[1][1:-1].split(",")
-        print(strings)
-        #list_of_lists = [ list(crossing.split(",")) for crossing in strings ]
-        #print(list_of_lists)
-        list_of_intlists = [int(n) for n in strings]
-        print(list_of_intlists)
-        new_LoL.append([row[0],create_matrix( list_of_intlists )])
-        line_count = line_count + 1
+# for row in reader:
+#     if line_count == 0:
+#         new_LoL.append(newfields)
+#         line_count = line_count + 1
+#     else:
+#         strings = row[1][1:-1].split(",")
+#         print(strings)
+#         #list_of_lists = [ list(crossing.split(",")) for crossing in strings ]
+#         #print(list_of_lists)
+#         list_of_intlists = [int(n) for n in strings]
+#         print(list_of_intlists)
+#         new_LoL.append([row[0],create_matrix( list_of_intlists )])
+#         line_count = line_count + 1
 
-rawfile.close()
+# rawfile.close()
 
 
 
-newfilename = "name_matrix1_3colorable.csv"
+# newfilename = "name_matrix1_3colorable.csv"
 
-newrawfile = open(newfilename, 'w')
+# newrawfile = open(newfilename, 'w')
 
-writer = csv.writer(newrawfile)
+# writer = csv.writer(newrawfile)
 
-for row in new_LoL:
-    writer.writerow(row)
+# for row in new_LoL:
+#     writer.writerow(row)
 
-newrawfile.close()
+# newrawfile.close()
 
 
 

@@ -1,7 +1,7 @@
 
 
 #
-# This is program that will take in the Gauss code and output the overstrand list
+# 
 #
 
 

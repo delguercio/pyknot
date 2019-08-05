@@ -941,24 +941,24 @@ print('9_35')
 print(display(sign_9_35, overstrand_9_35, '9_35', color_9_35))
 
 
-sign_3_1 = [-1, -1, -1, -1]
-sign_6_1 = [-1, 1, -1, -1, 1, -1]
-sign_7_4 = [1, 1, 1, 1, 1, 1, 1, -1]
-sign_7_7 = [-1, 1, -1, 1, -1, 1, -1, -1]
-sign_9_35 = [1, 1, 1, 1, 1, 1, 1, 1, 1, -1]
+# sign_3_1 = [-1, -1, -1, -1]
+# sign_6_1 = [-1, 1, -1, -1, 1, -1]
+# sign_7_4 = [1, 1, 1, 1, 1, 1, 1, -1]
+# sign_7_7 = [-1, 1, -1, 1, -1, 1, -1, -1]
+# sign_9_35 = [1, 1, 1, 1, 1, 1, 1, 1, 1, -1]
 
-print('other orientation')
+# print('other orientation')
 
-print('trefoil')
-print(display(sign_3_1, overstrand_3_1,'3_1',color_3_1))
-print('6_1')
-print(display(sign_6_1 , overstrand_6_1 , '6_1' , color_6_1))
-print('7_4')
-print(display(sign_7_4 , overstrand_7_4,'7_4',color_7_4))
-print('7_7')
-print(display(sign_7_7 , overstrand_7_7 ,  '7_7',color_7_7))
-print('9_35')
-print(display(sign_9_35, overstrand_9_35, '9_35', color_9_35))
+# print('trefoil')
+# print(display(sign_3_1, overstrand_3_1,'3_1',color_3_1))
+# print('6_1')
+# print(display(sign_6_1 , overstrand_6_1 , '6_1' , color_6_1))
+# print('7_4')
+# print(display(sign_7_4 , overstrand_7_4,'7_4',color_7_4))
+# print('7_7')
+# print(display(sign_7_7 , overstrand_7_7 ,  '7_7',color_7_7))
+# print('9_35')
+# print(display(sign_9_35, overstrand_9_35, '9_35', color_9_35))
 
 
 #print(display([-1,1,-1,-1,-1,1,-1,1,1,1],[3,4,7,6,1,8,0,1,4,9],'9_47',[1,1,2,1,0,2,2,0,2,1]))
