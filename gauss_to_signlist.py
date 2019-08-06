@@ -39,7 +39,12 @@ def kauffman(code):
     return code                                             # This code will be referred to as the modified Gauss code.
 
 def FindPair(values, i):
-    """Finds the position of the matching pair of indexed item in the input list."""
+    """
+        input: Gauss code (values), and an index i
+        output: the matching index where values[i] == values[index] but i != index
+        
+        Finds the position of the matching pair of indexed item in the input list.
+    """
 
     value = int(values[i])
 
@@ -52,12 +57,23 @@ def FindPair(values, i):
 
 def Rank(code):
 
-    """Determines whether each arc around a modified Gauss code is a maximum (above the code) or a minimum (below the code). Also builds arc dictionary describing the start and end points of each arc in the modified Gauss code. Returns list of maximums, minimums, and the arc dictionary."""
+    """ Determines whether each arc around a modified Gauss code is a maximum (above the code)
+        or a minimum (below the code). Also builds arc dictionary describing the start and end 
+        points of each arc in the modified Gauss code. Returns list of maximums, minimums, and 
+        the arc dictionary.
+        Calls on FindPair(values, i), kauffman(code), and reverse_sect(values, start, end).
+        
+        input: g
+        
+        output: one list the number of the arc that is above, one list the number of the arc that
+                are below, and the arc dictionary
+    """
 
-    # When reconstructing a knot from the Gauss code by hand, non-intersecting arcs are drawn between entries in the modified Gauss code
-    # with the same absolute value. Some of these arcs are drawn above the modified Gauss code (maximums) and some are drawn below the
-    # code (minimums), and whether a particular arc is a maximum or a minimum is important when determining the sign of the crossing on
-    # said arc.
+    # When reconstructing a knot from the Gauss code by hand, non-intersecting arcs are drawn 
+    # between entries in the modified Gauss code with the same absolute value. Some of these arcs 
+    # are drawn above the modified Gauss code (maximums) and some are drawn below the
+    # code (minimums), and whether a particular arc is a maximum or a minimum is important when 
+    # determining the sign of the crossing onsaid arc.
     
     max_list = [abs(code[0])]                                       # The first entry in the code is made a maximum arbitrarily.
     min_list = []                                                   # Whether the first entry is made a maximum or a minimum
@@ -109,7 +125,10 @@ def Rank(code):
         
 def CreatePath(gauss, arcs):
 
-    """Builds a path through the modified Gauss code using the original Gauss code and arc dictionary."""
+    """  
+        Builds a path through the modified Gauss code using the original Gauss code and arc dictionary.
+        output: indicies you must go to in order on the Kauffman(gauss_code)
+    """
 
     # In order to reconstruct the knot from the modified Gauss code, a closed loop needs to be made through the modified Gauss code,
     # with the only crossings in the knot being on the previously found arcs (i.e. there is a crossing on the arc between 1 and -1, 2
@@ -142,7 +161,10 @@ def CreatePath(gauss, arcs):
     
 def BuildCrossing(gauss, ranks):
 
-    """Creates an ordered pair [a, b] for each crossing using the original Gauss code and the information returned by the Rank function. Returns the crossings dictionary."""
+    """ 
+        Creates an ordered pair [a, b] for each crossing using the original Gauss code and the information 
+        returned by the Rank function. Returns the crossings dictionary.
+    """
     
     # This function creates a dictionary that encodes all the necessary information to determine the sign of each crossing. Each entry
     # in dictionary is formatted as [overstrand, understrand] where each value in the pair is ±1 or ±2. Each entry in the crossing can
