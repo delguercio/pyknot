@@ -32,8 +32,8 @@ def menu():
     print("(2) overstrand list -> matrix")
     print("(3) matrix -> rre matrix")
     print("(4) rre matrix -> color list")
-    print("(5) Quit")
-    print(" ")    
+    print("(5) dihedral linking number")
+    print("(6) exit")    
     print("Enter your choice:")
 
 def main():
@@ -42,7 +42,7 @@ def main():
 
     while True:     # the user-interaction loop
         menu()
-        uc = input( "Choose an option: " )
+        uc = int(input( "Choose an option: "))
 
         if uc == 9: #
             break
@@ -53,15 +53,13 @@ def main():
 
             newfields = [ 'Name', 'Overstrand List']
 
-            path = "./data/"
-
-            filename = "name_gauss_3colorable.csv"
+            filename = "./data/name_gauss_3colorable.csv"
 
             line_count = 0
 
-            rawfile = open(path+filename, 'r')
+            rawfile = open(filename, 'r')
 
-            reader = csv.reader(path+rawfile)
+            reader = csv.reader(rawfile)
 
             new_LoL = []
              
@@ -83,11 +81,11 @@ def main():
 
             rawfile.close()
 
-            newfilename = "name_overstrand_3colorable.csv"
+            newfilename = "./data/name_overstrand_3colorable.csv"
 
-            newrawfile = open(path+newfilename, 'w')
+            newrawfile = open(newfilename, 'w')
 
-            writer = csv.writer(path+newrawfile)
+            writer = csv.writer(newrawfile)
 
             for row in new_LoL:
                 writer.writerow(row)
@@ -99,15 +97,13 @@ def main():
 
             newfields = [ 'Name', 'Sign List']
 
-            filename = "name_gauss_3colorable.csv"
-
-            path = "./data/"
+            filename = "./data/name_gauss_3colorable.csv"
 
             line_count = 0
 
-            rawfile = open(path+filename, 'r')
+            rawfile = open(filename, 'r')
 
-            reader = csv.reader(path+rawfile)
+            reader = csv.reader(rawfile)
 
             new_LoL = []
              
@@ -130,11 +126,11 @@ def main():
             rawfile.close()
 
 
-            newfilename = "name_sign_3colorable.csv"
+            newfilename = "./data/name_sign_3colorable.csv"
 
-            newrawfile = open(path+newfilename, 'w')
+            newrawfile = open(newfilename, 'w')
 
-            writer = csv.writer(path+newrawfile)
+            writer = csv.writer(newrawfile)
 
             for row in new_LoL:
                 writer.writerow(row)
@@ -147,15 +143,15 @@ def main():
 
             newfields = [ 'Name', 'Coloring Matrix']
 
-            filename = "name_overstrand_3colorable.csv"
+            filename = "./data/name_overstrand_3colorable.csv"
 
-            path = "./data/"
+            
 
             line_count = 0
 
-            rawfile = open(path+filename, 'r')
+            rawfile = open(filename, 'r')
 
-            reader = csv.reader(path+rawfile)
+            reader = csv.reader(rawfile)
 
             new_LoL = []
              
@@ -165,21 +161,21 @@ def main():
                     line_count = line_count + 1
                 else:
                     strings = row[1][1:-1].split(",")
-                    print(strings)
+                    #print(strings)
                     #list_of_lists = [ list(crossing.split(",")) for crossing in strings ]
                     #print(list_of_lists)
                     list_of_intlists = [int(n) for n in strings]
-                    print(list_of_intlists)
+                    #print(list_of_intlists)
                     new_LoL.append([row[0],create_matrix( list_of_intlists )])
                     line_count = line_count + 1
 
             rawfile.close()
 
-            newfilename = "name_matrix_3colorable.csv"
+            newfilename = "./data/name_matrix_3colorable.csv"
 
-            newrawfile = open(path+newfilename, 'w')
+            newrawfile = open(newfilename, 'w')
 
-            writer = csv.writer(path+newrawfile)
+            writer = csv.writer(newrawfile)
 
             for row in new_LoL:
                 writer.writerow(row)
@@ -192,17 +188,17 @@ def main():
 
             newfields = [ 'Name', 'Row Reduced Coloring Matrix']
 
-            filename = "name_matrix_3colorable.csv"
+            filename = "./data/name_matrix_3colorable.csv"
 
-            newfilename = "name_reducedmatrix_3colorable.csv"
+            newfilename = "./data/name_reducedmatrix_3colorable.csv"
 
             line_count = 0
 
-            path = "./data/"
+            
 
-            rawfile = open(path+filename, 'r')
+            rawfile = open(filename, 'r')
 
-            reader = csv.reader(path+rawfile)
+            reader = csv.reader(rawfile)
 
             new_LoL = []
              
@@ -216,21 +212,19 @@ def main():
                     list_of_lists = [ list(crossing.split(",")) for crossing in strings ]
                     #print(list_of_lists)
                     list_of_intlists = [ [int(n) for n in string] for string in list_of_lists ]
-                    new_LoL.append([row[0],ToReducedRowEchelonForm( list_of_intlists )])
+                    new_LoL.append([row[0],ToReducedRowEchelonForm( list_of_intlists , 34)])
                     line_count = line_count + 1
 
             rawfile.close()
 
-            newrawfile = open(path+newfilename, 'w')
+            newrawfile = open(newfilename, 'w')
 
-            writer = csv.writer(path+newrawfile)
+            writer = csv.writer(newrawfile)
 
             for row in new_LoL:
                 writer.writerow(row)
 
             newrawfile.close()  
-
-            elif function == ColourList:
 
 
         elif uc == 4: # rre matrix -> color list
@@ -238,15 +232,15 @@ def main():
 
             newfields = [ 'Name', 'Color List']
 
-            path = "./data/"
+            
 
-            filename = "name_reducedmatrix_3colorable.csv"
+            filename = "./data/name_reducedmatrix_3colorable.csv"
 
             line_count = 0
 
-            rawfile = open(path+filename, 'r')
+            rawfile = open(filename, 'r')
 
-            reader = csv.reader(path+rawfile)
+            reader = csv.reader(rawfile)
 
             new_LoL = []
              
@@ -266,11 +260,11 @@ def main():
             rawfile.close()
 
 
-            newfilename = "name_colorlist_3colorable.csv"
+            newfilename = "./data/name_colorlist_3colorable.csv"
 
-            newrawfile = open(path+newfilename, 'w')
+            newrawfile = open(newfilename, 'w')
 
-            writer = csv.writer(path+newrawfile)
+            writer = csv.writer(newrawfile)
 
             for row in new_LoL:
                 writer.writerow(row)
@@ -288,11 +282,11 @@ def main():
 
             line_count = 0
 
-            path = "./data/"
+            
 
-            rawfile = open(path+filename, 'r')
+            rawfile = open(filename, 'r')
 
-            reader = csv.reader(path+rawfile)
+            reader = csv.reader(rawfile)
 
             dihedral_linking_numbers = []
 
@@ -329,11 +323,11 @@ def main():
 
             rawfile.close()
 
-            newfilename = "name_DLN_3colorable.csv"
+            newfilename = "./data/name_DLN_3colorable.csv"
 
-            newrawfile = open(path+newfilename, 'w')
+            newrawfile = open(newfilename, 'w')
 
-            writer = csv.writer(path+newrawfile)
+            writer = csv.writer(newrawfile)
 
             for row in new_LoL:
                 writer.writerow(row)
@@ -341,7 +335,7 @@ def main():
             newrawfile.close()
 
         else:
-            print "That's not on the menu!"
+            print("That's not on the menu!")
 
     print(" ")
     print(" ")
@@ -352,92 +346,5 @@ def main():
     print(" ")
     print(" ")
 
-
-
-fields = [ 'Name', 'Coloring Matrix']
-
-newfields = [ 'Name', 'Row Reduced Coloring Matrix']
-
-filename = "name_matrix1_3colorable.csv"
-
-line_count = 0
-
-rawfile = open(filename, 'r')
-
-reader = csv.reader(rawfile)
-
-new_LoL = []
- 
-for row in reader:
-    if line_count == 0:
-        new_LoL.append(newfields)
-        line_count = line_count + 1
-    else:
-        strings = row[1][2:-2].split("], [")
-        #print(strings)
-        list_of_lists = [ list(crossing.split(",")) for crossing in strings ]
-        #print(list_of_lists)
-        list_of_intlists = [ [int(n) for n in string] for string in list_of_lists ]
-        new_LoL.append([row[0],ToReducedRowEchelonForm( list_of_intlists )])
-        line_count = line_count + 1
-
-rawfile.close()
-
-
-
-newfilename = "name_reducedmatrix_3colorable.csv"
-
-newrawfile = open(newfilename, 'w')
-
-writer = csv.writer(newrawfile)
-
-for row in new_LoL:
-    writer.writerow(row)
-
-newrawfile.close()
-
-"""
-
-fields = [ 'Name', 'Gauss Code']
-
-newfields = [ 'Name', 'Overstrand List']
-
-filename = "name_gauss_3colorable.csv"
-
-line_count = 0
-
-rawfile = open(filename, 'r')
-
-reader = csv.reader(rawfile)
-
-new_LoL = []
- 
-for row in reader:
-    if line_count == 0:
-        new_LoL.append(newfields)
-        line_count = line_count + 1
-    else:
-        strings = row[1][1:-1].split(",")
-        #print(strings)
-        #list_of_lists = [ list(crossing.split(",")) for crossing in strings ]
-        #print(list_of_lists)
-        list_of_intlists = [int(n) for n in strings]
-        print(list_of_intlists)
-        new_LoL.append([row[0],create_overstrand_list( list_of_intlists )])
-        line_count = line_count + 1
-
-rawfile.close()
-
-
-
-newfilename = "name_overstrand_3colorable.csv"
-
-newrawfile = open(newfilename, 'w')
-
-writer = csv.writer(newrawfile)
-
-for row in new_LoL:
-    writer.writerow(row)
-
-newrawfile.close()
+main()
 

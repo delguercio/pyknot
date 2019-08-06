@@ -38,20 +38,20 @@ def ToReducedRowEchelonForm(M, p):
         M[i],M[r] = M[r],M[i] #swap two different rows (reassigning two vars at once)
         lv = M[r][lead] 
         if lv != 1: #if the lead value isn't one, multiply the row by lv inverse and take mod n    
-            M[r] = [ (mrx*inverses[lv])%n for mrx in M[r]]
+            M[r] = [ (mrx*inverses[lv])%p for mrx in M[r]]
         for i in range(rowCount):
             if i != r: #everything below the lead value will be taken care of in the step
                 lv = M[i][lead]
-                M[i] = [ (iv - lv*rv)%n for rv,iv in zip(M[r],M[i])]
+                M[i] = [ (iv - lv*rv)%p for rv,iv in zip(M[r],M[i])]
         lead += 1
  
  
-mtx4_1 = [[1,1,0,1],[0,1,1,1],[1,1,1,0],[1,0,1,1]]
-mtx = [[1,0,1,1,0],[1,1,0,1,0],[0,1,0,1,1],[0,1,1,0,1],[1,0,1,0,1]]
+#mtx4_1 = [[1,1,0,1],[0,1,1,1],[1,1,1,0],[1,0,1,1]]
+#mtx = [[1,0,1,1,0],[1,1,0,1,0],[0,1,0,1,1],[0,1,1,0,1],[1,0,1,0,1]]
  
-ToReducedRowEchelonForm(mtx, 3)
+#ToReducedRowEchelonForm(mtx, 3)
 
-print(mtx)
+#print(mtx)
 
 
 
