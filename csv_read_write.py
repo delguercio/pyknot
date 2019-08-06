@@ -62,48 +62,53 @@ def main():
                              ColourList\
                                 - rre matrix to list of strand colorings\
                                 - input matrix")
-            if funtion == ToReducedRowEchelonForm:
+            if funtion == "ToReducedRowEchelonForm":
                 
-            fields = [ 'Name', 'Coloring Matrix']
+                fields = [ 'Name', 'Coloring Matrix']
 
-            newfields = [ 'Name', 'Row Reduced Coloring Matrix']
+                newfields = [ 'Name', 'Row Reduced Coloring Matrix']
 
-            filename = "name_matrix1_3colorable.csv"
+                filename = "name_matrix_3colorable.csv"
 
-            newfilename = "name_reducedmatrix_3colorable.csv"
+                newfilename = "name_reducedmatrix_3colorable.csv"
 
-            line_count = 0
+                line_count = 0
 
-            rawfile = open(filename, 'r')
+                path = ./data
 
-            reader = csv.reader(rawfile)
+                rawfile = open(filename, 'r')
 
-            new_LoL = []
-             
-            for row in reader:
-                if line_count == 0:
-                    new_LoL.append(newfields)
-                    line_count = line_count + 1
-                else:
-                    strings = row[1][2:-2].split("], [")
-                    #print(strings)
-                    list_of_lists = [ list(crossing.split(",")) for crossing in strings ]
-                    #print(list_of_lists)
-                    list_of_intlists = [ [int(n) for n in string] for string in list_of_lists ]
-                    new_LoL.append([row[0],ToReducedRowEchelonForm( list_of_intlists )])
-                    line_count = line_count + 1
+                reader = csv.reader(rawfile)
 
-            rawfile.close()
+                new_LoL = []
+                 
+                for row in reader:
+                    if line_count == 0:
+                        new_LoL.append(newfields)
+                        line_count = line_count + 1
+                    else:
+                        strings = row[1][2:-2].split("], [")
+                        #print(strings)
+                        list_of_lists = [ list(crossing.split(",")) for crossing in strings ]
+                        #print(list_of_lists)
+                        list_of_intlists = [ [int(n) for n in string] for string in list_of_lists ]
+                        new_LoL.append([row[0],ToReducedRowEchelonForm( list_of_intlists )])
+                        line_count = line_count + 1
+
+                rawfile.close()
 
 
-            newrawfile = open(newfilename, 'w')
+                newrawfile = open(newfilename, 'w')
 
-            writer = csv.writer(newrawfile)
+                writer = csv.writer(newrawfile)
 
-            for row in new_LoL:
-                writer.writerow(row)
+                for row in new_LoL:
+                    writer.writerow(row)
 
-            newrawfile.close()        
+                newrawfile.close()  
+
+            elif funtion == ColourList:
+
 
 
         elif uc == 2: # 
