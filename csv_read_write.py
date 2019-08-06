@@ -27,15 +27,12 @@ def menu():
     """ 
     """
     print("")
-    print("(0) read in 1d array")
-    print("(1) read in 2d array")
-    print("(2) ")
-    print("(3) ")
-    print("(4) ")
-    print("(5) ")
-    print("(6) ")
-    print("(7) help !")
-    print("(9) Quit")
+    print("(0) gauss -> overstrand list")
+    print("(1) gauss -> sign list")
+    print("(2) overstrand list -> matrix")
+    print("(3) matrix -> rre matrix")
+    print("(4) rre matrix -> color list")
+    print("(5) Quit")
     print(" ")    
     print("Enter your choice:")
 
@@ -50,84 +47,298 @@ def main():
         if uc == 9: #
             break
 
-        elif uc == 0:  #
+        elif uc == 0: # gauss -> overstrand list
 
-        elif uc == 1:  #
+            fields = [ 'Name', 'Gauss Notation']
 
-            funtion = input("Function name input:\
-                             Your options are:\
-                             ToReducedRowEchelonForm\
-                                - matrix to rre matrix \
-                                - input (matrix , mod) \
-                             ColourList\
-                                - rre matrix to list of strand colorings\
-                                - input matrix")
-            if funtion == "ToReducedRowEchelonForm":
-                
-                fields = [ 'Name', 'Coloring Matrix']
+            newfields = [ 'Name', 'Overstrand List']
 
-                newfields = [ 'Name', 'Row Reduced Coloring Matrix']
+            path = "./data/"
 
-                filename = "name_matrix_3colorable.csv"
+            filename = "name_gauss_3colorable.csv"
 
-                newfilename = "name_reducedmatrix_3colorable.csv"
+            line_count = 0
 
-                line_count = 0
+            rawfile = open(path+filename, 'r')
 
-                path = ./data
+            reader = csv.reader(path+rawfile)
 
-                rawfile = open(filename, 'r')
-
-                reader = csv.reader(rawfile)
-
-                new_LoL = []
-                 
-                for row in reader:
-                    if line_count == 0:
-                        new_LoL.append(newfields)
+            new_LoL = []
+             
+            for row in reader:
+                if line_count == 0:
+                    new_LoL.append(newfields)
+                    line_count = line_count + 1
+                else:
+                    strings = list(row[1][1:-1].split(","))
+                    list_of_ints = [ int(number) for number in strings ]
+                    signs = SignList( list_of_ints )
+                    if len(signs)%2 == 0:
+                        new_LoL.append([row[0],signs])
                         line_count = line_count + 1
                     else:
-                        strings = row[1][2:-2].split("], [")
-                        #print(strings)
-                        list_of_lists = [ list(crossing.split(",")) for crossing in strings ]
-                        #print(list_of_lists)
-                        list_of_intlists = [ [int(n) for n in string] for string in list_of_lists ]
-                        new_LoL.append([row[0],ToReducedRowEchelonForm( list_of_intlists )])
+                        pos_crossing = signs + [1]
+                        new_LoL.append([row[0],pos_crossing])
+                        line_count = line_count + 1            
+
+            rawfile.close()
+
+            newfilename = "name_overstrand_3colorable.csv"
+
+            newrawfile = open(path+newfilename, 'w')
+
+            writer = csv.writer(path+newrawfile)
+
+            for row in new_LoL:
+                writer.writerow(row)
+
+            newrawfile.close()
+
+        elif uc == 1:  # gauss -> sign list
+            fields = [ 'Name', 'Gauss Notation']
+
+            newfields = [ 'Name', 'Sign List']
+
+            filename = "name_gauss_3colorable.csv"
+
+            path = "./data/"
+
+            line_count = 0
+
+            rawfile = open(path+filename, 'r')
+
+            reader = csv.reader(path+rawfile)
+
+            new_LoL = []
+             
+            for row in reader:
+                if line_count == 0:
+                    new_LoL.append(newfields)
+                    line_count = line_count + 1
+                else:
+                    strings = list(row[1][1:-1].split(","))
+                    list_of_ints = [ int(number) for number in strings ]
+                    signs = SignList( list_of_ints )
+                    if len(signs)%2 == 0:
+                        new_LoL.append([row[0],signs])
                         line_count = line_count + 1
+                    else:
+                        pos_crossing = signs + [1]
+                        new_LoL.append([row[0],pos_crossing])
+                        line_count = line_count + 1            
 
-                rawfile.close()
-
-
-                newrawfile = open(newfilename, 'w')
-
-                writer = csv.writer(newrawfile)
-
-                for row in new_LoL:
-                    writer.writerow(row)
-
-                newrawfile.close()  
-
-            elif funtion == ColourList:
+            rawfile.close()
 
 
+            newfilename = "name_sign_3colorable.csv"
 
-        elif uc == 2: # 
-            print(" ")
+            newrawfile = open(path+newfilename, 'w')
 
-        elif uc == 3: # 
-            print(" ")
+            writer = csv.writer(path+newrawfile)
 
-        elif uc == 4:
-            print(" ")
+            for row in new_LoL:
+                writer.writerow(row)
 
-        elif uc == 5:
-            print(" ")
+            newrawfile.close()
 
-        elif uc == 6:
-            print(" ")
 
-        elif uc == 7:
-            print(" ")
+        elif uc == 2: # overstrand -> matrix
+            fields = [ 'Name', 'Overstrand List']
+
+            newfields = [ 'Name', 'Coloring Matrix']
+
+            filename = "name_overstrand_3colorable.csv"
+
+            path = "./data/"
+
+            line_count = 0
+
+            rawfile = open(path+filename, 'r')
+
+            reader = csv.reader(path+rawfile)
+
+            new_LoL = []
+             
+            for row in reader:
+                if line_count == 0:
+                    new_LoL.append(newfields)
+                    line_count = line_count + 1
+                else:
+                    strings = row[1][1:-1].split(",")
+                    print(strings)
+                    #list_of_lists = [ list(crossing.split(",")) for crossing in strings ]
+                    #print(list_of_lists)
+                    list_of_intlists = [int(n) for n in strings]
+                    print(list_of_intlists)
+                    new_LoL.append([row[0],create_matrix( list_of_intlists )])
+                    line_count = line_count + 1
+
+            rawfile.close()
+
+            newfilename = "name_matrix_3colorable.csv"
+
+            newrawfile = open(path+newfilename, 'w')
+
+            writer = csv.writer(path+newrawfile)
+
+            for row in new_LoL:
+                writer.writerow(row)
+
+            newrawfile.close()
+
+        elif uc == 3:  #  matrix -> rre matrix
+            
+            fields = [ 'Name', 'Coloring Matrix']
+
+            newfields = [ 'Name', 'Row Reduced Coloring Matrix']
+
+            filename = "name_matrix_3colorable.csv"
+
+            newfilename = "name_reducedmatrix_3colorable.csv"
+
+            line_count = 0
+
+            path = "./data/"
+
+            rawfile = open(path+filename, 'r')
+
+            reader = csv.reader(path+rawfile)
+
+            new_LoL = []
+             
+            for row in reader:
+                if line_count == 0:
+                    new_LoL.append(newfields)
+                    line_count = line_count + 1
+                else:
+                    strings = row[1][2:-2].split("], [")
+                    #print(strings)
+                    list_of_lists = [ list(crossing.split(",")) for crossing in strings ]
+                    #print(list_of_lists)
+                    list_of_intlists = [ [int(n) for n in string] for string in list_of_lists ]
+                    new_LoL.append([row[0],ToReducedRowEchelonForm( list_of_intlists )])
+                    line_count = line_count + 1
+
+            rawfile.close()
+
+            newrawfile = open(path+newfilename, 'w')
+
+            writer = csv.writer(path+newrawfile)
+
+            for row in new_LoL:
+                writer.writerow(row)
+
+            newrawfile.close()  
+
+            elif function == ColourList:
+
+
+        elif uc == 4: # rre matrix -> color list
+            fields = [ 'Name', 'Row Reduced Coloring Matrix']
+
+            newfields = [ 'Name', 'Color List']
+
+            path = "./data/"
+
+            filename = "name_reducedmatrix_3colorable.csv"
+
+            line_count = 0
+
+            rawfile = open(path+filename, 'r')
+
+            reader = csv.reader(path+rawfile)
+
+            new_LoL = []
+             
+            for row in reader:
+                if line_count == 0:
+                    new_LoL.append(newfields)
+                    line_count = line_count + 1
+                else:
+                    strings = row[1][2:-2].split("], [")
+            #        print(strings)
+                    list_of_lists = [ list(crossing.split(",")) for crossing in strings ]
+            #        print(list_of_lists)
+                    list_of_intlists = [ [int(n) for n in string] for string in list_of_lists ]
+                    new_LoL.append([row[0],ColourList( list_of_intlists )])
+                    line_count = line_count + 1
+
+            rawfile.close()
+
+
+            newfilename = "name_colorlist_3colorable.csv"
+
+            newrawfile = open(path+newfilename, 'w')
+
+            writer = csv.writer(path+newrawfile)
+
+            for row in new_LoL:
+                writer.writerow(row)
+
+            newrawfile.close()
+
+        elif uc == 5: # dihedral linking number
+            #            0            1                  2              3             4            5
+
+            fields = [ 'Name','Gauss Notation', 'Overstrand List', 'Sign List', 'Color List', 'Dihedral Linking Number' ]
+
+            newfields = [ 'Name', 'Dihedral Linking Number' ]
+
+            filename = "allfields_3colorable.csv"
+
+            line_count = 0
+
+            path = "./data/"
+
+            rawfile = open(path+filename, 'r')
+
+            reader = csv.reader(path+rawfile)
+
+            dihedral_linking_numbers = []
+
+            new_LoL = []
+             
+            for row in reader:
+                if line_count == 0:
+                    new_LoL.append(newfields)
+                    line_count = line_count + 1
+                else:
+                    color_list_listofstrings = row[4][2:-2].split("], [")
+                    color_list_listoflists = [ list(crossing.split(", ")) for crossing in color_list_listofstrings ]
+                    color_lists = [ [int(n) for n in string] for string in color_list_listoflists ]
+
+                    
+                    overstrand_list_listofstrings = row[2][1:-1].split(",")
+                    overstrand_list = [ int(string) for string in overstrand_list_listofstrings ]
+                    #print("OVERSTRAND LIST")
+                    #print(overstrand_list)
+
+
+                    sign_list_listofstrings = row[3][1:-1].split(",")
+                    sign_list = [ int(string) for string in sign_list_listofstrings ]
+                    #print("SIGN LIST")
+                    #print(sign_list)      
+
+                    for i in range(len(color_lists)):
+                        dihedral_linking_numbers.append(display( sign_list, overstrand_list, row[0], color_lists[i] ))
+                    
+                    new_LoL.append([row[0],dihedral_linking_numbers])
+                    dihedral_linking_numbers = []
+                    
+                    line_count = line_count + 1
+
+            rawfile.close()
+
+            newfilename = "name_DLN_3colorable.csv"
+
+            newrawfile = open(path+newfilename, 'w')
+
+            writer = csv.writer(path+newrawfile)
+
+            for row in new_LoL:
+                writer.writerow(row)
+
+            newrawfile.close()
 
         else:
             print "That's not on the menu!"

@@ -3,6 +3,7 @@
 # This program is edited from https://rosettacode.org/wiki/Reduced_row_echelon_form#Python
 # The difference is that our row reduction works in mod p, if we are working to p-color a knot
 # where p is a prime number. It doesn't work for all odd... yet.
+#
 # Edited by Jack to include inverses and mod 
 #
 

@@ -83,45 +83,4 @@ def ColourList(matrix):
 #print( ColourList([[1, 0, 0, 0, 0, 0, 0, 0, 1, 1], [0, 1, 0, 0, 0, 0, 0, 0, 0, 2], [0, 0, 1, 0, 0, 0, 0, 0, 2, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 2], [0, 0, 0, 0, 1, 0, 0, 0, 1, 1], [0, 0, 0, 0, 0, 1, 0, 0, 1, 1], [0, 0, 0, 0, 0, 0, 1, 0, 2, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]))
 
 
-#Edit csv files. 
-fields = [ 'Name', 'Row Reduced Coloring Matrix']
 
-newfields = [ 'Name', 'Color List']
-
-filename = "name_reducedmatrix1_3colorable.csv"
-
-line_count = 0
-
-rawfile = open(filename, 'r')
-
-reader = csv.reader(rawfile)
-
-new_LoL = []
- 
-for row in reader:
-    if line_count == 0:
-        new_LoL.append(newfields)
-        line_count = line_count + 1
-    else:
-        strings = row[1][2:-2].split("], [")
-#        print(strings)
-        list_of_lists = [ list(crossing.split(",")) for crossing in strings ]
-#        print(list_of_lists)
-        list_of_intlists = [ [int(n) for n in string] for string in list_of_lists ]
-        new_LoL.append([row[0],ColourList( list_of_intlists )])
-        line_count = line_count + 1
-
-rawfile.close()
-
-
-
-newfilename = "name_colorlist_3colorable.csv"
-
-newrawfile = open(newfilename, 'w')
-
-writer = csv.writer(newrawfile)
-
-for row in new_LoL:
-    writer.writerow(row)
-
-newrawfile.close()
