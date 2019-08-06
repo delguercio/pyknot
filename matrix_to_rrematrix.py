@@ -1,11 +1,21 @@
-#This program is edited from https://rosettacode.org/wiki/Reduced_row_echelon_form#Python
-#The difference is that our row reduction works in mod n, if we are working to n-color a knot. 
 
-def ToReducedRowEchelonForm(M, n):
+#
+# This program is edited from https://rosettacode.org/wiki/Reduced_row_echelon_form#Python
+# The difference is that our row reduction works in mod p, if we are working to p-color a knot
+# where p is a prime number. It doesn't work for all odd... yet.
+# Edited by Jack to include inverses and mod 
+#
+
+
+def ToReducedRowEchelonForm(M, p):
+    """
+        input: matrix from overstrand_to_matrix.py
+        output: reduced row eschelon matrix mod p
+    """
     inverses = {}
-    for i in range(n):
-        for inverse in range(n):
-            if (i*inverse)%n == 1:
+    for i in range(p):
+        for inverse in range(p):
+            if (i*inverse)%p == 1:
                 inverses[i] = inverse
             
     if not M: return
