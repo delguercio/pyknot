@@ -212,7 +212,7 @@ def main():
                     list_of_lists = [ list(crossing.split(",")) for crossing in strings ]
                     #print(list_of_lists)
                     list_of_intlists = [ [int(n) for n in string] for string in list_of_lists ]
-                    new_LoL.append([row[0],ToReducedRowEchelonForm( list_of_intlists , 34)])
+                    new_LoL.append([row[0],ToReducedRowEchelonForm( list_of_intlists , 3)])
                     line_count = line_count + 1
 
             rawfile.close()
@@ -231,8 +231,6 @@ def main():
             fields = [ 'Name', 'Row Reduced Coloring Matrix']
 
             newfields = [ 'Name', 'Color List']
-
-            
 
             filename = "./data/name_reducedmatrix_3colorable.csv"
 
@@ -333,6 +331,9 @@ def main():
                 writer.writerow(row)
 
             newrawfile.close()
+
+        elif uc == 6: # dihedral linking number
+            break
 
         else:
             print("That's not on the menu!")
