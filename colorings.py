@@ -848,7 +848,7 @@ def twobridge(a,b,c,d,e,f):
 #            twist.append(s.pop())
 #           coloring[overstrands[k]] 
 
-def display(signs,overstrands,name,coloring): #,detail
+def display(signs,overstrands,name,coloring): #,detail 
     c=len(signs)
     #print('**********************************************************')
     #print('The knot is: ', name)
@@ -941,6 +941,9 @@ def display(signs,overstrands,name,coloring): #,detail
 # print(display(sign_9_35, overstrand_9_35, '9_35', color_9_35))
 
 
+
+print('6_1')
+print(display([1,1,-1,1,1,-1],[5,4,0,2,1,3],'6_1',[0,2,1,2,0,1]))
 # sign_3_1 = [-1, -1, -1, -1]
 # sign_6_1 = [-1, 1, -1, -1, 1, -1]
 # sign_7_4 = [1, 1, 1, 1, 1, 1, 1, -1]

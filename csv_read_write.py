@@ -276,7 +276,7 @@ def main():
 
             newfields = [ 'Name', 'Dihedral Linking Number' ]
 
-            filename = "allfields_3colorable.csv"
+            filename = "./data/allfields_3colorable.csv"
 
             line_count = 0
 

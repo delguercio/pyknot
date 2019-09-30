@@ -35,7 +35,7 @@ def ColourList(matrix):
             free_variables.append(i)
     #jack do this :(   
     #<|(:3)
-    colour_dict ={}
+    colour_dict ={} #
     for k in range( len( free_variables ) ):
         colour_dict[free_variables[k]] = k%3
     
