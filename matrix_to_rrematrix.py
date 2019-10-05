@@ -25,7 +25,7 @@ def ToReducedRowEchelonForm(M, p):
     columnCount = len(M[0]) # num col in M
     for r in range(lead, rowCount): #r is row index
         if lead >= columnCount:  #if col index reaches end, return column
-            return
+            return M
         i = r #
         while M[i][lead] == 0: #if the value is already 0, move to the next row
             i += 1
@@ -33,7 +33,7 @@ def ToReducedRowEchelonForm(M, p):
                 i = r
                 lead += 1
                 if columnCount == lead: #we reached the last column
-                    return
+                    return M
 
         M[i],M[r] = M[r],M[i] #swap two different rows (reassigning two vars at once)
         lv = M[r][lead] 
@@ -54,29 +54,29 @@ def ToReducedRowEchelonForm(M, p):
 
 #print(mtx)
 
-figure_eight_5coloring = [[ 0, 0, 1, 0, 1,-1, 0, 0, 1],
-                          [ 0, 0, 0,-1, 0, 1,-1, 1, 0],
-                          [ 1, 0, 0, 0, 0, 0, 1,-1,-1],
-                          [ 0, 1, 0, 0,-1, 1, 0, 1, 0],
-                          [ 1,-1, 1, 0, 0, 0, 1, 0, 1],
-                          [ 0, 1,-1, 0, 0, 0, 0,-1,-1],
-                          [ 1, 0, 1,-1, 1, 0, 0, 0, 0],
-                          [-1, 0, 0, 1, 0,-1, 0, 0, 1]]
+#figure_eight_5coloring = [[ 0, 0, 1, 0, 1,-1, 0, 0, 1],
+                          # [ 0, 0, 0,-1, 0, 1,-1, 1, 0],
+                          # [ 1, 0, 0, 0, 0, 0, 1,-1,-1],
+                          # [ 0, 1, 0, 0,-1, 1, 0, 1, 0],
+                          # [ 1,-1, 1, 0, 0, 0, 1, 0, 1],
+                          # [ 0, 1,-1, 0, 0, 0, 0,-1,-1],
+                          # [ 1, 0, 1,-1, 1, 0, 0, 0, 0],
+                          # [-1, 0, 0, 1, 0,-1, 0, 0, 1]]
 
-ToReducedRowEchelonForm(figure_eight_5coloring, 5)
-
-
-print(figure_eight_5coloring)
+#ToReducedRowEchelonForm(figure_eight_5coloring, 5)
 
 
-[[1, 0, 0, 0, 0, 0, 1, 4, 0], 
- [0, 1, 0, 0, 0, 0, 0, 0, 0], 
- [0, 0, 1, 0, 0, 0, 0, 1, 0], 
- [0, 0, 0, 1, 0, 4, 1, 4, 0], 
- [0, 0, 0, 0, 1, 4, 0, 4, 0], 
- [0, 0, 0, 0, 0, 0, 0, 0, 1], 
- [0, 0, 0, 0, 0, 0, 0, 0, 0], 
- [0, 0, 0, 0, 0, 0, 0, 0, 0]]
+#print(figure_eight_5coloring)
+
+
+# #[[1, 0, 0, 0, 0, 0, 1, 4, 0], 
+#  [0, 1, 0, 0, 0, 0, 0, 0, 0], 
+#  [0, 0, 1, 0, 0, 0, 0, 1, 0], 
+#  [0, 0, 0, 1, 0, 4, 1, 4, 0], 
+#  [0, 0, 0, 0, 1, 4, 0, 4, 0], 
+#  [0, 0, 0, 0, 0, 0, 0, 0, 1], 
+#  [0, 0, 0, 0, 0, 0, 0, 0, 0], 
+#  [0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
 
 

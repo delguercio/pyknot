@@ -15,23 +15,23 @@ from sympy import Matrix
 import itertools
 
 
-overstrand_3_1 = [2, 0, 1, 3]
-overstrand_6_1 = [2, 4, 0, 5, 1, 3]
-overstrand_7_4 = [5, 4, 0, 6, 1, 2, 3, 7]
-overstrand_7_7 = [4, 3, 6, 5, 0, 1, 2, 7]
-overstrand_9_35 = [6, 5, 7, 0, 8, 1, 3, 2, 4, 9]
+# overstrand_3_1 = [2, 0, 1, 3]
+# overstrand_6_1 = [2, 4, 0, 5, 1, 3]
+# overstrand_7_4 = [5, 4, 0, 6, 1, 2, 3, 7]
+# overstrand_7_7 = [4, 3, 6, 5, 0, 1, 2, 7]
+# overstrand_9_35 = [6, 5, 7, 0, 8, 1, 3, 2, 4, 9]
 
-color_3_1 = [1, 2, 3, 1]
-color_6_1 = [3, 2, 1, 2, 3, 1]
-color_7_4 = [1, 2, 3, 2, 1, 3, 3, 1]
-color_7_7 = [1, 3, 2, 1, 2, 3, 3, 1]
-color_9_35 = [3, 1, 2, 3, 3, 3, 2, 1, 3, 3]
+# color_3_1 = [1, 2, 3, 1]
+# color_6_1 = [3, 2, 1, 2, 3, 1]
+# color_7_4 = [1, 2, 3, 2, 1, 3, 3, 1]
+# color_7_7 = [1, 3, 2, 1, 2, 3, 3, 1]
+# color_9_35 = [3, 1, 2, 3, 3, 3, 2, 1, 3, 3]
 
-sign_3_1 = [1, 1, 1, 1]
-sign_6_1 = [1, -1, 1, 1, -1, 1]
-sign_7_4 = [-1, -1, -1, -1, -1, -1, -1, 1]
-sign_7_7 = [1, -1, 1, -1, 1, -1, 1, 1]
-sign_9_35 = [-1, -1, -1, -1, -1, -1, -1, -1, -1, 1]
+# sign_3_1 = [1, 1, 1, 1]
+# sign_6_1 = [1, -1, 1, 1, -1, 1]
+# sign_7_4 = [-1, -1, -1, -1, -1, -1, -1, 1]
+# sign_7_7 = [1, -1, 1, -1, 1, -1, 1, 1]
+# sign_9_35 = [-1, -1, -1, -1, -1, -1, -1, -1, -1, 1]
 
 
 # A color is a number between 1 and 3.
@@ -127,11 +127,11 @@ def WhereIsA2i(colorlist,overstrands,numcrossings):
             twist.append(s.pop())
     return twist
 
-where_3_1 = WhereIsA2i(color_3_1,  overstrand_3_1 , 4 )
-where_6_1 = WhereIsA2i(color_6_1 , overstrand_6_1 , 6 )
-where_7_4 = WhereIsA2i(color_7_4 , overstrand_7_4 , 8 )
-where_7_7 = WhereIsA2i(color_7_7 , overstrand_7_7 , 8 )
-where_9_35 = WhereIsA2i(color_9_35 , overstrand_9_35  , 10 )
+# where_3_1 = WhereIsA2i(color_3_1,  overstrand_3_1 , 4 )
+# where_6_1 = WhereIsA2i(color_6_1 , overstrand_6_1 , 6 )
+# where_7_4 = WhereIsA2i(color_7_4 , overstrand_7_4 , 8 )
+# where_7_7 = WhereIsA2i(color_7_7 , overstrand_7_7 , 8 )
+# where_9_35 = WhereIsA2i(color_9_35 , overstrand_9_35  , 10 )
 
 # print(where_3_1)
 # print(where_6_1)
@@ -255,11 +255,11 @@ def computecoef(colorlist, numcrossings,overstrands, signs):
     #print( coefmatrix )                     
     return coefmatrix
 
-matrix_3_1 = computecoef(color_3_1, 4 , overstrand_3_1 , sign_3_1 )
-matrix_6_1 = computecoef(color_6_1 , 6,overstrand_6_1 , sign_6_1 )
-matrix_7_4 = computecoef(color_7_4 , 8, overstrand_7_4 , sign_7_4 )
-matrix_7_7 = computecoef(color_7_7 , 8, overstrand_7_7 , sign_7_7 )
-matrix_9_35 = computecoef(color_9_35 , 10, overstrand_9_35  , sign_9_35 )
+# matrix_3_1 = computecoef(color_3_1, 4 , overstrand_3_1 , sign_3_1 )
+# matrix_6_1 = computecoef(color_6_1 , 6,overstrand_6_1 , sign_6_1 )
+# matrix_7_4 = computecoef(color_7_4 , 8, overstrand_7_4 , sign_7_4 )
+# matrix_7_7 = computecoef(color_7_7 , 8, overstrand_7_7 , sign_7_7 )
+# matrix_9_35 = computecoef(color_9_35 , 10, overstrand_9_35  , sign_9_35 )
 
 # print(matrix_3_1)
 # print(matrix_6_1)
@@ -942,8 +942,8 @@ def display(signs,overstrands,name,coloring): #,detail
 
 
 
-print('6_1')
-print(display([1,1,-1,1,1,-1],[5,4,0,2,1,3],'6_1',[0,2,1,2,0,1]))
+#print('6_1')
+#print(display([1,1,-1,1,1,-1],[5,4,0,2,1,3],'6_1',[0,2,1,2,0,1]))
 # sign_3_1 = [-1, -1, -1, -1]
 # sign_6_1 = [-1, 1, -1, -1, 1, -1]
 # sign_7_4 = [1, 1, 1, 1, 1, 1, 1, -1]
