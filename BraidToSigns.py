@@ -42,9 +42,9 @@ def InitialSigns(braid):
 
         for crossing in braid:
                 if crossing < 0:
-                        signs.append(-1)
-                else:
                         signs.append(1)
+                else:
+                        signs.append(-1)
         return signs
 
 def GaussToSigns(initialsigns, gauss):
