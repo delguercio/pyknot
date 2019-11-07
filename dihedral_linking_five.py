@@ -25,6 +25,11 @@ def reflect( current_universe , wall_color , p ):
     """
     return (2*wall_color - current_universe)%p 
 
+def side( , list_of_lists ):
+    """
+    """
+    return 
+
 # print("should be 1")
 # print("i got "+str(reflect(4,0)))
 # print("should be 2")

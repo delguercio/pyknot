@@ -25,6 +25,7 @@ def ToReducedRowEchelonForm(M, p):
     columnCount = len(M[0]) # num col in M
     for r in range(lead, rowCount): #r is row index
         if lead >= columnCount:  #if col index reaches end, return column
+            #print(M)
             return M
         i = r #
         while M[i][lead] == 0: #if the value is already 0, move to the next row
@@ -33,10 +34,12 @@ def ToReducedRowEchelonForm(M, p):
                 i = r
                 lead += 1
                 if columnCount == lead: #we reached the last column
+                    #print(M)
                     return M
 
         M[i],M[r] = M[r],M[i] #swap two different rows (reassigning two vars at once)
         lv = M[r][lead] 
+        #print(M)
         if lv != 1: #if the lead value isn't one, multiply the row by lv inverse and take mod n    
             M[r] = [ (mrx*inverses[lv])%p for mrx in M[r] ]
         for i in range(rowCount):
@@ -63,8 +66,11 @@ def ToReducedRowEchelonForm(M, p):
                           # [ 1, 0, 1,-1, 1, 0, 0, 0, 0],
                           # [-1, 0, 0, 1, 0,-1, 0, 0, 1]]
 
+#seven_seven_matrix =[[1, 1, 0, 0, 1, 0, 0, 0], [0, 1, 1, 1, 0, 0, 0, 0], [0, 0, 1, 1, 0, 0, 1, 0], [0, 0, 0, 1, 1, 1, 0, 0], [1, 0, 0, 0, 1, 1, 0, 0], [0, 1, 0, 0, 0, 1, 1, 0], [0, 0, 1, 0, 0, 0, 1, 1], [1, 0, 0, 0, 0, 0, 0, 2]]                          
+
 #ToReducedRowEchelonForm(figure_eight_5coloring, 5)
 
+#print(ToReducedRowEchelonForm(seven_seven_matrix,7))
 
 #print(figure_eight_5coloring)
 

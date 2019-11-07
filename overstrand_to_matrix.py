@@ -35,7 +35,7 @@ import csv
 #three_one = [2, 0, 1, 3]
 #six_one = [2, 4, 0, 5, 1, 3]
 #seven_four = [4, 5, 6, 1, 0, 3, 2, 7]
-#seven_seven = [4, 3, 6, 5, 0, 1, 2, 7]
+seven_seven = [4, 3, 6, 5, 0, 1, 2, 7]
 #eight_five = [3, 6, 0, 1, 7, 2, 4, 5]
 #eight_ten = [6, 4, 5, 7, 2, 0, 3, 1]
 
