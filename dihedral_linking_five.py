@@ -1,16 +1,20 @@
 
 overstrand_3_1 = [2, 0, 1, 3]
 overstrand_4_1 = [2, 3, 0, 1]
+overstrand_5_2 = [2, 4, 0, 1, 3, 5]
 overstrand_6_1 = [2, 4, 0, 5, 1, 3]
 overstrand_7_4 = [5, 4, 0, 6, 1, 2, 3, 7]
 overstrand_7_7 = [4, 3, 6, 5, 0, 1, 2, 7]
+overstrand_8_5 = [3, 6, 0, 1, 7, 2, 4, 5]
 overstrand_9_35 = [6, 5, 7, 0, 8, 1, 3, 2, 4, 9]
 
 color_3_1 = [1, 2, 3, 1]
-color_4_1 = [3, 0, 4, 2]
+color_4_1 = [3, 0, 4, 2] #5 coloring
+color_5_2 = [2, 1, 5, 6, 3, 2] #7 coloring
 color_6_1 = [3, 2, 1, 2, 3, 1]
 color_7_4 = [1, 2, 3, 2, 1, 3, 3, 1]
 color_7_7 = [1, 3, 2, 1, 2, 3, 3, 1]
+color_8_5 = [3, 1, 4, 2, 0, 2, 6, 1] #7 coloring
 color_9_35 = [3, 1, 2, 3, 3, 3, 2, 1, 3, 3]
 
 sign_3_1 = [1, 1, 1, 1]
@@ -21,14 +25,25 @@ sign_9_35 = [-1, -1, -1, -1, -1, -1, -1, -1, -1, 1]
 
 def reflect( current_universe , wall_color , p ):
     """
-
+    input: current universe, color of the wall you are traveling
+           through, p for number of colorings
+    output:the universe on the other side of the wall
     """
     return (2*wall_color - current_universe)%p 
 
-def side( , list_of_lists ):
+def side( list_of_lists ):
     """
+    input:
+    output:
     """
-    return 
+    return
+
+def tier():
+    """
+    input:
+    output:
+    """
+    return
 
 # print("should be 1")
 # print("i got "+str(reflect(4,0)))
@@ -102,9 +117,40 @@ def wall_colors( overstrand_list , color_list , p ):
     wall_color_lists = []
     incomingoutgoing_list = incoming_outgoing_list(color_list)
     for crossing in range(len(overstrand_list)):
-        wall_color_lists.append([reflect_list( [color_list[overstrand_list[crossing]]] , incomingoutgoing_list[crossing] , 0 , p ), reflect_list( [color_list[overstrand_list[crossing]]] , incomingoutgoing_list[crossing] , 1 , p )])
+        if crossing+1 != len(overstrand_list):
+            wall_color_lists.append([reflect_list( [color_list[overstrand_list[crossing]]] , incomingoutgoing_list[crossing] , 0 , p ), reflect_list( [color_list[overstrand_list[crossing]]] , incomingoutgoing_list[crossing] , 1 , p )])
+        else: #homogeneous crossing
+            wall_color_lists.append
+
     return wall_color_lists
 
+print(wall_colors(overstrand_5_2,color_5_2,7))
+
+#
+#
+#wall_colors_8_5 = [[[2,4,5,1], [2, 7, 6, 3]]]#, [[6, 3, 5, 4], [6, 2, 7, 1]], [[3, 5, 6, 2], [3, 1, 7, 4]], [[1, 3, 4, 7], [1, 6, 5, 2]], [[1, 6, 5, 2], [1, 3, 4, 7]], [[4, 0, 5, 6], [4, 1, 3, 2]], [[7, 5, 4, 1], [7, 2, 3, 6]], [[2, 7, 6, 3], [2, 4, 5, 1]]]
+#where_list_8_5 =  [[[1,0,0,1],[0,1,0,0]]]
+#print(wall_colors(overstrand_8_5,color_8_5,7))
+#[[2,4,5,1],[2,0,6,3]] [[1,0,0,1],[0,1,0,0]]
+
+def pass_through(where_list):
+    pass_where_list = []
+    pass_where_list.append(where_list[1])
+    pass_where_list.append(where_list[0])
+    return pass_where_list
+
+def colors_out(where_list,wall_colors):
+    colors_out_listoflists = []
+    for k in range(len(wall_colors[0])):
+        print(where_list[0][k])
+        colors_out_list = [a*b for a,b in zip(where_list[0][k],wall_colors[0][k])]
+        colors_out_listoflists.append(colors_out_list)
+        colors_out_list = []
+    return colors_out_listoflists
+
+#print(pass_through(where_list_8_5))
+#print(colors_out(where_list_8_5, wall_colors_8_5))
+#print(wall_colors_8_5[0][1].index()))
 #print(wall_colors(overstrand_4_1,color_4_1,5))
 
 
