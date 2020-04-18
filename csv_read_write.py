@@ -6,7 +6,7 @@ import csv
 
 from colorings import *
 
-from BraidToSigns import *
+from braid_to_gauss import *
 from gauss_to_overstrand import *
 from gauss_to_signlist import *
 from matrix_to_rrematrix import *
@@ -392,27 +392,29 @@ def main():
                     new_LoL.append(newfields)
                     line_count = line_count + 1
                 else:
+                    if line_count == 1026:
+                        print(row)
                     color_list_listofstrings = row[4][2:-2].split("], [")
                     color_list_listoflists = [ list(crossing.split(", ")) for crossing in color_list_listofstrings ]
                     color_lists = [ [int(n) for n in string] for string in color_list_listoflists ]
-                    print("COLOR LIST")
-                    print(color_lists)
+                    #print("COLOR LIST")
+                    #print(color_lists)
                     
                     overstrand_list_listofstrings = row[2][1:-1].split(",")
                     overstrand_list = [ int(string) for string in overstrand_list_listofstrings ]
-                    print("OVERSTRAND LIST")
-                    print(overstrand_list)
+                    #print("OVERSTRAND LIST")
+                    #print(overstrand_list)
 
 
                     sign_list_listofstrings = row[3][1:-1].split(",")
                     sign_list = [ int(string) for string in sign_list_listofstrings ]
-                    print("SIGN LIST")
-                    print(sign_list)      
+                    #print("SIGN LIST")
+                    #print(sign_list)      
 
                     for i in range(len(color_lists)):
                         dihedral_linking_numbers.append(display( sign_list, overstrand_list, row[0], color_lists[i] ))
                     
-                    print(new_LoL)
+                    #print(new_LoL)
                     new_LoL.append([row[0],dihedral_linking_numbers])
                     dihedral_linking_numbers = []
                     

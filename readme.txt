@@ -5,6 +5,7 @@ The program three_colorings.py isn't being used to compile our data currently.
 The program colorings.py is Professor Cahn's original program, with our comments, that calculates the dihedral linking number in two ways. We used this to create our other programs.
 
 The order to use the programs is: 
+0) BraidToSigns.py
 1) gauss_to_overstrand.py and gauss_to_signlist.py
 2) overstrand_to_matrix.py
 3) matrix_to_rrematrix.py
