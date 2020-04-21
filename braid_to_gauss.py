@@ -1,3 +1,5 @@
+from gauss_to_overstrand import *
+
 def BraidToGauss(braid):
         # Creates a Gauss code from the braid notation.
         gauss = []
@@ -63,4 +65,19 @@ def BraidToSigns(braid):
         signs = GaussToSigns(initsigns, gauss)
 
         return signs
+
+
+#braid_12n0717 = [1,1,-2,-2,3,-1,2,-1,-2,-2,-3,-3,-2]
+#print("12n_0717 gauss code from braid")
+#print(BraidToGauss(braid_12n0717))
+#print(len(BraidToGauss(braid_12n0717)))
+#print("12n_0717 sign list from braid")
+#print(BraidToSigns(braid_12n0717))
+#print(len(BraidToSigns(braid_12n0717)))
+#print("12n_0717 overstrand list from braid")
+#print(create_overstrand_list(BraidToGauss(braid_12n0717)))
+#print("12n_0717 overstrand list from braid")
+#print(len(create_overstrand_list(BraidToGauss(braid_12n0717))))
+
+
 
