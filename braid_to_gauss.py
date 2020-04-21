@@ -53,4 +53,4 @@ def BraidToSigns(braid):
 
         return signs
 
-print(BraidToSigns([1,1,2,-1,2,2,3,-2,3]))
+
