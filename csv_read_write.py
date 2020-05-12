@@ -34,8 +34,9 @@ def menu():
     print("(5) overstrand list -> matrix")
     print("(6) matrix -> rre matrix")
     print("(7) rre matrix -> color list")
-    print("(8) dihedral linking number")
-    print("(9) exit")    
+    print("(8) generate all_fields")
+    print("(9) dihedral linking number")
+    print("(10) exit")    
     print("Enter your choice:")
 
 def submenu():
@@ -52,7 +53,7 @@ def main():
     while True:     # the user-interaction loop
         menu()
         uc = int(input( "Choose an option: "))
-
+        uc2 = str(input("type braid or gauss depending on what you're doing:  "))
         if uc == 1: #
 
             fields = [ 'Name', 'Braid Notation']
@@ -90,7 +91,7 @@ def main():
 
             rawfile.close()
 
-            newfilename = "./data/name_signfrombraid_3colorable.csv"
+            newfilename = "./data/name_signfrom"+uc2+"_3colorable.csv"
 
             newrawfile = open(newfilename, 'w')
 
@@ -132,7 +133,7 @@ def main():
 
             rawfile.close()
 
-            newfilename = "./data/name_gaussfrombraid_3colorable.csv"
+            newfilename = "./data/name_gaussfrom"+uc2+"_3colorable.csv"
 
             newrawfile = open(newfilename, 'w')
 
@@ -150,7 +151,7 @@ def main():
 
             newfields = [ 'Name', 'Sign List']
 
-            filename = "./data/name_gaussfrombraid_3colorable.csv"
+            filename = "./data/name_gaussfrom"+uc2+"_3colorable.csv"
 
             line_count = 0
 
@@ -179,7 +180,7 @@ def main():
             rawfile.close()
 
 
-            newfilename = "./data/name_signfrombraid_3colorable.csv"
+            newfilename = "./data/name_signfrom"+uc2+"_3colorable.csv"
 
             newrawfile = open(newfilename, 'w')
 
@@ -202,7 +203,7 @@ def main():
 
                     newfields = [ 'Name', 'Overstrand List']
 
-                    filename = "./data/name_gaussfrombraid_3colorable.csv"
+                    filename = "./data/name_gaussfrom"+uc2+"_3colorable.csv"
 
                     line_count = 0
 
@@ -231,7 +232,7 @@ def main():
 
                     rawfile.close()
 
-                    newfilename = "./data/name_overstrandfrombraid_3colorable.csv"
+                    newfilename = "./data/name_overstrandfrom"+uc2+"_3colorable.csv"
 
                     newrawfile = open(newfilename, 'w')
 
@@ -248,7 +249,7 @@ def main():
 
                     newfields = [ 'Name', 'Overstrand List']
 
-                    filename = "./data/name_gaussfrombraid_3colorable.csv"
+                    filename = "./data/name_gaussfrom"+uc2+"_3colorable.csv"
 
                     line_count = 0
 
@@ -271,7 +272,7 @@ def main():
 
                     rawfile.close()
 
-                    newfilename = "./data/name_overstrandfrombraid_3colorable.csv"
+                    newfilename = "./data/name_overstrandfrom"+uc2+"_3colorable.csv"
 
                     newrawfile = open(newfilename, 'w')
 
@@ -293,7 +294,7 @@ def main():
 
             newfields = [ 'Name', 'Coloring Matrix']
 
-            filename = "./data/name_overstrandfrombraid_3colorable.csv"
+            filename = "./data/name_overstrandfrom"+uc2+"_3colorable.csv"
 
             
 
@@ -321,7 +322,7 @@ def main():
 
             rawfile.close()
 
-            newfilename = "./data/name_matrixfrombraid_3colorable.csv"
+            newfilename = "./data/name_matrixfrom"+uc2+"_3colorable.csv"
 
             newrawfile = open(newfilename, 'w')
 
@@ -340,7 +341,7 @@ def main():
 
             filename = "./data/name_matrixfrombraid_3colorable.csv"
 
-            newfilename = "./data/name_reducedmatrixfrombraid_3colorable.csv"
+            newfilename = "./data/name_reducedmatrixfrom"+uc2+"_3colorable.csv"
 
             line_count = 0
 
@@ -384,7 +385,7 @@ def main():
 
             newfields = [ 'Name', 'Color List']
 
-            filename = "./data/name_reducedmatrixfrombraid_3colorable.csv"
+            filename = "./data/name_reducedmatrixfrom"+uc2+"_3colorable.csv"
 
             line_count = 0
 
@@ -419,7 +420,7 @@ def main():
             rawfile.close()
 
 
-            newfilename = "./data/name_colorlistfrombraid_3colorable.csv"
+            newfilename = "./data/name_colorlistfrom"+uc2+"_3colorable.csv"
 
             newrawfile = open(newfilename, 'w')
 
@@ -430,14 +431,119 @@ def main():
 
             newrawfile.close()
 
-        elif uc == 8: # dihedral linking number
+        elif uc == 8: # generate all_fields
+
+
+             #             0            1                  2              3             4            5
+
+            newfields = [ 'Name','Gauss Notation', 'Overstrand List', 'Sign List', 'Color List', 'Dihedral Linking Number' ]
+
+
+
+            # 0-1
+            gauss_fields = [ 'Name', 'Gauss Notation']
+
+            gauss_filename = "./data/name_gaussfrom"+uc2+"_3colorable.csv"
+
+            gauss_rawfile = open(gauss_filename, 'r')
+
+            gauss_reader = csv.reader(gauss_rawfile)
+
+            # 2
+            overstrand_fields = [ 'Name', 'Overstrand List']
+
+            overstrand_filename = "./data/name_overstrandfrom"+uc2+"_3colorable.csv"
+
+            overstrand_rawfile = open(overstrand_filename, 'r')
+
+            overstrand_reader = csv.reader(overstrand_rawfile)
+
+            # 3
+            sign_fields = [ 'Name', 'Sign List']
+
+            sign_filename = "./data/name_signfrom"+uc2+"_3colorable.csv"
+
+            sign_rawfile = open(sign_filename, 'r')
+
+            sign_reader = csv.reader(sign_rawfile)
+
+
+            # 4
+            colorlist_fields = [ 'Name', 'Color List']
+
+            colorlist_filename = "./data/name_colorlistfrom"+uc2+"_3colorable.csv"
+
+            colorlist_rawfile = open(colorlist_filename, 'r')
+
+            colorlist_reader = csv.reader(colorlist_rawfile)
+
+
+
+            line_count = 0
+
+            new_LoL = []
+
+            for row in gauss_reader:
+                if line_count == 0:
+                    new_LoL.append(newfields)
+                    line_count += 1
+                else:
+                    new_LoL.append(row)
+                    line_count += 1
+ 
+            line_count = 0
+            for row in overstrand_reader:
+                if line_count == 0:
+                    line_count += 1
+                    continue
+                else:
+                    new_LoL[line_count].append(row[1])
+                    line_count += 1
+ 
+            line_count = 0
+            for row in sign_reader:
+                if line_count == 0:
+                    line_count += 1
+                    continue
+                else:
+                    new_LoL[line_count].append(row[1])
+                    line_count += 1                       
+
+
+            line_count = 0
+            for row in colorlist_reader:
+                if line_count == 0:
+                    line_count += 1
+                    continue
+                else:
+                    new_LoL[line_count].append(row[1])
+                    line_count += 1   
+
+            gauss_rawfile.close()
+            overstrand_rawfile.close()
+            sign_rawfile.close()
+            colorlist_rawfile.close()
+
+
+            newfilename = "./data/allfieldsfrom"+uc2+"_3colorable.csv"
+
+            newrawfile = open(newfilename, 'w')
+
+            writer = csv.writer(newrawfile)
+
+            for row in new_LoL:
+                writer.writerow(row)
+
+            newrawfile.close()
+
+        elif uc == 9: # dihedral linking number
             #            0            1                  2              3             4            5
 
             fields = [ 'Name','Gauss Notation', 'Overstrand List', 'Sign List', 'Color List', 'Dihedral Linking Number' ]
 
             newfields = [ 'Name', 'Dihedral Linking Number' ]
 
-            filename = "./data/allfieldsfrombraid_3colorable.csv"
+            filename = "./data/allfieldsfrom"+uc2+"_3colorable.csv"
 
             line_count = 0
 
@@ -486,7 +592,7 @@ def main():
 
             rawfile.close()
 
-            newfilename = "./data/name_DLNfrombraid_3colorable.csv"
+            newfilename = "./data/name_DLNfrom"+uc2+"_3colorable.csv"
 
             newrawfile = open(newfilename, 'w')
 
@@ -497,7 +603,7 @@ def main():
 
             newrawfile.close()
 
-        elif uc == 9:
+        elif uc == 10:
             break
 
         else:

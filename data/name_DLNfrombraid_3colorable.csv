@@ -1,1085 +1,1085 @@
 Name,Dihedral Linking Number
 3_1,"[[-2, -2]]"
-6_1,"[[-2, -2]]"
-7_4,['No Dihedral Linking Number Exists']
-7_7,['No Dihedral Linking Number Exists']
-8_5,['No Dihedral Linking Number Exists']
-8_10,['No Dihedral Linking Number Exists']
-8_11,['No Dihedral Linking Number Exists']
-8_15,['No Dihedral Linking Number Exists']
-8_18,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
+6_1,"[[2, 2]]"
+7_4,"[[2, 2]]"
+7_7,"[[6, 6]]"
+8_5,"[[-4, -4]]"
+8_10,"[[0, 0]]"
+8_11,"[[6, 6]]"
+8_15,"[[-4, -4]]"
+8_18,"[[2, 2], [2, 2], [-2, -2], [-2, -2]]"
 8_19,"[[-4, -4]]"
 8_20,"[[0, 0]]"
-8_21,['No Dihedral Linking Number Exists']
+8_21,"[[-4, -4]]"
 9_1,"[[-6, -6]]"
-9_2,['No Dihedral Linking Number Exists']
-9_4,['No Dihedral Linking Number Exists']
-9_6,['No Dihedral Linking Number Exists']
-9_10,['No Dihedral Linking Number Exists']
-9_11,"[[2, 2]]"
-9_15,['No Dihedral Linking Number Exists']
-9_16,['No Dihedral Linking Number Exists']
-9_17,['No Dihedral Linking Number Exists']
-9_23,['No Dihedral Linking Number Exists']
-9_24,"[[-2, -2]]"
-9_28,['No Dihedral Linking Number Exists']
-9_29,['No Dihedral Linking Number Exists']
-9_34,['No Dihedral Linking Number Exists']
-9_35,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-9_37,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-9_38,['No Dihedral Linking Number Exists']
-9_40,['No Dihedral Linking Number Exists']
-9_46,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-9_47,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-9_48,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [8/3, 8/3], 'No Dihedral Linking Number Exists']"
-10_4,['No Dihedral Linking Number Exists']
-10_5,['No Dihedral Linking Number Exists']
-10_9,['No Dihedral Linking Number Exists']
-10_10,['No Dihedral Linking Number Exists']
-10_14,['No Dihedral Linking Number Exists']
-10_19,"[[-2, -2]]"
-10_21,['No Dihedral Linking Number Exists']
-10_29,['No Dihedral Linking Number Exists']
-10_31,['No Dihedral Linking Number Exists']
-10_32,['No Dihedral Linking Number Exists']
-10_36,['No Dihedral Linking Number Exists']
+9_2,"[[-2, -2]]"
+9_4,"[[-2, -2]]"
+9_6,"[[-6, -6]]"
+9_10,"[[6, 6]]"
+9_11,"[[6, 6]]"
+9_15,"[[6, 6]]"
+9_16,"[[-4, -4]]"
+9_17,"[[10, 10]]"
+9_23,"[[-6, -6]]"
+9_24,"[[0, 0]]"
+9_28,"[[-4, -4]]"
+9_29,"[[10, 10]]"
+9_34,"[[-14/5, -14/5]]"
+9_35,"[[2/3, 2/3], [2/3, 2/3], [2/3, 2/3], 'No Dihedral Linking Number Exists']"
+9_37,"[[14/3, 14/3], [10/3, 10/3], 'No Dihedral Linking Number Exists', [10/3, 10/3]]"
+9_38,"[[-14, -14]]"
+9_40,"[[-4, -4]]"
+9_46,"[[2/3, 2/3], [-2/3, -2/3], 'No Dihedral Linking Number Exists', [-2/3, -2/3]]"
+9_47,"[[-2/3, -2/3], [-2/3, -2/3], [2/3, 2/3], [-2/3, -2/3]]"
+9_48,"['No Dihedral Linking Number Exists', [10/3, 10/3], [10/3, 10/3], [10/3, 10/3]]"
+10_4,"[[2, 2]]"
+10_5,"[[2, 2]]"
+10_9,"[[-2, -2]]"
+10_10,"[[-2, -2]]"
+10_14,"[[2, 2]]"
+10_19,"[[-6, -6]]"
+10_21,"[[10, 10]]"
+10_29,"[[2, 2]]"
+10_31,"[[-6, -6]]"
+10_32,"[[-2, -2]]"
+10_36,"[[2, 2]]"
 10_40,"[[2, 2]]"
-10_42,"[[-2, -2]]"
-10_59,['No Dihedral Linking Number Exists']
-10_61,['No Dihedral Linking Number Exists']
-10_62,['No Dihedral Linking Number Exists']
-10_63,['No Dihedral Linking Number Exists']
-10_64,"[[0, 0]]"
-10_65,['No Dihedral Linking Number Exists']
+10_42,"[[2, 2]]"
+10_59,"[[-2, -2]]"
+10_61,"[[-4, -4]]"
+10_62,"[[0, 0]]"
+10_63,"[[-4, -4]]"
+10_64,"[[-4, -4]]"
+10_65,"[[0, 0]]"
 10_66,"[[-4, -4]]"
-10_67,['No Dihedral Linking Number Exists']
-10_68,['No Dihedral Linking Number Exists']
-10_69,['No Dihedral Linking Number Exists']
-10_74,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-10_75,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-10_76,['No Dihedral Linking Number Exists']
-10_77,['No Dihedral Linking Number Exists']
-10_78,['No Dihedral Linking Number Exists']
-10_82,['No Dihedral Linking Number Exists']
-10_84,['No Dihedral Linking Number Exists']
-10_85,['No Dihedral Linking Number Exists']
+10_67,"[[14/5, 14/5]]"
+10_68,"[[-6/5, -6/5]]"
+10_69,"[[26/5, 26/5]]"
+10_74,"[[14/3, 14/3], [10/3, 10/3], [14/3, 14/3], 'No Dihedral Linking Number Exists']"
+10_75,"['No Dihedral Linking Number Exists', [22/3, 22/3], [22/3, 22/3], [22/3, 22/3]]"
+10_76,"[[-4, -4]]"
+10_77,"[[0, 0]]"
+10_78,"[[-4, -4]]"
+10_82,"[[0, 0]]"
+10_84,"[[-4, -4]]"
+10_85,"[[4, 4]]"
 10_87,"[[0, 0]]"
-10_89,['No Dihedral Linking Number Exists']
-10_96,['No Dihedral Linking Number Exists']
-10_97,"[[0, 0]]"
-10_98,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [-4, -4], 'No Dihedral Linking Number Exists']"
-10_99,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-10_103,['No Dihedral Linking Number Exists']
-10_106,['No Dihedral Linking Number Exists']
-10_107,['No Dihedral Linking Number Exists']
-10_108,['No Dihedral Linking Number Exists']
-10_112,['No Dihedral Linking Number Exists']
-10_113,['No Dihedral Linking Number Exists']
-10_114,['No Dihedral Linking Number Exists']
-10_120,['No Dihedral Linking Number Exists']
-10_122,['No Dihedral Linking Number Exists']
-10_136,['No Dihedral Linking Number Exists']
+10_89,"[[14, 14]]"
+10_96,"[[22, 22]]"
+10_97,"[[18, 18]]"
+10_98,"[[-4, -4], [-6, -6], [-4, -4], [-4, -4]]"
+10_99,"[[0, 0], [0, 0], [0, 0], [0, 0]]"
+10_103,"[[2, 2]]"
+10_106,"[[-2, -2]]"
+10_107,"[[-6, -6]]"
+10_108,"[[2, 2]]"
+10_112,"[[-2, -2]]"
+10_113,"[[-26/7, -26/7]]"
+10_114,"[[-2, -2]]"
+10_120,"[[-5, -5]]"
+10_122,"[[22/5, 22/5]]"
+10_136,"[[10, 10]]"
 10_139,"[[-4, -4]]"
-10_140,['No Dihedral Linking Number Exists']
+10_140,"[[0, 0]]"
 10_141,"[[-4, -4]]"
-10_142,['No Dihedral Linking Number Exists']
-10_143,['No Dihedral Linking Number Exists']
-10_144,['No Dihedral Linking Number Exists']
-10_145,['No Dihedral Linking Number Exists']
-10_146,['No Dihedral Linking Number Exists']
-10_147,['No Dihedral Linking Number Exists']
-10_158,['No Dihedral Linking Number Exists']
-10_159,['No Dihedral Linking Number Exists']
-10_160,['No Dihedral Linking Number Exists']
+10_142,"[[-4, -4]]"
+10_143,"[[0, 0]]"
+10_144,"[[-4, -4]]"
+10_145,"[[6/5, 6/5]]"
+10_146,"[[-14/5, -14/5]]"
+10_147,"[[-6/5, -6/5]]"
+10_158,"[[2, 2]]"
+10_159,"[[-2, -2]]"
+10_160,"[[2, 2]]"
 10_163,"[[-2, -2]]"
-10_164,['No Dihedral Linking Number Exists']
-10_165,['No Dihedral Linking Number Exists']
-11a_6,['No Dihedral Linking Number Exists']
-11a_8,['No Dihedral Linking Number Exists']
-11a_16,['No Dihedral Linking Number Exists']
-11a_17,['No Dihedral Linking Number Exists']
-11a_21,['No Dihedral Linking Number Exists']
-11a_37,['No Dihedral Linking Number Exists']
-11a_38,['No Dihedral Linking Number Exists']
-11a_43,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11a_44,"['No Dihedral Linking Number Exists', [2, 2], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11a_45,['No Dihedral Linking Number Exists']
-11a_46,['No Dihedral Linking Number Exists']
-11a_47,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11a_49,['No Dihedral Linking Number Exists']
-11a_57,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [0, 0], 'No Dihedral Linking Number Exists']"
-11a_58,['No Dihedral Linking Number Exists']
-11a_63,['No Dihedral Linking Number Exists']
-11a_69,['No Dihedral Linking Number Exists']
-11a_71,['No Dihedral Linking Number Exists']
-11a_72,['No Dihedral Linking Number Exists']
-11a_73,['No Dihedral Linking Number Exists']
-11a_78,['No Dihedral Linking Number Exists']
-11a_90,['No Dihedral Linking Number Exists']
-11a_91,['No Dihedral Linking Number Exists']
-11a_93,['No Dihedral Linking Number Exists']
-11a_99,['No Dihedral Linking Number Exists']
-11a_100,['No Dihedral Linking Number Exists']
-11a_102,['No Dihedral Linking Number Exists']
-11a_103,"[[-2, -2]]"
-11a_106,['No Dihedral Linking Number Exists']
-11a_107,['No Dihedral Linking Number Exists']
-11a_108,['No Dihedral Linking Number Exists']
-11a_109,['No Dihedral Linking Number Exists']
-11a_117,['No Dihedral Linking Number Exists']
-11a_118,['No Dihedral Linking Number Exists']
-11a_123,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11a_128,['No Dihedral Linking Number Exists']
-11a_130,['No Dihedral Linking Number Exists']
-11a_132,['No Dihedral Linking Number Exists']
-11a_134,['No Dihedral Linking Number Exists']
-11a_135,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11a_137,['No Dihedral Linking Number Exists']
-11a_139,['No Dihedral Linking Number Exists']
-11a_146,['No Dihedral Linking Number Exists']
-11a_152,['No Dihedral Linking Number Exists']
-11a_155,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11a_157,['No Dihedral Linking Number Exists']
-11a_159,['No Dihedral Linking Number Exists']
-11a_161,"[[2, 2]]"
-11a_165,"[[-2, -2]]"
-11a_171,['No Dihedral Linking Number Exists']
-11a_173,"[[-2/3, -2/3], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11a_175,['No Dihedral Linking Number Exists']
+10_164,"[[-2, -2]]"
+10_165,"[[6, 6]]"
+11a_6,"[[6, 6]]"
+11a_8,"[[-2, -2]]"
+11a_16,"[[-4, -4]]"
+11a_17,"[[-4, -4]]"
+11a_21,"[[0, 0]]"
+11a_37,"[[0, 0]]"
+11a_38,"[[-26/7, -26/7]]"
+11a_43,"[[-4, -4], [-4, -4], [-6, -6], [-4, -4]]"
+11a_44,"[[0, 0], [0, 0], [-2, -2], [-4, -4]]"
+11a_45,"[[-4, -4]]"
+11a_46,"[[-4, -4]]"
+11a_47,"[[-2, -2], [-4, -4], [0, 0], [0, 0]]"
+11a_49,"[[0, 0]]"
+11a_57,"[[0, 0], [2, 2], [4, 4], [0, 0]]"
+11a_58,"[[0, 0]]"
+11a_63,"[[2, 2]]"
+11a_69,"[[14, 14]]"
+11a_71,"[[-4, -4]]"
+11a_72,"[[0, 0]]"
+11a_73,"[[2, 2]]"
+11a_78,"[[34/5, 34/5]]"
+11a_90,"[[6, 6]]"
+11a_91,"[[6, 6]]"
+11a_93,"[[10, 10]]"
+11a_99,"[[2, 2]]"
+11a_100,"[[-4, -4]]"
+11a_102,"[[22/5, 22/5]]"
+11a_103,"[[18/7, 18/7]]"
+11a_106,"[[-4, -4]]"
+11a_107,"[[-4, -4]]"
+11a_108,"[[0, 0]]"
+11a_109,"[[0, 0]]"
+11a_117,"[[-6, -6]]"
+11a_118,"[[0, 0]]"
+11a_123,"[[22/3, 22/3], [-22/3, -22/3], 'No Dihedral Linking Number Exists', [-22/3, -22/3]]"
+11a_128,"[[38/7, 38/7]]"
+11a_130,"[[4, 4]]"
+11a_132,"[[-30, -30]]"
+11a_134,"[[-4, -4]]"
+11a_135,"[[10/3, 10/3], [10/3, 10/3], [14/3, 14/3], [-38/9, -38/9]]"
+11a_137,"[[8, 8]]"
+11a_139,"[[0, 0]]"
+11a_146,"[[10, 10]]"
+11a_152,"[[0, 0]]"
+11a_155,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [10/3, 10/3], [14/3, 14/3]]"
+11a_157,"[[0, 0]]"
+11a_159,"[[-6, -6]]"
+11a_161,"[[4, 4]]"
+11a_165,"[[0, 0]]"
+11a_171,"[[-2, -2]]"
+11a_173,"[[-14/3, -14/3], [34/3, 34/3], [-14/3, -14/3], 'No Dihedral Linking Number Exists']"
+11a_175,"[[-2, -2]]"
 11a_176,"[[-2, -2]]"
-11a_178,['No Dihedral Linking Number Exists']
-11a_179,['No Dihedral Linking Number Exists']
-11a_181,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [-2, -2]]"
-11a_184,['No Dihedral Linking Number Exists']
-11a_187,['No Dihedral Linking Number Exists']
-11a_194,['No Dihedral Linking Number Exists']
-11a_196,"[[6, 6]]"
-11a_199,['No Dihedral Linking Number Exists']
-11a_201,['No Dihedral Linking Number Exists']
-11a_202,['No Dihedral Linking Number Exists']
-11a_203,['No Dihedral Linking Number Exists']
-11a_208,"[[2, 2]]"
-11a_209,['No Dihedral Linking Number Exists']
-11a_212,['No Dihedral Linking Number Exists']
-11a_214,['No Dihedral Linking Number Exists']
-11a_216,['No Dihedral Linking Number Exists']
-11a_219,['No Dihedral Linking Number Exists']
-11a_223,['No Dihedral Linking Number Exists']
-11a_230,['No Dihedral Linking Number Exists']
-11a_231,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11a_232,['No Dihedral Linking Number Exists']
-11a_236,['No Dihedral Linking Number Exists']
-11a_237,['No Dihedral Linking Number Exists']
-11a_239,['No Dihedral Linking Number Exists']
-11a_243,['No Dihedral Linking Number Exists']
-11a_244,['No Dihedral Linking Number Exists']
-11a_245,['No Dihedral Linking Number Exists']
-11a_248,['No Dihedral Linking Number Exists']
-11a_249,"[[-2/3, -2/3], 'No Dihedral Linking Number Exists', [0, 0], 'No Dihedral Linking Number Exists']"
-11a_258,['No Dihedral Linking Number Exists']
-11a_260,['No Dihedral Linking Number Exists']
+11a_178,"[[2, 2]]"
+11a_179,"[[14, 14]]"
+11a_181,"['No Dihedral Linking Number Exists', [22/3, 22/3], [26/3, 26/3], [22/3, 22/3]]"
+11a_184,"[[10, 10]]"
+11a_187,"[[-26/5, -26/5]]"
+11a_194,"[[4, 4]]"
+11a_196,"[[2, 2]]"
+11a_199,"[[22/7, 22/7]]"
+11a_201,"[[18/5, 18/5]]"
+11a_202,"[[34/7, 34/7]]"
+11a_203,"[[-6, -6]]"
+11a_208,"[[6, 6]]"
+11a_209,"[[-8, -8]]"
+11a_212,"[[-6, -6]]"
+11a_214,"[[22/5, 22/5]]"
+11a_216,"[[-2, -2]]"
+11a_219,"[[-10/7, -10/7]]"
+11a_223,"[[-4, -4]]"
+11a_230,"[[-2, -2]]"
+11a_231,"[[2, 2], [0, 0], [4, 4], [0, 0]]"
+11a_232,"[[4, 4]]"
+11a_236,"[[-6, -6]]"
+11a_237,"[[14/5, 14/5]]"
+11a_239,"[[34/11, 34/11]]"
+11a_243,"[[2, 2]]"
+11a_244,"[[-4, -4]]"
+11a_245,"[[-4, -4]]"
+11a_248,"[[-34/11, -34/11]]"
+11a_249,"[[-2/3, -2/3], [-2/3, -2/3], [-22/9, -22/9], [2/3, 2/3]]"
+11a_258,"[[-4, -4]]"
+11a_260,"[[0, 0]]"
 11a_261,"[[4, 4]]"
-11a_263,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11a_264,['No Dihedral Linking Number Exists']
-11a_271,['No Dihedral Linking Number Exists']
-11a_273,['No Dihedral Linking Number Exists']
-11a_274,['No Dihedral Linking Number Exists']
-11a_275,['No Dihedral Linking Number Exists']
-11a_277,"[[-6, -6], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11a_278,['No Dihedral Linking Number Exists']
-11a_280,['No Dihedral Linking Number Exists']
-11a_283,['No Dihedral Linking Number Exists']
-11a_286,['No Dihedral Linking Number Exists']
-11a_290,['No Dihedral Linking Number Exists']
-11a_291,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11a_292,"[[-16, -16]]"
-11a_293,"[[6, 6], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11a_294,['No Dihedral Linking Number Exists']
-11a_296,['No Dihedral Linking Number Exists']
-11a_300,"[[2, 2]]"
-11a_304,['No Dihedral Linking Number Exists']
-11a_305,['No Dihedral Linking Number Exists']
-11a_306,['No Dihedral Linking Number Exists']
-11a_309,"[[-4, -4]]"
-11a_314,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
+11a_263,"[[-4, -4], [-4, -4], [-6, -6], [-4, -4]]"
+11a_264,"[[0, 0]]"
+11a_271,"[[6, 6]]"
+11a_273,"[[4, 4]]"
+11a_274,"[[6, 6]]"
+11a_275,"[[-2, -2]]"
+11a_277,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [2/3, 2/3], [26/9, 26/9]]"
+11a_278,"[[30/11, 30/11]]"
+11a_280,"[[-8, -8]]"
+11a_283,"[[2, 2]]"
+11a_286,"[[-2, -2]]"
+11a_290,"[[2, 2]]"
+11a_291,"[[-26/3, -26/3], [-22/3, -22/3], 'No Dihedral Linking Number Exists', [-22/3, -22/3]]"
+11a_292,"[[-30, -30]]"
+11a_293,"['No Dihedral Linking Number Exists', [14/3, 14/3], [14/3, 14/3], [14/3, 14/3]]"
+11a_294,"[[26, 26]]"
+11a_296,"[[22, 22]]"
+11a_300,"[[-2, -2]]"
+11a_304,"[[-10, -10]]"
+11a_305,"[[0, 0]]"
+11a_306,"[[2, 2]]"
+11a_309,"[[2, 2]]"
+11a_314,"[[-2/3, -2/3], 'No Dihedral Linking Number Exists', [-2/3, -2/3], [26/9, 26/9]]"
 11a_318,"[[-6, -6]]"
-11a_324,['No Dihedral Linking Number Exists']
-11a_332,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11a_335,['No Dihedral Linking Number Exists']
-11a_338,['No Dihedral Linking Number Exists']
-11a_340,['No Dihedral Linking Number Exists']
-11a_344,['No Dihedral Linking Number Exists']
-11a_346,['No Dihedral Linking Number Exists']
-11a_347,['No Dihedral Linking Number Exists']
-11a_351,['No Dihedral Linking Number Exists']
-11a_352,"[[0, 0], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11a_353,['No Dihedral Linking Number Exists']
-11a_354,['No Dihedral Linking Number Exists']
-11a_355,['No Dihedral Linking Number Exists']
-11a_360,['No Dihedral Linking Number Exists']
-11a_361,['No Dihedral Linking Number Exists']
-11a_362,['No Dihedral Linking Number Exists']
-11a_365,['No Dihedral Linking Number Exists']
-11a_366,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11n_1,['No Dihedral Linking Number Exists']
-11n_2,['No Dihedral Linking Number Exists']
-11n_13,['No Dihedral Linking Number Exists']
-11n_14,['No Dihedral Linking Number Exists']
-11n_18,"[[-4, -4]]"
-11n_28,"[[-2, -2]]"
-11n_29,['No Dihedral Linking Number Exists']
-11n_30,"[[-4, -4]]"
-11n_31,['No Dihedral Linking Number Exists']
-11n_32,['No Dihedral Linking Number Exists']
-11n_33,['No Dihedral Linking Number Exists']
-11n_38,['No Dihedral Linking Number Exists']
-11n_62,['No Dihedral Linking Number Exists']
-11n_63,['No Dihedral Linking Number Exists']
-11n_64,['No Dihedral Linking Number Exists']
-11n_65,['No Dihedral Linking Number Exists']
-11n_66,['No Dihedral Linking Number Exists']
-11n_67,['No Dihedral Linking Number Exists']
-11n_68,['No Dihedral Linking Number Exists']
-11n_69,['No Dihedral Linking Number Exists']
-11n_71,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [-4, -4], 'No Dihedral Linking Number Exists']"
-11n_72,"[[-2, -2], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11n_73,"['No Dihedral Linking Number Exists', [-2, -2], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11n_74,"['No Dihedral Linking Number Exists', [0, 0], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11n_75,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11n_76,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
+11a_324,"[[12, 12]]"
+11a_332,"[[0, 0], [2, 2], [2, 2], [-4, -4]]"
+11a_335,"[[2, 2]]"
+11a_338,"[[-4, -4]]"
+11a_340,"[[-4, -4]]"
+11a_344,"[[2, 2]]"
+11a_346,"[[-14/5, -14/5]]"
+11a_347,"[[26, 26]]"
+11a_351,"[[-4, -4]]"
+11a_352,"[[-2, -2], [-4, -4], [-6, -6], [-6, -6]]"
+11a_353,"[[-34/5, -34/5]]"
+11a_354,"[[22, 22]]"
+11a_355,"[[-6, -6]]"
+11a_360,"[[-2, -2]]"
+11a_361,"[[6/7, 6/7]]"
+11a_362,"[[2/5, 2/5]]"
+11a_365,"[[10, 10]]"
+11a_366,"[[14/3, 14/3], [14/3, 14/3], [14/3, 14/3], 'No Dihedral Linking Number Exists']"
+11n_1,"[[10, 10]]"
+11n_2,"[[-2, -2]]"
+11n_13,"[[-2, -2]]"
+11n_14,"[[10, 10]]"
+11n_18,"[[10, 10]]"
+11n_28,"[[0, 0]]"
+11n_29,"[[-4, -4]]"
+11n_30,"[[0, 0]]"
+11n_31,"[[0, 0]]"
+11n_32,"[[-4, -4]]"
+11n_33,"[[0, 0]]"
+11n_38,"[[-4, -4]]"
+11n_62,"[[-4, -4]]"
+11n_63,"[[0, 0]]"
+11n_64,"[[-4, -4]]"
+11n_65,"[[2/7, 2/7]]"
+11n_66,"[[-26/7, -26/7]]"
+11n_67,"[[2/7, 2/7]]"
+11n_68,"[[-14, -14]]"
+11n_69,"[[-10, -10]]"
+11n_71,"[[-2, -2], [-4, -4], [0, 0], [0, 0]]"
+11n_72,"[[-4, -4], [-4, -4], [-6, -6], [-4, -4]]"
+11n_73,"[[-4, -4], [0, 0], [-2, -2], [0, 0]]"
+11n_74,"[[-4, -4], [-2, -2], [0, 0], [0, 0]]"
+11n_75,"[[0, 0], [0, 0], [2, 2], [4, 4]]"
+11n_76,"[[2, 2], [0, 0], [0, 0], [4, 4]]"
 11n_77,"[[-4, -4], [-4, -4], [-6, -6], [-4, -4]]"
-11n_78,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [0, 0]]"
-11n_79,"[[-2, -2]]"
-11n_80,['No Dihedral Linking Number Exists']
-11n_81,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [-4, -4]]"
-11n_85,['No Dihedral Linking Number Exists']
-11n_86,['No Dihedral Linking Number Exists']
-11n_87,['No Dihedral Linking Number Exists']
-11n_92,['No Dihedral Linking Number Exists']
-11n_94,['No Dihedral Linking Number Exists']
-11n_95,['No Dihedral Linking Number Exists']
-11n_97,['No Dihedral Linking Number Exists']
-11n_98,['No Dihedral Linking Number Exists']
-11n_99,['No Dihedral Linking Number Exists']
-11n_100,['No Dihedral Linking Number Exists']
-11n_101,['No Dihedral Linking Number Exists']
-11n_102,['No Dihedral Linking Number Exists']
-11n_104,['No Dihedral Linking Number Exists']
-11n_105,['No Dihedral Linking Number Exists']
-11n_106,['No Dihedral Linking Number Exists']
-11n_107,['No Dihedral Linking Number Exists']
-11n_109,['No Dihedral Linking Number Exists']
-11n_118,['No Dihedral Linking Number Exists']
-11n_119,['No Dihedral Linking Number Exists']
-11n_121,['No Dihedral Linking Number Exists']
-11n_122,['No Dihedral Linking Number Exists']
-11n_123,['No Dihedral Linking Number Exists']
-11n_125,['No Dihedral Linking Number Exists']
-11n_126,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11n_136,['No Dihedral Linking Number Exists']
-11n_137,['No Dihedral Linking Number Exists']
-11n_138,['No Dihedral Linking Number Exists']
-11n_139,['No Dihedral Linking Number Exists']
-11n_140,['No Dihedral Linking Number Exists']
-11n_141,"[[16/5, 16/5]]"
-11n_142,['No Dihedral Linking Number Exists']
-11n_143,['No Dihedral Linking Number Exists']
-11n_145,['No Dihedral Linking Number Exists']
-11n_146,['No Dihedral Linking Number Exists']
-11n_148,['No Dihedral Linking Number Exists']
-11n_149,['No Dihedral Linking Number Exists']
-11n_150,['No Dihedral Linking Number Exists']
-11n_153,['No Dihedral Linking Number Exists']
-11n_155,['No Dihedral Linking Number Exists']
-11n_158,['No Dihedral Linking Number Exists']
-11n_161,['No Dihedral Linking Number Exists']
-11n_164,"['No Dihedral Linking Number Exists', [-2, -2], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11n_167,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-11n_168,"[[0, 0]]"
-11n_170,['No Dihedral Linking Number Exists']
-11n_173,['No Dihedral Linking Number Exists']
-11n_176,['No Dihedral Linking Number Exists']
-11n_181,['No Dihedral Linking Number Exists']
-11n_182,['No Dihedral Linking Number Exists']
+11n_78,"[[-4, -4], [0, 0], [-2, -2], [0, 0]]"
+11n_79,"[[0, 0]]"
+11n_80,"[[4, 4]]"
+11n_81,"[[-4, -4], [-6, -6], [-4, -4], [-4, -4]]"
+11n_85,"[[0, 0]]"
+11n_86,"[[-2, -2]]"
+11n_87,"[[4, 4]]"
+11n_92,"[[6, 6]]"
+11n_94,"[[2, 2]]"
+11n_95,"[[-6/5, -6/5]]"
+11n_97,"[[-2/5, -2/5]]"
+11n_98,"[[22/5, 22/5]]"
+11n_99,"[[-2/5, -2/5]]"
+11n_100,"[[10/7, 10/7]]"
+11n_101,"[[18/7, 18/7]]"
+11n_102,"[[10/7, 10/7]]"
+11n_104,"[[-4, -4]]"
+11n_105,"[[-4, -4]]"
+11n_106,"[[0, 0]]"
+11n_107,"[[-4, -4]]"
+11n_109,"[[2, 2]]"
+11n_118,"[[-2, -2]]"
+11n_119,"[[5, 5]]"
+11n_121,"[[8, 8]]"
+11n_122,"[[-6/7, -6/7]]"
+11n_123,"[[22, 22]]"
+11n_125,"[[6, 6]]"
+11n_126,"[[-22/3, -22/3], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
+11n_136,"[[-6, -6]]"
+11n_137,"[[22/7, 22/7]]"
+11n_138,"[[6/7, 6/7]]"
+11n_139,"[[2/5, 2/5]]"
+11n_140,"[[18/5, 18/5]]"
+11n_141,"[[2/5, 2/5]]"
+11n_142,"[[12, 12]]"
+11n_143,"[[-6/5, -6/5]]"
+11n_145,"[[2, 2]]"
+11n_146,"[[1, 1]]"
+11n_148,"[[-2/7, -2/7]]"
+11n_149,"[[2/5, 2/5]]"
+11n_150,"[[-10/7, -10/7]]"
+11n_153,"[[-6/7, -6/7]]"
+11n_155,"[[-2/5, -2/5]]"
+11n_158,"[[6/7, 6/7]]"
+11n_161,"[[2/5, 2/5]]"
+11n_164,"[[-2, -2], [-6, -6], [-4, -4], [-6, -6]]"
+11n_167,"['No Dihedral Linking Number Exists', [-14/3, -14/3], 'No Dihedral Linking Number Exists', [-10/3, -10/3]]"
+11n_168,"[[-18/7, -18/7]]"
+11n_170,"[[-8, -8]]"
+11n_173,"[[1, 1]]"
+11n_176,"[[-6/7, -6/7]]"
+11n_181,"[[-4, -4]]"
+11n_182,"[[6/7, 6/7]]"
 11n_183,"[[-4, -4]]"
 11n_184,"[[-4, -4]]"
 11n_185,"[[-4, -4]]"
-12a_0001,['No Dihedral Linking Number Exists']
-12a_0002,['No Dihedral Linking Number Exists']
-12a_0010,"[[0, 0]]"
-12a_0011,['No Dihedral Linking Number Exists']
-12a_0016,['No Dihedral Linking Number Exists']
-12a_0023,"[[0, 0]]"
-12a_0029,"[[0, 0]]"
+12a_0001,"[[8, 8]]"
+12a_0002,"[[4, 4]]"
+12a_0010,"[[4, 4]]"
+12a_0011,"[[8, 8]]"
+12a_0016,"[[-6, -6]]"
+12a_0023,"[[42/11, 42/11]]"
+12a_0029,"[[4, 4]]"
 12a_0030,"[[0, 0]]"
-12a_0033,"[[2, 2]]"
-12a_0035,"[[2, 2]]"
-12a_0036,['No Dihedral Linking Number Exists']
-12a_0048,"[[2, 2]]"
-12a_0049,['No Dihedral Linking Number Exists']
-12a_0051,['No Dihedral Linking Number Exists']
-12a_0057,['No Dihedral Linking Number Exists']
-12a_0060,['No Dihedral Linking Number Exists']
-12a_0062,['No Dihedral Linking Number Exists']
-12a_0066,['No Dihedral Linking Number Exists']
-12a_0067,['No Dihedral Linking Number Exists']
-12a_0071,['No Dihedral Linking Number Exists']
-12a_0074,['No Dihedral Linking Number Exists']
+12a_0033,"[[0, 0]]"
+12a_0035,"[[6, 6]]"
+12a_0036,"[[-4, -4]]"
+12a_0048,"[[4, 4]]"
+12a_0049,"[[-50, -50]]"
+12a_0051,"[[-4, -4]]"
+12a_0057,"[[-4, -4]]"
+12a_0060,"[[4, 4]]"
+12a_0062,"[[0, 0]]"
+12a_0066,"[[-54, -54]]"
+12a_0067,"[[8, 8]]"
+12a_0071,"[[2, 2]]"
+12a_0074,"[[6, 6]]"
 12a_0077,"[[4, 4]]"
-12a_0079,"[[0, 0]]"
-12a_0081,['No Dihedral Linking Number Exists']
-12a_0086,['No Dihedral Linking Number Exists']
-12a_0088,['No Dihedral Linking Number Exists']
-12a_0095,['No Dihedral Linking Number Exists']
-12a_0097,['No Dihedral Linking Number Exists']
-12a_0100,['No Dihedral Linking Number Exists']
-12a_0103,['No Dihedral Linking Number Exists']
-12a_0113,['No Dihedral Linking Number Exists']
-12a_0114,['No Dihedral Linking Number Exists']
-12a_0116,['No Dihedral Linking Number Exists']
-12a_0117,['No Dihedral Linking Number Exists']
-12a_0119,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [-2, -2]]"
-12a_0121,['No Dihedral Linking Number Exists']
-12a_0122,['No Dihedral Linking Number Exists']
-12a_0127,['No Dihedral Linking Number Exists']
-12a_0130,['No Dihedral Linking Number Exists']
-12a_0136,['No Dihedral Linking Number Exists']
-12a_0150,['No Dihedral Linking Number Exists']
-12a_0151,['No Dihedral Linking Number Exists']
-12a_0155,['No Dihedral Linking Number Exists']
-12a_0156,['No Dihedral Linking Number Exists']
-12a_0157,"[[-2, -2]]"
-12a_0163,['No Dihedral Linking Number Exists']
-12a_0164,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0165,['No Dihedral Linking Number Exists']
-12a_0166,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [0, 0]]"
-12a_0167,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0168,['No Dihedral Linking Number Exists']
-12a_0172,['No Dihedral Linking Number Exists']
-12a_0175,['No Dihedral Linking Number Exists']
-12a_0177,"['No Dihedral Linking Number Exists', [-38/9, -38/9], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0179,['No Dihedral Linking Number Exists']
-12a_0181,['No Dihedral Linking Number Exists']
-12a_0182,['No Dihedral Linking Number Exists']
-12a_0189,['No Dihedral Linking Number Exists']
-12a_0193,['No Dihedral Linking Number Exists']
-12a_0195,['No Dihedral Linking Number Exists']
-12a_0197,['No Dihedral Linking Number Exists']
-12a_0203,['No Dihedral Linking Number Exists']
-12a_0206,['No Dihedral Linking Number Exists']
-12a_0207,['No Dihedral Linking Number Exists']
-12a_0208,"[[32/7, 32/7]]"
-12a_0209,['No Dihedral Linking Number Exists']
-12a_0210,['No Dihedral Linking Number Exists']
-12a_0212,"[[0, 0]]"
-12a_0215,['No Dihedral Linking Number Exists']
-12a_0223,['No Dihedral Linking Number Exists']
-12a_0224,['No Dihedral Linking Number Exists']
-12a_0229,['No Dihedral Linking Number Exists']
+12a_0079,"[[-54/7, -54/7]]"
+12a_0081,"[[-4, -4]]"
+12a_0086,"[[-4, -4]]"
+12a_0088,"[[66/19, 66/19]]"
+12a_0095,"[[-8, -8]]"
+12a_0097,"[[0, 0]]"
+12a_0100,"[[-4, -4]]"
+12a_0103,"[[66/13, 66/13]]"
+12a_0113,"[[-4, -4]]"
+12a_0114,"[[-4, -4]]"
+12a_0116,"[[0, 0]]"
+12a_0117,"[[-4, -4]]"
+12a_0119,"[[-6, -6], [-4, -4], [-4, -4], [-4, -4]]"
+12a_0121,"[[-4, -4]]"
+12a_0122,"[[0, 0]]"
+12a_0127,"[[0, 0]]"
+12a_0130,"[[2, 2]]"
+12a_0136,"[[8, 8]]"
+12a_0150,"[[-26/7, -26/7]]"
+12a_0151,"[[0, 0]]"
+12a_0155,"[[-38/13, -38/13]]"
+12a_0156,"[[14/13, 14/13]]"
+12a_0157,"[[0, 0]]"
+12a_0163,"[[-8, -8]]"
+12a_0164,"[[-2, -2], [-4, -4], [0, 0], [0, 0]]"
+12a_0165,"[[-4, -4]]"
+12a_0166,"[[0, 0], [-2, -2], [-4, -4], [0, 0]]"
+12a_0167,"[[0, 0], [0, 0], [2, 2], [4, 4]]"
+12a_0168,"[[0, 0]]"
+12a_0172,"[[-2, -2]]"
+12a_0175,"[[6, 6]]"
+12a_0177,"[[14/3, 14/3], [-38/9, -38/9], 'No Dihedral Linking Number Exists', [10/3, 10/3]]"
+12a_0179,"[[2, 2]]"
+12a_0181,"[[6, 6]]"
+12a_0182,"[[0, 0]]"
+12a_0189,"[[18, 18]]"
+12a_0193,"[[6, 6]]"
+12a_0195,"[[4, 4]]"
+12a_0197,"[[2, 2]]"
+12a_0203,"[[8, 8]]"
+12a_0206,"[[6, 6]]"
+12a_0207,"[[42/5, 42/5]]"
+12a_0208,"[[46/7, 46/7]]"
+12a_0209,"[[54/19, 54/19]]"
+12a_0210,"[[-6, -6]]"
+12a_0212,"[[-2, -2]]"
+12a_0215,"[[10, 10]]"
+12a_0223,"[[-4, -4]]"
+12a_0224,"[[0, 0]]"
+12a_0229,"[[62/13, 62/13]]"
 12a_0231,"[[-54/5, -54/5]]"
-12a_0233,['No Dihedral Linking Number Exists']
-12a_0234,['No Dihedral Linking Number Exists']
-12a_0236,['No Dihedral Linking Number Exists']
-12a_0239,['No Dihedral Linking Number Exists']
-12a_0244,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0245,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0246,['No Dihedral Linking Number Exists']
-12a_0251,['No Dihedral Linking Number Exists']
-12a_0256,['No Dihedral Linking Number Exists']
-12a_0260,['No Dihedral Linking Number Exists']
-12a_0265,"[[14/3, 14/3], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [52/21, 52/21]]"
-12a_0269,['No Dihedral Linking Number Exists']
-12a_0270,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0280,['No Dihedral Linking Number Exists']
-12a_0281,['No Dihedral Linking Number Exists']
-12a_0287,['No Dihedral Linking Number Exists']
+12a_0233,"[[4, 4]]"
+12a_0234,"[[-2, -2]]"
+12a_0236,"[[-6, -6]]"
+12a_0239,"[[-2, -2]]"
+12a_0244,"[[10/3, 10/3], [10/3, 10/3], 'No Dihedral Linking Number Exists', [58/3, 58/3]]"
+12a_0245,"['No Dihedral Linking Number Exists', [2/3, 2/3], [2/3, 2/3], [46/3, 46/3]]"
+12a_0246,"[[4, 4]]"
+12a_0251,"[[2, 2]]"
+12a_0256,"[[-18, -18]]"
+12a_0260,"[[-34/5, -34/5]]"
+12a_0265,"[[14/3, 14/3], [14/3, 14/3], [10/3, 10/3], [62/21, 62/21]]"
+12a_0269,"[[34/11, 34/11]]"
+12a_0270,"['No Dihedral Linking Number Exists', [22/9, 22/9], [-2/3, -2/3], [2/3, 2/3]]"
+12a_0280,"[[-4, -4]]"
+12a_0281,"[[-4, -4]]"
+12a_0287,"[[12, 12]]"
 12a_0288,"[[74/13, 74/13]]"
-12a_0290,['No Dihedral Linking Number Exists']
-12a_0291,['No Dihedral Linking Number Exists']
+12a_0290,"[[0, 0]]"
+12a_0291,"[[0, 0]]"
 12a_0292,"[[2, 2]]"
 12a_0295,"[[-8, -8], [-6, -6], [-6, -6], [-4, -4]]"
-12a_0296,['No Dihedral Linking Number Exists']
-12a_0297,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0298,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0302,['No Dihedral Linking Number Exists']
-12a_0303,['No Dihedral Linking Number Exists']
-12a_0306,['No Dihedral Linking Number Exists']
-12a_0308,['No Dihedral Linking Number Exists']
-12a_0311,"[[-46/3, -46/3], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0312,['No Dihedral Linking Number Exists']
-12a_0313,['No Dihedral Linking Number Exists']
-12a_0319,['No Dihedral Linking Number Exists']
-12a_0321,['No Dihedral Linking Number Exists']
-12a_0325,['No Dihedral Linking Number Exists']
-12a_0329,['No Dihedral Linking Number Exists']
-12a_0331,['No Dihedral Linking Number Exists']
-12a_0332,"[[14/3, 14/3], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0334,['No Dihedral Linking Number Exists']
-12a_0336,['No Dihedral Linking Number Exists']
-12a_0342,['No Dihedral Linking Number Exists']
-12a_0345,['No Dihedral Linking Number Exists']
-12a_0346,"[[0, 0]]"
-12a_0347,['No Dihedral Linking Number Exists']
-12a_0348,['No Dihedral Linking Number Exists']
-12a_0358,"[[0, 0]]"
-12a_0360,['No Dihedral Linking Number Exists']
-12a_0362,['No Dihedral Linking Number Exists']
-12a_0373,['No Dihedral Linking Number Exists']
-12a_0374,['No Dihedral Linking Number Exists']
-12a_0375,['No Dihedral Linking Number Exists']
-12a_0376,['No Dihedral Linking Number Exists']
-12a_0377,['No Dihedral Linking Number Exists']
-12a_0386,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [10/3, 10/3]]"
-12a_0389,['No Dihedral Linking Number Exists']
-12a_0390,['No Dihedral Linking Number Exists']
-12a_0392,['No Dihedral Linking Number Exists']
-12a_0393,['No Dihedral Linking Number Exists']
-12a_0395,['No Dihedral Linking Number Exists']
-12a_0396,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [-6, -6]]"
-12a_0401,['No Dihedral Linking Number Exists']
-12a_0404,['No Dihedral Linking Number Exists']
-12a_0408,['No Dihedral Linking Number Exists']
-12a_0409,['No Dihedral Linking Number Exists']
-12a_0411,['No Dihedral Linking Number Exists']
-12a_0413,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [-2, -2]]"
-12a_0414,['No Dihedral Linking Number Exists']
-12a_0415,['No Dihedral Linking Number Exists']
-12a_0416,['No Dihedral Linking Number Exists']
-12a_0419,['No Dihedral Linking Number Exists']
-12a_0420,['No Dihedral Linking Number Exists']
-12a_0422,['No Dihedral Linking Number Exists']
-12a_0425,['No Dihedral Linking Number Exists']
+12a_0296,"[[-16, -16]]"
+12a_0297,"[[2, 2], [4, 4], [6, 6], [0, 0]]"
+12a_0298,"[[0, 0], [2, 2], [4, 4], [6, 6]]"
+12a_0302,"[[2, 2]]"
+12a_0303,"[[2, 2]]"
+12a_0306,"[[2, 2]]"
+12a_0308,"[[-16, -16]]"
+12a_0311,"[[-46/3, -46/3], [2/3, 2/3], [2/3, 2/3], 'No Dihedral Linking Number Exists']"
+12a_0312,"[[26/7, 26/7]]"
+12a_0313,"[[-34/5, -34/5]]"
+12a_0319,"[[-10, -10]]"
+12a_0321,"[[-6, -6]]"
+12a_0325,"[[6/5, 6/5]]"
+12a_0329,"[[0, 0]]"
+12a_0331,"[[54/11, 54/11]]"
+12a_0332,"[[22/3, 22/3], [22/3, 22/3], 'No Dihedral Linking Number Exists', [50/9, 50/9]]"
+12a_0334,"[[70/11, 70/11]]"
+12a_0336,"[[-26/5, -26/5]]"
+12a_0342,"[[-6, -6]]"
+12a_0345,"[[-10, -10]]"
+12a_0346,"[[-46/11, -46/11]]"
+12a_0347,"[[-58/17, -58/17]]"
+12a_0348,"[[10, 10]]"
+12a_0358,"[[-50/19, -50/19]]"
+12a_0360,"[[2, 2]]"
+12a_0362,"[[34/5, 34/5]]"
+12a_0373,"[[-4, -4]]"
+12a_0374,"[[0, 0]]"
+12a_0375,"[[0, 0]]"
+12a_0376,"[[0, 0]]"
+12a_0377,"[[0, 0]]"
+12a_0386,"[[22/3, 22/3], [22/3, 22/3], [22/3, 22/3], [26/3, 26/3]]"
+12a_0389,"[[8, 8]]"
+12a_0390,"[[0, 0]]"
+12a_0392,"[[-20, -20]]"
+12a_0393,"[[-6, -6]]"
+12a_0395,"[[6, 6]]"
+12a_0396,"[[-4, -4], [-4, -4], [0, 0], [-6, -6]]"
+12a_0401,"[[-50/11, -50/11]]"
+12a_0404,"[[6, 6]]"
+12a_0408,"[[-26/5, -26/5]]"
+12a_0409,"[[-26/5, -26/5]]"
+12a_0411,"[[34/5, 34/5]]"
+12a_0413,"[[-14/3, -14/3], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [-58/21, -58/21]]"
+12a_0414,"[[26/5, 26/5]]"
+12a_0415,"[[14/5, 14/5]]"
+12a_0416,"[[2, 2]]"
+12a_0419,"[[2, 2]]"
+12a_0420,"[[-10, -10]]"
+12a_0422,"[[2, 2]]"
+12a_0425,"[[-2, -2]]"
 12a_0426,"[[9/2, 9/2]]"
-12a_0427,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0428,['No Dihedral Linking Number Exists']
-12a_0429,['No Dihedral Linking Number Exists']
-12a_0433,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0434,['No Dihedral Linking Number Exists']
-12a_0435,"['No Dihedral Linking Number Exists', [0, 0], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0439,['No Dihedral Linking Number Exists']
-12a_0444,['No Dihedral Linking Number Exists']
-12a_0445,['No Dihedral Linking Number Exists']
-12a_0446,['No Dihedral Linking Number Exists']
-12a_0448,['No Dihedral Linking Number Exists']
-12a_0450,['No Dihedral Linking Number Exists']
-12a_0451,['No Dihedral Linking Number Exists']
-12a_0456,['No Dihedral Linking Number Exists']
-12a_0459,['No Dihedral Linking Number Exists']
-12a_0463,['No Dihedral Linking Number Exists']
-12a_0464,"[[2, 2]]"
+12a_0427,"[[0, 0], [-2, -2], [2, 2], [0, 0]]"
+12a_0428,"[[-4, -4]]"
+12a_0429,"[[-4, -4]]"
+12a_0433,"[[-8, -8], [-6, -6], [-6, -6], [-4, -4]]"
+12a_0434,"[[10, 10]]"
+12a_0435,"[[0, 0], [4, 4], [0, 0], [-4, -4]]"
+12a_0439,"[[14/5, 14/5]]"
+12a_0444,"[[-4, -4]]"
+12a_0445,"[[0, 0]]"
+12a_0446,"[[-4, -4]]"
+12a_0448,"[[10, 10]]"
+12a_0450,"[[30, 30]]"
+12a_0451,"[[6, 6]]"
+12a_0456,"[[2, 2]]"
+12a_0459,"[[-22, -22]]"
+12a_0463,"[[-4, -4]]"
+12a_0464,"[[-2, -2]]"
 12a_0472,"[[9/2, 9/2]]"
-12a_0475,['No Dihedral Linking Number Exists']
-12a_0482,['No Dihedral Linking Number Exists']
-12a_0485,"[[3, 3]]"
-12a_0486,['No Dihedral Linking Number Exists']
-12a_0490,['No Dihedral Linking Number Exists']
-12a_0491,['No Dihedral Linking Number Exists']
-12a_0493,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0494,['No Dihedral Linking Number Exists']
-12a_0496,['No Dihedral Linking Number Exists']
-12a_0498,['No Dihedral Linking Number Exists']
-12a_0503,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0504,['No Dihedral Linking Number Exists']
-12a_0505,['No Dihedral Linking Number Exists']
-12a_0508,"[[-4, -4]]"
-12a_0509,['No Dihedral Linking Number Exists']
-12a_0515,['No Dihedral Linking Number Exists']
-12a_0519,['No Dihedral Linking Number Exists']
-12a_0523,['No Dihedral Linking Number Exists']
-12a_0524,['No Dihedral Linking Number Exists']
-12a_0525,['No Dihedral Linking Number Exists']
-12a_0528,['No Dihedral Linking Number Exists']
-12a_0529,"[[0, 0]]"
-12a_0540,['No Dihedral Linking Number Exists']
-12a_0541,"[[4, 4]]"
-12a_0542,['No Dihedral Linking Number Exists']
-12a_0546,['No Dihedral Linking Number Exists']
+12a_0475,"[[-4, -4]]"
+12a_0482,"[[6, 6]]"
+12a_0485,"[[2, 2]]"
+12a_0486,"[[-2, -2]]"
+12a_0490,"[[-2, -2]]"
+12a_0491,"[[46/5, 46/5]]"
+12a_0493,"[[-34/3, -34/3], [10/3, 10/3], 'No Dihedral Linking Number Exists', [10/3, 10/3]]"
+12a_0494,"[[54/7, 54/7]]"
+12a_0496,"[[2, 2]]"
+12a_0498,"[[6, 6]]"
+12a_0503,"[[34/3, 34/3], [34/3, 34/3], 'No Dihedral Linking Number Exists', [34/3, 34/3]]"
+12a_0504,"[[34/5, 34/5]]"
+12a_0505,"[[50/7, 50/7]]"
+12a_0508,"[[-2, -2]]"
+12a_0509,"[[-2, -2]]"
+12a_0515,"[[-46/5, -46/5]]"
+12a_0519,"[[6, 6]]"
+12a_0523,"[[-2, -2]]"
+12a_0524,"[[38/7, 38/7]]"
+12a_0525,"[[38/5, 38/5]]"
+12a_0528,"[[2, 2]]"
+12a_0529,"[[-42/13, -42/13]]"
+12a_0540,"[[2, 2]]"
+12a_0541,"[[6, 6]]"
+12a_0542,"[[10/13, 10/13]]"
+12a_0546,"[[-8, -8]]"
 12a_0549,"[[-6, -6]]"
 12a_0554,['No Dihedral Linking Number Exists']
-12a_0561,['No Dihedral Linking Number Exists']
+12a_0561,"[[-6, -6]]"
 12a_0562,"[[38/11, 38/11]]"
-12a_0563,"['No Dihedral Linking Number Exists', [0, 0], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0564,['No Dihedral Linking Number Exists']
-12a_0567,['No Dihedral Linking Number Exists']
-12a_0569,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0570,['No Dihedral Linking Number Exists']
-12a_0571,['No Dihedral Linking Number Exists']
-12a_0574,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [-6, -6]]"
-12a_0575,['No Dihedral Linking Number Exists']
+12a_0563,"['No Dihedral Linking Number Exists', [26/9, 26/9], [-2/3, -2/3], [2/3, 2/3]]"
+12a_0564,"[[30/11, 30/11]]"
+12a_0567,"[[-46/11, -46/11]]"
+12a_0569,"['No Dihedral Linking Number Exists', [22/3, 22/3], [46/9, 46/9], [22/3, 22/3]]"
+12a_0570,"[[58/11, 58/11]]"
+12a_0571,"[[0, 0]]"
+12a_0574,"[[-8, -8], [-4, -4], [-6, -6], [-6, -6]]"
+12a_0575,"[[-4, -4]]"
 12a_0576,"[[0, 0], [2, 2], [4, 4], [6, 6]]"
 12a_0577,"[[0, 0]]"
 12a_0578,"[[0, 0]]"
-12a_0579,['No Dihedral Linking Number Exists']
-12a_0580,['No Dihedral Linking Number Exists']
-12a_0588,['No Dihedral Linking Number Exists']
-12a_0594,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0596,['No Dihedral Linking Number Exists']
-12a_0597,['No Dihedral Linking Number Exists']
-12a_0611,['No Dihedral Linking Number Exists']
-12a_0615,"['No Dihedral Linking Number Exists', [-6, -6], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0617,['No Dihedral Linking Number Exists']
-12a_0623,"[[0, 0]]"
-12a_0626,['No Dihedral Linking Number Exists']
-12a_0628,['No Dihedral Linking Number Exists']
-12a_0629,['No Dihedral Linking Number Exists']
-12a_0631,['No Dihedral Linking Number Exists']
-12a_0633,['No Dihedral Linking Number Exists']
-12a_0634,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0635,['No Dihedral Linking Number Exists']
-12a_0636,['No Dihedral Linking Number Exists']
-12a_0637,['No Dihedral Linking Number Exists']
-12a_0643,['No Dihedral Linking Number Exists']
-12a_0647,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [-4, -4]]"
+12a_0579,"[[-2, -2]]"
+12a_0580,"[[2, 2]]"
+12a_0588,"[[-2, -2]]"
+12a_0594,"[[0, 0], [-2, -2], [0, 0], [2, 2]]"
+12a_0596,"[[-2, -2]]"
+12a_0597,"[[6, 6]]"
+12a_0611,"[[-14, -14]]"
+12a_0615,"[[-6, -6], [-6, -6], [-6, -6], [-6, -6]]"
+12a_0617,"[[-2, -2]]"
+12a_0623,"[[42, 42]]"
+12a_0626,"[[-2, -2]]"
+12a_0628,"[[-50/11, -50/11]]"
+12a_0629,"[[2, 2]]"
+12a_0631,"[[2, 2]]"
+12a_0633,"[[-6, -6]]"
+12a_0634,"[[0, 0], [0, 0], [0, 0], [-2, -2]]"
+12a_0635,"[[-6, -6]]"
+12a_0636,"[[-6/11, -6/11]]"
+12a_0637,"[[10, 10]]"
+12a_0643,"[[-2, -2]]"
+12a_0647,"[[-8, -8], [-8, -8], [-4, -4], [-4, -4]]"
 12a_0648,"[[-4, -4]]"
-12a_0650,['No Dihedral Linking Number Exists']
-12a_0654,['No Dihedral Linking Number Exists']
-12a_0655,['No Dihedral Linking Number Exists']
-12a_0665,['No Dihedral Linking Number Exists']
-12a_0666,['No Dihedral Linking Number Exists']
+12a_0650,"[[-6, -6]]"
+12a_0654,"[[-14, -14]]"
+12a_0655,"[[10, 10]]"
+12a_0665,"[[-16, -16]]"
+12a_0666,"[[6, 6]]"
 12a_0668,"[[0, 0]]"
-12a_0670,['No Dihedral Linking Number Exists']
-12a_0672,['No Dihedral Linking Number Exists']
-12a_0679,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0683,"[[0, 0], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0684,['No Dihedral Linking Number Exists']
-12a_0685,['No Dihedral Linking Number Exists']
+12a_0670,"[[-4, -4]]"
+12a_0672,"[[0, 0]]"
+12a_0679,"[[-4, -4], [-2, -2], [-2, -2], [-4, -4]]"
+12a_0683,"[[2, 2], [0, 0], [-4, -4], [2, 2]]"
+12a_0684,"[[2, 2]]"
+12a_0685,"[[-14, -14]]"
 12a_0689,"[[0, 0]]"
-12a_0692,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [4, 4]]"
-12a_0693,['No Dihedral Linking Number Exists']
-12a_0694,['No Dihedral Linking Number Exists']
-12a_0699,['No Dihedral Linking Number Exists']
-12a_0701,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0702,['No Dihedral Linking Number Exists']
-12a_0703,['No Dihedral Linking Number Exists']
-12a_0705,['No Dihedral Linking Number Exists']
-12a_0706,['No Dihedral Linking Number Exists']
-12a_0708,['No Dihedral Linking Number Exists']
-12a_0711,['No Dihedral Linking Number Exists']
-12a_0712,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
+12a_0692,"[[0, 0], [0, 0], [2, 2], [4, 4]]"
+12a_0693,"[[4, 4]]"
+12a_0694,"[[-4, -4]]"
+12a_0699,"[[-2, -2]]"
+12a_0701,"[[2, 2], [2, 2], [4, 4], [4, 4]]"
+12a_0702,"[[4, 4]]"
+12a_0703,"[[4, 4]]"
+12a_0705,"[[54/19, 54/19]]"
+12a_0706,"[[46, 46]]"
+12a_0708,"[[-34/7, -34/7]]"
+12a_0711,"[[6/5, 6/5]]"
+12a_0712,"[[10, 10], [6, 6], [4, 4], [10, 10]]"
 12a_0718,"[[2, 2]]"
-12a_0719,['No Dihedral Linking Number Exists']
-12a_0721,['No Dihedral Linking Number Exists']
-12a_0723,['No Dihedral Linking Number Exists']
-12a_0725,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0730,['No Dihedral Linking Number Exists']
-12a_0731,['No Dihedral Linking Number Exists']
-12a_0735,['No Dihedral Linking Number Exists']
-12a_0736,['No Dihedral Linking Number Exists']
-12a_0737,['No Dihedral Linking Number Exists']
-12a_0739,['No Dihedral Linking Number Exists']
-12a_0741,['No Dihedral Linking Number Exists']
-12a_0742,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [2, 2], 'No Dihedral Linking Number Exists']"
+12a_0719,"[[-26/5, -26/5]]"
+12a_0721,"[[-6, -6]]"
+12a_0723,"[[14, 14]]"
+12a_0725,"['No Dihedral Linking Number Exists', [26/3, 26/3], [22/3, 22/3], [26/3, 26/3]]"
+12a_0730,"[[34/7, 34/7]]"
+12a_0731,"[[-6, -6]]"
+12a_0735,"[[22/5, 22/5]]"
+12a_0736,"[[-2, -2]]"
+12a_0737,"[[4, 4]]"
+12a_0739,"[[-4, -4]]"
+12a_0741,"[[-62/7, -62/7]]"
+12a_0742,"[[-2, -2], [-2, -2], [0, 0], [4, 4]]"
 12a_0750,['No Dihedral Linking Number Exists']
-12a_0760,['No Dihedral Linking Number Exists']
-12a_0762,['No Dihedral Linking Number Exists']
-12a_0766,['No Dihedral Linking Number Exists']
-12a_0767,['No Dihedral Linking Number Exists']
-12a_0768,['No Dihedral Linking Number Exists']
-12a_0769,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0771,['No Dihedral Linking Number Exists']
-12a_0772,['No Dihedral Linking Number Exists']
-12a_0775,['No Dihedral Linking Number Exists']
-12a_0777,"[[-4, -4]]"
-12a_0780,['No Dihedral Linking Number Exists']
-12a_0785,['No Dihedral Linking Number Exists']
-12a_0787,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0791,['No Dihedral Linking Number Exists']
-12a_0793,['No Dihedral Linking Number Exists']
-12a_0796,['No Dihedral Linking Number Exists']
-12a_0798,['No Dihedral Linking Number Exists']
-12a_0800,['No Dihedral Linking Number Exists']
-12a_0801,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0803,['No Dihedral Linking Number Exists']
-12a_0804,['No Dihedral Linking Number Exists']
-12a_0805,['No Dihedral Linking Number Exists']
-12a_0806,['No Dihedral Linking Number Exists']
-12a_0807,"[[0, 0]]"
-12a_0808,['No Dihedral Linking Number Exists']
-12a_0809,['No Dihedral Linking Number Exists']
-12a_0810,"[[2, 2], 'No Dihedral Linking Number Exists', [8/3, 8/3], 'No Dihedral Linking Number Exists']"
-12a_0812,['No Dihedral Linking Number Exists']
-12a_0814,['No Dihedral Linking Number Exists']
-12a_0818,['No Dihedral Linking Number Exists']
-12a_0823,['No Dihedral Linking Number Exists']
-12a_0827,['No Dihedral Linking Number Exists']
-12a_0828,['No Dihedral Linking Number Exists']
-12a_0841,"[[-2, -2]]"
-12a_0845,['No Dihedral Linking Number Exists']
-12a_0847,['No Dihedral Linking Number Exists']
-12a_0852,['No Dihedral Linking Number Exists']
-12a_0853,['No Dihedral Linking Number Exists']
-12a_0855,"[[-2, -2]]"
-12a_0858,['No Dihedral Linking Number Exists']
-12a_0861,['No Dihedral Linking Number Exists']
-12a_0862,['No Dihedral Linking Number Exists']
-12a_0864,['No Dihedral Linking Number Exists']
-12a_0873,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0876,['No Dihedral Linking Number Exists']
+12a_0760,"[[-10, -10]]"
+12a_0762,"[[-2, -2]]"
+12a_0766,"[[-2, -2]]"
+12a_0767,"[[18/7, 18/7]]"
+12a_0768,"[[-10, -10]]"
+12a_0769,"[[-10/3, -10/3], [34/3, 34/3], [-14/3, -14/3], [-14/3, -14/3]]"
+12a_0771,"[[50, 50]]"
+12a_0772,"[[-4, -4]]"
+12a_0775,"[[2, 2]]"
+12a_0777,"[[-6, -6]]"
+12a_0780,"[[-6, -6]]"
+12a_0785,"[[-4, -4]]"
+12a_0787,"['No Dihedral Linking Number Exists', [-14/9, -14/9], [-14/3, -14/3], [-14/3, -14/3]]"
+12a_0791,"[[2, 2]]"
+12a_0793,"[[46/17, 46/17]]"
+12a_0796,"[[-2, -2]]"
+12a_0798,"[[-4, -4]]"
+12a_0800,"[[-4, -4]]"
+12a_0801,"[[-4, -4], [-4, -4], [-6, -6], [-4, -4]]"
+12a_0803,"[[2, 2]]"
+12a_0804,"[[-54/17, -54/17]]"
+12a_0805,"[[-2, -2]]"
+12a_0806,"[[-2, -2]]"
+12a_0807,"[[-2, -2]]"
+12a_0808,"[[-2, -2]]"
+12a_0809,"[[-46/13, -46/13]]"
+12a_0810,"[[10/3, 10/3], [-58/15, -58/15], [14/3, 14/3], [10/3, 10/3]]"
+12a_0812,"[[-46, -46]]"
+12a_0814,"[[0, 0]]"
+12a_0818,"[[-42, -42]]"
+12a_0823,"[[0, 0]]"
+12a_0827,"[[-4, -4]]"
+12a_0828,"[[0, 0]]"
+12a_0841,"[[22/5, 22/5]]"
+12a_0845,"[[-10/11, -10/11]]"
+12a_0847,"[[4, 4]]"
+12a_0852,"[[0, 0]]"
+12a_0853,"[[22/13, 22/13]]"
+12a_0855,"[[2, 2]]"
+12a_0858,"[[-6/5, -6/5]]"
+12a_0861,"[[4, 4]]"
+12a_0862,"[[-26/11, -26/11]]"
+12a_0864,"[[4, 4]]"
+12a_0873,"['No Dihedral Linking Number Exists', [-10/3, -10/3], [-10/3, -10/3], [38/3, 38/3]]"
+12a_0876,"[[-10, -10]]"
 12a_0878,"[[2, 2]]"
-12a_0882,['No Dihedral Linking Number Exists']
-12a_0886,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0888,['No Dihedral Linking Number Exists']
-12a_0893,['No Dihedral Linking Number Exists']
-12a_0894,['No Dihedral Linking Number Exists']
-12a_0895,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0902,['No Dihedral Linking Number Exists']
-12a_0903,['No Dihedral Linking Number Exists']
-12a_0904,['No Dihedral Linking Number Exists']
-12a_0905,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0907,['No Dihedral Linking Number Exists']
-12a_0909,['No Dihedral Linking Number Exists']
-12a_0912,['No Dihedral Linking Number Exists']
-12a_0913,['No Dihedral Linking Number Exists']
-12a_0914,['No Dihedral Linking Number Exists']
+12a_0882,"[[2, 2]]"
+12a_0886,"['No Dihedral Linking Number Exists', [-2/3, -2/3], [-2/3, -2/3], [50/3, 50/3]]"
+12a_0888,"[[-10, -10]]"
+12a_0893,"[[-6, -6]]"
+12a_0894,"[[-10, -10]]"
+12a_0895,"[[-10/3, -10/3], 'No Dihedral Linking Number Exists', [-10/3, -10/3], [-10/3, -10/3]]"
+12a_0902,"[[-30, -30]]"
+12a_0903,"[[-4, -4]]"
+12a_0904,"[[2, 2]]"
+12a_0905,"[[6, 6], [4, 4], [6, 6], [2, 2]]"
+12a_0907,"[[-34/5, -34/5]]"
+12a_0909,"[[-2, -2]]"
+12a_0912,"[[2, 2]]"
+12a_0913,"[[-2, -2]]"
+12a_0914,"[[6, 6]]"
 12a_0916,"[[2, 2]]"
-12a_0919,['No Dihedral Linking Number Exists']
-12a_0923,"[[-2, -2]]"
-12a_0924,['No Dihedral Linking Number Exists']
-12a_0927,['No Dihedral Linking Number Exists']
-12a_0928,['No Dihedral Linking Number Exists']
-12a_0930,['No Dihedral Linking Number Exists']
-12a_0931,['No Dihedral Linking Number Exists']
-12a_0936,['No Dihedral Linking Number Exists']
-12a_0939,"[[-34, -34]]"
-12a_0940,['No Dihedral Linking Number Exists']
-12a_0941,['No Dihedral Linking Number Exists']
-12a_0944,['No Dihedral Linking Number Exists']
-12a_0949,['No Dihedral Linking Number Exists']
-12a_0952,['No Dihedral Linking Number Exists']
-12a_0964,['No Dihedral Linking Number Exists']
-12a_0965,['No Dihedral Linking Number Exists']
-12a_0970,['No Dihedral Linking Number Exists']
-12a_0972,['No Dihedral Linking Number Exists']
-12a_0973,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0974,['No Dihedral Linking Number Exists']
-12a_0975,['No Dihedral Linking Number Exists']
-12a_0976,['No Dihedral Linking Number Exists']
-12a_0979,['No Dihedral Linking Number Exists']
-12a_0981,['No Dihedral Linking Number Exists']
+12a_0919,"[[-2, -2]]"
+12a_0923,"[[-30/7, -30/7]]"
+12a_0924,"[[-42/5, -42/5]]"
+12a_0927,"[[8, 8]]"
+12a_0928,"[[22, 22]]"
+12a_0930,"[[-4, -4]]"
+12a_0931,"[[-4, -4]]"
+12a_0936,"[[-6, -6]]"
+12a_0939,"[[34, 34]]"
+12a_0940,"[[-38, -38]]"
+12a_0941,"[[0, 0]]"
+12a_0944,"[[-10, -10]]"
+12a_0949,"[[0, 0]]"
+12a_0952,"[[-14, -14]]"
+12a_0964,"[[-10, -10]]"
+12a_0965,"[[-2, -2]]"
+12a_0970,"[[4, 4]]"
+12a_0972,"[[-14/5, -14/5]]"
+12a_0973,"['No Dihedral Linking Number Exists', [-44/9, -44/9], 'No Dihedral Linking Number Exists', [-22/3, -22/3]]"
+12a_0974,"[[-36/7, -36/7]]"
+12a_0975,"[[-4, -4]]"
+12a_0976,"[[-22, -22]]"
+12a_0979,"[[0, 0]]"
+12a_0981,"[[0, 0]]"
 12a_0982,"[[0, 0]]"
-12a_0986,['No Dihedral Linking Number Exists']
-12a_0987,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [4, 4], 'No Dihedral Linking Number Exists']"
-12a_0990,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_0999,['No Dihedral Linking Number Exists']
-12a_1000,['No Dihedral Linking Number Exists']
-12a_1001,['No Dihedral Linking Number Exists']
-12a_1002,['No Dihedral Linking Number Exists']
-12a_1010,"[[2, 2]]"
-12a_1016,"[[4, 4]]"
-12a_1018,['No Dihedral Linking Number Exists']
-12a_1021,['No Dihedral Linking Number Exists']
-12a_1022,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_1025,['No Dihedral Linking Number Exists']
-12a_1026,['No Dihedral Linking Number Exists']
-12a_1029,['No Dihedral Linking Number Exists']
-12a_1036,['No Dihedral Linking Number Exists']
-12a_1043,['No Dihedral Linking Number Exists']
-12a_1044,['No Dihedral Linking Number Exists']
-12a_1050,['No Dihedral Linking Number Exists']
-12a_1057,['No Dihedral Linking Number Exists']
-12a_1059,['No Dihedral Linking Number Exists']
-12a_1060,['No Dihedral Linking Number Exists']
-12a_1061,['No Dihedral Linking Number Exists']
-12a_1062,['No Dihedral Linking Number Exists']
-12a_1073,['No Dihedral Linking Number Exists']
-12a_1076,['No Dihedral Linking Number Exists']
-12a_1077,['No Dihedral Linking Number Exists']
-12a_1079,['No Dihedral Linking Number Exists']
-12a_1080,['No Dihedral Linking Number Exists']
-12a_1087,['No Dihedral Linking Number Exists']
-12a_1091,['No Dihedral Linking Number Exists']
-12a_1092,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [4/3, 4/3], [-2, -2]]"
-12a_1093,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_1094,"[[-4, -4]]"
-12a_1095,['No Dihedral Linking Number Exists']
-12a_1100,['No Dihedral Linking Number Exists']
-12a_1101,['No Dihedral Linking Number Exists']
-12a_1103,['No Dihedral Linking Number Exists']
-12a_1111,['No Dihedral Linking Number Exists']
-12a_1115,['No Dihedral Linking Number Exists']
-12a_1117,"[[-4, -4]]"
-12a_1120,['No Dihedral Linking Number Exists']
-12a_1122,['No Dihedral Linking Number Exists']
-12a_1123,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_1129,['No Dihedral Linking Number Exists']
-12a_1133,['No Dihedral Linking Number Exists']
-12a_1136,['No Dihedral Linking Number Exists']
-12a_1137,['No Dihedral Linking Number Exists']
-12a_1142,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_1144,"[[0, 0]]"
-12a_1146,['No Dihedral Linking Number Exists']
+12a_0986,"[[2, 2]]"
+12a_0987,"[[2, 2], [2, 2], [4, 4], [4, 4]]"
+12a_0990,"[[0, 0], [-2, -2], [2, 2], [0, 0]]"
+12a_0999,"[[0, 0]]"
+12a_1000,"[[0, 0]]"
+12a_1001,"[[2, 2]]"
+12a_1002,"[[2, 2]]"
+12a_1010,"[[14, 14]]"
+12a_1016,"[[-4, -4]]"
+12a_1018,"[[0, 0]]"
+12a_1021,"[[-26/5, -26/5]]"
+12a_1022,"[[-26/3, -26/3], [22/3, 22/3], [22/3, 22/3], [22/3, 22/3]]"
+12a_1025,"[[50/13, 50/13]]"
+12a_1026,"[[38/7, 38/7]]"
+12a_1029,"[[-2, -2]]"
+12a_1036,"[[-14, -14]]"
+12a_1043,"[[-6/5, -6/5]]"
+12a_1044,"[[2, 2]]"
+12a_1050,"[[-12, -12]]"
+12a_1057,"[[30, 30]]"
+12a_1059,"[[-4, -4]]"
+12a_1060,"[[-2, -2]]"
+12a_1061,"[[-4, -4]]"
+12a_1062,"[[-4, -4]]"
+12a_1073,"[[-4, -4]]"
+12a_1076,"[[6, 6]]"
+12a_1077,"[[-14/5, -14/5]]"
+12a_1079,"[[-2, -2]]"
+12a_1080,"[[-4, -4]]"
+12a_1087,"[[-2, -2]]"
+12a_1091,"[[-6, -6]]"
+12a_1092,"[[-2/3, -2/3], [-2/3, -2/3], [-2/3, -2/3], [2/3, 2/3]]"
+12a_1093,"[[2/3, 2/3], [2/3, 2/3], 'No Dihedral Linking Number Exists', [-2/3, -2/3]]"
+12a_1094,"[[-2, -2]]"
+12a_1095,"[[2, 2]]"
+12a_1100,"[[0, 0]]"
+12a_1101,"[[-2, -2]]"
+12a_1103,"[[-2, -2]]"
+12a_1111,"[[-2, -2]]"
+12a_1115,"[[-2, -2]]"
+12a_1117,"[[-9/2, -9/2]]"
+12a_1120,"[[2, 2]]"
+12a_1122,"[[14/5, 14/5]]"
+12a_1123,"[[2, 2], [2, 2], [-2, -2], [-2, -2]]"
+12a_1129,"[[-10, -10]]"
+12a_1133,"[[6, 6]]"
+12a_1136,"[[-2, -2]]"
+12a_1137,"[[22/7, 22/7]]"
+12a_1142,"[[-14/3, -14/3], [-10/9, -10/9], 'No Dihedral Linking Number Exists', [-14/3, -14/3]]"
+12a_1144,"[[-14/11, -14/11]]"
+12a_1146,"[[6, 6]]"
 12a_1147,"[[-4, -4]]"
-12a_1151,['No Dihedral Linking Number Exists']
-12a_1154,['No Dihedral Linking Number Exists']
-12a_1155,['No Dihedral Linking Number Exists']
-12a_1157,['No Dihedral Linking Number Exists']
-12a_1160,['No Dihedral Linking Number Exists']
-12a_1161,['No Dihedral Linking Number Exists']
-12a_1162,['No Dihedral Linking Number Exists']
-12a_1164,['No Dihedral Linking Number Exists']
-12a_1166,['No Dihedral Linking Number Exists']
-12a_1170,['No Dihedral Linking Number Exists']
-12a_1173,['No Dihedral Linking Number Exists']
-12a_1177,['No Dihedral Linking Number Exists']
-12a_1180,['No Dihedral Linking Number Exists']
-12a_1181,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_1184,['No Dihedral Linking Number Exists']
-12a_1187,['No Dihedral Linking Number Exists']
-12a_1189,['No Dihedral Linking Number Exists']
-12a_1190,['No Dihedral Linking Number Exists']
-12a_1191,['No Dihedral Linking Number Exists']
-12a_1196,['No Dihedral Linking Number Exists']
-12a_1197,"[[0, 0]]"
-12a_1200,"[[0, 0]]"
-12a_1201,['No Dihedral Linking Number Exists']
-12a_1207,['No Dihedral Linking Number Exists']
-12a_1210,['No Dihedral Linking Number Exists']
-12a_1212,['No Dihedral Linking Number Exists']
-12a_1214,['No Dihedral Linking Number Exists']
-12a_1215,['No Dihedral Linking Number Exists']
-12a_1216,['No Dihedral Linking Number Exists']
+12a_1151,"[[-2, -2]]"
+12a_1154,"[[-8, -8]]"
+12a_1155,"[[-14, -14]]"
+12a_1157,"[[-6, -6]]"
+12a_1160,"[[18/5, 18/5]]"
+12a_1161,"[[-2, -2]]"
+12a_1162,"[[-6, -6]]"
+12a_1164,"[[-4, -4]]"
+12a_1166,"[[-2, -2]]"
+12a_1170,"[[-2, -2]]"
+12a_1173,"[[-8, -8]]"
+12a_1177,"[[-2, -2]]"
+12a_1180,"[[-6, -6]]"
+12a_1181,"[[-2/3, -2/3], [2/3, 2/3], [-2/3, -2/3], [-2/3, -2/3]]"
+12a_1184,"[[-6, -6]]"
+12a_1187,"[[4, 4]]"
+12a_1189,"[[18, 18]]"
+12a_1190,"[[0, 0]]"
+12a_1191,"[[0, 0]]"
+12a_1196,"[[-6/5, -6/5]]"
+12a_1197,"[[-10, -10]]"
+12a_1200,"[[6, 6]]"
+12a_1201,"[[-2, -2]]"
+12a_1207,"[[-6, -6]]"
+12a_1210,"[[-2, -2]]"
+12a_1212,"[[-4, -4]]"
+12a_1214,"[[-6, -6]]"
+12a_1215,"[[0, 0]]"
+12a_1216,"[[-34/7, -34/7]]"
 12a_1217,"[[-54/13, -54/13]]"
-12a_1219,['No Dihedral Linking Number Exists']
-12a_1221,['No Dihedral Linking Number Exists']
-12a_1224,['No Dihedral Linking Number Exists']
-12a_1225,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_1226,['No Dihedral Linking Number Exists']
-12a_1237,['No Dihedral Linking Number Exists']
-12a_1239,['No Dihedral Linking Number Exists']
-12a_1247,['No Dihedral Linking Number Exists']
-12a_1248,['No Dihedral Linking Number Exists']
-12a_1252,['No Dihedral Linking Number Exists']
-12a_1253,['No Dihedral Linking Number Exists']
-12a_1255,['No Dihedral Linking Number Exists']
-12a_1260,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_1261,['No Dihedral Linking Number Exists']
-12a_1262,['No Dihedral Linking Number Exists']
-12a_1265,"[[-4, -4]]"
-12a_1266,['No Dihedral Linking Number Exists']
-12a_1270,['No Dihedral Linking Number Exists']
-12a_1272,['No Dihedral Linking Number Exists']
+12a_1219,"[[4, 4]]"
+12a_1221,"[[-4, -4]]"
+12a_1224,"[[-2, -2]]"
+12a_1225,"[[2, 2], [0, 0], [-2, -2], [0, 0]]"
+12a_1226,"[[2, 2]]"
+12a_1237,"[[6/5, 6/5]]"
+12a_1239,"[[10, 10]]"
+12a_1247,"[[6, 6]]"
+12a_1248,"[[2, 2]]"
+12a_1252,"[[-4, -4]]"
+12a_1253,"[[0, 0]]"
+12a_1255,"[[-2, -2]]"
+12a_1260,"[[-2, -2], [2, 2], [2, 2], [-2, -2]]"
+12a_1261,"[[-4, -4]]"
+12a_1262,"[[2, 2]]"
+12a_1265,"[[6, 6]]"
+12a_1266,"[[-4, -4]]"
+12a_1270,"[[-2, -2]]"
+12a_1272,"[[-10, -10]]"
 12a_1276,"[[2, 2]]"
-12a_1282,['No Dihedral Linking Number Exists']
-12a_1283,"[[-2, -2], [2, 2], [0, 0], [0, 0]]"
-12a_1284,['No Dihedral Linking Number Exists']
-12a_1285,['No Dihedral Linking Number Exists']
-12a_1286,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12a_1288,"[[0, 0], [0, 0], [0, 0], [0, 0]]"
-12n_0001,['No Dihedral Linking Number Exists']
-12n_0004,['No Dihedral Linking Number Exists']
-12n_0005,['No Dihedral Linking Number Exists']
-12n_0006,['No Dihedral Linking Number Exists']
-12n_0007,"[[2, 2]]"
-12n_0010,['No Dihedral Linking Number Exists']
-12n_0015,['No Dihedral Linking Number Exists']
-12n_0016,['No Dihedral Linking Number Exists']
-12n_0022,['No Dihedral Linking Number Exists']
-12n_0023,['No Dihedral Linking Number Exists']
-12n_0027,['No Dihedral Linking Number Exists']
-12n_0028,['No Dihedral Linking Number Exists']
-12n_0030,['No Dihedral Linking Number Exists']
-12n_0031,['No Dihedral Linking Number Exists']
-12n_0033,['No Dihedral Linking Number Exists']
-12n_0034,['No Dihedral Linking Number Exists']
-12n_0035,['No Dihedral Linking Number Exists']
-12n_0039,['No Dihedral Linking Number Exists']
-12n_0040,['No Dihedral Linking Number Exists']
-12n_0043,['No Dihedral Linking Number Exists']
-12n_0044,['No Dihedral Linking Number Exists']
-12n_0049,"[[0, 0]]"
-12n_0050,['No Dihedral Linking Number Exists']
-12n_0051,['No Dihedral Linking Number Exists']
+12a_1282,"[[2, 2]]"
+12a_1283,"[[-2, -2], [-2, -2], [0, 0], [4, 4]]"
+12a_1284,"[[4, 4]]"
+12a_1285,"[[4, 4]]"
+12a_1286,"[[2, 2], [4, 4], [2, 2], [4, 4]]"
+12a_1288,"[[0, 0], [0, 0], [-4, -4], [4, 4]]"
+12n_0001,"[[0, 0]]"
+12n_0004,"[[4, 4]]"
+12n_0005,"[[8, 8]]"
+12n_0006,"[[4, 4]]"
+12n_0007,"[[4, 4]]"
+12n_0010,"[[8, 8]]"
+12n_0015,"[[6, 6]]"
+12n_0016,"[[2, 2]]"
+12n_0022,"[[4, 4]]"
+12n_0023,"[[4, 4]]"
+12n_0027,"[[0, 0]]"
+12n_0028,"[[8, 8]]"
+12n_0030,"[[4, 4]]"
+12n_0031,"[[4, 4]]"
+12n_0033,"[[0, 0]]"
+12n_0034,"[[8, 8]]"
+12n_0035,"[[14, 14]]"
+12n_0039,"[[6, 6]]"
+12n_0040,"[[2, 2]]"
+12n_0043,"[[2, 2]]"
+12n_0044,"[[6, 6]]"
+12n_0049,"[[18, 18]]"
+12n_0050,"[[22, 22]]"
+12n_0051,"[[-2/11, -2/11]]"
 12n_0052,"[[42/11, 42/11]]"
-12n_0053,['No Dihedral Linking Number Exists']
-12n_0055,['No Dihedral Linking Number Exists']
-12n_0056,['No Dihedral Linking Number Exists']
-12n_0057,['No Dihedral Linking Number Exists']
+12n_0053,"[[-2/11, -2/11]]"
+12n_0055,"[[-4, -4]]"
+12n_0056,"[[0, 0]]"
+12n_0057,"[[0, 0]]"
 12n_0058,"[[4, 4]]"
-12n_0059,['No Dihedral Linking Number Exists']
-12n_0060,['No Dihedral Linking Number Exists']
-12n_0061,['No Dihedral Linking Number Exists']
-12n_0062,['No Dihedral Linking Number Exists']
-12n_0063,['No Dihedral Linking Number Exists']
-12n_0064,"[[-2, -2]]"
-12n_0066,['No Dihedral Linking Number Exists']
-12n_0067,['No Dihedral Linking Number Exists']
-12n_0083,['No Dihedral Linking Number Exists']
-12n_0084,['No Dihedral Linking Number Exists']
-12n_0098,['No Dihedral Linking Number Exists']
-12n_0099,"[[2, 2]]"
-12n_0100,['No Dihedral Linking Number Exists']
-12n_0101,['No Dihedral Linking Number Exists']
-12n_0102,['No Dihedral Linking Number Exists']
-12n_0106,['No Dihedral Linking Number Exists']
-12n_0107,['No Dihedral Linking Number Exists']
-12n_0108,['No Dihedral Linking Number Exists']
-12n_0109,['No Dihedral Linking Number Exists']
-12n_0110,['No Dihedral Linking Number Exists']
+12n_0059,"[[-4, -4]]"
+12n_0060,"[[0, 0]]"
+12n_0061,"[[0, 0]]"
+12n_0062,"[[0, 0]]"
+12n_0063,"[[4, 4]]"
+12n_0064,"[[-4, -4]]"
+12n_0066,"[[0, 0]]"
+12n_0067,"[[4, 4]]"
+12n_0083,"[[-4, -4]]"
+12n_0084,"[[0, 0]]"
+12n_0098,"[[-8, -8]]"
+12n_0099,"[[4, 4]]"
+12n_0100,"[[-34/7, -34/7]]"
+12n_0101,"[[38/5, 38/5]]"
+12n_0102,"[[-22/13, -22/13]]"
+12n_0106,"[[0, 0]]"
+12n_0107,"[[-4, -4]]"
+12n_0108,"[[0, 0]]"
+12n_0109,"[[-4, -4]]"
+12n_0110,"[[0, 0]]"
 12n_0125,"[[-8, -8]]"
 12n_0126,"[[4, 4]]"
-12n_0139,['No Dihedral Linking Number Exists']
-12n_0140,['No Dihedral Linking Number Exists']
-12n_0141,['No Dihedral Linking Number Exists']
-12n_0144,['No Dihedral Linking Number Exists']
-12n_0147,['No Dihedral Linking Number Exists']
+12n_0139,"[[-6/7, -6/7]]"
+12n_0140,"[[18/5, 18/5]]"
+12n_0141,"[[30/13, 30/13]]"
+12n_0144,"[[2, 2]]"
+12n_0147,"[[-2, -2]]"
 12n_0150,"[[-8, -8]]"
 12n_0151,"[[4, 4]]"
 12n_0152,"[[-8, -8]]"
-12n_0156,['No Dihedral Linking Number Exists']
-12n_0157,['No Dihedral Linking Number Exists']
-12n_0158,['No Dihedral Linking Number Exists']
-12n_0169,['No Dihedral Linking Number Exists']
-12n_0170,['No Dihedral Linking Number Exists']
-12n_0171,['No Dihedral Linking Number Exists']
-12n_0173,['No Dihedral Linking Number Exists']
-12n_0174,"[[28/13, 28/13]]"
-12n_0175,['No Dihedral Linking Number Exists']
-12n_0176,['No Dihedral Linking Number Exists']
-12n_0198,['No Dihedral Linking Number Exists']
-12n_0200,['No Dihedral Linking Number Exists']
-12n_0201,['No Dihedral Linking Number Exists']
-12n_0202,['No Dihedral Linking Number Exists']
-12n_0203,['No Dihedral Linking Number Exists']
-12n_0204,['No Dihedral Linking Number Exists']
-12n_0211,"[[-4/5, -4/5]]"
+12n_0156,"[[-6, -6]]"
+12n_0157,"[[-18, -18]]"
+12n_0158,"[[30/7, 30/7]]"
+12n_0169,"[[0, 0]]"
+12n_0170,"[[-4, -4]]"
+12n_0171,"[[0, 0]]"
+12n_0173,"[[-18/11, -18/11]]"
+12n_0174,"[[30/13, 30/13]]"
+12n_0175,"[[18/5, 18/5]]"
+12n_0176,"[[14/13, 14/13]]"
+12n_0198,"[[4, 4]]"
+12n_0200,"[[-4, -4]]"
+12n_0201,"[[0, 0]]"
+12n_0202,"[[-4, -4]]"
+12n_0203,"[[0, 0]]"
+12n_0204,"[[-38/13, -38/13]]"
+12n_0211,"[[-18/5, -18/5]]"
 12n_0219,"[[0, 0]]"
-12n_0220,['No Dihedral Linking Number Exists']
-12n_0221,['No Dihedral Linking Number Exists']
-12n_0222,['No Dihedral Linking Number Exists']
-12n_0223,['No Dihedral Linking Number Exists']
+12n_0220,"[[-4, -4]]"
+12n_0221,"[[0, 0]]"
+12n_0222,"[[-4, -4]]"
+12n_0223,"[[-4, -4]]"
 12n_0224,"[[0, 0]]"
-12n_0225,['No Dihedral Linking Number Exists']
+12n_0225,"[[-4, -4]]"
 12n_0229,"[[-4, -4]]"
-12n_0245,['No Dihedral Linking Number Exists']
-12n_0246,['No Dihedral Linking Number Exists']
-12n_0247,['No Dihedral Linking Number Exists']
-12n_0258,"[[2, 2]]"
-12n_0260,['No Dihedral Linking Number Exists']
-12n_0261,['No Dihedral Linking Number Exists']
-12n_0265,['No Dihedral Linking Number Exists']
-12n_0266,['No Dihedral Linking Number Exists']
-12n_0267,['No Dihedral Linking Number Exists']
-12n_0268,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0269,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0270,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0280,"[[-2, -2]]"
-12n_0282,['No Dihedral Linking Number Exists']
-12n_0283,['No Dihedral Linking Number Exists']
-12n_0284,['No Dihedral Linking Number Exists']
-12n_0285,['No Dihedral Linking Number Exists']
-12n_0286,['No Dihedral Linking Number Exists']
-12n_0287,['No Dihedral Linking Number Exists']
-12n_0290,['No Dihedral Linking Number Exists']
-12n_0291,"[[2, 2]]"
-12n_0294,['No Dihedral Linking Number Exists']
-12n_0302,['No Dihedral Linking Number Exists']
-12n_0308,['No Dihedral Linking Number Exists']
-12n_0310,['No Dihedral Linking Number Exists']
-12n_0311,['No Dihedral Linking Number Exists']
-12n_0329,['No Dihedral Linking Number Exists']
-12n_0330,['No Dihedral Linking Number Exists']
-12n_0331,['No Dihedral Linking Number Exists']
-12n_0332,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0333,"['No Dihedral Linking Number Exists', [0, 0], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0334,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0357,['No Dihedral Linking Number Exists']
-12n_0359,['No Dihedral Linking Number Exists']
-12n_0363,['No Dihedral Linking Number Exists']
-12n_0364,['No Dihedral Linking Number Exists']
-12n_0365,['No Dihedral Linking Number Exists']
-12n_0368,['No Dihedral Linking Number Exists']
-12n_0369,['No Dihedral Linking Number Exists']
-12n_0375,['No Dihedral Linking Number Exists']
-12n_0377,['No Dihedral Linking Number Exists']
-12n_0379,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0380,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [0, 0]]"
-12n_0383,['No Dihedral Linking Number Exists']
-12n_0386,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0387,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [-4, -4], 'No Dihedral Linking Number Exists']"
-12n_0388,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0389,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0392,['No Dihedral Linking Number Exists']
-12n_0398,['No Dihedral Linking Number Exists']
-12n_0399,"[[0, 0]]"
-12n_0401,['No Dihedral Linking Number Exists']
-12n_0402,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [10/9, 10/9]]"
-12n_0403,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
+12n_0245,"[[-10, -10]]"
+12n_0246,"[[-14, -14]]"
+12n_0247,"[[2/7, 2/7]]"
+12n_0258,"[[14/13, 14/13]]"
+12n_0260,"[[2/5, 2/5]]"
+12n_0261,"[[-4, -4]]"
+12n_0265,"[[4, 4]]"
+12n_0266,"[[-8, -8]]"
+12n_0267,"[[4, 4]]"
+12n_0268,"[[22/3, 22/3], [26/3, 26/3], 'No Dihedral Linking Number Exists', [-2/9, -2/9]]"
+12n_0269,"[[-38/9, -38/9], [14/3, 14/3], [14/3, 14/3], 'No Dihedral Linking Number Exists']"
+12n_0270,"[[-2/9, -2/9], 'No Dihedral Linking Number Exists', [22/3, 22/3], [22/3, 22/3]]"
+12n_0280,"[[-3, -3]]"
+12n_0282,"[[-12, -12]]"
+12n_0283,"[[-2/11, -2/11]]"
+12n_0284,"[[-6, -6]]"
+12n_0285,"[[-10/7, -10/7]]"
+12n_0286,"[[10/13, 10/13]]"
+12n_0287,"[[10/13, 10/13]]"
+12n_0290,"[[-4, -4]]"
+12n_0291,"[[0, 0]]"
+12n_0294,"[[6, 6]]"
+12n_0302,"[[-42/13, -42/13]]"
+12n_0308,"[[-2, -2]]"
+12n_0310,"[[-10, -10]]"
+12n_0311,"[[26, 26]]"
+12n_0329,"[[10/11, 10/11]]"
+12n_0330,"[[34/11, 34/11]]"
+12n_0331,"[[10/11, 10/11]]"
+12n_0332,"[[14/9, 14/9], 'No Dihedral Linking Number Exists', [10/3, 10/3], [10/3, 10/3]]"
+12n_0333,"[[-2/3, -2/3], [22/9, 22/9], 'No Dihedral Linking Number Exists', [-2/3, -2/3]]"
+12n_0334,"[[10/3, 10/3], [14/3, 14/3], 'No Dihedral Linking Number Exists', [14/9, 14/9]]"
+12n_0357,"[[-30, -30]]"
+12n_0359,"[[-8, -8]]"
+12n_0363,"[[4, 4]]"
+12n_0364,"[[-22/13, -22/13]]"
+12n_0365,"[[22/13, 22/13]]"
+12n_0368,"[[-6, -6]]"
+12n_0369,"[[-2, -2]]"
+12n_0375,"[[-2, -2]]"
+12n_0377,"[[2, 2]]"
+12n_0379,"[[6, 6], [4, 4], [2, 2], [0, 0]]"
+12n_0380,"[[2, 2], [0, 0], [2, 2], [-4, -4]]"
+12n_0383,"[[-20, -20]]"
+12n_0386,"[[-8, -8], [-6, -6], [-6, -6], [-4, -4]]"
+12n_0387,"[[-8, -8], [-6, -6], [-4, -4], [-6, -6]]"
+12n_0388,"[[0, 0], [-6, -6], [-4, -4], [-2, -2]]"
+12n_0389,"[[0, 0], [2, 2], [-4, -4], [2, 2]]"
+12n_0392,"[[-16, -16]]"
+12n_0398,"[[2, 2]]"
+12n_0399,"[[-2, -2]]"
+12n_0401,"[[2, 2]]"
+12n_0402,"[[10/3, 10/3], [10/3, 10/3], 'No Dihedral Linking Number Exists', [10/9, 10/9]]"
+12n_0403,"[[10/3, 10/3], [14/3, 14/3], [14/3, 14/3], [10/3, 10/3]]"
 12n_0404,"[[14/11, 14/11]]"
-12n_0409,['No Dihedral Linking Number Exists']
-12n_0410,['No Dihedral Linking Number Exists']
-12n_0412,['No Dihedral Linking Number Exists']
-12n_0413,['No Dihedral Linking Number Exists']
-12n_0419,['No Dihedral Linking Number Exists']
-12n_0420,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [-2, -2]]"
-12n_0421,['No Dihedral Linking Number Exists']
-12n_0422,['No Dihedral Linking Number Exists']
-12n_0423,['No Dihedral Linking Number Exists']
-12n_0425,['No Dihedral Linking Number Exists']
-12n_0426,['No Dihedral Linking Number Exists']
-12n_0435,['No Dihedral Linking Number Exists']
-12n_0438,['No Dihedral Linking Number Exists']
-12n_0439,['No Dihedral Linking Number Exists']
-12n_0440,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0441,['No Dihedral Linking Number Exists']
-12n_0442,['No Dihedral Linking Number Exists']
-12n_0443,['No Dihedral Linking Number Exists']
-12n_0444,['No Dihedral Linking Number Exists']
-12n_0445,['No Dihedral Linking Number Exists']
-12n_0458,['No Dihedral Linking Number Exists']
-12n_0459,['No Dihedral Linking Number Exists']
-12n_0460,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [4, 4]]"
-12n_0464,['No Dihedral Linking Number Exists']
-12n_0480,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0483,['No Dihedral Linking Number Exists']
-12n_0484,['No Dihedral Linking Number Exists']
-12n_0491,['No Dihedral Linking Number Exists']
-12n_0493,['No Dihedral Linking Number Exists']
-12n_0494,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0495,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [2, 2]]"
-12n_0496,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0497,['No Dihedral Linking Number Exists']
-12n_0499,['No Dihedral Linking Number Exists']
-12n_0500,"[[14, 14]]"
-12n_0502,['No Dihedral Linking Number Exists']
-12n_0505,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0507,['No Dihedral Linking Number Exists']
-12n_0508,"['No Dihedral Linking Number Exists', [-2, -2], 'No Dihedral Linking Number Exists', [-4, -4]]"
+12n_0409,"[[6, 6]]"
+12n_0410,"[[-6, -6]]"
+12n_0412,"[[2, 2]]"
+12n_0413,"[[-2, -2]]"
+12n_0419,"[[-26/5, -26/5]]"
+12n_0420,"['No Dihedral Linking Number Exists', [2/3, 2/3], 'No Dihedral Linking Number Exists', [22/9, 22/9]]"
+12n_0421,"[[-26/11, -26/11]]"
+12n_0422,"[[26/11, 26/11]]"
+12n_0423,"[[18/11, 18/11]]"
+12n_0425,"[[6, 6]]"
+12n_0426,"[[-3, -3]]"
+12n_0435,"[[10, 10]]"
+12n_0438,"[[-14/5, -14/5]]"
+12n_0439,"[[2/7, 2/7]]"
+12n_0440,"[[0, 0], [0, 0], [-2, -2], [0, 0]]"
+12n_0441,"[[-14, -14]]"
+12n_0442,"[[26, 26]]"
+12n_0443,"[[22/5, 22/5]]"
+12n_0444,"[[-6/11, -6/11]]"
+12n_0445,"[[-38/13, -38/13]]"
+12n_0458,"[[14/13, 14/13]]"
+12n_0459,"[[-6/11, -6/11]]"
+12n_0460,"[[2, 2], [6, 6], [2, 2], [2, 2]]"
+12n_0464,"[[-14/5, -14/5]]"
+12n_0480,"[[10/3, 10/3], [10/3, 10/3], [10/3, 10/3], [10/3, 10/3]]"
+12n_0483,"[[-4, -4]]"
+12n_0484,"[[-4, -4]]"
+12n_0491,"[[2, 2]]"
+12n_0493,"[[6, 6]]"
+12n_0494,"[[0, 0], [0, 0], [-4, -4], [-2, -2]]"
+12n_0495,"[[0, 0], [4, 4], [4, 4], [2, 2]]"
+12n_0496,"[[-8, -8], [-8, -8], [-4, -4], [-10, -10]]"
+12n_0497,"[[38/11, 38/11]]"
+12n_0499,"[[6/5, 6/5]]"
+12n_0500,"[[10, 10]]"
+12n_0502,"[[-2, -2]]"
+12n_0505,"[[14/3, 14/3], [10/3, 10/3], [10/3, 10/3], [14/3, 14/3]]"
+12n_0507,"[[2, 2]]"
+12n_0508,"[[-4, -4], [0, 0], [-4, -4], [-4, -4]]"
 12n_0518,"[[-8, -8], [-8, -8], [-4, -4], [-4, -4]]"
-12n_0525,['No Dihedral Linking Number Exists']
-12n_0527,['No Dihedral Linking Number Exists']
-12n_0533,['No Dihedral Linking Number Exists']
-12n_0535,"[[2, 2]]"
-12n_0536,"[[3, 3]]"
-12n_0543,['No Dihedral Linking Number Exists']
-12n_0546,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0547,['No Dihedral Linking Number Exists']
-12n_0549,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0550,['No Dihedral Linking Number Exists']
-12n_0551,['No Dihedral Linking Number Exists']
-12n_0552,['No Dihedral Linking Number Exists']
-12n_0553,['No Dihedral Linking Number Exists']
+12n_0525,"[[-18, -18]]"
+12n_0527,"[[-2, -2]]"
+12n_0533,"[[0, 0]]"
+12n_0535,"[[1, 1]]"
+12n_0536,"[[2, 2]]"
+12n_0543,"[[34/5, 34/5]]"
+12n_0546,"[[-26/9, -26/9], 'No Dihedral Linking Number Exists', [2/3, 2/3], [2/3, 2/3]]"
+12n_0547,"[[-30/11, -30/11]]"
+12n_0549,"[[-2, -2], [-2, -2], [-6, -6], [-2, -2]]"
+12n_0550,"[[10/13, 10/13]]"
+12n_0551,"[[0, 0]]"
+12n_0552,"[[1, 1]]"
+12n_0553,"[[-2, -2]]"
 12n_0554,['No Dihedral Linking Number Exists']
-12n_0555,['No Dihedral Linking Number Exists']
-12n_0556,['No Dihedral Linking Number Exists']
-12n_0564,['No Dihedral Linking Number Exists']
-12n_0565,"['No Dihedral Linking Number Exists', [8/9, 8/9], 'No Dihedral Linking Number Exists', [0, -1]]"
-12n_0566,['No Dihedral Linking Number Exists']
-12n_0567,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
+12n_0555,"[[14/3, 14/3]]"
+12n_0556,"[[10/3, 10/3]]"
+12n_0564,"[[6/11, 6/11]]"
+12n_0565,"[[10/3, 10/3], [10/9, 10/9], [14/3, 14/3], 'No Dihedral Linking Number Exists']"
+12n_0566,"[[14/11, 14/11]]"
+12n_0567,"[[-2, -2], [0, 0], [-2, -2], [2, 2]]"
 12n_0570,"[[0, 0], [2, 2], [4, 4], [6, 6]]"
 12n_0571,"[[0, 0], [2, 2], [-4, -4], [2, 2]]"
-12n_0572,['No Dihedral Linking Number Exists']
-12n_0573,['No Dihedral Linking Number Exists']
+12n_0572,"[[0, 0]]"
+12n_0573,"[[-4, -4]]"
 12n_0574,"[[-8, -8], [-6, -6], [-4, -4], [-6, -6]]"
-12n_0575,['No Dihedral Linking Number Exists']
+12n_0575,"[[-4, -4]]"
 12n_0576,"[[-4, -4]]"
-12n_0577,['No Dihedral Linking Number Exists']
-12n_0578,['No Dihedral Linking Number Exists']
-12n_0579,['No Dihedral Linking Number Exists']
-12n_0581,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [-4, -4], 'No Dihedral Linking Number Exists']"
-12n_0582,"['No Dihedral Linking Number Exists', [0, 0], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0583,"[[0, 0], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0587,['No Dihedral Linking Number Exists']
-12n_0597,['No Dihedral Linking Number Exists']
-12n_0598,"[[20/3, 20/3], 'No Dihedral Linking Number Exists', [-2, -2], 'No Dihedral Linking Number Exists']"
-12n_0600,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0601,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0602,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0603,['No Dihedral Linking Number Exists']
+12n_0577,"[[0, 0]]"
+12n_0578,"[[-4, -4]]"
+12n_0579,"[[-10/7, -10/7]]"
+12n_0581,"[[-4, -4], [-2, -2], [-4, -4], [-2, -2]]"
+12n_0582,"[[-2, -2], [2, 2], [0, 0], [0, 0]]"
+12n_0583,"[[-4, -4], [-4, -4], [-2, -2], [-2, -2]]"
+12n_0587,"[[-16, -16]]"
+12n_0597,"[[-2, -2]]"
+12n_0598,"[[34/3, 34/3], [-14/3, -14/3], [-10/3, -10/3], [-10/3, -10/3]]"
+12n_0600,"[[-4, -4], [-4, -4], [-6, -6], [-4, -4]]"
+12n_0601,"[[0, 0], [0, 0], [-2, -2], [0, 0]]"
+12n_0602,"[[-4, -4], [-4, -4], [-6, -6], [-4, -4]]"
+12n_0603,"[[-14, -14]]"
 12n_0604,"[[4, 4], [4, 4], [4, 4], [0, 0]]"
-12n_0605,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [0, 0], 'No Dihedral Linking Number Exists']"
-12n_0611,['No Dihedral Linking Number Exists']
-12n_0613,['No Dihedral Linking Number Exists']
-12n_0615,['No Dihedral Linking Number Exists']
-12n_0622,"[[0, 0], 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0626,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0627,['No Dihedral Linking Number Exists']
-12n_0628,['No Dihedral Linking Number Exists']
-12n_0629,['No Dihedral Linking Number Exists']
-12n_0630,['No Dihedral Linking Number Exists']
-12n_0631,['No Dihedral Linking Number Exists']
-12n_0632,['No Dihedral Linking Number Exists']
-12n_0636,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0637,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0638,['No Dihedral Linking Number Exists']
+12n_0605,"[[0, 0], [0, 0], [4, 4], [-4, -4]]"
+12n_0611,"[[-8, -8]]"
+12n_0613,"[[-6/11, -6/11]]"
+12n_0615,"[[10/13, 10/13]]"
+12n_0622,"[[2/3, 2/3], [-2/3, -2/3], 'No Dihedral Linking Number Exists', [2/3, 2/3]]"
+12n_0626,"[[6, 6], [10, 10], [4, 4], [10, 10]]"
+12n_0627,"[[2, 2]]"
+12n_0628,"[[-30/11, -30/11]]"
+12n_0629,"[[-2/5, -2/5]]"
+12n_0630,"[[-2/5, -2/5]]"
+12n_0631,"[[10/13, 10/13]]"
+12n_0632,"[[10/13, 10/13]]"
+12n_0636,"[[2/3, 2/3], [2/3, 2/3], [2/3, 2/3], [2/3, 2/3]]"
+12n_0637,"[[-2, -2], [-2, -2], [-4, -4], [2, 2]]"
+12n_0638,"[[-8, -8]]"
 12n_0640,"[[-6, -6]]"
-12n_0641,['No Dihedral Linking Number Exists']
-12n_0642,['No Dihedral Linking Number Exists']
-12n_0653,['No Dihedral Linking Number Exists']
-12n_0654,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
+12n_0641,"[[2, 2]]"
+12n_0642,"[[2/3, 2/3]]"
+12n_0653,"[[6, 6]]"
+12n_0654,"[[-2/3, -2/3], [2/3, 2/3], [-2/3, -2/3], [2/3, 2/3]]"
 12n_0655,"[[2, 2]]"
-12n_0656,['No Dihedral Linking Number Exists']
-12n_0657,['No Dihedral Linking Number Exists']
-12n_0660,['No Dihedral Linking Number Exists']
-12n_0664,['No Dihedral Linking Number Exists']
-12n_0665,['No Dihedral Linking Number Exists']
-12n_0666,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0667,['No Dihedral Linking Number Exists']
-12n_0668,['No Dihedral Linking Number Exists']
-12n_0669,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0672,['No Dihedral Linking Number Exists']
+12n_0656,"[[-6, -6]]"
+12n_0657,"[[2, 2]]"
+12n_0660,"[[6, 6]]"
+12n_0664,"[[-14/13, -14/13]]"
+12n_0665,"[[6/7, 6/7]]"
+12n_0666,"[[-2, -2], [-2, -2], [-6, -6], [-2, -2]]"
+12n_0667,"[[-2, -2]]"
+12n_0668,"[[-2, -2]]"
+12n_0669,"[[-2, -2], [-2, -2], [2, 2], [2, 2]]"
+12n_0672,"[[26/11, 26/11]]"
 12n_0674,"[[-4, -4]]"
 12n_0675,"[[0, 0]]"
-12n_0676,['No Dihedral Linking Number Exists']
-12n_0690,['No Dihedral Linking Number Exists']
-12n_0697,['No Dihedral Linking Number Exists']
-12n_0700,['No Dihedral Linking Number Exists']
-12n_0701,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0717,['No Dihedral Linking Number Exists']
-12n_0726,['No Dihedral Linking Number Exists']
-12n_0737,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0738,['No Dihedral Linking Number Exists']
-12n_0740,['No Dihedral Linking Number Exists']
-12n_0744,['No Dihedral Linking Number Exists']
+12n_0676,"[[-4, -4]]"
+12n_0690,"[[-4, -4]]"
+12n_0697,"[[-8, -8]]"
+12n_0700,"[[28/5, 28/5]]"
+12n_0701,"[[-2/3, -2/3], [2/3, 2/3], [-2/3, -2/3], [20/3, 20/3]]"
+12n_0717,"[[-2, -2]]"
+12n_0726,"[[10, 10]]"
+12n_0737,"['No Dihedral Linking Number Exists', [-20/3, -20/3], 'No Dihedral Linking Number Exists', [-10/3, -10/3]]"
+12n_0738,"[[-14, -14]]"
+12n_0740,"[[-14/5, -14/5]]"
+12n_0744,"[[-6/5, -6/5]]"
 12n_0750,"[[-2, -2]]"
 12n_0751,"[[-2, -2]]"
-12n_0752,['No Dihedral Linking Number Exists']
-12n_0753,['No Dihedral Linking Number Exists']
-12n_0754,['No Dihedral Linking Number Exists']
-12n_0756,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [-2, -2], 'No Dihedral Linking Number Exists']"
-12n_0759,['No Dihedral Linking Number Exists']
-12n_0762,['No Dihedral Linking Number Exists']
-12n_0767,['No Dihedral Linking Number Exists']
-12n_0769,['No Dihedral Linking Number Exists']
-12n_0770,['No Dihedral Linking Number Exists']
-12n_0774,['No Dihedral Linking Number Exists']
-12n_0779,['No Dihedral Linking Number Exists']
-12n_0780,['No Dihedral Linking Number Exists']
-12n_0781,['No Dihedral Linking Number Exists']
-12n_0782,['No Dihedral Linking Number Exists']
-12n_0784,"[[-8, -8]]"
-12n_0791,['No Dihedral Linking Number Exists']
-12n_0799,['No Dihedral Linking Number Exists']
-12n_0803,['No Dihedral Linking Number Exists']
-12n_0806,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', [-6, -6], 'No Dihedral Linking Number Exists']"
-12n_0807,['No Dihedral Linking Number Exists']
-12n_0809,['No Dihedral Linking Number Exists']
-12n_0811,['No Dihedral Linking Number Exists']
-12n_0812,['No Dihedral Linking Number Exists']
-12n_0813,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0823,['No Dihedral Linking Number Exists']
-12n_0825,['No Dihedral Linking Number Exists']
-12n_0826,['No Dihedral Linking Number Exists']
-12n_0831,['No Dihedral Linking Number Exists']
-12n_0832,['No Dihedral Linking Number Exists']
-12n_0833,['No Dihedral Linking Number Exists']
-12n_0836,['No Dihedral Linking Number Exists']
-12n_0841,['No Dihedral Linking Number Exists']
-12n_0843,['No Dihedral Linking Number Exists']
-12n_0844,['No Dihedral Linking Number Exists']
-12n_0845,['No Dihedral Linking Number Exists']
-12n_0846,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0847,['No Dihedral Linking Number Exists']
+12n_0752,"[[-2, -2]]"
+12n_0753,"[[-4, -4]]"
+12n_0754,"[[-2, -2]]"
+12n_0756,"[[-6, -6], [-2, -2], [-4, -4], [-6, -6]]"
+12n_0759,"[[-28/5, -28/5]]"
+12n_0762,"[[-2, -2]]"
+12n_0767,"[[2, 2]]"
+12n_0769,"[[-2, -2]]"
+12n_0770,"[[-6, -6]]"
+12n_0774,"[[4, 4]]"
+12n_0779,"[[-4, -4]]"
+12n_0780,"[[0, 0]]"
+12n_0781,"[[-6, -6]]"
+12n_0782,"[[-2, -2]]"
+12n_0784,"[[-10, -10]]"
+12n_0791,"[[2, 2]]"
+12n_0799,"[[6, 6]]"
+12n_0803,"[[-6, -6]]"
+12n_0806,"['No Dihedral Linking Number Exists', [-26/3, -26/3], [-26/3, -26/3], 'No Dihedral Linking Number Exists']"
+12n_0807,"[[-2, -2]]"
+12n_0809,"[[-3, -3]]"
+12n_0811,"[[0, 0]]"
+12n_0812,"[[0, 0]]"
+12n_0813,"[[2, 2], [2, 2], [0, 0], [2, 2]]"
+12n_0823,"[[-6, -6]]"
+12n_0825,"[[6, 6]]"
+12n_0826,"[[6, 6]]"
+12n_0831,"[[0, 0]]"
+12n_0832,"[[6, 6]]"
+12n_0833,"[[0, 0]]"
+12n_0836,"[[-6, -6]]"
+12n_0841,"[[6/5, 6/5]]"
+12n_0843,"[[-2, -2]]"
+12n_0844,"[[-8, -8]]"
+12n_0845,"[[-8/5, -8/5]]"
+12n_0846,"[[10/3, 10/3], [10/3, 10/3], [10/3, 10/3], [-8/3, -8/3]]"
+12n_0847,"[[26, 26]]"
 12n_0850,"[[-8, -8]]"
-12n_0858,['No Dihedral Linking Number Exists']
+12n_0858,"[[2, 2]]"
 12n_0865,"[[6/5, 6/5]]"
-12n_0866,['No Dihedral Linking Number Exists']
-12n_0868,['No Dihedral Linking Number Exists']
-12n_0869,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0874,['No Dihedral Linking Number Exists']
-12n_0875,['No Dihedral Linking Number Exists']
-12n_0876,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0882,['No Dihedral Linking Number Exists']
-12n_0883,"['No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists', 'No Dihedral Linking Number Exists']"
-12n_0884,['No Dihedral Linking Number Exists']
-12n_0886,['No Dihedral Linking Number Exists']
+12n_0866,"[[14/5, 14/5]]"
+12n_0868,"[[-5, -5]]"
+12n_0869,"[[-14/3, -14/3], [-14/3, -14/3], [-14/3, -14/3], 'No Dihedral Linking Number Exists']"
+12n_0874,"[[-2, -2]]"
+12n_0875,"[[6, 6]]"
+12n_0876,"[[2/3, 2/3], [2/3, 2/3], [2/3, 2/3], [2/3, 2/3]]"
+12n_0882,"[[6, 6]]"
+12n_0883,"[[-2/3, -2/3], 'No Dihedral Linking Number Exists', [2/3, 2/3], [8/3, 8/3]]"
+12n_0884,"[[8/5, 8/5]]"
+12n_0886,"[[-42/11, -42/11]]"
 12n_0888,"[[-8, -8], [-4, -4], [-8, -8], [-4, -4]]"
