@@ -158,6 +158,9 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list,p):
             #IF HOMOGENEOUS CROSSING
                 continue
             else:
+                #now we need to add the equation information to this row of the matrix.
+                x_matrix[i][i] +=1
+                x_matrix[i][(i+1)%len(overstrand_list)] -=1
                 if color_list[overstrand_list[i]] == where_list[overstrand_list[i]]:
                     epsilon_a_two = 1
                     #epsilon two is positive if the color of the overstrand is equal to the where of i. 
@@ -178,26 +181,24 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list,p):
         #see if we have an epsilon three. this would happen if all three strands are the same color (homogeneous crossing)
 
             #epsilon 3 is negative if where of i is the same as where of the overstrand.
-            if(where_list[i] == where_list[overstrand_list[i]]):
-                epsilon_three = -1
-            else:
-                epsilon_three = 1
+ #           if(where_list[i] == where_list[overstrand_list[i]]):
+ #               epsilon_three = -1
+ #           else:
+ #               epsilon_three = 1
 
-        #now we need to add the equation information to this row of the matrix.
-        x_matrix[i][i] +=1
-        x_matrix[i][(i+1)%len(overstrand_list)] -=1
+
       
         #edits as a heterogenous crossing
-        if epsilon_three == 0:
+ #       if epsilon_three == 0:
             #edit the overstrand coefficient
             #x_matrix[i][overstrand_list[i]] += (epsilon_one*epsilon_two)
             #edit the constant on the LEFT side of the equation (the equation will be set equal to 0?)
             #x_matrix[i][len(overstrand_list)] += -(sign_list[i]*epsilon_two)
-            continue 
+ #           continue 
       #edits as a homogenous crossing
-        else:
+ #       else:
             #edit overstrand coefficient. constant is 0. 
-            x_matrix[i][overstrand_list[i]] += 2*epsilon_three
+ #           x_matrix[i][overstrand_list[i]] += 2*epsilon_three
 
 
     #print("MATRIX")
