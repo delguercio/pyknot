@@ -11,13 +11,14 @@
 def ToReducedRowEchelonForm(M, p):
     """
         input: matrix from overstrand_to_matrix.py
-        output: reduced row eschelon matrix mod p
+        output: reduced row echelon matrix mod p
     """
     inverses = {}
     for i in range(p):
         for inverse in range(p):
             if (i*inverse)%p == 1:
                 inverses[i] = inverse
+                inverses[-i]= -inverse
             
     if not M: return
     lead = 0 # col index
@@ -25,7 +26,7 @@ def ToReducedRowEchelonForm(M, p):
     columnCount = len(M[0]) # num col in M
     for r in range(lead, rowCount): #r is row index
         if lead >= columnCount:  #if col index reaches end, return column
-            #print(M)
+
             return M
         i = r #
         while M[i][lead] == 0: #if the value is already 0, move to the next row
@@ -39,7 +40,7 @@ def ToReducedRowEchelonForm(M, p):
 
         M[i],M[r] = M[r],M[i] #swap two different rows (reassigning two vars at once)
         lv = M[r][lead] 
-        #print(M)
+
         if lv != 1: #if the lead value isn't one, multiply the row by lv inverse and take mod n    
             M[r] = [ (mrx*inverses[lv])%p for mrx in M[r] ]
         for i in range(rowCount):
@@ -48,12 +49,13 @@ def ToReducedRowEchelonForm(M, p):
                 M[i] = [ (iv - lv*rv)%p for rv,iv in zip(M[r],M[i]) ]
         lead += 1
 
+    return M
  
  
-#mtx4_1 = [[1,1,0,1],[0,1,1,1],[1,1,1,0],[1,0,1,1]]
+mtx4_1 = [[1,1,0,-2],[-2,1,1,0],[0,-2,1,1],[1,0,-2,1]]
 #mtx = [[1,0,1,1,0],[1,1,0,1,0],[0,1,0,1,1],[0,1,1,0,1],[1,0,1,0,1]]
  
-#ToReducedRowEchelonForm(mtx, 3)
+#print(ToReducedRowEchelonForm([[1, 1, 0, 0, 0, 0, -2, 0, 0], [-2, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 1, 1, 0, 0, 0, -2, 0], [0, 0, 0, 1, 1, -2, 0, 0, 0], [0, 0, 0, 0, 1, 1, 0, -2, 0], [-2, 0, 0, 0, 0, 1, 1, 0, 0], [0, 0, -2, 0, 0, 0, 1, 1, 0], [0, 0, 0, 0, -2, 0, 0, 1, 1], [1, 0, 0, 0, 0, 0, -2, 0, 1]], 5))
 
 #print(mtx)
 
@@ -70,7 +72,20 @@ def ToReducedRowEchelonForm(M, p):
 
 #ToReducedRowEchelonForm(figure_eight_5coloring, 5)
 
-#print(ToReducedRowEchelonForm(seven_seven_matrix,7))
+##print(ToReducedRowEchelonForm([[1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+##                               [0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+##                               [0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+##                               [0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+##                               [0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0],
+##                               [0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0],
+##                               [0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0],
+##                               [1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0],
+##                               [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
+##                               [0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0],
+##                               [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0],
+##                               [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0],
+##                               [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1],
+##                               [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]],3))
 
 #print(figure_eight_5coloring)
 

@@ -55,4 +55,3 @@ def BraidToSigns(braid):
 
         return signs
 
-

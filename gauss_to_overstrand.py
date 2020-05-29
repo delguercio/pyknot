@@ -103,5 +103,3 @@ def create_overstrand_list(gauss_code_list):
 # print('The overstrand list for 8-5 is '+str(create_overstrand_list(eight_five)))
 # print('The overstrand list for 8-10 is '+str(create_overstrand_list(eight_ten)))
 # print('The overstrand list for 11n-1 is '+str(create_overstrand_list(eleven_n_one)))
-
-

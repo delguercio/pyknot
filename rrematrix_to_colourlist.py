@@ -1,15 +1,22 @@
 import csv
+from itertools import *
+from overstrand_to_matrix import *
+from matrix_to_rrematrix import *
 
 #Makes a list of color lists that are valid for the knot, given the row reduced matrix for the strands. 
-def ColourList(matrix):
+def ColourList(matrix,p):
     #get number of rows as a variable and initialize lists for later. 
     number_rows = len(matrix)
 
+    possible_colours = []
+    for i in range(p):
+        possible_colours.append(i)
+    
     colourlists = []
     colours = []
     pivots = []
     free_variables = []
-    free_var_names = []
+
 
     #Loop through each of the rows
     for i in range(number_rows):
@@ -33,54 +40,81 @@ def ColourList(matrix):
     for i in range(number_rows):
         if i not in pivots:
             free_variables.append(i)
-    #jack do this :(   
-    #<|(:3)
-    colour_dict ={} #
-    for k in range( len( free_variables ) ):
-        colour_dict[free_variables[k]] = k%3
     
-    for i in range(len(pivots)):
-        colour = 0
-        row = matrix[i]
-        for column in range(len(row)):
-            if column not in pivots:
-                colour -= row[column]*colour_dict[column]
-        colour = colour%3
-        colour_dict[pivots[i]] = colour
-        
-    for i in range(len(matrix)):
-        colours.append(colour_dict[i]+1)
+    # All possible assignments of colours to the free variables
+    free = list(product(possible_colours, repeat = len(free_variables)))
 
-    colourlists.append(colours)
-    
-    if len(free_variables) == 3:
-        free_colours = [[0,0,1],[0,1,0],[1,0,0]]
+    free_colours=[]
 
-        for i in range(3):
-            colour_dict ={}
-            colours = []
-            combination = free_colours[i]
-            for j in range(3):
-                colour_dict[free_variables[j]] = combination[j]
+    for colours in free:
+        colours = list(colours)
+        free_colours.append(colours)
 
-            for i in range(len(pivots)):
+    # Get rid of rotations of each colour list
+    for colourlist in free_colours:
+        colourlist = list(colourlist)
+        for i in range(p):
+            new_list = []
+            for colour in colourlist:
+                new_colour=(colour+i+1) %p
+                new_list.append(new_colour)
+
+            if new_list != colourlist and new_list in free_colours:
+                free_colours.remove(new_list)
+
+    # Get rid of reflections of each colour list
+    for colourlist in free_colours:
+        colourlist = list(colourlist)
+        new_list = []
+        for colour in colourlist:
+            new_colour = (p-colour) %p
+            new_list.append(new_colour)
+        if new_list != colourlist and new_list in free_colours:
+            free_colours.remove(new_list)
+
+    trivial_colouring = []
+    for i in range(len(free_variables)):
+        trivial_colouring.append(0)
+
+    free_colours.remove(trivial_colouring)
+
+    for permutation in free_colours:
+
+        colour_dict={}
+
+        colours = []
+
+        for i in range(len(permutation)):
+            colour = list(permutation)[i]
+            colour_dict[free_variables[i]] = colour
+
+        for i in range(len(pivots)):
                 colour = 0
                 row = matrix[i]
                 for column in range(len(row)):
                     if column not in pivots:
                         colour -= row[column]*colour_dict[column]
-                colour = colour%3
+                colour = colour%p
                 colour_dict[pivots[i]] = colour
-                
-            for i in range(len(matrix)):
-                colours.append(colour_dict[i]+1)
+     
+        for i in range(len(matrix)):
+                colours.append(colour_dict[i])
 
-            colourlists.append(colours)    
+        colourlists.append(colours)
+
+
+    for colourlist in colourlists:
+        for i in range(len(colourlist)):
+            if colourlist[i] ==0:
+                colourlist[i] = p  
         
     return colourlists
 
-#testing
-print( ColourList([[1, 0, 0, 0, 0, 0, 0, 0, 1, 1], [0, 1, 0, 0, 0, 0, 0, 0, 0, 2], [0, 0, 1, 0, 0, 0, 0, 0, 2, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 2], [0, 0, 0, 0, 1, 0, 0, 0, 1, 1], [0, 0, 0, 0, 0, 1, 0, 0, 1, 1], [0, 0, 0, 0, 0, 0, 1, 0, 2, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]))
-#print(ColourList([[1, 0, 0, 0, 0, 0, 0, 6], [0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 1], [0, 0, 0, 1, 0, 0, 0, 6], [0, 0, 0, 0, 1, 0, 0, 1], [0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 3]]))
+def overstrand_to_colourlist(overstrand, p):
+    matrix = create_matrix(overstrand, p)
+    rrematrix = ToReducedRowEchelonForm(matrix, p)
+    colourlists = ColourList(rrematrix, p)
 
+    return colourlists
 
+print(overstrand_to_colourlist([3,6,8,2,12,9,3,0,10,4,6,9,10,2], 3))

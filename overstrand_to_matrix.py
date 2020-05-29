@@ -40,7 +40,7 @@ seven_seven = [4, 3, 6, 5, 0, 1, 2, 7]
 #eight_ten = [6, 4, 5, 7, 2, 0, 3, 1]
 
 
-def create_matrix(overstrand_list):
+def create_matrix(overstrand_list, p):
     """
         first makes a list of lists of tuples that
         specify where we want to add the 1's later in the program
@@ -87,11 +87,15 @@ def create_matrix(overstrand_list):
     for row in index_list:
         #print("ROW")
         #print(row)
-        for index in row:
+        for i in range(len(row)):
             #print("INDEX")
             #print(index)
-            knot_matrix[index[0]][index[1]] += 1
+            if i == 2:
+                knot_matrix[row[i][0]][row[i][1]] += (p-2)
+            else:
+                knot_matrix[row[i][0]][row[i][1]] += 1
     return knot_matrix
+
 
 #print('The dictionary for 6-1 '+str(create_matrix(six_one)))
 #print('The dictionary for 3-1 '+str(create_matrix(three_one)))
@@ -99,7 +103,6 @@ def create_matrix(overstrand_list):
 #print('The dictionary for 7-7  '+str(create_matrix(seven_seven)))
 #print('The dictionary for 8-5  '+str(create_matrix(eight_five)))
 #print('The dictionary for 8-10  '+str(create_matrix(eight_ten)))
-
 
 
 
