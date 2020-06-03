@@ -115,8 +115,9 @@ def where(overstrand_list, color_list, p):
     """
 
     """
+    numcrossings = len(overstrand_list)
     all_walls = wall_colors(overstrand_list,color_list, p)
-    print(all_walls)
+    #print(all_walls)
     first_wall = all_walls[0]
     side = 0
     where_lists = []
@@ -124,16 +125,71 @@ def where(overstrand_list, color_list, p):
         where_lists.append([first_wall[side%2][tier]])
         side+=1
     for where_list in where_lists:
-        for i in range(len(overstrand_list)-1):
-            if where_list[i] == color_list[overstrand_list[i+1]]:
-                where_list.append(color_list[overstrand_list[i+1]])
+        for i in range(numcrossings-1):
+            if where_list[i] == color_list[overstrand_list[i%numcrossings]]:
+                where_list.append(where_list[i])
             else:                
-                where_list.append(reflect(where_list[i],color_list[overstrand_list[i+1]],p))
+                where_list.append(reflect(where_list[i],color_list[overstrand_list[i%numcrossings]],p))
     return where_lists
+
+color_lists_8_5 = wall_colors(overstrand_8_5,color_8_5,7)
+where_lists_8_5 = where(overstrand_8_5,color_8_5,7)
+
+wall_colors_4_1 = wall_colors(overstrand_4_1,color_4_1,5)
+where_lists_4_1 = where(overstrand_4_1,color_4_1,5)
+
+#print(where_lists_4_1)
+
+def what_level(index):
+    """
+    only works for 5 coloring
+    """
+    if index == [1,1] or [1,2]:
+        level = 1
+    else:
+        level = 0
+    return level
+
+def find(head, head_list_at_crossing):
+    """ 
+        ripped from stack exchange :)
+    """
+    side_tier = []
+    for side,single_wall_side in enumerate(head_list_at_crossing):
+        try:
+            #print("the wall is")
+            #print(single_wall_side)
+            #print("we are looking for")
+            #print(head)
+            tier = single_wall_side.index(head)
+            #print("the index of head is")
+            #print(j)
+            side_tier.append([side,tier])
+        except ValueError:
+            continue
+    #print(side_tier)
+    return side_tier
+
+def where_to_topbot(where_lists,wall_colors):
+    """
+    """
+    where_top = []
+    where_bot = []
+    for crossing in range(len(where_lists[0])):
+        level = what_level(find(where_lists[0][crossing],wall_colors[crossing]))
+        if level == 0:
+            where_top.append(where_lists[0][crossing])
+            where_bot.append(where_lists[1][crossing])
+        else:
+            where_top.append(where_lists[1][crossing])
+            where_bot.append(where_lists[0][crossing])
+    return [where_top,where_bot]
+
+print(where_to_topbot(where_lists_4_1,wall_colors_4_1))
 
 
 #This function outputs the matrix containing x_i, x_i+1, x_f(i) and a constant. This relies on using epsilon rules. 
-def initialize_matrix(overstrand_list,color_list,where_list,sign_list,p):
+def initialize_matrix(overstrand_list,color_list,where_list_topbot,sign_list,p):
     #Make a starting matrix of all 0s
     num_index2 = int((p-1)/2)
     x_matrix = [[0]*(num_index2*len(overstrand_list)+1) for i in range(num_index2*len(overstrand_list))]
@@ -142,9 +198,9 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list,p):
     epsilon_c_one = 0
     epsilon_d_one = 0
 
-    #Now we need to find the signs of the first two epsilons.
-    #Loop through each of the crossings
-    for i in range(num_index2*len(overstrand_list)):
+    row = 0
+
+    for i in range(len(overstrand_list)):
         #initialize epsilon_three so we can see if a crossing is inhomogeneous or not easily
         epsilon_a_two = 0
         epsilon_b_two = 0
@@ -152,31 +208,38 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list,p):
         epsilon_d_one = 0
 
         epsilon_three = 0
-        
-        for i in range(len(overstrand_list)):
-            if color_list[i]==color_list[(i+1)%len(overstrand_list)]==color_list[overstrand_list[i]]:
+
+        numcross = len(overstrand_list)
+
+
+        if color_list[i]==color_list[(i+1)%numcross]==color_list[overstrand_list[i]]:
             #IF HOMOGENEOUS CROSSING
                 continue
-            else:
-                #now we need to add the equation information to this row of the matrix.
-                x_matrix[i][i] +=1
-                x_matrix[i][(i+1)%len(overstrand_list)] -=1
-                if color_list[overstrand_list[i]] == where_list[overstrand_list[i]]:
-                    epsilon_a_two = 1
-                    #epsilon two is positive if the color of the overstrand is equal to the where of i. 
-                    if reflect(where_lists[][]color_list[overstrand_list[i]] == where_list[i]:
-                        epsilon_two = 1
-                    elif color_list[overstrand_list[i]] != where_list[i]:
-                        epsilon_two = -1
-                elif color_list[overstrand_list[i]] != where_list[overstrand_list[i]]:
-                    epsilon_a_two = -1
-                    #epsilon two is positive if the color of the overstrand is equal to the where of i. 
-                    if color_list[overstrand_list[i]] == where_list[i]:
-                        epsilon_two = 1
-                    elif color_list[overstrand_list[i]] != where_list[i]:
-                        epsilon_two = -1
+        else:
+            #now we need to add the equation information to this row of the matrix.
+            if color_list[overstrand_list[i]] == where_list_top[i]:
+                epsilon_a_two = 1
+            elif color_list[overstrand_list[i]] != where_list_top[i]:
+                epsilon_a_two = -1
+            if reflect(where_list_bot[i],color_list[i]) == color_list[(i+1)%numcross]:
+                epsilon_b_two = 1
+            elif reflect(where_list_bot[i],color_list[i]) != color_list[(i+1)%numcross]:
+                epsilon_b_two = -1
+            if where_list_up[i] == reflect(color_list[overstrand_list[i]],color_list[i]):
+                epsilon_c_one = 1
+            elif where_list_up[i] != reflect(color_list[overstrand_list[i]],color_list[i]):
+                epsilon_c_one = -1
+            if where_list_down[i] == color_list[(i+1)%numcross]:
+                epsilon_d_one = 1
+            elif where_list_down[i] == color_list[i]
+                epsilon_d_one = -1
 
-
+            x_matrix[row][i] +=1
+            x_matrix[row][(i+1)%numcross] -=1
+            row += 1
+            x_matrix[row+numcross][i+numcross] +=1
+            x_matrix[row+numcross][(i+1)%numcross+numcross] -=1
+            row += 1
 
         #see if we have an epsilon three. this would happen if all three strands are the same color (homogeneous crossing)
 
@@ -207,5 +270,3 @@ def initialize_matrix(overstrand_list,color_list,where_list,sign_list,p):
     #return row reduced version of matrix
     return sympy.Matrix(x_matrix).rref()[0] #x_matrix #
 
-
-print(where(overstrand_8_5,color_8_5,7))

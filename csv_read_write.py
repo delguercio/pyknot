@@ -562,8 +562,6 @@ def main():
                     new_LoL.append(newfields)
                     line_count = line_count + 1
                 else:
-                    #if line_count == 1026:
-                    #    print(row)
                     color_list_listofstrings = row[4][2:-2].split("], [")
                     color_list_listoflists = [ list(crossing.split(", ")) for crossing in color_list_listofstrings ]
                     color_lists = [ [int(n) for n in string] for string in color_list_listoflists ]

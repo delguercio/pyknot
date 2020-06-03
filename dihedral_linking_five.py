@@ -231,67 +231,38 @@ print(matches_pass)
 
 print(build_where(where_lists_5_2,matches_pass,wall_list_first_crossing,7))
 
-def where(overstrand_list, where_lists,indicies_of_heads,wall_color_at_crossing,p):
+def next_crossing(where_lists, next_wall_color_list):
+    """
+    output: the head_list for the 
+    """
+    indicies_of_heads = []
+    for where_list in where_lists:
+        find(where_list[-1],next_wall_color_list)
+    return head_list
+
+def where(overstrand_list, where_lists, wall_color_lists, p):
     """
         trying to do recursion ?
     """
+    where_lists = []
+    head_lists = [[1,0,3,0],[0,2,0,0]]
     num_crossings = len(overstrand_list)
-    if where_lists[0] == num_crossings:
-        return where_lists
-    else:
-        match = 
-        build_where(where_lists,indicies_of_heads,wall_color_at_crossing,p)
-
-print(wher)
-
-def colors_out(where_list,wall_colors): 
-    """
-    input:
-    output:
-    """
-    colors_out_listoflists = []
-    for k in range(len(wall_colors[0])):
-        print(where_list[0][k])
-        colors_out_list = [a*b for a,b in zip(where_list[0][k],wall_colors[0][k])]
-        colors_out_listoflists.append(colors_out_list)
-        colors_out_list = []
-    return colors_out_listoflists
-
-#print(pass_through(where_list_8_5))
-#print(colors_out(where_list_8_5, wall_colors_8_5))
-#print(wall_colors_8_5[0][1].index()))
-#print(wall_colors(overstrand_4_1,color_4_1,5))
+    head_list_first_crossing = head_lists[0]
+    wall_color_first_crossing = wall_color_lists[0]
+    indicies_of_heads = match(head_list_first_crossing,wall_color_first_crossing,p)
+    new_where_lists = build_where([],indicies_of_heads,wall_color_first_crossing,p)
+    for i in range(num_crossings):
+        head_list_at_crossing = pass_through(head_list[i])
+        indicies_of_heads = match(head_list_at_crossing,wall_color_lists[i],p)
+        build_where(new_where_lists,indicies_of_heads,wall_color_at_crossing[i],p)
+        # now we match the universes of the last entry in each where_list to the 
+        # wall_color_lists[i+1] to generate head_list[i+1]
+        indicies_of_heads = match(head_list_at_crossing,wall_color_at_crossing[i+1],p)
+    return new_where_lists
 
 
-# def where( overstrand_list , color_list ):
-#     """
 
 
-#     """
-#     num_crossings = len(overstrand_list)
-#     where_list_1 = []
-#     where_list_2 = []
-#     colors = [0,1,2,3,4]
-#     for i in range(len(overstrand_list)):
-#         print("We are on strand ", i)
-#         if i ==0- 0:
-#             where_list.append(color_list[overstrand_list[0]])
-#             #print("We initialized the first strand: ", where_list)
-#         elif i == 1:
-#             where_list.append(color_list[overstrand_list[0]])
-#             #print("We initialized the second strand: ", where_list)
-#         else:
-#             color_of_overstrand = color_list[overstrand_list[i-1]]
-#             color_of_overstrand = color_list[overstrand_list[(i-1)%num_crossings]]
-#             universe_of_incoming_understrand = where_list[i-1]
-#             #print('COLOR OF OVERSTRAND')
-#             #print(color_of_overstrand)
-#                 #print(colors)
-#                 where_list.append(colors[0])
-#                 #print(where_list)
-
-#                 colors = [1,2,3]
-#     return where_list
 
 
 
