@@ -53,11 +53,9 @@ def reflect_list( wall_1side_list , inout_strands , inout_strands_index , p ):
     this function works recursively by appending taking a list and appending
     the last element in the list reflected over the incoming or outgoing understrand
     alternating
-
     you initialize with inout_strands_index as either zero or one
     which indictes if you are reflecting over the incoming understrand 
     inout_strands[0] or the outgoing understrand inout_strands[1]
-
     helper functions: reflect(), incomingoutgoing_list()
     input: wall_1side_list inout_strands inout_strands_index p
     output: wall_1side_list
@@ -78,9 +76,7 @@ def reflect_list( wall_1side_list , inout_strands , inout_strands_index , p ):
 def wall_colors( overstrand_list , color_list , p ):
     """
     input: overstrand_list, color_list, p an odd number
-
     output: all of the walls in all crossings of the knot
-
     one of the lists will be [ [ [],[] ],[ [],[] ],...,[ [],[] ] ]
     [[[crossing 0 universe of the top on incoming understand, universe of the one below,...]
       [crossing 0 universe of the top on outgoing understand, universe of the one below,...]]
@@ -113,7 +109,6 @@ def wall_colors( overstrand_list , color_list , p ):
 
 def where(overstrand_list, color_list, p):
     """
-
     """
     numcrossings = len(overstrand_list)
     all_walls = wall_colors(overstrand_list,color_list, p)
@@ -270,4 +265,10 @@ def initialize_matrix(overstrand_list,color_list,where_list_topbot,sign_list,p):
 
     #return row reduced version of matrix
     return sympy.Matrix(x_matrix).rref()[0] #x_matrix #
+
+
+
+
+
+
 
