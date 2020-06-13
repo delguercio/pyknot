@@ -49,18 +49,19 @@ def submenu():
 def main():
     """ the main user-interaction loop 
     """
-
+    uc2 = str(input("Type braid or gauss depending on what you're doing:  "))
+    colorings = str(input("How many colors are we working with?"))
     while True:     # the user-interaction loop
         menu()
         uc = int(input( "Choose an option: "))
-        uc2 = str(input("type braid or gauss depending on what you're doing:  "))
-        if uc == 1: #
+
+        if uc == 1: # Braid to signlist
 
             fields = [ 'Name', 'Braid Notation']
 
             newfields = [ 'Name', 'Sign List']
 
-            filename = "./data/name_braid_3colorable.csv"
+            filename = "./data/name_braid_"+colorings+"colorable.csv"
 
             line_count = 0
 
@@ -91,7 +92,7 @@ def main():
 
             rawfile.close()
 
-            newfilename = "./data/name_signfrom"+uc2+"_3colorable.csv"
+            newfilename = "./data/name_signfrom"+uc2+"_"+colorings+"colorable.csv"
 
             newrawfile = open(newfilename, 'w')
 
@@ -103,13 +104,13 @@ def main():
             newrawfile.close()
 
 
-        elif uc == 2: #
+        elif uc == 2: # Braid to Gauss
 
             fields = [ 'Name', 'Braid Notation']
 
             newfields = [ 'Name', 'Gauss Notation']
 
-            filename = "./data/name_braid_3colorable.csv"
+            filename = "./data/name_braid_"+colorings+"colorable.csv"
 
             line_count = 0
 
@@ -133,7 +134,7 @@ def main():
 
             rawfile.close()
 
-            newfilename = "./data/name_gaussfrom"+uc2+"_3colorable.csv"
+            newfilename = "./data/name_gaussfrom"+uc2+"_"+colorings+"colorable.csv"
 
             newrawfile = open(newfilename, 'w')
 
@@ -151,7 +152,7 @@ def main():
 
             newfields = [ 'Name', 'Sign List']
 
-            filename = "./data/name_gaussfrom"+uc2+"_3colorable.csv"
+            filename = "./data/name_gaussfrom"+uc2+"_"+colorings+"colorable.csv"
 
             line_count = 0
 
@@ -180,7 +181,7 @@ def main():
             rawfile.close()
 
 
-            newfilename = "./data/name_signfrom"+uc2+"_3colorable.csv"
+            newfilename = "./data/name_signfrom"+uc2+"_"+colorings+"colorable.csv"
 
             newrawfile = open(newfilename, 'w')
 
@@ -203,7 +204,7 @@ def main():
 
                     newfields = [ 'Name', 'Overstrand List']
 
-                    filename = "./data/name_gaussfrom"+uc2+"_3colorable.csv"
+                    filename = "./data/name_gaussfrom"+uc2+"_"+colorings+"colorable.csv"
 
                     line_count = 0
 
@@ -232,7 +233,7 @@ def main():
 
                     rawfile.close()
 
-                    newfilename = "./data/name_overstrandfrom"+uc2+"_3colorable.csv"
+                    newfilename = "./data/name_overstrandfrom"+uc2+"_"+colorings+"colorable.csv"
 
                     newrawfile = open(newfilename, 'w')
 
@@ -249,7 +250,7 @@ def main():
 
                     newfields = [ 'Name', 'Overstrand List']
 
-                    filename = "./data/name_gaussfrom"+uc2+"_3colorable.csv"
+                    filename = "./data/name_gaussfrom"+uc2+"_"+colorings+"colorable.csv"
 
                     line_count = 0
 
@@ -272,7 +273,7 @@ def main():
 
                     rawfile.close()
 
-                    newfilename = "./data/name_overstrandfrom"+uc2+"_3colorable.csv"
+                    newfilename = "./data/name_overstrandfrom"+uc2+"_"+colorings+"colorable.csv"
 
                     newrawfile = open(newfilename, 'w')
 
@@ -294,7 +295,7 @@ def main():
 
             newfields = [ 'Name', 'Coloring Matrix']
 
-            filename = "./data/name_overstrandfrom"+uc2+"_3colorable.csv"
+            filename = "./data/name_overstrandfrom"+uc2+"_"+colorings+"colorable.csv"
 
             
 
@@ -317,12 +318,12 @@ def main():
                     #print(list_of_lists)
                     list_of_intlists = [int(n) for n in strings]
                     #print(list_of_intlists)
-                    new_LoL.append([row[0],create_matrix( list_of_intlists )])
+                    new_LoL.append([row[0],create_matrix( list_of_intlists ,int(colorings))])
                     line_count = line_count + 1
 
             rawfile.close()
 
-            newfilename = "./data/name_matrixfrom"+uc2+"_3colorable.csv"
+            newfilename = "./data/name_matrixfrom"+uc2+"_"+colorings+"colorable.csv"
 
             newrawfile = open(newfilename, 'w')
 
@@ -339,9 +340,9 @@ def main():
 
             newfields = [ 'Name', 'Row Reduced Coloring Matrix']
 
-            filename = "./data/name_matrixfrombraid_3colorable.csv"
+            filename = "./data/name_matrixfrom"+uc2+"_"+colorings+"colorable.csv"
 
-            newfilename = "./data/name_reducedmatrixfrom"+uc2+"_3colorable.csv"
+            newfilename = "./data/name_reducedmatrixfrom"+uc2+"_"+colorings+"colorable.csv"
 
             line_count = 0
 
@@ -363,7 +364,7 @@ def main():
                     list_of_lists = [ list(crossing.split(",")) for crossing in strings ]
                     #print(list_of_lists)
                     list_of_intlists = [ [int(n) for n in string] for string in list_of_lists ]
-                    rre_matrix = ToReducedRowEchelonForm( list_of_intlists , 3)
+                    rre_matrix = ToReducedRowEchelonForm( list_of_intlists , int(colorings))
                     print(rre_matrix)
                     new_LoL.append([row[0],rre_matrix ])
                     line_count = line_count + 1
@@ -385,7 +386,7 @@ def main():
 
             newfields = [ 'Name', 'Color List']
 
-            filename = "./data/name_reducedmatrixfrom"+uc2+"_3colorable.csv"
+            filename = "./data/name_reducedmatrixfrom"+uc2+"_"+colorings+"colorable.csv"
 
             line_count = 0
 
@@ -405,7 +406,7 @@ def main():
                     list_of_lists = [ list(crossing.split(",")) for crossing in strings ]
             #        print(list_of_lists)
                     list_of_intlists = [ [int(n) for n in string] for string in list_of_lists ]
-                    list_of_colorlists = ColourList( list_of_intlists )
+                    list_of_colorlists = ColourList( list_of_intlists ,int(colorings) )
                     if len(list_of_colorlists[0])%2 == 0:
                         new_LoL.append([row[0],list_of_colorlists])
                         line_count = line_count + 1
@@ -420,7 +421,7 @@ def main():
             rawfile.close()
 
 
-            newfilename = "./data/name_colorlistfrom"+uc2+"_3colorable.csv"
+            newfilename = "./data/name_colorlistfrom"+uc2+"_"+colorings+"colorable.csv"
 
             newrawfile = open(newfilename, 'w')
 
@@ -443,7 +444,7 @@ def main():
             # 0-1
             gauss_fields = [ 'Name', 'Gauss Notation']
 
-            gauss_filename = "./data/name_gaussfrom"+uc2+"_3colorable.csv"
+            gauss_filename = "./data/name_gaussfrom"+uc2+"_"+colorings+"colorable.csv"
 
             gauss_rawfile = open(gauss_filename, 'r')
 
@@ -452,7 +453,7 @@ def main():
             # 2
             overstrand_fields = [ 'Name', 'Overstrand List']
 
-            overstrand_filename = "./data/name_overstrandfrom"+uc2+"_3colorable.csv"
+            overstrand_filename = "./data/name_overstrandfrom"+uc2+"_"+colorings+"colorable.csv"
 
             overstrand_rawfile = open(overstrand_filename, 'r')
 
@@ -461,7 +462,7 @@ def main():
             # 3
             sign_fields = [ 'Name', 'Sign List']
 
-            sign_filename = "./data/name_signfrom"+uc2+"_3colorable.csv"
+            sign_filename = "./data/name_signfrom"+uc2+"_"+colorings+"colorable.csv"
 
             sign_rawfile = open(sign_filename, 'r')
 
@@ -471,7 +472,7 @@ def main():
             # 4
             colorlist_fields = [ 'Name', 'Color List']
 
-            colorlist_filename = "./data/name_colorlistfrom"+uc2+"_3colorable.csv"
+            colorlist_filename = "./data/name_colorlistfrom"+uc2+"_"+colorings+"colorable.csv"
 
             colorlist_rawfile = open(colorlist_filename, 'r')
 
@@ -486,29 +487,39 @@ def main():
             for row in gauss_reader:
                 if line_count == 0:
                     new_LoL.append(newfields)
-                    line_count += 1
+                    line_count = line_count + 1
                 else:
                     new_LoL.append(row)
-                    line_count += 1
- 
+                    line_count = line_count + 1
+                    
+            gauss_rawfile.close()
+            
             line_count = 0
             for row in overstrand_reader:
                 if line_count == 0:
                     line_count += 1
                     continue
                 else:
-                    new_LoL[line_count].append(row[1])
-                    line_count += 1
- 
+                    overstrand_list_listofstrings = row[1][1:-1].split(",")
+                    overstrand_list = [ int(string) for string in overstrand_list_listofstrings ]
+                    new_LoL[line_count].append(overstrand_list)
+                    line_count = line_count + 1
+
+            overstrand_rawfile.close()
+            
+            
             line_count = 0
             for row in sign_reader:
                 if line_count == 0:
                     line_count += 1
                     continue
                 else:
-                    new_LoL[line_count].append(row[1])
-                    line_count += 1                       
+                    sign_list_listofstrings = row[1][1:-1].split(",")
+                    sign_list = [ int(string) for string in sign_list_listofstrings ]
+                    new_LoL[line_count].append(sign_list)
+                    line_count = line_count + 1                  
 
+            sign_rawfile.close()
 
             line_count = 0
             for row in colorlist_reader:
@@ -516,16 +527,17 @@ def main():
                     line_count += 1
                     continue
                 else:
-                    new_LoL[line_count].append(row[1])
-                    line_count += 1   
+                    color_list_listofstrings = row[1][2:-2].split("], [")
+                    color_list_listoflists = [ list(crossing.split(", ")) for crossing in color_list_listofstrings ]
+                    color_lists = [ [int(n) for n in string] for string in color_list_listoflists ]
+                    #print("COLOR LIST")
+                    new_LoL[line_count].append(color_lists)
+                    line_count = line_count + 1 
 
-            gauss_rawfile.close()
-            overstrand_rawfile.close()
-            sign_rawfile.close()
             colorlist_rawfile.close()
 
 
-            newfilename = "./data/allfieldsfrom"+uc2+"_3colorable.csv"
+            newfilename = "./data/allfieldsfrom"+uc2+"_"+colorings+"colorable.csv"
 
             newrawfile = open(newfilename, 'w')
 
@@ -543,7 +555,7 @@ def main():
 
             newfields = [ 'Name', 'Dihedral Linking Number' ]
 
-            filename = "./data/allfieldsfrom"+uc2+"_3colorable.csv"
+            filename = "./data/allfieldsfrom"+uc2+"_"+colorings+"colorable.csv"
 
             line_count = 0
 
@@ -590,7 +602,7 @@ def main():
 
             rawfile.close()
 
-            newfilename = "./data/name_DLNfrom"+uc2+"_3colorable.csv"
+            newfilename = "./data/name_DLNfrom"+uc2+"_"+colorings+"colorable.csv"
 
             newrawfile = open(newfilename, 'w')
 

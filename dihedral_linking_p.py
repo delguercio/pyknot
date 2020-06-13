@@ -240,6 +240,7 @@ def initialize_matrix(overstrand_list,color_list,where_list_topbot,sign_list,p):
             x_matrix[row+numcross][i+numcross] +=1
             x_matrix[row+numcross][(i+1)%numcross+numcross] -=1
             row += 1
+            
 
         #see if we have an epsilon three. this would happen if all three strands are the same color (homogeneous crossing)
 

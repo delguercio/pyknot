@@ -117,4 +117,4 @@ def overstrand_to_colourlist(overstrand, p):
 
     return colourlists
 
-print(overstrand_to_colourlist([3,6,8,2,12,9,3,0,10,4,6,9,10,2], 3))
+#print(overstrand_to_colourlist([3,6,8,2,12,9,3,0,10,4,6,9,10,2], 3))
