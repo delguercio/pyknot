@@ -1,20 +1,11 @@
+import dihedral_linking_five as dl5
+
+
 def index(iterable, value):
 
     for i in range(len(iterable)):
         if iterable[i] == value:
             return i
-
-
-def reflect(current_universe, wall_color, p):
-    """
-    input: current universe, color of the wall you are traveling
-           through, p for number of colorings
-    output:the universe on the other side of the wall
-    """
-    if (2*wall_color - current_universe) % p == 0:
-        return p
-    else:
-        return (2*wall_color - current_universe) % p
 
 
 def universe_lists(colourlist, overstrandlist, p):
@@ -25,17 +16,19 @@ def universe_lists(colourlist, overstrandlist, p):
     for i in range(n):
         overstrand = overstrandlist[i]
         colour_in = colourlist[i]
-        colour_out = colourlist[(i+1) % n]
+        colour_out = colourlist[(i + 1) % n]
         colour_over = colourlist[overstrand]
 
         if colour_in == colour_out:
 
             universe_pairs = []
 
-            for j in range((p-1)//2):
+            for j in range((p - 1) // 2):
 
                 current_universe = (colour_in + j + 1) % p
-                universe_pairs.append([current_universe, reflect(current_universe, colour_in, p)])
+                universe_pairs.append(
+                    [current_universe, dl5.reflect(current_universe,
+                                                   colour_in, p)])
 
             universes.append(universe_pairs)
 
@@ -44,12 +37,13 @@ def universe_lists(colourlist, overstrandlist, p):
             universes_left = [colour_over]
             current_universe = colour_over
 
-            for j in range((p-1)//2):
+            for j in range((p - 1) // 2):
 
                 if j % 2 == 0:
-                    next_universe = reflect(current_universe, colour_in, p)
+                    next_universe = dl5.reflect(current_universe, colour_in, p)
                 else:
-                    next_universe = reflect(current_universe, colour_out, p)
+                    next_universe = dl5.reflect(current_universe,
+                                                colour_out, p)
 
                 current_universe = next_universe
                 universes_left.append(current_universe)
@@ -58,12 +52,13 @@ def universe_lists(colourlist, overstrandlist, p):
 
             current_universe = colour_over
 
-            for k in range((p-1)//2):
+            for k in range((p - 1) // 2):
 
                 if k % 2 == 0:
-                    next_universe = reflect(current_universe, colour_out, p)
+                    next_universe = dl5.reflect(current_universe,
+                                                colour_out, p)
                 else:
-                    next_universe = reflect(current_universe, colour_in, p)
+                    next_universe = dl5.reflect(current_universe, colour_in, p)
 
                 current_universe = next_universe
                 universes_right.append(current_universe)
@@ -79,7 +74,7 @@ def where_lists(colourlist, overstrandlist, p):
 
     where_lists = []
 
-    for i in range((p-1)//2):
+    for i in range((p - 1) // 2):
 
         if i == 0 % 2:
             current_universe = universes[0][0][i]
@@ -93,7 +88,7 @@ def where_lists(colourlist, overstrandlist, p):
             overstrand = overstrandlist[j]
             over_colour = colourlist[overstrand]
 
-            current_universe = reflect(current_universe, over_colour, p)
+            current_universe = dl5.reflect(current_universe, over_colour, p)
             where_list.append(current_universe)
 
         where_lists.append(where_list)
@@ -113,16 +108,16 @@ def horizontal_order(colourlist, overstrandlist, p):
         colour_in = colourlist[i]
         colour_over = colourlist[overstrandlist[i]]
         crossing_universes = universes[i]
-        order_list = [0 for x in range((p-1)//2)]
+        order_list = [0 for x in range((p - 1) // 2)]
 
         if colour_in == colour_over:
 
-            for j in range((p-1)//2):
+            for j in range((p - 1) // 2):
                 where = wheres[j][i]
 
-                for k in range((p-1)//2):
+                for k in range((p - 1) // 2):
                     if where in crossing_universes[k]:
-                        order_list[k] = j+1
+                        order_list[k] = j + 1
 
             order_lists.append(order_list)
 
@@ -130,10 +125,10 @@ def horizontal_order(colourlist, overstrandlist, p):
             left_universes = crossing_universes[0]
             right_universes = crossing_universes[1]
 
-            for j in range((p-1)//2):
+            for j in range((p - 1) // 2):
 
                 where = wheres[j][i]
-                pair = reflect(where, colour_in, p)
+                pair = dl5.reflect(where, colour_in, p)
 
                 if where in left_universes and pair in left_universes:
                     index1 = index(left_universes, where)
@@ -143,7 +138,7 @@ def horizontal_order(colourlist, overstrandlist, p):
                     index2 = index(right_universes, pair)
 
                 level = min(index1, index2)
-                order_list[level] = j+1
+                order_list[level] = j + 1
 
             order_lists.append(order_list)
 
@@ -167,31 +162,32 @@ def vertical_order(colourlist, overstrandlist, p):
 
         order_list = []
 
-        for j in range((p-1)//2):
+        for j in range((p - 1) // 2):
 
             if colourlist[i] == colourlist[overstrand]:
-                universe1 = crossing_universes[j][0]
-                universe2 = crossing_universes[j][1]
+                uni1 = crossing_universes[j][0]
+                uni2 = crossing_universes[j][1]
 
             else:
 
-                universe1 = left_universes[j+1]
-                universe2 = right_universes[j+1]
+                uni1 = left_universes[j + 1]
+                uni2 = right_universes[j + 1]
 
-            if colourlist[overstrand] == colourlist[overstrandlist[overstrand]]:
-                for k in range((p-1)//2):
+            if colourlist[overstrand] == colourlist[overstrandlist
+                                                    [overstrand]]:
+                for k in range((p - 1) // 2):
 
-                    if universe1 in over_crossing[k]:
+                    if uni1 in over_crossing[k]:
                         order_list.append(horizontal[overstrand][k])
 
             else:
 
-                if universe1 in over_crossing[0] and universe2 in over_crossing[0]:
-                    index1 = index(over_crossing[0], universe1)
-                    index2 = index(over_crossing[0], universe2)
+                if uni1 in over_crossing[0] and uni2 in over_crossing[0]:
+                    index1 = index(over_crossing[0], uni1)
+                    index2 = index(over_crossing[0], uni2)
                 else:
-                    index1 = index(over_crossing[1], universe1)
-                    index2 = index(over_crossing[1], universe2)
+                    index1 = index(over_crossing[1], uni1)
+                    index2 = index(over_crossing[1], uni2)
 
                 order_list.append(horizontal[overstrand][min(index1, index2)])
 

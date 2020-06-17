@@ -1,13 +1,14 @@
-from colour_overstrand_to_index2lists import *
+import colour_overstrand_to_index2lists as i2l
+import dihedral_linking_five as dl5
 
 
 def rrematrix_to_dict(matrix):
     n = len(matrix)
-    num_crossings = n//2
+    num_crossings = n // 2
     coeff_dict = {}
 
     for i in range(n):
-        coeff_dict[((i//num_crossings)+1, i % num_crossings)] = 0
+        coeff_dict[((i // num_crossings) + 1, i % num_crossings)] = 0
 
     pivots = []
 
@@ -31,16 +32,17 @@ def rrematrix_to_dict(matrix):
         row = matrix[i]
         for column in range(len(row)):
             if column in pivots:
-                coeff_dict[((column//num_crossings)+1, column % num_crossings)] = row[-1]
+                coeff_dict[((column // num_crossings) + 1,
+                            column % num_crossings)] = row[-1]
 
     return coeff_dict
 
 
 def matrix_to_dln(colourlist, overstrandlist, signlist, p):
 
-    universes_list = universe_lists(colourlist, overstrandlist, p)
-    wheres = where_lists(colourlist, overstrandlist, p)
-    vert_order = vertical_order(colourlist, overstrandlist, p)
+    universes_list = i2l.universe_lists(colourlist, overstrandlist, p)
+    wheres = i2l.where_lists(colourlist, overstrandlist, p)
+    vert_order = i2l.vertical_order(colourlist, overstrandlist, p)
     coeff_dict = {(1, 1): 1,
                   (1, 3): -1,
                   (1, 0): 0,
@@ -56,31 +58,33 @@ def matrix_to_dln(colourlist, overstrandlist, signlist, p):
         dln = 0
         where_list = wheres[i]
 
-        for j in range(len(universes_list)):  # Go through each of the crossings
+        for j in range(len(universes_list)):  # Go through each crossing
             where = where_list[j]
             universes = universes_list[j]
 
             for k in range(len(universes)):
                 if where in universes[k]:
-                    level = index(universes[k], where)
+                    level = i2l.index(universes[k], where)
                     break
 
             # index 1 is only the zeroth level at inhomogeneous crossings
             if level == 0 and colourlist[j] != colourlist[overstrandlist[j]]:
                 coeff = 1
             else:
-                knot = vert_order[j][level-1]
+                knot = vert_order[j][level - 1]
                 coeff = coeff_dict[(knot, overstrandlist[j])]
 
-                vertical_where = wheres[knot-1][overstrandlist[j]]
-                if where == vertical_where or where == reflect(vertical_where, colourlist[j], p):
+                vertical_where = wheres[knot - 1][overstrandlist[j]]
+                if where == vertical_where or where == dl5.reflect(
+                        vertical_where,
+                        colourlist[j], p):
                     e = 1
                 else:
                     e = -1
 
-                coeff = coeff*e*signlist[j]
+                coeff = coeff * e * signlist[j]
 
-            dln += coeff*signlist[j]
+            dln += coeff * signlist[j]
 
         dlns.append(dln)
 
