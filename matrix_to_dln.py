@@ -89,6 +89,3 @@ def matrix_to_dln(colourlist, overstrandlist, signlist, p):
         dlns.append(dln)
 
     return dlns
-
-
-print(matrix_to_dln([3, 5, 4, 2], [2, 3, 0, 1], [-1, 1, -1, 1], 5))
