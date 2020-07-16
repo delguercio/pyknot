@@ -39,16 +39,23 @@ def create_matrix(overstrandlist, colorlist, signlist, p, k):
             if colorlist[i] == colorlist[overstrandlist[i]]:
                 # homogeneous crossing
                 # find a
-                a = verticalorder[i][j]
+                a = verticalorder[i][j - 1]
 
                 # find where of understrand and overstrand
+                where_under = wherelists[j - 1][i]
+                # look at a^th index 2 when overstrand is the understrand
+                where_over = wherelists[a - 1][overstrandlist[i]]
                 # find epsilon 4
+                if where_under == where_over:
+                    epsilon4 = -1
+                else:
+                    epsilon4 = 1
 
-                # if k != a: (Case 7)
-                # x^h_i - x^h_{i+1} + 2epsilon4 x^a_{f(i)} = 0
+                coeff_matrix[i + j * n][overstrandlist[i] + (a - 1) * n] = 2 * epsilon4
 
-                # else: (Case 8)
-                # x^h_i - x^h_{i+1} + 2epsilon4 x^a_{f(i)} = epsilon4
+                if k == a:      # (Case 8)
+                    # x^h_i - x^h_{i+1} + 2epsilon4 x^a_{f(i)} = epsilon4
+                    coeff_matrix[i + j * n][-1] = epsilon4
 
             else:
                 # inhomogeneous crossing
