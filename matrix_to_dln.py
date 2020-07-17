@@ -1,9 +1,9 @@
 import colour_overstrand_to_index2lists as i2l
-import dihedral_linking_five as dl5
+import dihedral_linking_five as dln5
 from sympy import Matrix
 
 
-def rrematrix_to_dict(rre_matrix):
+def rrematrix_to_dict(rre_matrix, k):
     matrix = rre_matrix[0]
     pivots = list(rre_matrix[1])
 
@@ -12,7 +12,13 @@ def rrematrix_to_dict(rre_matrix):
     coeff_dict = {}
 
     for i in range(n):
-        coeff_dict[((i // num_crossings) + 1, i % num_crossings)] = 0
+        if k == 0:
+            coeff_dict[(0, i % num_crossings)] = 1
+        else:
+            coeff_dict[(0, i % num_crossings)] = 0
+
+    for i in range(n):
+        coeff_dict[((i // num_crossings + 1), i % num_crossings)] = 0
 
     for i in range(len(pivots)):
         row = matrix.row(i)
@@ -21,58 +27,87 @@ def rrematrix_to_dict(rre_matrix):
     return coeff_dict
 
 
-def matrix_to_dln(colourlist, overstrandlist, signlist, coeff_dict, p):
+def matrix_to_dln(colourlist, overstrandlist, signlist, coeff_dict, p, k):
 
     universes_list = i2l.universe_lists(colourlist, overstrandlist, p)
     wheres = i2l.where_lists(colourlist, overstrandlist, p)
     vert_order = i2l.vertical_order(colourlist, overstrandlist, p)
     dlns = []
 
-    for i in range(len(wheres)):  # Go through each of the where lists
-
+    for j in range(len(wheres)):        # Go through each of the index 2 knots
+        where_list = wheres[j]
         dln = 0
-        where_list = wheres[i]
 
-        for j in range(len(universes_list)):  # Go through each crossing
-            where = where_list[j]
-            universes = universes_list[j]
+        for i in range(len(where_list) - 1):        # Go through each crossing
+            where_under = where_list[i]
+            universes = universes_list[i]
+            # print("crossing:", i)
 
-            for k in range(len(universes)):
-                if where in universes[k]:
-                    level = i2l.index(universes[k], where)
-                    break
+            if colourlist[i] == colourlist[overstrandlist[i]]:
+                for x in range(len(universes)):     # list of pairs of universes
+                    if where_under in universes[x]:
+                        over_index = vert_order[i][x]
 
-            # index 1 is only the zeroth level at inhomogeneous crossings
-            if level == 0 and colourlist[j] != colourlist[overstrandlist[j]]:
-                coeff = 1
             else:
-                knot = vert_order[j][level - 1]
-                coeff = coeff_dict[(knot, overstrandlist[j])]
-
-                vertical_where = wheres[knot - 1][overstrandlist[j]]
-                if where == vertical_where or where == dl5.reflect(
-                        vertical_where,
-                        colourlist[j], p):
-                    e = 1
+                if where_under in universes[0] and where_under in universes[1]:
+                    # Must be on the top level, so a(j) = 0
+                    over_index = 0
                 else:
-                    e = -1
+                    if where_under in universes[0]:
+                        level = i2l.index(universes[0], where_under)
+                    else:
+                        level = i2l.index(universes[1], where_under)
 
-                coeff = coeff * e * signlist[j]
+                    over_index = vert_order[i][level - 1]
 
-            dln += coeff * signlist[j]
+            if over_index == 0:
+                where_over = colourlist[overstrandlist[i]]
+                # print("adding index 1 wall")
+                dln += signlist[i] * coeff_dict[(0, overstrandlist[i])]
+                # print(dln)
+            else:
+                where_over = wheres[over_index - 1][overstrandlist[i]]
 
+                # print(where_under, where_over)
+
+                reflections = [dln5.reflect(where_over, colourlist[i], p),
+                               dln5.reflect(where_over, colourlist[overstrandlist[i]], p)]
+                if where_under in reflections:
+                    epsilon1 = 1
+                else:
+                    epsilon1 = -1
+                # print("adding wall", (over_index, overstrandlist[i]))
+                # if epsilon1 * signlist[i] == -1:
+                    # print("right")
+                # else:
+                    # print("left")
+                dln -= epsilon1 * coeff_dict[(over_index, overstrandlist[i])]
+
+                if k == over_index:
+                    dln += (signlist[i] + epsilon1) // 2
+        # print("Final DLN:", dln)
         dlns.append(dln)
 
     return dlns
 
 
-coeffs = rrematrix_to_dict((Matrix([[1, 0, 0, 0, 1, 0, 1, -1, 0],
-                                    [0, 1, 0, 0, 1, 0, 0, -1, 1],
-                                    [0, 0, 1, 0, 1, -1, 1, 0, 0],
-                                    [0, 0, 0, 1, 0, -1, 1, 0, -1],
-                                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    [0, 0, 0, 0, 0, 0, 0, 0, 0]]), (0, 1, 2, 3)))
+# Example: 7_4
+coeffs = rrematrix_to_dict((Matrix([
+                                   [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 1, -1, 0, 0, 2],
+                                   [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, -1, 0, 0, 1],
+                                   [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, -1, 0, -1, 2],
+                                   [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, -1, 1],
+                                   [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, -1, 0, -1, 2],
+                                   [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, -1, 1, 0, 0, -2],
+                                   [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, -1],
+                                   [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, -1, 0, -1, 0, 0, 1],
+                                   [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -2],
+                                   [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, -1, 1, 0, 1, -3],
+                                   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, -2],
+                                   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0],
+                                   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]), (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14)), 0)
 
-print(matrix_to_dln([3, 5, 4, 2], [2, 3, 0, 1], [-1, 1, -1, 1], coeffs, 5))
+print(matrix_to_dln([5, 4, 3, 2, 3, 5, 1, 1], [3, 6, 5, 0, 1, 2, 6, 4], [1, 1, 1, 1, 1, 1, 1, 1], coeffs, 5, 0))
