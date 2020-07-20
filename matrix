@@ -51,7 +51,7 @@ def create_matrix(overstrandlist, colorlist, signlist, p, k):
                 else:
                     epsilon4 = 1
 
-                coeff_matrix[i + j * n][overstrandlist[i] + (a - 1) * n] = 2 * epsilon4
+                coeff_matrix[i + j * n][overstrandlist[i] + (a - 1) * n] += 2 * epsilon4
 
                 if k == a:      # (Case 8)
                     # x^h_i - x^h_{i+1} + 2epsilon4 x^a_{f(i)} = epsilon4
