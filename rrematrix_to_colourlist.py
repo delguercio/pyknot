@@ -68,6 +68,7 @@ def ColourList(matrix, p):
                 colouring.append(reordering[i])
             covered_colourings.append(colouring)
 
+        test_covered = []
         for i in range(1, len(free_colours)):
             test_permutation = free_colours[i]
             test_covered = []
@@ -119,5 +120,7 @@ def overstrand_to_colourlist(overstrand, p):
     return colourlists
 
 
-print(overstrand_to_colourlist([7, 0, 8, 7, 9, 11, 1, 3, 10, 4, 0, 5], 3))
-print(len(overstrand_to_colourlist([7, 0, 8, 7, 9, 11, 1, 3, 10, 4, 0, 5], 3)))
+# print(overstrand_to_colourlist([7, 0, 8, 7, 9, 11, 1, 3, 10, 4, 0, 5], 3))
+# print(len(overstrand_to_colourlist([7, 0, 8, 7, 9, 11, 1, 3, 10, 4, 0, 5], 3)))
+
+# print(overstrand_to_colourlist([2, 0, 1], 3))
