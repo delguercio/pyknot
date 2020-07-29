@@ -26,6 +26,8 @@ def universe_lists(colourlist, overstrandlist, p):
             for j in range((p - 1) // 2):
 
                 current_universe = (colour_in + j + 1) % p
+                if current_universe == 0:
+                    current_universe = p
                 universe_pairs.append(
                     [current_universe, dl5.reflect(current_universe,
                                                    colour_in, p)])
@@ -155,8 +157,6 @@ def vertical_order(colourlist, overstrandlist, p):
     for i in range(len(colourlist)):
 
         crossing_universes = universes[i]
-        left_universes = crossing_universes[0]
-        right_universes = crossing_universes[1]
         overstrand = overstrandlist[i]
         over_crossing = universes[overstrand]
 
@@ -170,6 +170,8 @@ def vertical_order(colourlist, overstrandlist, p):
 
             else:
 
+                left_universes = crossing_universes[0]
+                right_universes = crossing_universes[1]
                 uni1 = left_universes[j + 1]
                 uni2 = right_universes[j + 1]
 
@@ -194,3 +196,8 @@ def vertical_order(colourlist, overstrandlist, p):
         order_lists.append(order_list)
 
     return(order_lists)
+
+
+# print(universe_lists([2, 3, 1, 2], [2, 0, 1, 3], 3))
+# print(horizontal_order([2, 3, 1, 2], [2, 0, 1, 3], 3))
+# print(vertical_order([2, 3, 1, 2], [2, 0, 1, 3], 3))
