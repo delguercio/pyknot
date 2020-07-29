@@ -902,10 +902,16 @@ def display(signs,overstrands,name,coloring): #,detail
         #print()
         #print('The linking number, computed with the surface bounded by the deg 2 curve, is ', intersectionnumberDeg1withDeg2Surface(solvefor2chain(M2,c),coloring,overstrands,signs,c),'.')
         #print()
-        return [intersectionnumberDeg2withDeg1Surface(solvefor2chain(M,c),coloring,overstrands,signs,c),intersectionnumberDeg1withDeg2Surface(solvefor2chain(M2,c),coloring,overstrands,signs,c)]#,intersectionnumberDeg2withDeg1Surface(solvefor2chain(M,c),coloring,overstrands,signs,c)]
+        DLN1 = intersectionnumberDeg2withDeg1Surface(solvefor2chain(M,c),coloring,overstrands,signs,c)
+        DLN2 = intersectionnumberDeg1withDeg2Surface(solvefor2chain(M2,c),coloring,overstrands,signs,c)
+        if DLN1 == DLN2:
+            return [DLN1]
+        else:
+            return "Something Horrible has happened!"
+        #,intersectionnumberDeg2withDeg1Surface(solvefor2chain(M,c),coloring,overstrands,signs,c)]
         #print('The self-linking number of the degree 2 curve is ', selflinkingnumberDeg2(solvefor2chain(M2,c),coloring,overstrands,signs,c),'.')
     else:
-        return "No Dihedral Linking Number Exists"
+        return ["No Dihedral Linking Number Exists"]
     #if detail=='yes':
 
     #    print('The collection of linking invariants for ', name, ' computed by intersecting the degree 2 curve with a surface whose boundary is the degree 1 curve, is:')
@@ -935,60 +941,60 @@ def display(signs,overstrands,name,coloring): #,detail
 #print( display(sign_11_n105,overstrand_11_n105,"11_n105",color_11_n105) )
 
 
-overstrand_12_n556 = [7,9,11,10,0,4,8,0,2,8,3,5]
-sign_12_n556 = [1,-1,1,1,-1,1,-1,1,-1,1,1,-1]
-color_12_n556 = [3,2,1,1,1,2,3,1,2,3,1,1]
-print( "The DLN is calcuated by hand for 12n_556 is")
-print( display(sign_12_n556,overstrand_12_n556,"12_n556", color_12_n556))
+# overstrand_12_n556 = [7,9,11,10,0,4,8,0,2,8,3,5]
+# sign_12_n556 = [1,-1,1,1,-1,1,-1,1,-1,1,1,-1]
+# color_12_n556 = [3,2,1,1,1,2,3,1,2,3,1,1]
+# print( "The DLN is calcuated by hand for 12n_556 is")
+# print( display(sign_12_n556,overstrand_12_n556,"12_n556", color_12_n556))
 
-braidoverstrand_12_n556 = [7,3,8,10,2,3,12,0,5,2,7,0,1,10]
-braidsign_12_n556 = [-1,-1,1,-1,-1,1,1,-1,-1,1,1,-1,1,-1]
-braidcolor_12_n556 = [1,3,1,2,3,2,2,2,3,1,1,3,2,1]
-print( "The DLN is calcuated by hand by braid for 12n_556 is")
-print( display(braidsign_12_n556,braidoverstrand_12_n556,"12_n556", braidcolor_12_n556))
-print( "Elise got by braid hand No DNL exits")
-
-
-overstrand_12_n555 = [6,8,10,0,3,1,5,2,7,3,2,4]
-sign_12_n555 = [-1,-1,-1,-1,1,-1,1,-1,1,-1,-1,-1]
-color_12_n555 = [3,2,1,1,2,3,1,2,3,1,1,1]
-print( "The DLN is calcuated by hand for 12n_555 is")
-print( display(sign_12_n555,overstrand_12_n555,"12_n555", color_12_n555))
+# braidoverstrand_12_n556 = [7,3,8,10,2,3,12,0,5,2,7,0,1,10]
+# braidsign_12_n556 = [-1,-1,1,-1,-1,1,1,-1,-1,1,1,-1,1,-1]
+# braidcolor_12_n556 = [1,3,1,2,3,2,2,2,3,1,1,3,2,1]
+# print( "The DLN is calcuated by hand by braid for 12n_556 is")
+# print( display(braidsign_12_n556,braidoverstrand_12_n556,"12_n556", braidcolor_12_n556))
+# print( "Elise got by braid hand No DNL exits")
 
 
-braidoverstrand_12_n555 = [13,0,4,13,8,13,4,3,12,13,2,8,0,7,4,10,16]
-braidsign_12_n555 = [1,-1,-1,1,-1,1,-1,1,-1,1,1,-1,1,1,1,1,1]
-braidcolor_12_n555 = [1,2,3,3,3,3,3,3,3,1,2,1,2,3,3,3,1]
-print( "The DLN is calcuated by hand by braid for 12n_555 is")
-print( display(braidsign_12_n555,braidoverstrand_12_n555,"12_n555", braidcolor_12_n555))
-print("Elise got by braid hand [14/3],[14/3]")
-
-overstrand_12_n553 = [5,7,9,11,6,0,8,1,3,8,4,3]
-sign_12_n553 = [1,1,-1,-1,-1,1,-1,1,-1,1,-1,-1]
-color_12_n553 = [1,3,2,1,1,2,3,1,2,3,1,1]
-print( "The DLN is calcuated by hand for 12n_553 is")
-print( display(sign_12_n553,overstrand_12_n553,"12_n553", color_12_n553))
-
-braidoverstrand_12_n553 = [12,4,5,8,10,4,0,11,5,2,12,6,8,11]
-braidsign_12_n553 = [-1,-1,1,1,-1,1,1,-1,-1,1,1,-1,1,1]
-braidcolor_12_n553 = [1,1,1,2,1,3,2,3,3,3,2,3,1,2]
-print( "The DLN is calcuated by braidhand for 12n_553 is")
-print( display(braidsign_12_n553,braidoverstrand_12_n553,"12_n553", braidcolor_12_n553))
-print( "Elise got by braid hand No DNL exits")
+# overstrand_12_n555 = [6,8,10,0,3,1,5,2,7,3,2,4]
+# sign_12_n555 = [-1,-1,-1,-1,1,-1,1,-1,1,-1,-1,-1]
+# color_12_n555 = [3,2,1,1,2,3,1,2,3,1,1,1]
+# print( "The DLN is calcuated by hand for 12n_555 is")
+# print( display(sign_12_n555,overstrand_12_n555,"12_n555", color_12_n555))
 
 
-overstrand_12_a750 = [8,7,9,2,10,0,11,1,3,5,4,6]
-sign_12_a750 = [1,1,-1,1,1,1,1,1,-1,1,1,1]
-color_12_a750 = [1,2,3,2,1,2,3,1,3,1,3,2]
-print( "The DLN is calcuated by hand for 12a_750 is")
-print( display(sign_12_a750,overstrand_12_a750,"12_a750", color_12_a750))
+# braidoverstrand_12_n555 = [13,0,4,13,8,13,4,3,12,13,2,8,0,7,4,10,16]
+# braidsign_12_n555 = [1,-1,-1,1,-1,1,-1,1,-1,1,1,-1,1,1,1,1,1]
+# braidcolor_12_n555 = [1,2,3,3,3,3,3,3,3,1,2,1,2,3,3,3,1]
+# print( "The DLN is calcuated by hand by braid for 12n_555 is")
+# print( display(braidsign_12_n555,braidoverstrand_12_n555,"12_n555", braidcolor_12_n555))
+# print("Elise got by braid hand [14/3],[14/3]")
 
-braidoverstrand_12_a750 = [10,5,0,0,11,14,14,14,5,15,0,5,1,8,14,0,16,10]
-braidsign_12_a750 = [-1,1,1,-1,-1,-1,-1,1,1,-1,-1,-1,-1,-1,1,1,-1,-1]
-braidcolor_12_a750 = [1,2,2,3,2,2,1,2,1,3,3,2,2,2,3,3,2,1]
-print( "The DLN is calcuated by braid hand for 12a_750 is")
-print( display(braidsign_12_a750,braidoverstrand_12_a750,"12_a750", braidcolor_12_a750))
-print( "Elise got by braid hand No DNL exits")
+# overstrand_12_n553 = [5,7,9,11,6,0,8,1,3,8,4,3]
+# sign_12_n553 = [1,1,-1,-1,-1,1,-1,1,-1,1,-1,-1]
+# color_12_n553 = [1,3,2,1,1,2,3,1,2,3,1,1]
+# print( "The DLN is calcuated by hand for 12n_553 is")
+# print( display(sign_12_n553,overstrand_12_n553,"12_n553", color_12_n553))
+
+# braidoverstrand_12_n553 = [12,4,5,8,10,4,0,11,5,2,12,6,8,11]
+# braidsign_12_n553 = [-1,-1,1,1,-1,1,1,-1,-1,1,1,-1,1,1]
+# braidcolor_12_n553 = [1,1,1,2,1,3,2,3,3,3,2,3,1,2]
+# print( "The DLN is calcuated by braidhand for 12n_553 is")
+# print( display(braidsign_12_n553,braidoverstrand_12_n553,"12_n553", braidcolor_12_n553))
+# print( "Elise got by braid hand No DNL exits")
+
+
+# overstrand_12_a750 = [8,7,9,2,10,0,11,1,3,5,4,6]
+# sign_12_a750 = [1,1,-1,1,1,1,1,1,-1,1,1,1]
+# color_12_a750 = [1,2,3,2,1,2,3,1,3,1,3,2]
+# print( "The DLN is calcuated by hand for 12a_750 is")
+# print( display(sign_12_a750,overstrand_12_a750,"12_a750", color_12_a750))
+
+# braidoverstrand_12_a750 = [10,5,0,0,11,14,14,14,5,15,0,5,1,8,14,0,16,10]
+# braidsign_12_a750 = [-1,1,1,-1,-1,-1,-1,1,1,-1,-1,-1,-1,-1,1,1,-1,-1]
+# braidcolor_12_a750 = [1,2,2,3,2,2,1,2,1,3,3,2,2,2,3,3,2,1]
+# print( "The DLN is calcuated by braid hand for 12a_750 is")
+# print( display(braidsign_12_a750,braidoverstrand_12_a750,"12_a750", braidcolor_12_a750))
+# print( "Elise got by braid hand No DNL exits")
 
 
 
