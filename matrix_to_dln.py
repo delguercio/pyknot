@@ -130,9 +130,9 @@ def matrix_to_dln(colourlist, overstrandlist, signlist, coeff_dict, p, k):
                             epsilon1 = -1
                         # print("adding wall", (over_index, overstrandlist[i]))
                         # if epsilon1 * signlist[i] == -1:
-                            # print("right")
+                        #     # print("right")
                         # else:
-                            # print("left")
+                        #     # print("left")
                         dln -= epsilon1 * coeff_dict[(over_index, overstrandlist[i])]
 
                         if k == over_index:
@@ -158,10 +158,11 @@ def errors(complete_dln):
                         error_list.append(error_message)
 
                 if j != 0 and k != 0 and k != j:
-                    if dln_mat[j][k] != (dln_mat[0][j] + dln_mat[0][k]) / 2:
-                        if str(k) + ", " + str(j) + " not equal to (0, " + str(k) + " + 0, " + str(j) + ")/ 2" not in error_list:
-                            error_message = str(j) + ", " + str(k) + " not equal to (0, " + str(j) + " + 0, " + str(k) + ")/ 2"
-                            error_list.append(error_message)
+                    if "x" not in [dln_mat[j][k], dln_mat[0][j], dln_mat[0][k]]:
+                        if dln_mat[j][k] != (dln_mat[0][j] + dln_mat[0][k]) / 2:
+                            if str(k) + ", " + str(j) + " not equal to (0, " + str(k) + " + 0, " + str(j) + ")/ 2" not in error_list:
+                                error_message = str(j) + ", " + str(k) + " not equal to (0, " + str(j) + " + 0, " + str(k) + ")/ 2"
+                                error_list.append(error_message)
 
     return error_list
 
@@ -177,14 +178,16 @@ def braid_to_dln(braid, p):
     for i in range(len(colourlists)):
         colourlist = colourlists[i]
 
-        if len(signlist) % 2 == 1:
-            signlist.append(1)
-            overstrandlist.append(len(overstrandlist))
+        if len(colourlist) % 2 == 1:
             colourlist.append(colourlist[0])
+            if i == 0:
+                signlist.append(1)
+                overstrandlist.append(len(overstrandlist))
         # print(signlist, overstrandlist, colourlist)
         dln_mat = []
 
         for k in range(((p - 1) // 2) + 1):
+
             mat = matrix.create_matrix(overstrandlist, colourlist, signlist, p, k)
             coeffs = rrematrix_to_dict(mat, p, k)
             # print("Coefficients: k = ", k)
@@ -214,16 +217,21 @@ def gauss_to_dln(gauss, p):
     for i in range(len(colourlists)):
         colourlist = colourlists[i]
 
-        if len(signlist) % 2 == 1:
-            signlist.append(1)
-            overstrandlist.append(len(overstrandlist))
+        if len(colourlist) % 2 == 1:
             colourlist.append(colourlist[0])
+            if i == 0:
+                signlist.append(1)
+                overstrandlist.append(len(overstrandlist))
         # print(signlist, overstrandlist, colourlist)
         dln_mat = []
 
         for k in range(((p - 1) // 2) + 1):
+            # print(k)
             mat = matrix.create_matrix(overstrandlist, colourlist, signlist, p, k)
             coeffs = rrematrix_to_dict(mat, p, k)
+            # print("Coefficients: k = ", k)
+            # print(coeffs)
+            # print()
 
             dlns = matrix_to_dln(colourlist, overstrandlist, signlist, coeffs, p, k)
             dln_mat.append(dlns)
@@ -237,6 +245,7 @@ def gauss_to_dln(gauss, p):
     else:
         return ["Error:", error_list]
 
-# complete_dln = braid_to_dln([1, 1, 2, -1, 2, 2, 3, -2, -2, 4, -3, 2, 4, 3], 3)
-# for dln in complete_dln:
-#     print(dln)
+
+complete_dln = braid_to_dln([1, 1, 1, 1, 1, 1, 1], 7)
+for dln in complete_dln:
+    print(dln)
