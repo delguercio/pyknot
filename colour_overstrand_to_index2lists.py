@@ -26,6 +26,8 @@ def universe_lists(colourlist, overstrandlist, p):
             for j in range((p - 1) // 2):
 
                 current_universe = (colour_in + j + 1) % p
+                if current_universe == 0:
+                    current_universe = p
                 universe_pairs.append(
                     [current_universe, dl5.reflect(current_universe,
                                                    colour_in, p)])
@@ -71,16 +73,10 @@ def universe_lists(colourlist, overstrandlist, p):
 def where_lists(colourlist, overstrandlist, p):
 
     universes = universe_lists(colourlist, overstrandlist, p)
-
     where_lists = []
 
     for i in range((p - 1) // 2):
-
-        if i == 0 % 2:
-            current_universe = universes[0][0][i]
-        else:
-            current_universe = universes[0][1][i]
-
+        current_universe = universes[0][i % 2][i]
         where_list = [current_universe]
 
         for j in range(len(colourlist)):
@@ -114,7 +110,6 @@ def horizontal_order(colourlist, overstrandlist, p):
 
             for j in range((p - 1) // 2):
                 where = wheres[j][i]
-
                 for k in range((p - 1) // 2):
                     if where in crossing_universes[k]:
                         order_list[k] = j + 1
@@ -155,8 +150,6 @@ def vertical_order(colourlist, overstrandlist, p):
     for i in range(len(colourlist)):
 
         crossing_universes = universes[i]
-        left_universes = crossing_universes[0]
-        right_universes = crossing_universes[1]
         overstrand = overstrandlist[i]
         over_crossing = universes[overstrand]
 
@@ -170,6 +163,8 @@ def vertical_order(colourlist, overstrandlist, p):
 
             else:
 
+                left_universes = crossing_universes[0]
+                right_universes = crossing_universes[1]
                 uni1 = left_universes[j + 1]
                 uni2 = right_universes[j + 1]
 
@@ -194,3 +189,8 @@ def vertical_order(colourlist, overstrandlist, p):
         order_lists.append(order_list)
 
     return(order_lists)
+
+
+# print(universe_lists([2, 3, 4, 5, 6, 7, 1, 2], [4, 5, 6, 0, 1, 2, 3, 7], 7))
+# print(horizontal_order([2, 3, 4, 5, 6, 7, 1, 2], [4, 5, 6, 0, 1, 2, 3, 7], 7))
+# print(vertical_order([2, 3, 4, 5, 6, 7, 1, 2], [4, 5, 6, 0, 1, 2, 3, 7], 7))
