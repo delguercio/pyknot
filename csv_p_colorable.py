@@ -11,7 +11,7 @@ from matrix_to_rrematrix import *
 from rrematrix_to_colourlist import *
 from overstrand_to_matrix import *
 
-
+from matrix_to_dln import *
 
 import math
 
@@ -24,10 +24,12 @@ uc2 = "gauss"
 
 for colorings in primes_used:
 
-    ### Gauss to sign
+    ### Gauss to DLN
 
     fields = [ 'Name', 'Gauss Notation']
 
+    newfields = [ 'Name', 'Dihedral Linking Numbers']
+    
     filename = "./data/name_gaussfrom"+uc2+"_"+str(colorings)+"colorable.csv"
 
     line_count = 0
@@ -37,24 +39,84 @@ for colorings in primes_used:
     reader = csv.reader(rawfile)
 
     gauss_code = []
-     
+
+    new_LoL = []
+    
     for row in reader:
         if line_count == 0:
             new_LoL.append(newfields)
             line_count = line_count + 1
         else:
             strings = list(row[1][1:-1].split(","))
-            list_of_ints = [ int(number) for number in strings ]
-            signs = SignList( list_of_ints )
-            if len(signs)%2 == 0:
-                new_LoL.append([row[0],signs])
-                line_count = line_count + 1
-            else:
-                pos_crossing = signs + [1]
-                new_LoL.append([row[0],pos_crossing])
-                line_count = line_count + 1            
+            gauss_code = [ int(number) for number in strings ]
+            dln = gauss_to_dln( gauss_code , colorings )
+            new_LoL.append([row[0], dln])
+            line_count = line_count + 1 
+            
+    rawfile.close()
+
+    newfilename = "./data/name_dlnfrom"+uc2+"_"+str(colorings)+"colorable.csv"
+
+    newrawfile = open(newfilename, 'w')
+
+    writer = csv.writer(newrawfile)
+
+    for row in new_LoL:
+        writer.writerow(row)
+
+    newrawfile.close()    
+
+
+uc2 = "braid"
+
+for colorings in primes_used:
+
+    ### Gauss to DLN
+
+    fields = [ 'Name', 'Gauss Notation']
+
+    newfields = [ 'Name', 'Dihedral Linking Numbers']
     
+    filename = "./data/name_braid_"+str(colorings)+"colorable.csv"
+
+    line_count = 0
+
+    rawfile = open(filename, 'r')
+
+    reader = csv.reader(rawfile)
+
+    braid = []
+
+    new_LoL = []
     
+    for row in reader:
+        if line_count == 0:
+            new_LoL.append(newfields)
+            line_count = line_count + 1
+        else:
+            mult_braids = list(row[1][1:-1].split("},{"))
+            for string in mult_braids:
+                strings = list(string.split(","))
+                braid = [ int(number) for number in strings ]
+                dlns = braid_to_dln( braid , colorings )
+            new_LoL.append([row[0], dln])
+            line_count = line_count + 1 
+            
+    rawfile.close()
+
+    newfilename = "./data/name_dlnfrom"+uc2+"_"+str(colorings)+"colorable.csv"
+
+    newrawfile = open(newfilename, 'w')
+
+    writer = csv.writer(newrawfile)
+
+    for row in new_LoL:
+        writer.writerow(row)
+
+    newrawfile.close()    
+    
+
+""" 
     
     ##### gauss to overstrand no loop
     
@@ -241,7 +303,7 @@ for colorings in primes_used:
         writer.writerow(row)
 
     newrawfile.close()
-
+"""
 
 
 

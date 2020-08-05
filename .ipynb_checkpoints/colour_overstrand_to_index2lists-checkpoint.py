@@ -76,7 +76,7 @@ def where_lists(colourlist, overstrandlist, p):
     where_lists = []
 
     for i in range((p - 1) // 2):
-        current_universe = universes[0][i % 2][i] # this is where the error is ?
+        current_universe = universes[0][i % 2][i]
         where_list = [current_universe]
 
         for j in range(len(colourlist)):

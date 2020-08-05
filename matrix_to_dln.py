@@ -237,7 +237,7 @@ def gauss_to_dln(gauss, p):
             dln_mat.append(dlns)
         complete_dln.append(dln_mat)
 
-    error_list = errors(complete_dln)
+    error_list = errors(complete_dln , p)
 
     if error_list == []:
         return complete_dln
