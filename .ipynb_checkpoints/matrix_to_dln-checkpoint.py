@@ -115,7 +115,9 @@ def matrix_to_dln(colourlist, overstrandlist, signlist, coeff_dict, p, k):
                     if over_index == 0:
                         where_over = colourlist[overstrandlist[i]]
                         # print("adding index 1 wall")
+                        # print("coefficient:", coeff_dict[(0, overstrandlist[i])])
                         dln += signlist[i] * coeff_dict[(0, overstrandlist[i])]
+                        # print()
                         # print(dln)
                     else:
                         where_over = wheres[over_index - 1][overstrandlist[i]]
@@ -130,14 +132,18 @@ def matrix_to_dln(colourlist, overstrandlist, signlist, coeff_dict, p, k):
                             epsilon1 = -1
                         # print("adding wall", (over_index, overstrandlist[i]))
                         # if epsilon1 * signlist[i] == -1:
-                            # print("right")
+                        #     print("right")
                         # else:
-                            # print("left")
+                        #     print("left")
+                        # print("coefficient:", -epsilon1 * signlist[i] * coeff_dict[(over_index, overstrandlist[i])])
                         dln -= epsilon1 * coeff_dict[(over_index, overstrandlist[i])]
 
                         if k == over_index:
+                            # print("since over_index = k, add", (signlist[i] + epsilon1) // 2)
                             dln += (signlist[i] + epsilon1) // 2
+                        # print()
                 # print("Final DLN:", dln)
+                # print()
             dlns.append(dln)
 
     return dlns
@@ -209,9 +215,11 @@ def braid_to_dln(braid, p):
 
 def gauss_to_dln(gauss, p):
 
+    overstrand = gauss_to_overstrand.create_overstrand_list(gauss)
     signlist = gauss_to_signlist.SignList(gauss)
-    overstrandlist = gauss_to_overstrand.create_overstrand_list(gauss)
-    colourlists = rrematrix_to_colourlist.overstrand_to_colourlist(overstrandlist, p)
+    colourlists = rrematrix_to_colourlist.overstrand_to_colourlist(overstrand, p)
+
+    # print(signlist, overstrand, colourlists)
 
     complete_dln = []
     for i in range(len(colourlists)):
@@ -221,23 +229,24 @@ def gauss_to_dln(gauss, p):
             colourlist.append(colourlist[0])
             if i == 0:
                 signlist.append(1)
-                overstrandlist.append(len(overstrandlist))
+                overstrand.append(len(overstrand))
         # print(signlist, overstrandlist, colourlist)
         dln_mat = []
 
         for k in range(((p - 1) // 2) + 1):
             # print(k)
-            mat = matrix.create_matrix(overstrandlist, colourlist, signlist, p, k)
+            mat = matrix.create_matrix(overstrand, colourlist, signlist, p, k)
             coeffs = rrematrix_to_dict(mat, p, k)
             # print("Coefficients: k = ", k)
             # print(coeffs)
             # print()
 
-            dlns = matrix_to_dln(colourlist, overstrandlist, signlist, coeffs, p, k)
+            dlns = matrix_to_dln(colourlist, overstrand, signlist, coeffs, p, k)
             dln_mat.append(dlns)
         complete_dln.append(dln_mat)
+    # print(complete_dln)
 
-    error_list = errors(complete_dln , p)
+    error_list = errors(complete_dln, p)
 
     if error_list == []:
         return complete_dln
@@ -246,6 +255,25 @@ def gauss_to_dln(gauss, p):
         return ["Error:", error_list]
 
 
-complete_dln = braid_to_dln([1, 1, 1, 2, -1, 2], 7)
-for dln in complete_dln:
-    print(dln)
+def linkingnumber(overstrandlist, signlist, colourlist, p):
+    dln_mat = []
+    for k in range((p - 1) // 2 + 1):
+        coeff_matrix = matrix.create_matrix(overstrandlist, colourlist, signlist, p, k)
+
+        coeff_dict = rrematrix_to_dict(coeff_matrix, p, k)
+        # print("k =", k)
+        # print("Coefficients:", coeff_dict)
+        # print()
+        dln = matrix_to_dln(colourlist, overstrandlist, signlist, coeff_dict, p, k)
+        dln_mat.append(dln)
+
+    return dln_mat
+
+
+#complete_dln = gauss_to_dln([1, -2, 3, -1, 2, -3], 3)
+#for dln in complete_dln:
+#    print(dln)
+
+# dln = linkingnumber([3, 5, 0, 1, 0, 1], [-1, -1, -1, -1, 1, -1], [4, 6, 3, 5, 7, 1], 7)
+# for row in dln:
+#     print(row)

@@ -2,14 +2,14 @@
 import csv
 
 
-from colorings import *
+#from colorings import *
 
-from braid_to_gauss import *
-from gauss_to_overstrand import *
-from gauss_to_signlist import *
-from matrix_to_rrematrix import *
-from rrematrix_to_colourlist import *
-from overstrand_to_matrix import *
+#from braid_to_gauss import *
+#from gauss_to_overstrand import *
+#from gauss_to_signlist import *
+#from matrix_to_rrematrix import *
+#from rrematrix_to_colourlist import *
+#from overstrand_to_matrix import *
 
 from matrix_to_dln import *
 
@@ -42,6 +42,8 @@ for colorings in primes_used:
 
     new_LoL = []
     
+    print(colorings)
+    
     for row in reader:
         if line_count == 0:
             new_LoL.append(newfields)
@@ -51,6 +53,8 @@ for colorings in primes_used:
             gauss_code = [ int(number) for number in strings ]
             dln = gauss_to_dln( gauss_code , colorings )
             new_LoL.append([row[0], dln])
+            print(row[0])
+            print(dln)
             line_count = line_count + 1 
             
     rawfile.close()
@@ -65,7 +69,7 @@ for colorings in primes_used:
         writer.writerow(row)
 
     newrawfile.close()    
-
+""" 
 
 uc2 = "braid"
 
@@ -116,7 +120,7 @@ for colorings in primes_used:
     newrawfile.close()    
     
 
-""" 
+
     
     ##### gauss to overstrand no loop
     
