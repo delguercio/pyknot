@@ -215,9 +215,11 @@ def braid_to_dln(braid, p):
 
 def gauss_to_dln(gauss, p):
 
+    overstrand = gauss_to_overstrand.create_overstrand_list(gauss)
     signlist = gauss_to_signlist.SignList(gauss)
-    overstrandlist = gauss_to_overstrand.create_overstrand_list(gauss)
-    colourlists = rrematrix_to_colourlist.overstrand_to_colourlist(overstrandlist, p)
+    colourlists = rrematrix_to_colourlist.overstrand_to_colourlist(overstrand, p)
+
+    # print(signlist, overstrand, colourlists)
 
     complete_dln = []
     for i in range(len(colourlists)):
@@ -227,27 +229,24 @@ def gauss_to_dln(gauss, p):
             colourlist.append(colourlist[0])
             if i == 0:
                 signlist.append(1)
-                overstrandlist.append(len(overstrandlist))
+                overstrand.append(len(overstrand))
         # print(signlist, overstrandlist, colourlist)
         dln_mat = []
 
         for k in range(((p - 1) // 2) + 1):
             # print(k)
-            mat = matrix.create_matrix(overstrandlist, colourlist, signlist, p, k)
+            mat = matrix.create_matrix(overstrand, colourlist, signlist, p, k)
             coeffs = rrematrix_to_dict(mat, p, k)
             # print("Coefficients: k = ", k)
             # print(coeffs)
             # print()
 
-            dlns = matrix_to_dln(colourlist, overstrandlist, signlist, coeffs, p, k)
+            dlns = matrix_to_dln(colourlist, overstrand, signlist, coeffs, p, k)
             dln_mat.append(dlns)
         complete_dln.append(dln_mat)
+    # print(complete_dln)
 
-<<<<<<< HEAD
     error_list = errors(complete_dln, p)
-=======
-    error_list = errors(complete_dln , p)
->>>>>>> af8a279a82f3ecb4d9003ce00b00702708a673c0
 
     if error_list == []:
         return complete_dln
@@ -271,10 +270,10 @@ def linkingnumber(overstrandlist, signlist, colourlist, p):
     return dln_mat
 
 
-# complete_dln = braid_to_dln([1, 1, 1, 2, -1, 2], 7)
-# for dln in complete_dln:
-#     print(dln)
+complete_dln = gauss_to_dln([1, -2, 3, -1, 2, -3], 3)
+for dln in complete_dln:
+    print(dln)
 
-dln = linkingnumber([3, 5, 0, 1, 0, 1], [-1, -1, -1, -1, 1, -1], [4, 6, 3, 5, 7, 1], 7)
-for row in dln:
-    print(row)
+# dln = linkingnumber([3, 5, 0, 1, 0, 1], [-1, -1, -1, -1, 1, -1], [4, 6, 3, 5, 7, 1], 7)
+# for row in dln:
+#     print(row)
