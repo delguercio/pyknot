@@ -270,9 +270,9 @@ def linkingnumber(overstrandlist, signlist, colourlist, p):
     return dln_mat
 
 
-complete_dln = gauss_to_dln([1, -2, 3, -1, 2, -3], 3)
-for dln in complete_dln:
-    print(dln)
+#complete_dln = gauss_to_dln([1, -2, 3, -1, 2, -3], 3)
+#for dln in complete_dln:
+#    print(dln)
 
 # dln = linkingnumber([3, 5, 0, 1, 0, 1], [-1, -1, -1, -1, 1, -1], [4, 6, 3, 5, 7, 1], 7)
 # for row in dln:
