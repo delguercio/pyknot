@@ -73,10 +73,20 @@ def universe_lists(colourlist, overstrandlist, p):
 def where_lists(colourlist, overstrandlist, p):
 
     universes = universe_lists(colourlist, overstrandlist, p)
+    # print(universes)
     where_lists = []
 
     for i in range((p - 1) // 2):
-        current_universe = universes[0][i % 2][i] # this is where the error is ?
+        # print(i)
+        # print(universes[0], i % 2, i)
+        if colourlist[0] == colourlist[overstrandlist[0]]:
+            # print("homogeneous")
+            # print("universes:", universes[0])
+            # print("level:", universes[0][i])
+            current_universe = universes[0][i][0]
+        else:
+            # print("inhomogeneous")
+            current_universe = universes[0][i % 2][i]  # this is where the error is ?
         where_list = [current_universe]
 
         for j in range(len(colourlist)):
