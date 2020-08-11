@@ -19,7 +19,7 @@ import math
 
 primes_used = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 313, 353]
 
-
+"""
 uc2 = "gauss"
 
 for colorings in primes_used:
@@ -75,9 +75,9 @@ uc2 = "braid"
 
 for colorings in primes_used:
 
-    ### Gauss to DLN
+    ### BRAID to DLN
 
-    fields = [ 'Name', 'Gauss Notation']
+    fields = [ 'Name', 'Braid Notation']
 
     newfields = [ 'Name', 'Dihedral Linking Numbers']
     
@@ -93,17 +93,35 @@ for colorings in primes_used:
 
     new_LoL = []
     
+    dlns = []
+    
     for row in reader:
         if line_count == 0:
             new_LoL.append(newfields)
             line_count = line_count + 1
         else:
             mult_braids = list(row[1][1:-1].split("},{"))
-            for string in mult_braids:
-                strings = list(string.split(","))
+            if len(mult_braids) == 2:
+                for string in enumerate(mult_braids):
+                    if string[0] == 0:
+                        strings = list(string[1][1:].split(","))
+                        braid = [ int(number) for number in strings ]
+                        dln = braid_to_dln( braid , colorings )
+                        dlns.append(dln)
+                    elif string[0] == 1:
+                        strings = list(string[1][:-1].split(","))
+                        braid = [ int(number) for number in strings ]
+                        dln = braid_to_dln( braid , colorings )
+                        dlns.append(dln)
+            else:
+                strings = list(row[1][1:-1].split(","))
                 braid = [ int(number) for number in strings ]
                 dlns = braid_to_dln( braid , colorings )
-            new_LoL.append([row[0], dln])
+                
+            print(row[0])
+            print(dlns)              
+            new_LoL.append([row[0], dlns])
+            dlns = []
             line_count = line_count + 1 
             
     rawfile.close()
@@ -120,7 +138,7 @@ for colorings in primes_used:
     newrawfile.close()    
     
 
-
+"""
     
     ##### gauss to overstrand no loop
     
